@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2017-12-23 20:30+0100\n"
-"PO-Revision-Date: 2018-06-16 18:36+0200\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2018-06-16 20:44+0200\n"
+"Language-Team: Libremanuals\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -117,7 +117,10 @@ msgstr "Chet Ramey, Case Western Reserve University"
 #: bashref.texi:46
 #, no-wrap
 msgid "Brian Fox, Free Software Foundation"
-msgstr "Brian Fox, Free Software Foundation"
+msgstr ""
+"Brian Fox, Free Software Foundation.\n"
+"Traducido por Jorge Maldonado.\n"
+"Revisado por David Arroyo Men@'endez."
 
 #. type: node
 #: bashref.texi:57
@@ -6013,13 +6016,14 @@ msgid ""
 "slash character must always be matched explicitly.  In other cases, the @samp{.} "
 "character is not treated specially."
 msgstr ""
-"Cuando se usa un patr@'on para la expansi@'on de nombre de archivo, el "
-"car@'acter @samp{.} al principio de un nombre de archivo o inmediatamente "
-"siguiendo a una barra debe ser coincidido expl@'{@dotless{i}}citamente, a no ser que la "
-"opci@'on del int@'erprete @code{dotglob} est@'e habilitada.  Al coincidir un "
-"nombre de archivo, el car@'acter de barra debe ser coincidido siempre "
-"expl@'{@dotless{i}}citamente.  En otros casos, el car@'acter @samp{.} no es tratado de forma "
-"especial."
+"Cuando se usa un patr@'on para la expansi@'on de nombre de archivo, el\n"
+"car@'acter @samp{.} al principio de un nombre de archivo o\n"
+"inmediatamente siguiendo a una barra debe coincidir\n"
+"expl@'{@dotless{i}}citamente, a no ser que la opci@'on del\n"
+"int@'erprete @code{dotglob} est@'e habilitada.  Al coincidir un nombre\n"
+"de archivo, el car@'acter de barra debe coincidir siempre\n"
+"expl@'{@dotless{i}}citamente.  En otros casos, el car@'acter @samp{.}\n"
+"no se trata de forma especial."
 
 #. type: Plain text
 #: bashref.texi:2420
@@ -6047,20 +6051,22 @@ msgid ""
 "with a @samp{.}, make @samp{.*} one of the patterns in @env{GLOBIGNORE}.  The "
 "@code{dotglob} option is disabled when @env{GLOBIGNORE} is unset."
 msgstr ""
-"La variable del int@'erprete @env{GLOBIGNORE} puede ser usada para restringir el "
-"conjunto de nombres de archivo que coinciden con un patr@'on.  Si "
-"@env{GLOBIGNORE} est@'a establecida, cada nombre de archivo coincidente que "
-"tambi@'en coincida con uno de los patrones en @env{GLOBIGNORE} es eliminado de "
-"la lista de coincidencias.  Si la opci@'on @code{nocaseglob} est@'a habilitada, "
-"la coincidencia con el patr@'on en @env{GLOBIGNORE} se realiza sin importar las "
-"may@'usculas y min@'usculas.  Los nombres de archivo @file{.} y @file{..} "
-"siempre se ignoran cuando @env{GLOBIGNORE} est@'a establecida y no es nula.  Sin "
-"embargo, establecer @env{GLOBIGNORE} a un valor no nulo tiene el efecto de "
-"activar la opci@'on del int@'erprete @code{dotglob}, para que todos los otros "
-"nombres de archivo que empiezan por @samp{.} coincidan.  Para obtener el viejo "
-"comportamiento de ignorar los nombres de archivo que comienzan por @samp{.}, haz "
-"@samp{.*} uno de los patrones en @env{GLOBIGNORE}.  La opci@'on @code{dotglob} "
-"se desabilita cuando @env{GLOBIGNORE} no est@'a establecida."
+"La variable del int@'erprete @env{GLOBIGNORE} puede ser usada para\n"
+"restringir el conjunto de nombres de archivo que coincide con un\n"
+"patr@'on.  Si @env{GLOBIGNORE} est@'a establecida, cada nombre de\n"
+"archivo que tambi@'en coincida con uno de los patrones en\n"
+"@env{GLOBIGNORE} es eliminado de la lista de coincidencias.  Si la\n"
+"opci@'on @code{nocaseglob} est@'a habilitada, la coincidencia con el\n"
+"patr@'on en @env{GLOBIGNORE} se realiza sin importar las may@'usculas\n"
+"y min@'usculas.  Los nombres de archivo @file{.} y @file{..} siempre\n"
+"se ignoran cuando @env{GLOBIGNORE} est@'a establecida y no es nula.\n"
+"Sin embargo, establecer @env{GLOBIGNORE} a un valor no nulo tiene el\n"
+"efecto de activar la opci@'on del int@'erprete @code{dotglob}, para\n"
+"que todos los otros nombres de archivo que empiezan por @samp{.}\n"
+"coincidan.  Para obtener el viejo comportamiento de ignorar los\n"
+"nombres de archivo que comienzan por @samp{.}, haz @samp{.*} uno de\n"
+"los patrones en @env{GLOBIGNORE}.  La opci@'on @code{dotglob} se\n"
+"deshabilita cuando @env{GLOBIGNORE} no se establece."
 
 #. type: cindex
 #: bashref.texi:2443
@@ -6083,12 +6089,13 @@ msgid ""
 "backslash is discarded when matching.  The special pattern characters must be "
 "quoted if they are to be matched literally."
 msgstr ""
-"Cualquier car@'acter que aparezca en un patr@'on, distinto a los caracteres de "
-"patr@'on especial descritos m@'as abajo, coincide con s@'{@dotless{i}} mismo.  El car@'acter "
-"@sc{nul} no puede ocurrir en un patr@'on.  Una barra invertida escapa el "
-"siguiente car@'acter; la barra invertida de escape se descarta durante la "
-"coincidencia.  Los caracteres de patrones especiales deben ser entrecomillados "
-"si no van a ser coincididos literalmente."
+"Cualquier car@'acter que aparezca en un patr@'on, distinto a los\n"
+"caracteres de patr@'on especial descritos m@'as abajo, coincide con\n"
+"s@'{@dotless{i}} mismo.  El car@'acter @sc{nul} no puede ocurrir en un\n"
+"patr@'on.  Una barra invertida escapa el siguiente car@'acter; la\n"
+"barra invertida de escape se descarta durante la coincidencia.  Los\n"
+"caracteres de patrones especiales deben ser entrecomillados si no van\n"
+"a ser coincididos literalmente."
 
 #. type: Plain text
 #: bashref.texi:2455
@@ -6136,18 +6143,20 @@ msgid ""
 "the current locale and the values of the @env{LC_COLLATE} and @env{LC_ALL} shell "
 "variables, if set."
 msgstr ""
-"Coincide con cualquiera de los patrones incluidos.  Una pareja de patrones "
-"separada por un guion denota una @var{expresi@'on de rango}; cualquier "
-"car@'acter que se encuentre entre esos dos caracteres, inclusive, usando la "
-"secuencia de ordenaci@'on y el conjunto de caracteres de la configuraci@'on "
-"regional actual, es coincidido.  Si el primer car@'acter que sigue al @samp{[} "
-"es un @samp{!} o un @samp{^}, es coincidido cualquier car@'acter no incluido.  "
-"Un @samp{@minus{}} puede ser coincidido incluy@'endolo como el primer o @'ultimo "
-"car@'acter en el conjunto.  Un @samp{]} puede ser coincidido incluy@'endolo como "
-"el primer car@'acter en el conjunto.  El orden de ordenaci@'on de caracteres en "
-"las expresiones de rango se determina por la configuraci@'on regional actual y "
-"los valores de las variables del int@'erprete @env{LC_COLLATE} y @env{LC_ALL}, "
-"si est@'an establecidas."
+"Coincide con cualquiera de los patrones incluidos.  Una pareja de\n"
+"patrones separada por un gui@'on denota una @var{expresi@'on de rango};\n"
+"cualquier car@'acter que se encuentre entre esos dos caracteres,\n"
+"inclusive, usando la secuencia de ordenaci@'on y el conjunto de\n"
+"caracteres de la configuraci@'on regional actual coincide.  Si\n"
+"el primer car@'acter que sigue al @samp{[} es un @samp{!} o un\n"
+"@samp{^}, coincide cualquier car@'acter no incluido.  Un\n"
+"@samp{@minus{}} puede coincidir incluy@'endo como el primer o\n"
+"@'ultimo car@'acter en el conjunto.  Un @samp{]} puede coincidir\n"
+"incluy@'endolo como el primer car@'acter en el conjunto.  El orden de\n"
+"ordenaci@'on de caracteres en las expresiones de rango se determina\n"
+"por la configuraci@'on regional actual y los valores de las variables\n"
+"del int@'erprete @env{LC_COLLATE} y @env{LC_ALL}, si se\n"
+"establecen."
 
 #. type: table
 #: bashref.texi:2489
@@ -6551,7 +6560,7 @@ msgstr ""
 #. type: Plain text
 #: bashref.texi:2642
 msgid "The general format for redirecting input is:"
-msgstr "El formato generar para redirigir entrada es:"
+msgstr "El formato generar para redirigir una entrada es:"
 
 #. type: example
 #: bashref.texi:2644
@@ -6582,7 +6591,7 @@ msgstr ""
 #. type: Plain text
 #: bashref.texi:2655
 msgid "The general format for redirecting output is:"
-msgstr "El formato general para redirigir salida es:"
+msgstr "El formato general para redirigir una salida es:"
 
 #. type: example
 #: bashref.texi:2657
@@ -6630,7 +6639,7 @@ msgstr ""
 #. type: Plain text
 #: bashref.texi:2676
 msgid "The general format for appending output is:"
-msgstr "El formato generar para a@~nadir salida es:"
+msgstr "El formato general para a@~nadir una salida es:"
 
 #. type: example
 #: bashref.texi:2678
@@ -6658,7 +6667,7 @@ msgstr ""
 #. type: Plain text
 #: bashref.texi:2689
 msgid "There are two formats for redirecting standard output and standard error:"
-msgstr "Hay dos formatos para redirigir error est@'andar y salida est@'andar:"
+msgstr "Hay dos formatos para redirigir un error est@'andar y una salida est@'andar:"
 
 #. type: example
 #: bashref.texi:2691
@@ -6681,9 +6690,7 @@ msgstr ">&@var{palabra}\n"
 #: bashref.texi:2700
 msgid ""
 "Of the two forms, the first is preferred.  This is semantically equivalent to"
-msgstr ""
-"De las dos formas, se prefiere la primera.  Esto es equivalente sem@'anticamente "
-"a"
+msgstr "De las dos formas, se prefiere la primera. Esto equivale sem@'anticamente a:"
 
 #. type: example
 #: bashref.texi:2702
@@ -6715,9 +6722,10 @@ msgid ""
 "standard error output (file descriptor 2)  to be appended to the file whose name "
 "is the expansion of @var{word}."
 msgstr ""
-"Esta construcci@'on permite que sean a@~nadidas tanto la salida est@'andar "
-"(descriptor de archivo 1) como la salida de error est@'andar (descriptor de "
-"archivo 2) al archivo cuyo nombre es la expansi@'on de @var{palabra}."
+"Esta construcci@'on permite que se a@~nadan tanto la salida\n"
+"est@'andar (descriptor de archivo 1) como la salida de error\n"
+"est@'andar (descriptor de archivo 2) al archivo cuyo nombre es la\n"
+"expansi@'on de @var{palabra}."
 
 #. type: Plain text
 #: bashref.texi:2715
@@ -6733,7 +6741,7 @@ msgstr "&>>@var{palabra}\n"
 #. type: Plain text
 #: bashref.texi:2720
 msgid "This is semantically equivalent to"
-msgstr "Esto es equivalente sem@'anticamente a"
+msgstr "Esto equivale sem@'anticamente a:"
 
 #. type: example
 #: bashref.texi:2722
@@ -6760,11 +6768,12 @@ msgid ""
 "seen.  All of the lines read up to that point are then used as the standard "
 "input (or file descriptor @var{n} if @var{n} is specified) for a command."
 msgstr ""
-"Este tipo de redirecci@'on le ordena al int@'erprete leer la entrada de la "
-"fuente actual hasta que se encuentra una l@'{@dotless{i}}nea que contiene solo @var{palabra} "
-"(sin blancos al final).  Todas las l@'{@dotless{i}}neas le@'{@dotless{i}}das hasta ese punto son "
-"entonces usadas como la entrada est@'andar (o descriptor de archivo @var{n} si "
-"se especifica @var{n}) para una instrucci@'on."
+"Este tipo de redirecci@'on le ordena al int@'erprete leer la entrada\n"
+"de la fuente actual hasta que se encuentra una l@'{@dotless{i}}nea que\n"
+"contiene solo @var{palabra} (sin espacios en blanco al final).  Todas\n"
+"las l@'{@dotless{i}}neas le@'{@dotless{i}}das hasta ese punto son\n"
+"entonces usadas como la entrada est@'andar (o descriptor de archivo\n"
+"@var{n} si se especifica @var{n}) para una instrucci@'on."
 
 #. type: Plain text
 #: bashref.texi:2733
