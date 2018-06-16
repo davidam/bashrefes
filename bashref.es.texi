@@ -22,7 +22,7 @@ Esta es la Edici@'on @value{EDITION}, actualizada por @'ultima vez
 @code{Bash}, Version @value{VERSION}.
 
 Las fuentes de este documento están accesibles desde
-https://notabug.org/jorgesumle/bashrefes.
+https://github.com/davidam/bashrefes.git
 
 Copyright @copyright{} 1988--2016 Free Software Foundation, Inc.
 
@@ -77,7 +77,7 @@ Esta es la Edici@'on @value{EDITION}, actualizada por @'ultima vez
 @code{Bash}, Version @value{VERSION}.
 
 Las fuentes de este documento están accesibles desde
-https://notabug.org/jorgesumle/bashrefes.
+https://github.com/davidam/bashrefes.git
 
 Bash contiene funcionalidades que aparecen en otros int@'erpretes de
 instrucciones populares, y algunas funcionalidades que solo aparecen en
