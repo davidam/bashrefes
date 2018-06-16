@@ -1,0 +1,81 @@
+\initial {.}
+\entry {\code {.}}{45}
+\initial {:}
+\entry {\code {:}}{45}
+\initial {[}
+\entry {\code {[}}{50}
+\initial {A}
+\entry {\code {alias}}{53}
+\initial {B}
+\entry {\code {bg}}{110}
+\entry {\code {bind}}{53}
+\entry {\code {break}}{46}
+\initial {C}
+\entry {\code {caller}}{55}
+\entry {\code {cd}}{46}
+\entry {\code {command}}{55}
+\entry {\code {compgen}}{142}
+\entry {\code {complete}}{142}
+\entry {\code {compopt}}{145}
+\entry {\code {continue}}{46}
+\initial {D}
+\entry {\code {declare}}{55}
+\entry {\code {dirs}}{101}
+\entry {\code {disown}}{111}
+\initial {E}
+\entry {\code {echo}}{57}
+\entry {\code {enable}}{58}
+\entry {\code {eval}}{47}
+\entry {\code {exec}}{47}
+\entry {\code {exit}}{47}
+\entry {\code {export}}{47}
+\initial {F}
+\entry {\code {fc}}{150}
+\entry {\code {fg}}{110}
+\initial {G}
+\entry {\code {getopts}}{48}
+\initial {H}
+\entry {\code {hash}}{48}
+\entry {\code {help}}{58}
+\entry {\code {history}}{150}
+\initial {I}
+\entry {\code {instrucci\'on integrada}}{55}
+\initial {J}
+\entry {\code {jobs}}{110}
+\initial {K}
+\entry {\code {kill}}{111}
+\initial {L}
+\entry {\code {let}}{59}
+\entry {\code {local}}{59}
+\entry {\code {logout}}{59}
+\initial {M}
+\entry {\code {mapfile}}{59}
+\initial {P}
+\entry {\code {popd}}{102}
+\entry {\code {printf}}{60}
+\entry {\code {pushd}}{102}
+\entry {\code {pwd}}{49}
+\initial {R}
+\entry {\code {read}}{61}
+\entry {\code {readarray}}{63}
+\entry {\code {readonly}}{49}
+\entry {\code {return}}{49}
+\initial {S}
+\entry {\code {set}}{65}
+\entry {\code {shift}}{50}
+\entry {\code {shopt}}{69}
+\entry {\code {source}}{63}
+\entry {\code {suspend}}{112}
+\initial {T}
+\entry {\code {test}}{50}
+\entry {\code {times}}{51}
+\entry {\code {trap}}{51}
+\entry {\code {type}}{63}
+\entry {\code {typeset}}{63}
+\initial {U}
+\entry {\code {ulimit}}{63}
+\entry {\code {umask}}{52}
+\entry {\code {unalias}}{65}
+\entry {\code {unset}}{53}
+\initial {W}
+\entry {\code {wait}}{111}

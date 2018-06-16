@@ -1,0 +1,557 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@c The GNU Free Documentation License.
+@center Versi@'on 1.3, 3 de noviembre de 2008
+
+@c This file is intended to be included within another document,
+@c hence no sectioning command or @node.
+
+@display
+Copyright @copyright{} 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
+@uref{https://fsf.org/}
+
+@emph{This is an unofficial translation of the GNU Free Documentation License,
+version 1.3 into Spanish. It was not published by the Free Software Foundation,
+and does not legally state the distribution terms for software that uses the 
+GNU FDL---only the original English text of the GNU FDL does that. However, we
+hope that this translation will help language speakers understand the GNU FDL better.}
+
+Esta es una traducci@'on no oficial de la GNU Free Documentation License,
+versi@'on 1.3 al espa@~nol. No fue publicada por la Free Software Foundation,
+y no establece legalmente los t@'erminos de distribuci@'on para software que usa
+la GNU FDL ---solo el texto original de la GNU FDL hace eso---. Sin embargo,
+esperamos que esta traducci@'on ayude a hablantes de espa@~nol a entender la
+GNU FDL mejor.
+
+Puede publicar esta traducci@'on, modificada o sin modificar bajo los t@'erminos
+en @uref{http://www.gnu.org/licenses/translations.html}.
+
+[Comienzo de la traducci@'on de la licencia]
+Se permite a cualquier persona copiar y distribuir copias literales
+de este documento, pero cambiarlo no est@'a permitido.
+@end display
+
+@enumerate 0
+@item
+PRE@'AMBULO
+
+El prop@'osito de esta Licencia es permitir que un manual, libro de texto u
+otro documento funcional y @'util sea @dfn{libre} en el sentido de libertad:
+asegurar a todo el mundo la libertad efectiva de copiarlo y redistribuirlo,
+con o sin modificaciones, de manera comercial o no.  En segundo t@'ermino,
+esta Licencia reserva al autor y al editor de una manera de obtener
+reconocimiento por su trabajo, sin que se le considere responsable de las
+modificaciones realizadas por otros.
+
+Esta Licencia es un tipo de @guillemetleft{}copyleft@guillemetright{}, lo
+que significa que los trabajos derivados del documento deben a su vez ser
+libres en el mismo sentido.  Complementa a la GNU General Public License,
+que es una licencia copyleft dise@~nada para el software libre.
+
+Hemos dise@~nado esta Licencia para usarla en manuales de software libre, ya
+que el software libre necesita documentaci@'on libre: un programa libre debe
+venir con manuales que ofrezcan la mismas libertades que el software.  Pero
+esta Licencia no se limita a manuales de software; puede usarse para
+cualquier obra textual, sin tener en cuenta su tem@'atica o si se publica
+como libro impreso o no.  Recomendamos esta licencia principalmente para
+trabajos cuyo fin sea instructivo o de referencia.
+
+@item
+DEFINICIONES Y APLICABILIDAD
+
+Esta Licencia se aplica a cualquier manual u otro trabajo, en cualquier
+soporte, que contenga una aviso puesto por el propietario de los derechos de
+autor que indique que puede ser distribuido bajo los t@'erminos de esta
+Licencia.  Tal aviso garantiza en cualquier lugar del mundo, sin pago de
+derechos y sin l@'{@dotless{i}}mite de tiempo, el uso de dicho trabajo seg@'un las
+condiciones aqu@'{@dotless{i}} estipuladas.  En adelante la palabra
+@guillemetleft{}Documento@guillemetright{} se referir@'a a cualquiera de
+dichos manuales o trabajos.  Cualquier persona del p@'ublico es una
+licenciataria y ser@'a referida como “Usted”.  Usted acepta la licencia si
+copia, modifica o distribuye el trabajo de cualquier modo que requiera
+permiso seg@'un la ley de propiedad intelectual.
+
+Una @guillemetleft{}Versi@'on Modificada@guillemetright{} del Documento
+significa que cualquier trabajo que contenga el Documento o una porci@'on
+del mismo, ya sea una copia literal o con modificaciones y/o traducciones a
+otro idioma.
+
+Una @guillemetleft{}Secci@'on Secundaria@guillemetright{} es un ap@'endice
+con t@'{@dotless{i}}tulo o una secci@'on preliminar del Documento que trata
+exclusivamente de la relaci@'on entre los autores o editores del Documento
+con el tema general del Documento (o temas relacionados) pero que no
+contiene nada que entre directamente en dicho tema general.  (Por ejemplo,
+si el Documento es en parte un libro de texto de matem@'aticas, una
+Secci@'on Secundaria puede no explicar nada de matem@'aticas).  La
+relaci@'on podr@'{@dotless{i}}a ser un asunto de conexi@'on hist@'orica con el tema o
+temas relacionados, o de opini@'on legal, comercial, filos@'ofica, @'etica o
+pol@'{@dotless{i}}tica acerca de ellos.
+
+Las @guillemetleft{}Secciones Invariantes@guillemetright{} son ciertas
+Secciones Secundarias cuyos t@'{@dotless{i}}tulos son designados, como aquellos de
+Secciones Invariantes, en el aviso que indica que el documento est@'a
+publicado bajo esta Licencia.  Si una secci@'on no entra en la definici@'on
+de Secundaria, no puede designarse como Invariante.  El documento puede no
+tener Secciones Invariantes.  Si el Documento no identifica las Secciones
+Invariantes, es que no las tiene.
+
+Los @guillemetleft{}Textos de Cubierta@guillemetright{} son ciertos pasajes
+cortos de texto que se listan, como Textos de Cubierta Delantera o Textos de
+Cubierta Trasera, en el aviso que indica que el documento est@'a publicado
+bajo esta Licencia.  Un Texto de Cubierta Delantera puede tener como mucho 5
+palabras, y uno de Cubierta Trasera puede tener hasta 25 palabras.
+
+Una copia @guillemetleft{}Transparente@guillemetright{} del Documento,
+significa una copia para lectura de m@'aquina, representada en un formato
+cuya especificaci@'on est@'a disponible al p@'ublico general, apta para que
+los contenidos puedan ser revisados directamente con editores de texto
+gen@'ericos o (para im@'agenes compuestas de p@'{@dotless{i}}xeles) con programas
+gen@'ericos de manipulaci@'on de im@'agenes o (para dibujos) con alg@'un
+editor de dibujos ampliamente disponible, y que sea adecuado como entrada
+para formateadores de texto o para su traducci@'on autom@'atica a formatos
+adecuados para formateadores de texto.  Una copia hecha en un formato
+definido como Transparente, pero cuyo marcaje o ausencia de @'el haya sido
+dise@~nado para impedir o dificultar modificaciones posteriores por parte de
+los lectores no es Transparente.  Un formato de imagen no es transparente si
+se usa para una cantidad de texto sustancial.  Una copia que no es
+@guillemetleft{}Transparente@guillemetright{} se denomina Opaca.
+
+Ejemplos de formatos adecuados para copias Transparentes son ASCII puro sin
+marcaje, formato de entrada de Texinfo, formato de entrada de La@TeX{}, SGML
+o XML usando una DTD disponible p@'ublicamente, y HTML, PostScript o PDF
+simples, que sigan los est@'andares y dise@~nados para que los modifiquen
+personas.  Ejemplos de formatos de imagen transparentes son PNG, XCF y
+JPG@.  Los formatos Opacos incluyen formatos propietarios que pueden ser
+le@'{@dotless{i}}dos y editados @'unicamente en procesadores de palabras propietarios,
+SGML o XML para los cu@'ales las DTD y/o herramientas de procesamiento no
+est@'en ampliamente disponibles, y HTML, PostScript o PDF generados por
+algunos procesadores de palabras solo como salida.
+
+La @guillemetleft{}P@'agina de T@'{@dotless{i}}tulo@guillemetright{} significa, en un
+libro impreso, la p@'agina de t@'{@dotless{i}}tulo, m@'as las p@'aginas siguientes que
+sean necesarias para mantener legiblemente el material que esta Licencia
+requiere en la portada.  Para trabajos en formatos que no tienen p@'agina de
+portada como tal, @guillemetleft{}Portada@guillemetright{} significa el
+texto cercano a la aparici@'on m@'as prominente del t@'{@dotless{i}}tulo del trabajo,
+precediendo el comienzo del cuerpo del texto.
+
+El @guillemetleft{}Editor@guillemetright{} se refiere a cualquier persona o
+entidad que distribuya copias del Documento a el p@'ublico.
+
+Una secci@'on @guillemetleft{}Titulada XYZ@guillemetright{} significa una
+parte del Documento cuyo t@'{@dotless{i}}tulo es precisamente XYZ o contiene XYZ entre
+par@'entesis, a continuaci@'on de texto que traduce XYZ a otro idioma.
+(Aqu@'{@dotless{i}} XYZ se refiere a nombres de secci@'on espec@'{@dotless{i}}ficos mencionados
+m@'as abajo, como @guillemetleft{}Agradecimientos@guillemetright{},
+@guillemetleft{}Dedicatorias@guillemetright{},
+@guillemetleft{}Aprobaciones@guillemetright{} o
+@guillemetleft{}Historia@guillemetright{}.)  @guillemetleft{}Conservar el
+T@'{@dotless{i}}tulo@guillemetright{} de tal secci@'on cuando se modifica el Documento
+significa que permanece una secci@'on @guillemetleft{}Titulada
+XYZ@guillemetright{} seg@'un esta definici@'on.
+
+El Documento puede incluir Limitaciones de Garant@'{@dotless{i}}a cercanas al aviso
+donde se declara que al Documento se le aplica esta Licencia.  Se considera
+que estas Limitaciones de Garant@'{@dotless{i}}a est@'an incluidas, por referencia, en
+la Licencia, pero solo en cuanto a limitaciones de garant@'{@dotless{i}}a: cualquier
+otra implicaci@'on que estas Limitaciones de Garant@'{@dotless{i}}a puedan tener es nula
+y no tiene efecto en el significado de esta Licencia.
+
+@item
+COPIA LITERAL
+
+Usted puede copiar y distribuir el Documento en cualquier soporte, sea en
+forma comercial o no, siempre y cuando esta Licencia, los avisos de
+copyright y la nota que indica que esta Licencia se aplica al Documento se
+reproduzcan en todas las copias y que usted no a@~nada ninguna otra
+condici@'on a las expuestas en esta Licencia.  Usted no puede usar medidas
+t@'ecnicas para obstruir o controlar la lectura o copia posterior de las
+copias que usted haga o distribuya.  Sin embargo, usted puede aceptar
+compensaci@'on a cambio de las copias.  Si distribuye un n@'umero
+suficientemente grande de copias tambi@'en deber@'a seguir las condiciones
+de la secci@'on 3.
+
+Usted tambi@'en puede prestar copias, bajo las mismas condiciones
+establecidas anteriormente, y puede exhibir copias p@'ublicamente.
+
+@item
+COPIAR EN CANTIDAD
+
+Si publica copias impresas (o copias en soportes que tengan normalmente
+cubiertas impresas) del Documento que sobrepasen las 100, y el aviso de
+licencia del Documento exige Textos de Cubierta, debe incluir las copias con
+cubiertas que lleven en forma clara y legible todos esos Textos de Cubierta:
+Textos de Cubierta Delantera en la cubierta delantera y Textos de Cubierta
+Trasera en la cubierta trasera.  Ambas cubiertas deben identificarlo a Usted
+clara y legiblemente como editor de tales copias.  La cubierta debe mostrar
+el t@'{@dotless{i}}tulo completo con todas las palabras igualmente prominentes y
+visibles.  Adem@'as puede a@~nadir otro material en las cubiertas. Las
+copias con cambios limitados a las cubiertas, siempre que conserven el
+t@'{@dotless{i}}tulo del Documento y satisfagan estas condiciones, pueden considerarse
+como copias literales en otros aspectos.
+
+Si los textos requeridos para la cubierta son muy voluminosos para que
+quepan legiblemente, debe colocar los primeros (tantos como sea razonable
+colocar) en la verdadera cubierta, y situar el resto en p@'aginas
+adyacentes.
+
+Si usted publica o distribuye copias Opacas del Documento cuya cantidad
+exceda las 100, debe incluir una copia Transparente legible por una
+m@'aquina con cada copia Opaca, o bien mostrar en cada copia Opaca una
+direcci@'on de red a la que el p@'ublico general que use redes tenga acceso
+de descarga usando protocolos de red p@'ublicos y estandarizados a una copia
+Transparente del Documento completa, sin material adicional.  Si usted hace
+uso de la @'ultima opci@'on, deber@'a tomar las medidas necesarias, cuando
+comience la distribuci@'on de las copias Opacas en cantidad, para asegurar
+que esta copia Transparente permanecer@'a accesible en el sitio establecido
+por lo menos un a@~no despu@'es de la @'ultima vez que distribuya una copia
+Opaca (directamente o a trav@'es de sus agentes o distribuidores) de esa
+edici@'on al p@'ublico.
+
+Se solicita, aunque no es requisito, que se ponga en contacto con los
+autores del Documento antes de redistribuir gran n@'umero de copias, para
+darles la oportunidad de que le proporcionen una versi@'on actualizada del
+Documento.
+
+@item
+MODIFICACIONES
+
+Puede copiar y distribuir una Versi@'on Modificada del Documento bajo las
+condiciones de las secciones 2 y 3 anteriores, siempre que usted publique la
+Versi@'on Modificada bajo esta misma Licencia, con la Versi@'on Modificada
+haciendo el rol del Documento, por lo tanto dando licencia de distribuci@'on
+y modificaci@'on de la Versi@'on Modificada a quienquiera posea una copia de
+la misma.  Adem@'as, debe hacer lo siguiente en la Versi@'on Modificada:
+
+@enumerate A
+@item
+Usar en la P@'agina de T@'{@dotless{i}}tulo (y en las cubiertas, si hay alguna) un
+t@'{@dotless{i}}tulo distinto al del Documento y de sus versiones anteriores (que
+deber@'{@dotless{i}}an, si hay alguna, estar listadas en la secci@'on de Historia del
+Documento).  Puede usar el mismo t@'{@dotless{i}}tulo de versiones anteriores al
+original siempre y cuando quien las public@'o originalmente otorgue permiso.
+
+@item
+Listar en la P@'agina de T@'{@dotless{i}}tulo, como autores, a una o m@'as personas o
+entidades responsables de la autor@'{@dotless{i}}a de las modificaciones de la Versi@'on
+Modificada, junto con por lo menos cinco de los autores principales del
+Documento (todos sus autores principales, si tiene menos de cinco), a menos
+que le eximan de tal requisito.
+
+@item
+Mostrar en la p@'agina de T@'{@dotless{i}}tulo el nombre del editor de la Versi@'on
+Modificada.
+
+@item
+Conservar todas las notas de copyright del Documento.
+
+@item
+A@~nadir una nota de copyright apropiada a sus modificaciones, adyacente a
+las otras notas de copyright.
+
+@item
+Incluir, inmediatamente despu@'es de las notas de copyright, una nota de
+licencia dando el permiso para usar la Versi@'on Modificada bajo los
+t@'erminos de esta Licencia, en la forma mostrada en el Adendo abajo.
+
+@item
+Conservar en esa nota de licencia el listado completo de las Secciones
+Invariantes y de los Textos de Cubierta que sean requeridos en el aviso de
+Licencia del Documento.
+
+@item
+Incluir una copia sin modificaci@'on de esta Licencia.
+
+@item
+Conservar la secci@'on Titulada @guillemetleft{}Historia@guillemetright{},
+conservar su T@'{@dotless{i}}tulo y a@~nadirle un elemento que declare al menos el
+t@'{@dotless{i}}tulo, el a@~no, los nuevos autores y el editor de la Versi@'on
+Modificada, tal como figuran en la P@'agina de T@'{@dotless{i}}tulo.  Si no hay una
+secci@'on Titulada “Historia” en el Documento, crear una estableciendo el
+t@'{@dotless{i}}tulo, el a@~no, los autores y el editor del Documento, tal como figuran
+en su Portada, a@~nadiendo adem@'as un elemento describiendo la Versi@'on
+Modificada, como se estableci@'o en la oraci@'on anterior.
+
+@item
+Conservar la direcci@'on en red, si la hay, dada en el Documento para el
+acceso p@'ublico a una copia Transparente del Documento, as@'{@dotless{i}} como las
+otras direcciones de red dadas en el Documento para versiones anteriores en
+las que estuviese basado.  Pueden ubicarse en la secci@'on
+@guillemetleft{}Historia@guillemetright{}.  Se puede omitir la ubicaci@'on
+en red de un trabajo que haya sido publicado por lo menos cuatro a@~nos
+antes que el Documento mismo, o si el editor original de dicha versi@'on da
+permiso.
+
+@item
+En cualquier secci@'on Titulada
+@guillemetleft{}Agradecimientos@guillemetright{} o
+@guillemetleft{}Dedicatorias@guillemetright{}, Conservar el T@'{@dotless{i}}tulo de la
+secci@'on y conservar en ella toda la sustancia y el tono de los
+agradecimientos y/o dedicatorias incluidas all@'{@dotless{i}}.
+
+@item
+Conservar todas las Secciones Invariantes del Documento, sin alterar su
+texto ni sus t@'{@dotless{i}}tulos.  Los n@'umeros de secci@'on o el equivalente no son
+considerados parte de los t@'{@dotless{i}}tulos de la secci@'on.
+
+@item
+Borrar cualquier secci@'on titulada
+@guillemetleft{}Aprobaciones@guillemetright{}.  Tales secciones no pueden
+incluirse en las Versiones Modificadas.
+
+@item
+No cambiar el t@'{@dotless{i}}tulo de ninguna secci@'on
+@guillemetleft{}Aprobaciones@guillemetright{} autorizada ni entrar en
+conflicto con el t@'{@dotless{i}}tulo de alguna Secci@'on Invariante.
+
+@item
+Conservar todas las Limitaciones de Garant@'{@dotless{i}}a.
+@end enumerate
+
+Si la Versi@'on Modificada incluye secciones de texto preliminar o
+ap@'endices nuevos que califiquen como Secciones Secundarias y contienen
+material no copiado del Documento, puede opcionalmente designar algunas o
+todas esas secciones como invariantes.  Para hacerlo, a@~nada sus t@'{@dotless{i}}tulos
+a la lista de Secciones Invariantes en la nota de licencia de la Versi@'on
+Modificada.  Tales t@'{@dotless{i}}tulos deben ser distintos de cualquier otro t@'{@dotless{i}}tulo
+de secci@'on.
+
+Puede a@~nadir una secci@'on titulada
+@guillemetleft{}Aprobaciones@guillemetright{}, siempre que contenga
+@'unicamente aprobaciones de su Versi@'on Modificada por otras fuentes
+---por ejemplo, observaciones de peritos o que el texto ha sido aprobado por
+una organizaci@'on como la definici@'on oficial de un est@'andar---.
+
+Puede a@~nadir un pasaje de hasta cinco palabras como Texto de Cubierta
+Delantera y un pasaje de hasta 25 palabras como Texto de Cubierta Trasera al
+final de la lista de Textos de Cubierta en la Versi@'on Modificada.  Una
+entidad solo puede a@~nadir (o hacer que se a@~nada) un pasaje al Texto de
+Cubierta Delantera y uno al de Cubierta Trasera.  Si el Documento ya incluye
+un textos de cubiertas a@~nadidos previamente por usted o por la misma
+entidad que usted representa, usted no puede a@~nadir otro; pero puede
+reemplazar el anterior, con permiso expl@'{@dotless{i}}cito del editor que agreg@'o el
+texto anterior.
+
+Con esta Licencia ni el/los autor(es) ni el/los editor(es) del Documento dan
+permiso para usar sus nombres para publicidad ni para asegurar o implicar
+aprobaci@'on de cualquier Versi@'on Modificada.
+
+@item
+COMBINACI@'ON DE DOCUMENTOS
+
+Usted puede combinar el Documento con otros documentos publicados bajo esta
+Licencia, bajo los t@'erminos definidos en la secci@'on 4 anterior para
+versiones modificadas, siempre que incluya en la combinaci@'on todas las
+Secciones Invariantes de todos los documentos originales, sin modificar,
+listadas todas como Secciones Invariantes del trabajo combinado en su nota
+de licencia.  As@'{@dotless{i}} mismo, debe incluir la Limitaci@'on de Garant@'{@dotless{i}}a.
+
+El trabajo combinado necesita contener solamente una copia de esta Licencia,
+y puede reemplazar varias Secciones Invariantes id@'enticas por una sola
+copia.  Si hay varias Secciones Invariantes con el mismo nombre pero con
+contenidos diferentes, haga el t@'{@dotless{i}}tulo de cada una de estas secciones
+@'unico a@~nadi@'endole al final del mismo, entre par@'entesis, el nombre
+del autor o editor original de esa secci@'on, si es conocido, o si no, un
+n@'umero @'unico.  Haga el mismo ajuste a los t@'{@dotless{i}}tulos de secci@'on en la
+lista de Secciones Invariantes de la nota de licencia del trabajo combinado.
+
+En la combinaci@'on, debe combinar cualquier secci@'on Titulada
+@guillemetleft{}Historia@guillemetright{} de los documentos originales,
+formando una secci@'on Titulada @guillemetleft{}Historia@guillemetright{};
+de la misma forma combine cualquier secci@'on Titulada
+@guillemetleft{}Agradecimientos@guillemetright{}, y cualquier secci@'on
+Titulada @guillemetleft{}Dedicatorias@guillemetright{}.  Debe borrar todas
+las secciones tituladas @guillemetleft{}Aprobaciones@guillemetright{}.
+
+@item
+COLECCIONES DE DOCUMENTOS
+
+Puede hacer una colecci@'on que conste del Documento y de otros documentos
+publicados bajo esta Licencia, y reemplazar las copias individuales de esta
+Licencia en todos los documentos por una sola copia que est@'e incluida en
+la colecci@'on, siempre que siga las reglas de esta Licencia para cada copia
+literal de cada uno de los documentos en cualquiera de los dem@'as aspectos.
+
+Puede extraer un solo documento de una de tales colecciones y distribuirlo
+individualmente bajo esta Licencia, siempre que inserte una copia de esta
+Licencia en el documento extra@'{@dotless{i}}do, y siga esta Licencia en todos los
+dem@'as aspectos relativos a la copia literal de dicho documento.
+
+@item
+AGREGACI@'ON CON TRABAJOS INDEPENDIENTES
+
+Una recopilaci@'on que conste del Documento o sus derivados y de otros
+documentos o trabajos separados e independientes, en cualquier soporte de
+almacenamiento o distribuci@'on, se denomina un
+@guillemetleft{}agregado@guillemetright{} si el copyright resultante de la
+compilaci@'on no se usa para limitar los derechos legales de compilaci@'on
+de los usuarios m@'as all@'a de lo que los de los trabajos individuales
+permiten.  Cuando el Documento se incluye en un agregado, esta Licencia no
+se aplica a los otros trabajos del agregado que no sean en s@'{@dotless{i}} mismos
+derivados del Documento.
+
+Si el requisito de la secci@'on 3 sobre el Texto de Cubierta es aplicable a
+estas copias del Documento y el Documento es menor que la mitad del agregado
+entero, los Textos de Cubierta del Documento pueden colocarse en cubiertas
+que enmarquen solamente el Documento dentro del agregado, o el equivalente
+electr@'onico de las cubiertas si el documento est@'a en forma
+electr@'onica.  En caso contrario deben aparecer en cubiertas impresas
+enmarcando todo el agregado.
+
+@item
+TRADUCCI@'ON
+
+La Traducci@'on es considerada como un tipo de modificaci@'on, por lo que
+usted puede distribuir traducciones del Documento bajo los t@'erminos de la
+secci@'on 4.  El reemplazo de las Secciones Invariantes con traducciones
+requiere permiso especial de los due@~nos de su copyright, pero usted puede
+a@~nadir traducciones de algunas o todas las Secciones Invariantes a las
+versiones originales de las mismas.  Puede incluir una traducci@'on de esta
+Licencia, de todas los avisos de licencia del documento, as@'{@dotless{i}} como de las
+Limitaciones de Garant@'{@dotless{i}}a, siempre que incluya tambi@'en la versi@'on en
+ingl@'es de esta Licencia y las versiones originales de las notas de
+licencia y Limitaciones de Garant@'{@dotless{i}}a.  En caso de desacuerdo entre la
+traducci@'on y la versi@'on original de esta Licencia, la nota de licencia o
+la limitaci@'on de garant@'{@dotless{i}}a, la versi@'on original prevalecer@'a.
+
+Si una secci@'on del Documento se Titula
+@guillemetleft{}Agradecimientos@guillemetright{},
+@guillemetleft{}Dedicatorias@guillemetright{} o
+@guillemetleft{}Historia@guillemetright{} el requisito (secci@'on 4) de
+Conservar su T@'{@dotless{i}}tulo (Secci@'on 1) requerir@'a, t@'{@dotless{i}}picamente, cambiar su
+t@'{@dotless{i}}tulo.
+
+@item
+TERMINACI@'ON
+
+Usted no puede copiar, modificar, sublicenciar o distribuir el Documento
+salvo por lo permitido expresamente bajo esta Licencia.  Cualquier intento
+en otra manera de copia, modificaci@'on, sublicenciamiento o distribuci@'on
+de @'el es nulo, y dar@'a por terminados autom@'aticamente sus derechos bajo
+esa Licencia.
+
+Sin embargo, si usted cesa toda violaci@'on a esta Licencia, entonces su
+licencia proveniente de un titular de copyright queda restaurada (a)
+provisionalmente, a menos y hasta que el titular del copyright explicita y
+finalmente termine su licencia, y (b) permanentemente, si el titular del
+copyright falla en notificarle de la violaci@'on por alg@'un medio razonable
+en un tiempo menor a 60 d@'{@dotless{i}}as despu@'es del cese.
+
+Adem@'as, su licencia proveniente de un titular del copyright particular
+queda restaurada permanentemente si el titular del copyright lo notifica de
+la violaci@'on por alg@'un m@'etodo razonable, es la primera vez que usted
+ha recibido aviso de la violaci@'on de esta Licencia (para cualquier
+trabajo) de ese titular del copyright, y usted remedia la violaci@'on en un
+tiempo menor a 30 d@'{@dotless{i}}as despu@'es de recibir dicho aviso.
+
+La terminaci@'on de sus derechos bajo esta secci@'on no termina la licencia
+de terceros que hayan recibido copias o derechos de usted bajo @'esta
+Licencia.  Si sus derechos han sido terminados y no restaurados
+permanentemente, recibir una copia de alguna parte o el total del mismo
+material no le da ning@'un derecho de usarlo.
+
+@item
+REVISIONES FUTURAS DE ESTA LICENCIA
+
+De vez en cuando la Free Software Foundation puede publicar versiones nuevas
+y revisadas de la GNU Free Documentation License.  Tales versiones nuevas
+ser@'an similares en esp@'{@dotless{i}}ritu a la presente versi@'on, pero pueden diferir
+en detalles para solucionar nuevos problemas o intereses.  Vea
+@uref{https://www.gnu.org/licenses/}.
+
+A cada versi@'on de la Licencia se le da un n@'umero de versi@'on
+distintivo.  Si el Documento especifica que se aplica una versi@'on numerada
+en particular de esta licencia @guillemetleft{}o cualquier versi@'on
+posterior@guillemetright{}, usted tiene la opci@'on de seguir los t@'erminos
+y condiciones de la versi@'on especificada o cualquier versi@'on posterior
+que haya sido publicada (no como borrador) por la Free Software Foundation.
+Si el Documento no especifica un n@'umero de versi@'on de esta Licencia,
+puede escoger cualquier versi@'on que haya sido publicada (no como borrador)
+por la Free Software Foundation.  Si el Documento especifica que un
+apoderado puede decidir qu@'e versi@'on futura de esta Licencia puede ser
+utilizada, esa frase de aceptaci@'on del apoderado de una versi@'on le
+autoriza permanentemente a escoger esa versi@'on para el Documento.
+
+@item
+CAMBIO DE LICENCIA
+
+Un @guillemetleft{}Sitio de Colaboraci@'on Masiva
+Multiautor@guillemetright{} (o @guillemetleft{}Sitio CMM@guillemetright{})
+significa cualquier servidor World Wide Web que publique trabajos que puedan
+ser sujetos a copyright y que tambi@'en provea medios prominentes para que
+cualquiera pueda editar esos trabajos.  Una wiki p@'ublica que cualquiera
+puede editar es un ejemplo de tal servidor.  Una
+@guillemetleft{}Colaboraci@'on Masiva Multiautor@guillemetright{} (o
+@guillemetleft{}CMM@guillemetright{}) contenida en el sitio significa
+cualquier colecci@'on de trabajos que puedan ser sujetos a copyright
+publicados en el sitio de CMM.
+
+@guillemetleft{}CC-BY-SA@guillemetright{} significa la licencia Creative
+Commons Attribution-Share Alike 3.0 publicada por Creative Commons
+Corporation, una corporaci@'on sin fines de lucro con base en San Francisco,
+California, as@'{@dotless{i}} como versiones futuras copyleft de esa licencia publicada
+por esa misma organizaci@'on.
+
+@guillemetleft{}Incorporar@guillemetright{} significa publicar o republicar
+un Documento, como un todo o parcialmente, como parte de otro Documento.
+
+Un sitio CMM es @guillemetleft{}elegible para
+re-licenciamiento@guillemetright{} si es licenciado bajo esta Licencia, y si
+todos los trabajos que fueron publicados originalmente bajo esta Licencia en
+alg@'un otro lugar diferente a esta CMM, y subsecuentemente incorporado como
+un todo o parcialmente a la CMM, (1) no ten@'{@dotless{i}}a textos de cubierta o
+secciones invariantes, y (2) fueron incorporados antes del 1 de noviembre de
+2008.
+
+El operador de un Sitio CMM puede volver a publicar una CMM contenida en el
+sitio bajo CC-BY-SA en el mismo sitio en cualquier momento antes del 1 de
+agosto de 2009, siempre que la CMM sea elegible para relicenciamiento.
+
+@end enumerate
+
+@page
+@heading ADENDO: C@'omo usar esta Licencia en sus documentos
+
+Para usar esta Licencia es un documento que haya escrito, incluya una copia
+de la Licencia en el documento y ponga las siguientes notas de copyright y
+licencia justo despu@'es de la p@'agina de t@'{@dotless{i}}tulo:
+
+@smallexample
+@group
+  Copyright (C)  @var{a@~no}  @var{su nombre}.
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.3
+  or any later version published by the Free Software Foundation;
+  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+  Texts.  A copy of the license is included in the section entitled ``GNU
+  Free Documentation License''.
+@end group
+@end smallexample
+
+Si tiene Secciones Invariantes, Textos de Cubierta Delantera y Textos de
+Cubierta Trasera, reemplace la frase
+@guillemetleft{}with@dots{}Texts.@guillemetright{}@: por esto:
+
+@smallexample
+@group
+    with the Invariant Sections being @var{lista de sus t@'{@dotless{i}}tulos}, with
+    the Front-Cover Texts being @var{lista}, and with the Back-Cover Texts
+    being @var{lista}.
+@end group
+@end smallexample
+
+Si tiene Secciones Invariantes sin Textos de Cubierta  o cualquier otra
+combinaci@'on de los tres, mezcle ambas alternativas para adaptarse a la
+situaci@'on.
+
+Si su documento contiene ejemplos no triviales de c@'odigo de programa,
+recomendamos publicar estos ejemplos en paralelo bajo su elecci@'on de
+licencia de software libre, como la GNU General Public License, para
+permitir su uso en software libre.
+
+@c Local Variables:
+@c ispell-local-pdict: "ispell-dict"
+@c End:

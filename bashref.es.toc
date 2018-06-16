@@ -1,0 +1,140 @@
+@numchapentry{Introducci@'on}{1}{Introducci@'on}{1}
+@numsecentry{¿Qu@'e es Bash?}{1.1}{¿Qu@'e es Bash?}{1}
+@numsecentry{¿Qu@'e es un int@'erprete?}{1.2}{¿Qu@'e es un int@'erprete?}{1}
+@numchapentry{Definiciones}{2}{Definiciones}{3}
+@numchapentry{Funcionalidades B@'asicas del Int@'erprete}{3}{Funcionalidades B@'asicas del Int@'erprete}{5}
+@numsecentry{Sintaxis del Int@'erprete}{3.1}{Sintaxis del Int@'erprete}{5}
+@numsubsecentry{Funcionamiento del Int@'erprete}{3.1.1}{Funcionamiento del Int@'erprete}{5}
+@numsubsecentry{Entrecomillado}{3.1.2}{Entrecomillado}{6}
+@numsubsubsecentry{Car@'acter de Escape}{3.1.2.1}{Car@'acter de Escape}{6}
+@numsubsubsecentry{Comillas Simples}{3.1.2.2}{Comillas Simples}{6}
+@numsubsubsecentry{Comillas Dobles}{3.1.2.3}{Comillas Dobles}{6}
+@numsubsubsecentry{Entrecomillado ANSI-C}{3.1.2.4}{Entrecomillado ANSI-C}{7}
+@numsubsubsecentry{Traducci@'on de Regi@'on Espec@'{@dotless {i}}fica}{3.1.2.5}{Traducci@'on de Localizaci@'on}{7}
+@numsubsecentry{Comentarios}{3.1.3}{Comentarios}{8}
+@numsecentry{Instrucciones del Int@'erprete}{3.2}{Instrucciones del Int@'erprete}{8}
+@numsubsecentry{Instrucciones Simples}{3.2.1}{Instrucciones Simples}{8}
+@numsubsecentry{Tuber@'{@dotless {i}}as}{3.2.2}{Tuber@'{@dotless {i}}as}{8}
+@numsubsecentry{Listas de Instrucciones}{3.2.3}{Listas}{9}
+@numsubsecentry{Instrucciones Compuestas}{3.2.4}{Instrucciones Compuestas}{10}
+@numsubsubsecentry{Construcciones de Bucle}{3.2.4.1}{Construcciones de Bucle}{10}
+@numsubsubsecentry{Construcciones Condicionales}{3.2.4.2}{Construcciones Condicionales}{11}
+@numsubsubsecentry{Agrupaci@'on de Instrucciones}{3.2.4.3}{Instrucciones Agrupativas}{15}
+@numsubsecentry{Coprocesos}{3.2.5}{Coprocesos}{16}
+@numsubsecentry{GNU Parallel}{3.2.6}{GNU Parallel}{16}
+@numsecentry{Funciones del Int@'erprete}{3.3}{Funciones del Int@'erprete}{18}
+@numsecentry{Par@'ametros del Int@'erprete}{3.4}{Par@'ametros del Int@'erprete}{20}
+@numsubsecentry{Par@'ametros Posicionales}{3.4.1}{Par@'ametros Posicionales}{21}
+@numsubsecentry{Par@'ametros Especiales}{3.4.2}{Par@'ametros Especiales}{21}
+@numsecentry{Expansiones del Int@'erprete}{3.5}{Expansiones del Int@'erprete}{23}
+@numsubsecentry{Expansi@'on de Llaves}{3.5.1}{Expansi@'on de Llaves}{23}
+@numsubsecentry{Expansi@'on de Virgulilla}{3.5.2}{Expansi@'on de Virgulilla}{24}
+@numsubsecentry{Expansi@'on de Par@'ametros del Int@'erprete}{3.5.3}{Expansi@'on de Par@'ametros del Int@'erprete}{25}
+@numsubsecentry{Sustituci@'on de Instrucciones}{3.5.4}{Sustituci@'on de Instrucciones}{31}
+@numsubsecentry{Expansi@'on Aritm@'etica}{3.5.5}{Expansi@'on Aritm@'etica}{32}
+@numsubsecentry{Sustituci@'on de Procesos}{3.5.6}{Sustituci@'on de Procesos}{32}
+@numsubsecentry{Divisi@'on de Palabras}{3.5.7}{Divisi@'on de Palabras}{32}
+@numsubsecentry{Expansi@'on de Nombre de Archivo}{3.5.8}{Expansi@'on de Nombre de Archivo}{33}
+@numsubsubsecentry{Coincidencia de Patrones}{3.5.8.1}{Coincidencia de Patrones}{34}
+@numsubsecentry{Eliminaci@'on de Comillas}{3.5.9}{Eliminaci@'on de Comillas}{35}
+@numsecentry{Redirecciones}{3.6}{Redirecciones}{35}
+@numsubsecentry{Redirigiendo Entrada}{3.6.1}{}{36}
+@numsubsecentry{Redirigiendo Salida}{3.6.2}{}{37}
+@numsubsecentry{A@~nadiendo Salida Redirigida}{3.6.3}{}{37}
+@numsubsecentry{Redirigiendo Error Est@'andar y Salida Est@'andar}{3.6.4}{}{37}
+@numsubsecentry{A@~nadiendo la Salida Est@'andar y el Error Est@'andar}{3.6.5}{}{37}
+@numsubsecentry{Documentos Aqu@'{@dotless {i}}}{3.6.6}{}{38}
+@numsubsecentry{Cadenas Aqu@'{@dotless {i}}}{3.6.7}{}{38}
+@numsubsecentry{Duplicando Descriptores de Archivo}{3.6.8}{}{38}
+@numsubsecentry{Moviendo Descriptores de Archivo}{3.6.9}{}{39}
+@numsubsecentry{Abriendo Descriptores de Archivo para Leer y Escribir}{3.6.10}{}{39}
+@numsecentry{Ejecutando Instrucciones}{3.7}{Ejecutando Instrucciones}{39}
+@numsubsecentry{Expansi@'on de Instrucciones Simples}{3.7.1}{Expansi@'on de Instrucciones Simples}{39}
+@numsubsecentry{B@'usqueda y Ejecuci@'on de Instrucciones}{3.7.2}{B@'usqueda y Ejecuci@'on de Instrucciones}{40}
+@numsubsecentry{Entorno de Ejecuci@'on de Instrucciones}{3.7.3}{Entorno de Ejecuci@'on de Instrucciones}{40}
+@numsubsecentry{Entorno}{3.7.4}{Entorno}{42}
+@numsubsecentry{Estado de Salida}{3.7.5}{Estado de Salida}{42}
+@numsubsecentry{Se@~nales}{3.7.6}{Se@~nales}{43}
+@numsecentry{Guiones del Int@'erprete}{3.8}{Guiones del Int@'erprete}{43}
+@numchapentry{Instrucciones Integradas del Int@'erprete}{4}{Instrucciones Integradas del Int@'erprete}{45}
+@numsecentry{Instrucciones Integradas del Bourne Shell}{4.1}{Instrucciones Integradas del Bourne Shell}{45}
+@numsecentry{Instrucciones Integradas de Bash}{4.2}{Instrucciones Integradas de Bash}{53}
+@numsecentry{Modificando el Comportamiento del Int@'erprete}{4.3}{Modificando el Comportamiento del Int@'erprete}{65}
+@numsubsecentry{La Instrucci@'on Integrada Set}{4.3.1}{La Instrucci@'on Integrada Set}{65}
+@numsubsecentry{La Instrucci@'on Integrada Shopt}{4.3.2}{La Instrucci@'on Integrada Shopt}{69}
+@numsecentry{Instrucciones Integradas Especiales}{4.4}{Instrucciones Integradas Especiales}{76}
+@numchapentry{Variables del Int@'erprete}{5}{Variables del Int@'erprete}{77}
+@numsecentry{Variables del Bourne Shell}{5.1}{Variables del Bourne Shell}{77}
+@numsecentry{Variables de Bash}{5.2}{Variables de Bash}{77}
+@numchapentry{Funcionalidades de Bash}{6}{Funcionalidades de Bash}{89}
+@numsecentry{Llamando a Bash}{6.1}{Llamando a Bash}{89}
+@numsecentry{Archivos de Inicio de Bash}{6.2}{Archivos de Inicio de Bash}{91}
+@numsecentry{Int@'erpretes Interactivos}{6.3}{Int@'erpretes Interactivos}{93}
+@numsubsecentry{¿Qu@'e es un Int@'erprete interactivo?}{6.3.1}{¿Qu@'e es un Int@'erprete interactivo?}{93}
+@numsubsecentry{¿Es este Int@'erprete Interactivo?}{6.3.2}{¿Es este Int@'erprete Interactivo?}{93}
+@numsubsecentry{Comportamiento del Int@'erprete Interactivo}{6.3.3}{Comportamiento del Int@'erprete Interactivo}{93}
+@numsecentry{Expresiones Condicionales de Bash}{6.4}{Expresiones Condicionales de Bash}{95}
+@numsecentry{Aritm@'etica del Int@'erprete}{6.5}{Aritm@'etica del Int@'erprete}{97}
+@numsecentry{Aliases}{6.6}{Aliases}{99}
+@numsecentry{Vectores}{6.7}{Vectores}{99}
+@numsecentry{La Pila de Directorios}{6.8}{La Pila de Directorios}{101}
+@numsubsecentry{Instrucciones Integradas de la Pila de Directorios}{6.8.1}{Instrucciones Integradas de la Pila de Directorios}{101}
+@numsecentry{Controlando el Prompt}{6.9}{Controlando el Prompt}{103}
+@numsecentry{El Int@'erprete Restringido}{6.10}{El Int@'erprete Restringido}{104}
+@numsecentry{Modo POSIX de Bash}{6.11}{Modo POSIX de Bash}{105}
+@numchapentry{Control de Tareas}{7}{Control de Tareas}{109}
+@numsecentry{Fundamentos del Control de Tareas}{7.1}{Fundamentos del Control de Tareas}{109}
+@numsecentry{Instrucciones Integradas de Control de Tareas}{7.2}{Instrucciones Integradas de Control de Tareas}{110}
+@numsecentry{Variables de Control de Tareas}{7.3}{Variables de Control de Tareas}{112}
+@numchapentry{Edici@'on en L@'{@dotless {i}}nea de @'Ordenes}{8}{Edici@'on en L@'{@dotless {i}}nea de @'Ordenes}{113}
+@numsecentry{Introducci@'on a la Edici@'on de L@'{@dotless {i}}nea}{8.1}{Introducci@'on y Notaci@'on}{113}
+@numsecentry{Interacci@'on con Readline}{8.2}{Interacci@'on con Readline}{113}
+@numsubsecentry{M@'{@dotless {i}}nimos Esenciales de Readline}{8.2.1}{M@'{@dotless {i}}nimos Esenciales de Readline}{114}
+@numsubsecentry{@'Ordenes de Movimiento de Readline}{8.2.2}{@'Ordenes de Movimiento de Readline}{114}
+@numsubsecentry{@'Ordenes de Cortar de Readline}{8.2.3}{@'Ordenes de Cortar de Readline}{115}
+@numsubsecentry{Argumentos de Readline}{8.2.4}{Argumentos de Readline}{115}
+@numsubsecentry{Buscando Instrucciones en el Historial}{8.2.5}{B@'usqueda}{116}
+@numsecentry{Archivo de Inicializaci@'on de Readline}{8.3}{Archivo de Inicializaci@'on de Readline}{116}
+@numsubsecentry{Sintaxis del Archivo de Inicializaci@'on de Readline}{8.3.1}{Sintaxis del Archivo de Inicializaci@'on de Readline}{116}
+@numsubsecentry{Construcciones Condicionales de Inicializaci@'on}{8.3.2}{Construcciones Condicionales de Inicializaci@'on}{125}
+@numsubsecentry{Archivo Init de Muestra}{8.3.3}{Archivo Init de Muestra}{126}
+@numsecentry{@'Ordenes Asociables de Readline}{8.4}{@'Ordenes Asociables de Readline}{129}
+@numsubsecentry{@'Ordenes para Moverse}{8.4.1}{@'Ordenes para Moverse}{129}
+@numsubsecentry{@'Ordenes para Manipular el Historial}{8.4.2}{@'Ordenes para el Historial}{130}
+@numsubsecentry{@'Ordenes para Cambiar Texto}{8.4.3}{@'Ordenes para Texto}{131}
+@numsubsecentry{Cortar y Pegar}{8.4.4}{@'Ordenes para Cortar}{133}
+@numsubsecentry{Especificando Argumentos Num@'ericos}{8.4.5}{Argumentos Num@'ericos}{134}
+@numsubsecentry{Dejar a Readline Escribir por Usted}{8.4.6}{@'Ordenes para Compleci@'on}{134}
+@numsubsecentry{Macros de Teclado}{8.4.7}{Macros de Teclado}{136}
+@numsubsecentry{Algunas @'Ordenes Variadas}{8.4.8}{@'Ordenes de Miscel@'anea}{136}
+@numsecentry{Modo vi de Readline}{8.5}{Modo vi de Readline}{139}
+@numsecentry{Compleci@'on Programable}{8.6}{Compleci@'on Programable}{139}
+@numsecentry{Instrucciones Integradas de Compleci@'on Programable}{8.7}{Instrucciones Integradas de Compleci@'on Programable}{142}
+@numsecentry{Un Ejemplo de Compleci@'on Programable}{8.8}{Un Ejemplo de Compleci@'on Programable}{146}
+@numchapentry{Usando el Historial Interactivamente}{9}{Usando el Historial Interactivamente}{149}
+@numsecentry{Servicios del Historial de Bash}{9.1}{Servicios del Historial de Bash}{149}
+@numsecentry{Instrucciones Integradas del Historial de Bash}{9.2}{Instrucciones Integradas del Historial de Bash}{150}
+@numsecentry{Expansi@'on del Historial}{9.3}{Interacci@'on con el Historial}{151}
+@numsubsecentry{Designadores de Eventos}{9.3.1}{Designadores de Eventos}{152}
+@numsubsecentry{Designadores de Palabras}{9.3.2}{Designadores de Palabras}{153}
+@numsubsecentry{Modificadores}{9.3.3}{Modificadores}{153}
+@numchapentry{Instalaci@'on de Bash}{10}{Instalaci@'on de Bash}{155}
+@numsecentry{Instalaci@'on B@'asica}{10.1}{Instalaci@'on B@'asica}{155}
+@numsecentry{Compiladores y opciones}{10.2}{Compiladores y opciones}{156}
+@numsecentry{Compilando para M@'ultiples Arquitecturas}{10.3}{Compilando para M@'ultiples Arquitecturas}{156}
+@numsecentry{Nombres de Instalaci@'on}{10.4}{Nombres de Instalaci@'on}{156}
+@numsecentry{Especificando el Tipo de Sistema}{10.5}{Especificando el Tipo de Sistema}{157}
+@numsecentry{Compartiendo Predeterminados}{10.6}{Compartiendo Predeterminados}{157}
+@numsecentry{Controles de Operaci@'on}{10.7}{Controles de Operaci@'on}{157}
+@numsecentry{Funcionalidades Opcionales}{10.8}{Funcionalidades Opcionales}{157}
+@appentry{Notificar Errores}{A}{Notificar Errores}{163}
+@appentry{Diferencias Principales Respecto a The Bourne Shell}{B}{Diferencias Principales Respecto a The Bourne Shell}{164}
+@appsecentry{Diferencias de Implementaci@'on Respecto al Int@'erprete SVR4.2}{B.1}{}{169}
+@appentry{GNU Free Documentation License}{C}{GNU Free Documentation License}{171}
+@appentry{Traducci@'on de GNU Free Documentation License}{D}{Traducci@'on de GNU Free Documentation License}{179}
+@appentry{Glosarios}{E}{Glosarios}{188}
+@appsecentry{@'Indice de Instrucciones Integradas del Int@'erprete}{E.1}{@'Indice Integrado}{188}
+@appsecentry{@'Indice de Palabras Reservadas del Int@'erprete}{E.2}{@'Indice de Palabras Reservadas}{189}
+@appsecentry{@'Indice de Par@'ametros y Variables}{E.3}{@'Indice de Variables}{190}
+@appsecentry{@'Indice de Funciones}{E.4}{@'Indice de Funciones}{193}
+@appsecentry{@'Indice Conceptual}{E.5}{@'Indice Conceptual}{196}

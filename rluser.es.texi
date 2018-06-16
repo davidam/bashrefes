@@ -1,0 +1,2398 @@
+@c ===========================================================================
+@c
+@c This file was generated with po4a. Translate the source file.
+@c
+@c ===========================================================================
+@comment %**start of header (This is for running Texinfo on a region.)
+@setfilename rluser.info
+@comment %**end of header (This is for running Texinfo on a region.)
+
+@ignore
+This file documents the end user interface to the GNU command line
+editing features.  It is to be an appendix to manuals for programs which
+use these features.  There is a document entitled "readline.texinfo"
+which contains both end-user and programmer documentation for the
+GNU Readline Library.
+
+Copyright (C) 1988--2016 Free Software Foundation, Inc.
+
+Authored by Brian Fox and Chet Ramey.
+
+Permission is granted to process this file through Tex and print the
+results, provided the printed document carries copying permission notice
+identical to this one except for the removal of this paragraph (this
+paragraph not being relevant to the printed manual).
+
+Permission is granted to make and distribute verbatim copies of this manual
+provided the copyright notice and this permission notice are preserved on
+all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+GNU Copyright statement is available to the distributee, and provided that
+the entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions.
+@end ignore
+
+@comment If you are including this manual as an appendix, then set the
+@comment variable readline-appendix.
+
+@ifclear BashFeatures
+@defcodeindex bt
+@end ifclear
+
+@node Edici@'on en L@'{@dotless{i}}nea de @'Ordenes
+@chapter Edici@'on en L@'{@dotless{i}}nea de @'Ordenes
+
+Este cap@'{@dotless{i}}tulo describe las funcionalidades b@'asicas de la
+interfaz de edici@'on en l@'{@dotless{i}}nea de @'ordenes de @sc{gnu}.
+@ifset BashFeatures
+La edici@'on de l@'{@dotless{i}}nea de @'ordenes est@'a proporcionada por la
+biblioteca Readline, que es usada por varios programas diferentes, incluido
+Bash.  La edici@'on de l@'{@dotless{i}}nea de @'ordenes es habilitada por
+defecto cuando se usa un int@'erprete interactivo, a no ser que se
+proporcione la opci@'on @option{--noediting} en la llamada al int@'erprete.
+La edici@'on de l@'{@dotless{i}}nea tambi@'en se usa al usar la opci@'on
+@option{-e} para la instrucci@'on integrada @code{read}
+(@pxref{Instrucciones Integradas de Bash}).  Por defecto, las @'ordenes de
+edici@'on de l@'{@dotless{i}}nea son similares a las de Emacs.  Tambi@'en
+est@'a disponible una edici@'on de l@'{@dotless{i}}nea estilo vi.  La
+edici@'on de l@'{@dotless{i}}nea puede ser habilitada en cualquier momento
+usando las opciones @option{-o emacs} o @option{-o vi} para la instrucci@'on
+integrada @code{set} (@pxref{La Instrucci@'on Integrada Set}) o
+deshabilitada usando las opciones @option{+o emacs} o @option{+o vi} para
+@code{set}.
+@end ifset
+
+@menu
+* Introducci@'on y Notaci@'on::  Notaci@'on usada en este texto.
+* Interacci@'on con Readline::  El conjunto m@'{@dotless{i}}nimo de 
+                                  instrucciones para editar 
+                                  unal@'{@dotless{i}}nea.
+* Archivo de Inicializaci@'on de Readline::  Personalizando Readline desde 
+                                               la vista del usuario.
+* @'Ordenes Asociables de Readline::  Una descripci@'on de la 
+                                        mayor@'{@dotless{i}}a de las @'ordenes 
+                                        de Readlinedisponibles para asociar
+* Modo vi de Readline::      Una descripci@'on corta de c@'omo hacer que 
+                               Readline se comporte como eleditor vi.
+@ifset BashFeatures
+* Compleci@'on Programable::	C@'omo especificar las posibles compleciones
+para una instrucci@'on espec@'{@dotless{i}}fica.  * Instrucciones Integradas
+de Compleci@'on Programables::	Instrucciones integradas para especificar
+c@'omo completar argumentos para una instrucci@'on
+espec@'{@dotless{i}}fica.  * Un Ejemplo de Compleci@'on Programable::	Una
+funci@'on del int@'erprete de ejemplo para generar posibles compleciones.
+@end ifset
+@end menu
+
+@node Introducci@'on y Notaci@'on
+@section Introducci@'on a la Edici@'on de L@'{@dotless{i}}nea
+
+Los siguientes p@'arrafos describen la notaci@'on usada para representar
+pulsaciones de teclas.
+
+El texto @kbd{C-k} se lee como `Control-K' y describe el car@'acter
+producido cuando se pulsa la tecla @key{k} mientras se oprime la tecla
+Control.
+
+El texto @kbd{M-k} se lee como `Meta-K' y describe el car@'acter producido
+cuando la tecla Meta (si tiene una) se oprime y se pulsa la tecla @key{k}.
+La tecla Meta est@'a etiquetada como @key{ALT} en muchos teclados.  En
+teclados con dos teclas etiquetadas como @key{ALT} (normalmente a ambos
+lados de la barra espaciadora), el @key{ALT} en el lado izquierdo est@'a
+generalmente establecido para funcionar como tecla Meta.  La tecla @key{ALT}
+en el derecho tambi@'en puede ser configurado para funcionar como una tecla
+Meta o puede ser configurado como alg@'un otro modificador, como la tecla
+Compose para escribir caracteres acentuados.
+
+Si no tiene un tecla Meta o @key{ALT}, o otra tecla funcionando como una
+tecla Meta, se puede generar la misma pulsaci@'on escribiendo @key{ESC}
+@emph{primero} y despu@'es escribiendo @key{k}.  Este proceso se conoce como
+@dfn{metaficar} la tecla @key{k}.
+
+El texto @kbd{M-C-k} se lee como `Meta-Control-k' y describe el car@'acter
+producido al @dfn{metaficar} @kbd{C-k}.
+
+Adem@'as, varias teclas tienen sus propios nombres.
+Espec@'{@dotless{i}}ficamente, @key{SUPR}, @key{ESC}, @key{LFD}, @key{SPC},
+@key{ENT} y @key{TAB} todas se representan a s@'{@dotless{i}} mismos al ser
+vistas en este texto o en un archivo de inicializaci@'on (@pxref{Archivo de
+Inicializaci@'on de Readline}).  Su su teclado carace de una tecla
+@key{LFD}, teclear @key{C-j} producir@'a el car@'acter deseado.  La tecla
+@key{ENT} puede estar etiquetada como @key{Retorno} o @key{Entrar} en
+algunos teclados.
+
+@node Interacci@'on con Readline
+@section Interacci@'on con Readline
+@cindex interacci@'on, readline
+
+Normalmente durante una sesi@'on interactiva escribe una larga
+l@'{@dotless{i}}nea de texto, para darse cuenta de que la primera palabra en
+la l@'{@dotless{i}}nea est@'a mal escrita.  La biblioteca Readline le
+proporciona un conjunto de @'ordenes para manipular el texto a medida que lo
+escribe, permiti@'endole solo arreglar su errata, y no forzarle a volver a
+escribir la mayor parte de la l@'{@dotless{i}}nea.  Usando estas @'ordenes
+de edici@'on, mueve el cursor al lugar que necesita correcci@'on y elimina o
+inserta el texto de las correcciones.  Entonces, cuando est@'a satisfecho
+con la l@'{@dotless{i}}nea, simplemente pulsa @key{ENT}.  No tiene que estar
+al final de la l@'{@dotless{i}}nea para pulsar @key{ENT}; se acepta la
+l@'{@dotless{i}}nea completa independientemente de la ubicaci@'on del cursor
+dentro de la l@'{@dotless{i}}nea. 
+
+@menu
+* M@'{@dotless{i}}nimos Esenciales de Readline::  Lo m@'{@dotless{i}}nimo 
+                                                    que necesita saber sobre 
+                                                    Readline.
+* @'Ordenes de Movimiento de Readline::  Moverse por la l@'{@dotless{i}}nea 
+                                           de entrada.
+* @'Ordenes de Cortar de Readline::  C@'omo eliminar texto, ¡y c@'omo 
+                                       recuperarlo!
+* Argumentos de Readline::   Pasando argumentos num@'ericos a @'ordenes.
+* B@'usqueda::               Busca a trav@'es de l@'{@dotless{i}}neas 
+                               anteriores.
+@end menu
+
+@node M@'{@dotless{i}}nimos Esenciales de Readline
+@subsection M@'{@dotless{i}}nimos Esenciales de Readline
+@cindex notaci@'on, readline
+@cindex edici@'on de @'ordenes
+@cindex editando l@'{@dotless{i}}neas de @'ordenes
+
+Para introducir caracteres en la l@'{@dotless{i}}nea, simplemente
+escr@'{@dotless{i}}balos.  El car@'acter escrito aparece donde estaba el
+cursor, y entonces el cursor se mueve un car@'acter a la derecha.  Si
+escribi@'o mal un car@'acter, puede usar su car@'acter de borrado para
+volver atr@'as y borrar el car@'acter mal escrito.
+
+Algunas veces puede escribir mal un car@'acter, y no darse cuenta del error
+hasta haber escrito varios otros caracteres.  En ese caso, puede pulsar
+@kbd{C-b} para mover el cursor a la izquierda y, despu@'es, corregir su
+fallo.  A continuaci@'on, puede mover el cursor a la derecha con @kbd{C-f}.
+
+Cuando a@~nade texto en medio de una l@'{@dotless{i}}nea, se dar@'a cuenta
+de que los caracteres a la derecha del cursor son `empujados' dejar espacio
+al texto que ha insertado.  Del mismo modo, cuando cuando borra texto antes
+del cursor, los caracteres a la derecha del cursor son `arrastrados atr@'as`
+para llenar el espacio en blanco creado por la eliminaci@'on del texto.  A
+continuaci@'on, una lista de lo m@'{@dotless{i}}nimo necesario para editar
+el texto de una l@'{@dotless{i}}nea de entrada.
+
+@table @asis
+@item @kbd{C-b}
+Se mueve atr@'as un car@'acter.
+@item @kbd{C-f}
+Se mueve un car@'acter adelante.
+@item @key{SUPR} or @key{Retroceso}
+Borra el car@'acter a la izquierda del cursor.
+@item @kbd{C-d}
+Borra el car@'acter bajo el cursor.
+@item @w{Imprimir caracteres}
+Inserta el car@'acter en la l@'{@dotless{i}}nea en la posici@'on del cursor.
+@item @kbd{C-_} o @kbd{C-x C-u}
+Deshace la @'ultima orden de edici@'on.  Puede deshacer hacia atrás hasta
+una l@'{@dotless{i}}nea vac@'{@dotless{i}}a.
+@end table
+
+@noindent
+(Dependiendo de su configuraci@'on, la tecla @key{Retroceso} est@'a
+establecida para eliminar el car@'acter a la izquierda del cursor y la tecla
+@key{DEL} establecida para eliminar el car@'acter bajo el cursor, como
+@kbd{C-d}, en vez del car@'acter a la izquierda del cursor.)
+
+@node @'Ordenes de Movimiento de Readline
+@subsection @'Ordenes de Movimiento de Readline
+
+
+La tabla de arriba describe las pulsaciones de teclas m@'as b@'asicas que
+necesita para realizar ediciones de la l@'{@dotless{i}}nea de entrada.  Para
+su conveniencia, se han a@~nadido muchas otras @'ordenes adem@'as de
+@kbd{C-b}, @kbd{C-f}, @kbd{C-d} y @key{SUPR}.  He aqu@'{@dotless{i}} algunas
+de las @'ordenes para moverse m@'as r@'apido por la l@'{@dotless{i}}nea.
+
+@table @kbd
+@item C-a
+Se mueve al comienzo de la l@'{@dotless{i}}nea.
+@item C-e
+Se mueve al final de la l@'{@dotless{i}}nea.
+@item M-f
+Se mueve adelante una palabra, donde una palabra est@'a compuesta de letras
+y d@'{@dotless{i}}gitos.
+@item M-b
+Se mueve atr@'as una palabra.
+@item C-l
+Limpia la pantalla, volviendo a imprimir la l@'{@dotless{i}}nea actual en lo
+m@'as alto.
+@end table
+
+Observe como @kbd{C-f} se puede adelante un car@'acter, mientras que
+@kbd{M-f} se mueve adelante una palabra.  Es una convenci@'on informal que
+las pulsaciones de control operen en caracteres y las pulsaciones meta en
+palabras.
+
+@node @'Ordenes de Cortar de Readline
+@subsection @'Ordenes de Cortar de Readline
+
+@cindex cortar texto
+@cindex pegar texto
+
+@dfn{Cortar} texto significa eliminar el texto de la l@'{@dotless{i}}nea,
+pero guardarlo seguidamente para un uso posterior, normalmente
+@dfn{peg@'andolo} (reinsert@'andolo) en la l@'{@dotless{i}}nea.  (En
+ingl@'es se dice `kill' para cortar y `yank' para pegar, pero `copy' y
+`paste' es jerga m@'as reciente.)
+
+Si la descripci@'on de una instrucci@'on dice que `corta' texto, puede estar
+seguro de que puede volver a obtener el texto en un lugar diferente (o el
+mismo) despu@'es.
+
+Cuando usa una instrucci@'on de cortar, el texto se guarda en un
+@dfn{kill-ring} [anillo de la muerte, literalmente, nosotros lo llamaremos
+anillo de corte].  Un n@'umero cualquiera de cortes consecutivos guarda todo
+el texto cortado junto, para que cuando lo pegue de nuevo lo obtenga todo.
+El anillo de corte no es espec@'{@dotless{i}}fico para la
+l@'{@dotless{i}}nea; el texto que cort@'o en una l@'{@dotless{i}}nea escrita
+previamente est@'a disponible para ser pegado despu@'es, cuando est@'a
+escribiendo otra l@'{@dotless{i}}nea.
+@cindex anillo de corte
+
+He aqu@'{@dotless{i}} la lista de @'ordenes para cortar texto.
+
+@table @kbd
+@item C-k
+Corta el texto desde la posici@'on del cursor actual hasta el final de la
+l@'{@dotless{i}}nea.
+
+@item M-d
+Corta desde el cursor hasta el final de la palabra actual o, si est@'a entre
+palabras, hasta el final de la siguiente palabra.  Los l@'{@dotless{i}}mites
+de palabra son los mismos usados por @kbd{M-f}.
+
+@item M-@key{SUPR}
+Corta desde el cursor el principio de la palabra actual o, si est@'a entre
+palabras, hasta el principio de la palabra anterior.  Los
+l@'{@dotless{i}}mites de palabra son los mismos usados por @kbd{M-b}.
+
+@item C-w
+Corta desde el cursor hasta el espacio en blanco anterior.  Esto es
+diferente a @kbd{M-@key{SUPR}} porque difieren los l@'{@dotless{i}}mites de
+palabra.
+
+@end table
+
+He aqu@'{@dotless{i}} c@'omo @dfn{pegar} el texto de nuevo en la
+l@'{@dotless{i}}nea.  Pegar significa copiar el texto m@'as recientemente
+cortado del b@'ufer de corte.
+
+@table @kbd
+@item C-y
+Pega el texto m@'as recientemente cortado de nuevo en el b@'ufer en el
+cursor.
+
+@item M-y
+Rota el kill-ring, y pega la nueva parte superior.  Solo puede hacer esto si
+la anterior orden es @kbd{C-y} o @kbd{M-y}.
+@end table
+
+@node Argumentos de Readline
+@subsection Argumentos de Readline
+
+Puede pasar argumentos num@'ericos a @'ordenes de Readline.  Algunas veces
+el argumento act@'ua como una cuenta de repetici@'on, otras veces es el
+@i{signo} del argumento lo importante.  Si pasa un argumento negativo a una
+orden que normalmente act@'ua en una direcci@'on hacia delante, esa orden
+actuar@'a en una direcci@'on hacia atr@'as.  Por ejemplo, para cortar texto
+atr@'as hasta el principio de la l@'{@dotless{i}}nea, puede escribir
+@samp{M-- c-k}.
+
+La manera general de pasar argumentos num@'ericos a una orden es escribir
+d@'{@dotless{i}}gitos meta antes de la orden.  Si el primer
+`d@'{@dotless{i}}gito' escrito es un signo de menos (@samp{-}), entonces el
+signo del argumento ser@'a negativo.  Una vez que haya escrito m@'as de un
+d@'{@dotless{i}}gito meta para empezar el argumento, puede escribir el resto
+de d@'{@dotless{i}}gitos y despu@'es la instrucci@'on.  Por ejemplo, para
+darle a la orden @kbd{C-d} un argumento de 10, podr@'{@dotless{i}}a escribir
+@samp{M-1 0 C-d}, lo que eliminar@'a los siguientes diez caracteres en la
+l@'{@dotless{i}}nea de entrada.
+
+@node B@'usqueda
+@subsection Buscando Instrucciones en el Historial
+
+Readline proporciona @'ordenes para buscar a trav@'es del historial de
+instrucciones
+@ifset BashFeatures
+(@pxref{Servicios del Historial de Bash})
+@end ifset
+para l@'{@dotless{i}}neas que contienen una cadena especificada.  Hay dos
+modos de b@'usqueda: @dfn{incremental} y @dfn{no incremental}.
+
+Las b@'usquedas incrementales comienzan antes de que el usuario haya
+terminado de escribir la cadena de b@'usqueda.  Al escribir cada car@'acter
+de la cadena de b@'usqueda, Readline muestra la siguiente entrada del
+historial que coincide con la cadena escrita hasta entonces.  Una b@'usqueda
+incremental requiere solo tantos caracteres como sean necesarios para
+encontrar la entrada del historial deseada.  Para buscar hacia tras en el
+historial una cadena concreta, escriba @kbd{C-r}.  Escribir @kbd{C-s} busca
+hacia delante a trav@'es del historial.  Los caracteres presentes en el
+valor de la variable @code{isearch-terminators} se usan para terminar una
+b@'usqueda incremental.  Si no se ha asignado un valor a esa variable, los
+caracteres @key{ESC} y @kbd{C-J} terminar@'an una b@'usqueda incremental.
+@kbd{C-g} abortar@'a una b@'usqueda incremental y restaurar@'a la
+l@'{@dotless{i}}nea original.  Cuando la b@'usqueda se termina, la entrada
+del historial que contiene la cadena de b@'usqueda se convierte en la
+l@'{@dotless{i}}nea actual.
+
+Para encontrar otras entradas coincidentes en la lista del historial,
+escriba @kbd{C-r} o @kbd{C-s} seg@'un sea apropiado.  Esto buscar@'a atr@'as
+o adelante en el historial la siguiente entrada que coincida con la cadena
+de b@'usqueda escrita hasta ahora.  Cualquier otra secuencia de teclas
+asociada a una orden Readline terminar@'a la b@'usqueda y ejecutar@'a esa
+orden.  Por ejemplo, un @key{RET} terminar@'a la b@'usqueda y ejecutar@'a la
+l@'{@dotless{i}}nea, ejecut@'ando as@'{@dotless{i}} la instrucci@'on de la
+lista del historial.  Una orden de movimiento terminar@'a la b@'usqueda,
+convertir@'a la @'ultima l@'{@dotless{i}}nea encontrada en la
+l@'{@dotless{i}}nea actual y comenzar@'a a editar.
+
+Readline recuerda la @'ultima cadena de la b@'usqueda incremental.  Si se
+teclean dos @kbd{C-r}s sin caracteres que intervienen definiendo una nueva
+cadena de b@'usqueda, se usa cualquier cadena de b@'usqueda recordada.
+
+Las b@'usquedas no incrementales leen la cadena de b@'usqueda entera antes
+de empezar a buscar l@'{@dotless{i}}neas de historial coincidentes.  La
+cadena de b@'usqueda puede ser escrita por el usuario o como parte de los
+contenidos de la l@'{@dotless{i}}nea actual.
+
+@node Archivo de Inicializaci@'on de Readline
+@section Archivo de Inicializaci@'on de Readline
+@cindex archivo de inicializaci@'on, readline
+
+Aunque la librer@'{@dotless{i}}a de Readline viene con un conjunto de atajos
+de teclas estilo Emacs instalado por defecto, es posible utilizar un
+conjunto diferente de atajos de teclas.  Cualquier usuario puede
+personalizar los programas que usa Readline poniendo instrucciones en un
+archivo @dfn{inputrc}, de forma convencional en su directorio hogar.  El
+nombre de este
+@ifset BashFeatures
+archivo se toma del valor de la variable del int@'erprete @env{INPUTRC}.  Si
+@end ifset
+@ifclear BashFeatures
+el archivo se toma del valor de la variable de entorno @env{INPUTRC}.  Si
+@end ifclear
+esa variable no est@'a establecida, el predeterminado es @file{~/.inputrc}.
+Si ese archivo no existe o no se puede leer, el predeterminado final es
+@file{/etc/inputrc}.
+
+Cuando se inicia un programa que usa la librer@'{@dotless{i}}a Readline, es
+le@'{@dotless{i}}do el archivo de inicializaci@'on y se establecen las
+asociaciones de teclas.
+
+Adem@'as, la orden @code{C-x C-r} vuelve a leer este archivo de
+inicializaci@'on, incorporando as@'{@dotless{i}} todos los cambios que hayas
+podido hacerle.
+
+@menu
+* Sintaxis del Archivo de Inicializaci@'on de Readline::  Sintaxis para las 
+                                                            instrucciones en 
+                                                            el archivo 
+                                                            inputrc.
+
+* Construcciones Condicionales de Inicializaci@'on::  Asociaciones de teclas 
+                                                        condicionales en el 
+                                                        archivo inputrc.
+
+* Archivo Init de Muestra::  Un ejemplo de archivo inputrc.
+@end menu
+
+@node Sintaxis del Archivo de Inicializaci@'on de Readline
+@subsection Sintaxis del Archivo de Inicializaci@'on de Readline
+
+Solo hay unas pocas construcciones b@'asicas permitidas en el archivo de
+inicializaci@'on de Readline.  Las l@'{@dotless{i}}neas en blanco son
+ignoradas.  Las l@'{@dotless{i}}neas que comienzan por @samp{#} son
+comentarios.  Las l@'{@dotless{i}}neas que comienzan por @samp{$} indican
+construcciones condicionales (@pxref{Construcciones Condicionales de
+Inicializaci@'on}).  Otras l@'{@dotless{i}}neas denotan ajustes de variables
+y asociaciones de teclas.
+
+@table @asis
+@item Ajustes de Variables
+Puede modificar el comportamiento en ejecuci@'on de Readline alterando los
+valores de variables en Readline usando la orden @code{set} dentro del
+archivo de inicializaci@'on.  La sintaxis es simple:
+
+@example
+set @var{variable} @var{valor}
+@end example
+
+@noindent
+He aqu@'{@dotless{i}}, por ejemplo, c@'omo cambiar del modo predeterminado
+de asociaciones de teclas estilo Emacs para usar las @'ordenes de edici@'on
+de l@'{@dotless{i}}nea estilo @code{vi}:
+
+@example
+set editing-mode vi
+@end example
+
+Los nombres y valores de variables, donde sea apropiado, se reconocen sin
+importar may@'usculas y min@'usculas.  Los nombres de variable no
+reconocidos son ignorados.
+
+Las variables booleanas (aquellas que pueden establecerse en «on» u «off»)
+se establecen a «on» si el valor es nulo o vac@'{@dotless{i}}o, @var{on}
+(independiente de may@'usculas y min@'usculas) o 1.  Cualquier otro valor
+hace que la variable sea asignada a «off».
+
+@ifset BashFeatures
+La instrucci@'on @w{@code{bind -V}} lista los nombres y valores de variable
+actuales de Readline.  @xref{Instrucciones Integradas de Bash}.
+@end ifset
+
+Una gran parte del comportamiento de ejecuci@'on se puede cambiar con las
+siguientes variables.
+
+@cindex variables, readline
+@table @code
+
+@item bell-style
+@vindex bell-style
+Controla qu@'e sucede cuando Readline quiere sonar el timbre de la
+terminal.  Si est@'a puesta en @samp{none}, Readline nunca suena el timbre.
+Si est@'a puesta en @samp{visible}, Readline usa un timbre visible si hay
+uno disponible.  Si est@'a puesta en @samp{audible} (por defecto), Readline
+trata de sonar el timbre de la terminal.
+
+@item bind-tty-special-chars
+@vindex bind-tty-special-chars
+Si est@'a puesta en @samp{on} (por defecto), Readline trata de asociar los
+caracteres de control tratados de forma especial por el controlador de la
+terminal del n@'ucleo a sus equivalentes de Readline.
+
+@item blink-matching-paren
+@vindex blink-matching-paren
+Si est@'a puesta en @samp{on}, Readline trata de mover el cursor brevemente
+a un par@'entesis de apertura cuando se inserta un par@'entesis de cierre.
+Por defecto es @samp{off}.
+
+@item colored-completion-prefix
+@vindex colored-completion-prefix
+Si est@'a puesta en @samp{on}, al listar compleciones, Readline muestra el
+prefijo com@'un del conjunto de compleciones posibles usando un color
+diferente.  Las definiciones de color son tomadas del valor de la variable
+de entorno @env{LS_COLORS}.  Por defecto es @samp{off}.
+
+@item colored-stats
+@vindex colored-stats
+Si est@'a puesta en @samp{on}, Readline muestra las posibles compleciones
+usando diferentes colores para indicar su tipo de archivo.  Las definiciones
+de color se toman del valor de la variable de entorno @env{LS_COLORS}.  Por
+defecto es @samp{off}.
+
+@item comment-begin
+@vindex comment-begin
+La cadena que insertar al principio de la l@'{@dotless{i}}nea cuando se
+ejecuta la instrucci@'on @code{insert-comment}.  El valor predeterminado es
+@code{"#"}.
+
+@item completion-display-width
+@vindex completion-display-width
+El n@'umero de columnas de pantalla usadas para mostrar posibles
+coincidencias al realizar la compleci@'on.  El valor es ignorado si es menor
+que 0 o mayor que la anchura de la pantalla de la terminal.  Un valor de 0
+har@'a que se muestre una coincidencia por l@'{@dotless{i}}nea.  El valor
+predeterminado es -1.
+
+@item completion-ignore-case
+@vindex completion-ignore-case
+Si est@'a puesta en @samp{on}, Readline realiza la coincidencia de nombre de
+archivo y compleci@'on sin importar may@'usculas y min@'usculas.  El valor
+predeterminado es @samp{off}.
+
+@item completion-map-case
+@vindex completion-map-case
+Si est@'a puesta en @samp{on} y est@'a habilitada
+@var{completion-ignore-case}, Readline trata los guiones (@samp{-}) y barras
+bajas (@samp{_}) como equivalentes al realizar coincidencia y compleci@'on
+de nombre de archivo independientemente de may@'usculas y min@'usculas.
+
+@item completion-prefix-display-length
+@vindex completion-prefix-display-length
+La longitud en caracteres del prefijo com@'un de una lista de posibles
+compleciones que se muestra sin modificaci@'on.  Al establecerse a un valor
+mayor que cero, los prefijos comunes m@'as largos que este valor son
+reemplazados con una elipsis al mostrar posibles compleciones.
+
+@item completion-query-items
+@vindex completion-query-items
+El n@'umero de posibles compleciones que determina cuando el usuario es
+preguntado si la lista de posibilidades deber@'{@dotless{i}}a ser mostrada.
+Si el n@'umero de posibles compleciones es m@'as grande que este valor,
+Readline preguntar@'a al usuario si desea o no verla; de lo contrario, son
+simplemente listadas.  A esta variable se le debe asignar un valor entero
+mayor o igual a 0.  Un valor negativo significa que Readline nunca
+deber@'{@dotless{i}}a preguntar.  El l@'{@dotless{i}}mite predeterminado es
+@code{100}.
+
+@item convert-meta
+@vindex convert-meta
+Si est@'a puesta en @samp{on}, Readline convertir@'a los caracteres con el
+octavo bit asignado a una secuencia de teclas @sc{ascii} quitando el octavo
+bit y prefijando un car@'acter @key{ESC}, convirti@'endolos en una secuencia
+de teclas prefijadas por meta.  El valor predeterminado es @samp{on}, pero
+ser@'a puesto en @samp{off} si la configuraci@'on regional es una que
+contiene caracteres de ocho bits.
+
+@item disable-completion
+@vindex disable-completion
+Puesta en @samp{On}, Readline inhibir@'a la compleci@'on de palabra.  Los
+caracteres de compleci@'on ser@'an insertados en la l@'{@dotless{i}}nea como
+si hubieran sido asociados a @code{self-insert}.  Lo predeterminado es
+@samp{off}.
+
+@item echo-control-characters
+@vindex echo-control-characters
+Si est@'a puesta en @samp{on}, en sistemas operativos que indican que lo
+soportan, readline muestra un car@'acter correspondiente a una se@~nal
+generada desde el teclado.  Lo predeterminado es @samp{on}.
+
+@item editing-mode
+@vindex editing-mode
+La variable @code{editing-mode} controla que conjunto predeterminado de
+asociaciones de teclado es usado.  Por defeco, Readline se inicia en el modo
+de edici@'on de Emacs, donde las pulsaciones de teclado son lo m@'as similar
+a Emacs.  Esta variable puede establecerse tanto a @samp{emacs} como a
+@samp{vi}.
+
+@item emacs-mode-string
+@vindex emacs-mode-string
+Esta cadena se muestra inmediatamente antes de la @'ultima
+l@'{@dotless{i}}nea del prompt primario cuando est@'a activado el modo de
+edici@'on de emacs.  El valor se expande como una asociaci@'on de teclas, de
+forma que est@'a disponible el conjunto est@'andar de prefijos meta- y de
+control y secuencias de barras invertidas de escape.  Use los escapes
+@samp{\1} y @samp{\2} para empezar y terminar secuencias de caracteres no
+imprimibles, que pueden ser usados para encerrar una secuencia de control de
+terminal en la cadena de modo.  Lo predeterminado es @samp{@@}.
+
+@item enable-bracketed-paste
+@vindex enable-bracketed-paste
+Cuando est@'a puesta en @samp{On}, Readline configurar@'a la terminal de
+forma que la activar@'a para insertar cada pegada en el b@'ufer de edici@'on
+como una cadena simple de caracteres, en vez de tratar cada car@'acter como
+si hubiera sido le@'{@dotless{i}}do del teclado.  Esto puede evitar que
+caracteres pegados sean interpretados como ordenes de edici@'on.  Lo
+predeterminado es @samp{off}.
+
+@item enable-keypad
+@vindex enable-keypad
+Cuando est@'a puesta en @samp{on}, Readline tratar@'a de habilitar el
+teclado num@'erico al ser llamado.  Algunos sistemas necesitan esto para
+activar las teclas de flechas.  Lo predeterminado es @samp{off}.
+
+@item enable-meta-key
+Cuando est@'a puesta en @samp{on}, Readline tratar@'a de activar cualquier
+tecla modificadora meta que la terminal afirme soportar cuando sea llamada.
+En muchas terminales, la tecla meta se usa para enviar caracteres de ocho
+bits.  Lo predeterminado es @samp{on}.
+
+@item expand-tilde
+@vindex expand-tilde
+Si est@'a puesta en @samp{on} se realiza la expansi@'on de virgulilla cuando
+Readline intenta la compleci@'on de palabra.  Por defecto es @samp{off}.
+
+@item history-preserve-point
+@vindex history-preserve-point
+Si est@'a puesta en @samp{on}, el c@'odigo del historial trata de ubicar el
+punto (la posici@'on del cursor actual) en la misma ubicaci@'on en cada
+l@'{@dotless{i}}nea del historial recuperada con @code{previous-history} o
+@code{next-history}.  Por defecto es @samp{off}.
+
+@item history-size
+@vindex history-size
+Establece el n@'umero m@'aximo de entradas del historial guardadas en la
+lista del historial.  Si est@'a puesta en cero, todas las entradas del
+historial existentes son eliminadas y no se guarda ninguna nueva entrada.
+Si se le asigna un valor menor que cero, el n@'umero de entradas del
+historial no est@'a limitado.  Por defecto, el n@'umero de entradas del
+historial no est@'a limitado.  Si se realiza un intento para establecer
+@var{history-size} a un valor no num@'erico, el m@'aximo n@'umero de
+entradas del historial ser@'a establecido en 500.
+
+@item horizontal-scroll-mode
+@vindex horizontal-scroll-mode
+Esta variable se puede poner en @samp{on} u @samp{off}.  Ponerla en
+@samp{on} significa que el texto de las l@'{@dotless{i}}neas que est@'a
+siendo editado se desplazar@'a horizontalmente en una @'unica
+l@'{@dotless{i}}nea de la pantalla cuando estas no sean m@'as largas que la
+altura de la pantalla, en vez de envolverla en una nueva l@'{@dotless{i}}nea
+de la pantalla.  Por defecto, esta variable est@'a puesta en @samp{off}.
+
+@item input-meta
+@vindex input-meta
+@vindex meta-flag
+Si est@'a puesta en @samp{on}, Readline habilitar@'a entrada de ocho bits
+(no eliminar@'a el octavo bit en los caracteres que lea), sin importar lo
+que la terminar afirme soportar.  El valor predeterminado es @samp{off},
+pero Readline lo establecer@'a en @samp{on} si la configuraci@'on regional
+contiene caracteres de ocho bits.  El nombre @code{meta-flag} es un
+sin@'onimo para esta variable.
+
+@item isearch-terminators
+@vindex isearch-terminators
+La cadena de caracteres que deber@'{@dotless{i}}a terminar una b@'usqueda
+incremental sin ejecutar posteriormente el car@'acter como una instrucci@'on
+(@pxref{B@'usqueda}).  Si a esta variable no se le ha dado un valor, los
+caracteres @key{ESC} y @kbd{C-J} terminar@'an una b@'usqueda incremental.
+
+@item keymap
+@vindex keymap
+Ajusta la idea de Readline del mapa de teclas actual para las @'ordenes de
+asociaci@'on de teclas.  Nombres aceptables de @code{mapas de teclas} son
+@code{emacs}, @code{emacs-standard}, @code{emacs-meta}, @code{emacs-ctlx},
+@code{vi}, @code{vi-move}, @code{vi-command} y @code{vi-insert}.  @code{vi}
+es equivalente a @code{vi-command} (@code{vi-move} es tambi@'en un
+sin@'onimo); @code{emacs} es equivalente a @code{emacs-standard}.  El valor
+predeterminado es @code{emacs}.  El valor de la variable @code{editing-mode}
+tambi@'en afecta al mapa de teclas predeterminado.
+
+@item keyseq-timeout
+Especifica la duraci@'on que Readline esperar@'a un car@'acter al leer una
+secuencia de teclas ambigua (una que puede formar una secuencia de teclas
+completa usando la entrada le@'{@dotless{i}}da hasta entonces o pueda tomar
+entrada adicional para completar una secuencia de teclas m@'as larga).  Si
+no se recibe entrada dentro del l@'{@dotless{i}}mite de tiempo, Readline
+usar@'a la m@'as corta pero completa secuencia de teclas.  Readline usa este
+valor para determinar si la entrada est@'a disponible o no en la actual
+fuente de entrada (@code{rl_instream} por defecto).  El valor es
+especificado en milisegundos, as@'{@dotless{i}} que un valor de 1000
+significa que Readline esperar@'a entrada adicional un segundo.  Si esta
+variable se establece a un valor menor o igual a cero o a un valor no
+num@'erico, Readline esperar@'a hasta que se pulse otra tecla para decidir
+qu@'e secuencia completar.  El valor predeterminado es @code{500}. 
+
+@item mark-directories
+Si est@'a puesta en @samp{on}, se a@~nade una barra a los nombres de
+directorios completados.  Por defecto es @samp{on}.
+
+@item mark-modified-lines
+@vindex mark-modified-lines
+Esta variable, cuando est@'a puesta en @samp{on}, hace que Readline muestre
+un asterisco (@samp{*}) al comienzo de las l@'{@dotless{i}}neas del
+historial que hayan sido modificadas.  Esta variable est@'a en @samp{off}
+por defecto.
+
+@item mark-symlinked-directories
+@vindex mark-symlinked-directories
+Si est@'a puesta en @samp{on}, se a@~nade una barra a los nombres
+completados que son enlaces simb@'olicos a directorios (sujeto al valor de
+@code{mark-directories}).  Por defecto es @samp{off}.
+
+@item match-hidden-files
+@vindex match-hidden-files
+Esta variable, cuando es puesta en @samp{on}, hace que Readline coincida los
+archivos cuyos nombres comiencen por un @samp{.} (archivos ocultos) al
+realizar compleci@'on de nombre de archivo.  Si est@'a puesta en @samp{off},
+se debe proporcionar el @samp{.} inicial por el usuario en el nombre de
+archivo a ser completado.  Esta variable est@'a en @samp{on} por defecto.
+
+@item menu-complete-display-prefix
+@vindex menu-complete-display-prefix
+Si est@'a puesta en @samp{on}, la compleci@'on de men@'u muestra el prefijo
+com@'un de la lista de posibles compleciones (que puede ser
+vac@'{@dotless{i}}a) antes de iterar sobre la lista.  Por defecto es
+@samp{off}.
+
+@item output-meta
+@vindex output-meta
+Si est@'a puesta en @samp{on}, Readline mostrar@'a caracteres con el octavo
+bit establecido directamente en vez de como una secuencia de escape
+prefijada con meta.  El valor predeterminado es @samp{off}, pero Readline lo
+pondr@'a en @samp{on} si la configuraci@'on regional contiene caracteres de
+ocho bits.
+
+@item page-completions
+@vindex page-completions
+Si est@'a puesta en @samp{on} Readline usa un paginador interno parecido a
+@code{more} para mostrar una pantalla completa de posibles compleciones cada
+vez.  Esta variable est@'a en @samp{on} por defecto.
+
+@item print-completions-horizontally
+Si est@'a puesta en @samp{on}, Readline mostrar@'a compleciones con
+coincidencias ordenadas horizontalmente en orden alfab@'etico, en vez de
+pantalla abajo.  Por defecto es @samp{off}.
+
+@item revert-all-at-newline
+@vindex revert-all-at-newline
+Si est@'a puesta en @samp{on}, Readline deshar@'a todos los cambios a las
+l@'{@dotless{i}}neas del historial antes de retornar cuando se ejecute
+@code{accept-line}.  Por defecto, las l@'{@dotless{i}}neas del historial
+pueden ser modificadas y conservar listas de deshacer entre llamadas a
+@code{readline}.  Lo predeterminado es @samp{off}.
+
+@item show-all-if-ambiguous
+@vindex show-all-if-ambiguous
+Esto altera el comportamiento predeterminado de las funciones de
+compleci@'on.  Si est@'a puesto en @samp{on}, palabras que tengan m@'as de
+una posible compleci@'on hacen que las coincidencias sean listadas
+inmediatamente en vez de sonar el timbre.  El valor predeterminado es
+@samp{off}.
+
+@item show-all-if-unmodified
+@vindex show-all-if-unmodified
+Esto altera el comportamiento predeterminado de las funciones de
+compleci@'on en un estilo similar al de @var{show-all-if-ambiguous}.  Si
+est@'a puesto en @samp{on}, las palabras que tienen m@'as de una posible
+compleci@'on sin una posible compleci@'on parcial (las posibles compleciones
+no comparten un prefijo com@'un) hacen que las coincidencias sean mostradas
+inmediatamente en vez de sonar el timbre.  El valor predeterminado es
+@samp{off}.
+
+@item show-mode-in-prompt
+@vindex show-mode-in-prompt
+Si est@'a puesta en @samp{on}, a@~nade un car@'acter al comienzo del prompt
+indicando el modo de edici@'on: emacs, orden vi o inserci@'on vi.  Las
+cadenas de modo se pueden establecer por el usuario.  El valor
+predeterminado es @samp{off}.
+
+@item skip-completed-text
+@vindex skip-completed-text
+Si est@'a puesta en @samp{on}, esto altera el comportamiento predeterminado
+de compleci@'on al insertar una @'unica coincidencia en la
+l@'{@dotless{i}}nea.  Solo est@'a activa al realizar compleciones en mitad
+de palabra.  Si est@'a habilitada, readline no inserta caracteres desde la
+compleci@'on que modifican caracteres despu@'es del punto en la palabra que
+est@'a siendo completada, as@'{@dotless{i}} que las partes de la palabra que
+siguen al cursor no se duplican.  Por ejemplo, si esto est@'a habilitado,
+intentar la compleci@'on cuando el cursor est@'a despu@'es de la @samp{e} en
+@samp{Makefile} reultar@'a en @samp{Makefile} en vez de @samp{Makefilefile},
+asumiendo que hay una @'unica compleci@'on posible.  El valor predeterminado
+es @samp{off}
+
+@item vi-cmd-mode-string
+@vindex vi-cmd-mode-string
+Esta cadena se muestra inmediatamente antes de la @'ultima
+l@'{@dotless{i}}nea del prompt primario cuando est@'a activo el modo de
+edici@'on vi y en modo de ordenes.  El valor se expande como una
+asociaci@'on de teclas, as@'{@dotless{i}} que est@'a disponible el conjunto
+est@'andar de meta- y prefijos de control y secuencias de escape.  Use los
+escapes @samp{\1} y @samp{\2} para comenzar y terminar secuencias de
+caracteres no imprimibles, que pueden ser usados para encerrar una secuencia
+de control de terminal en la cadena de modo.  Lo predeterminado es
+@samp{(cmd)}.
+
+@item vi-ins-mode-string
+@vindex vi-ins-mode-string
+Esta cadena se muestra inmediatamente antes de la @'ultima
+l@'{@dotless{i}}nea del prompt primario cuando est@'a activo el modo de
+edici@'on vi y en modo inserci@'on.  El valor se expande como una
+asociaci@'on de teclas, de forma que el conjunto est@'andar de prefijos
+meta- y de control y las secuencias de escape de barra invertida est@'a
+disponible.  Use los escapes @samp{\1} and @samp{\2} para empezar y terminar
+secuencias de caracteres no imprimibles, que pueden ser usados para encerrar
+una secuencia de caracteres de control de terminal en la cadena de modo.  Lo
+predeterminado es @samp{(ins)}.
+
+@item visible-stats
+@vindex visible-stats
+Si est@'a puesta en @samp{on}, se a@~nade un car@'acter que denota el tipo
+de un archivo al nombre de archivo durante el listado de posibles
+compleciones. Por defecto es @samp{off}.
+
+@end table
+
+@item Asociaciones de Teclas
+La sintaxis para controlar las asociaciones de teclas en el archivo de
+inicializaci@'on es sencilla.  Primero necesita encontrar el nombre de la
+orden que quiere cambiar.  Las siguientes secciones contienen tablas del
+nombre de orden, la asociaci@'on de teclado predeterminada, si hay, y una
+descripci@'on corta de lo que hace la orden.
+
+Una vez que sepa el nombre de la orden, simplemente ubique en una
+l@'{@dotless{i}}nea en el archivo de inicializaci@'on el nombre de la tecla
+que desea asociar la orden, dos puntos y el nombre de la orden.  No puede
+haber espacio entre el nombre de la tecla y los dos puntos, que ser@'an
+interpretados como parte del nombre de la tecla.  El nombre de la tecla se
+puede expresar de diferentes formas, dependiendo de lo que encuentre m@'as
+c@'omodo.
+
+Adem@'as de nombres de @'ordenes, readline permite que sean asociadas teclas
+a una cadena que se inserta cuando la tecla se pulsa (una @var{macro}).
+
+@ifset BashFeatures
+La instrucci@'on @w{@code{bind -p}} muestra los nombres de funciones y las
+asociaciones de Readline en un formato que se puede poner directamente en un
+archivo de inicializaci@'on.  @xref{Instrucciones Integradas de Bash}.
+@end ifset
+
+@table @asis
+@item @w{@var{nombre-de-tecla}: @var{nombre-de-funci@'on} o @var{macro}}
+@var{nombre-de-tecla} es el nombre de una tecla enunciada en ingl@'es.  Por
+ejemplo:
+@example
+Control-u: universal-argument
+Meta-Rubout: backward-kill-word
+Control-o: "> output"
+@end example
+
+En el ejemplo anterior, @kbd{C-u} est@'a asociada a la funci@'on
+@code{universal-argument}, @kbd{M-SUPR} est@'a asociada a la funci@'on
+@code{backward-kill-word} y @kbd{C-o} est@'a asociada a ejecutar la macro
+expresada en el lado derecho (es decir, a insertar el texto @samp{> output}
+en la l@'{@dotless{i}}nea).
+
+Un n@'umero de nombres de caracteres simb@'olicos se reconocen al procesar
+esta sintaxis de asociaci@'on de teclas: @var{DEL}, @var{ESC},
+@var{ESCAPE}, @var{LFD}, @var{NEWLINE}, @var{ENT}, @var{RETURN},
+@var{RUBOUT}, @var{SPACE}, @var{SPC}, and @var{TAB}.
+
+@item @w{"@var{secteclas}": @var{nombre-de-funci@'on} o @var{macro}}
+@var{secteclas} difiere de @var{nombre-de-tecla} anterior en que las cadenas
+denotan una secuencia de teclas entera que puede ser especificada, ubicando
+la secuencia de teclas en comillas dobles.  Se pueden usar algunas
+secuencias de escape de teclas estilo Emacs, como en el siguiente ejemplo,
+pero no se reconocen los nombres de caracteres especiales.
+
+@example
+"\C-u": universal-argument
+"\C-x\C-r": re-read-init-file
+"\e[11~": "Tecla de Funci@'on 1"
+@end example
+
+En el ejemplo anterior, @kbd{C-u} est@'a de nuevo asociada a la funci@'on
+@code{universal-argument} (como estaba en el primer ejemplo),
+@samp{@kbd{C-x} @kbd{C-r}} est@'a asociada a la funci@'on
+@code{re-read-init-file} y @samp{@key{ESC} @key{[} @key{1} @key{1} @key{~}}
+est@'a asociada a insertar el texto @samp{Tecla de Funci@'on 1}.
+
+@end table
+
+Las siguientes secuencias de escape estilo @sc{gnu} Emacs est@'an
+disponibles al especificar secuencias de caracteres:
+
+@table @code
+@item @kbd{\C-}
+prefijo control
+@item @kbd{\M-}
+prefijo meta
+@item @kbd{\e}
+un car@'acter de escape
+@item @kbd{\\}
+barra invertida
+@item @kbd{\"}
+@key{"}, un s@'{@dotless{i}}mbolo de comilla doble
+@item @kbd{\'}
+@key{'}, una comilla simple o ap@'ostrofo
+@end table
+
+Adem@'as de las secuencias de escape estilo @sc{gnu} Emacs, est@'a
+disponible un segundo conjunto de secuencias de escape:
+
+@table @code
+@item \a
+alerta (timbre)
+@item \b
+retroceso
+@item \d
+eliminar
+@item \f
+salto de p@'agina
+@item \n
+nueva l@'{@dotless{i}}nea
+@item \r
+retorno de carro
+@item \t
+tabulaci@'on horizontal
+@item \v
+tabulaci@'on vertical
+@item \@var{nnn}
+la secuencia de caracteres de ocho bits cuyo valor es el valor octal
+@var{nnn} (de uno a tres d@'{@dotless{i}}gitos)
+@item \x@var{HH}
+el car@'acter de ocho bits cuyo valor es el valor hexadecimal @var{HH} (uno
+o dos d@'{@dotless{i}}gitos hexadecimales)
+@end table
+
+Al introducir el texto de una macro, las comillas simples o dobles se deben
+usar para indicar una definici@'on de macro.  Se asume que el texto sin
+entrecomillar es un nombre de funci@'on.  En el cuerpo de la macro, los
+escapes de barra invertida descritos arriba son expandidos.  La barra
+invertida entrecomillar@'a cualquier otro car@'acter en el texto de la
+macro, incluyendo a @samp{"} y @samp{'}.  Por ejemplo, la siguiente
+asociaci@'on har@'a que @samp{@kbd{C-x} \} inserte una @'unica @samp{\} en
+la l@'{@dotless{i}}nea:
+@example
+"\C-x\\": "\\"
+@end example
+
+@end table
+
+@node Construcciones Condicionales de Inicializaci@'on
+@subsection Construcciones Condicionales de Inicializaci@'on
+
+Readline implementa una herramienta similar en esp@'{@dotless{i}}ritu a las
+funcionalidades condicionales de compilaci@'on del preprocesador C que
+permiten que asociaciones de teclas y ajustes de variables se realicen como
+el resultado de comprobaciones.  Hay cuatro directivas del analizador
+usadas.
+
+@table @code
+@item $if
+La construcci@'on @code{$if} permite que se hagan asociaciones basadas en el
+modo de edici@'on, la terminal que est@'a siendo usada o las aplicaciones
+que usan Readline.  El texto de la comprobaci@'on se extiende hasta el final
+de la l@'{@dotless{i}}nea; no se requieren caracteres para aislarlo.
+
+@table @code
+@item mode
+La forma @code{modo=} de la directiva @code{$if} se usa para comprobar si
+Readline est@'a en el modo @code{emacs} o @code{vi}.  Esto puede ser usado
+en conjunto con la orden @samp{set keymap}, por ejemplo, para establecer
+asociaciones en los mapas de teclas @code{emacs-standard} y
+@code{emacs-ctlx} solo si Readline est@'a empezando en modo @code{emacs}.
+
+@item term
+La forma @code{term=} puede ser usada para incluir asociaciones de teclas
+espec@'{@dotless{i}}ficas de la terminal, quiz@'a para asociar la salida de
+secuencias de teclas por las teclas de funci@'on de la terminal.  La palabra
+al lado izquierdo del @samp{=} se comprueba sobre tanto el nombre completo
+de la terminal como la porci@'on del nombre de la terminal antes del primer
+@samp{-}.  Esto permite que @code{sun} coincida tanto con @code{sun} y
+@code{sub-cmd}, por ejemplo.
+
+@item application
+La construcci@'on @var{application} se usa para incluir ajustes
+espec@'{@dotless{i}}ficos de aplicaci@'on.  Cada programa usando la
+librer@'{@dotless{i}}a Readline asigna el @var{nombre de aplicación}, y
+puede comprobar por un valor particular.  Esto se podr@'{@dotless{i}}a usar
+para asociar secuencias de teclas a funciones @'utiles para un programa
+espec@'{@dotless{i}}fico.  Por ejemplo, la siguiente orden a@~nade una
+secuencia que entrecomilla la palabra actual o previa en Bash:
+@example
+$if Bash
+# Entrecomilla la palabra actual o previa
+"\C-xq": "\eb\"\ef\""
+$endif
+@end example
+@end table
+
+@item $endif
+Esta instrucci@'on, como se vio en el ejemplo anterior, termina una orden
+@code{$if}.
+
+@item $else
+Las @'ordenes en esta rama de la directiva @code{$if} son ejecutadas si
+falla la comprobaci@'on.
+
+@item $include
+Esta directiva toma un @'unico nombre de archivo como un argumento y lee
+@'ordenes y asociaciones de ese archivo.  Por ejemplo, la siguiente
+directiva lee de @file{/etc/inputrc}:
+@example
+$include /etc/inputrc
+@end example
+@end table
+
+@node Archivo Init de Muestra
+@subsection Archivo Init de Muestra
+
+He aqu@'{@dotless{i}} un ejemplo de un archivo @var{inputrc}.  Este ilustra
+la asociaci@'on de teclas, la asignaci@'on de variables y la sintaxis
+condicional.
+
+@example
+@page
+# Este archivo controla el comportamiento de la edici@'on de
+# la l@'{@dotless{i}}nea de entrada para programas que usan la
+# biblioteca de GNU Readline. Programas existentes
+# incluyen FTP, Bash y GDB.
+#
+# Puede volver a leer el archivo inputrc con C-x C-r.
+# Las l@'{@dotless{i}}neas que comienzan por '#' son comentarios.
+#
+# Primero, incluye las asociaciones de alcance a todo el
+# sistema de /etc/Inputrc
+$include /etc/Inputrc
+
+#
+# Establece varias asociaciones para el modo emacs.
+
+set editing-mode emacs 
+
+$if mode=emacs
+
+Meta-Control-h:	backward-kill-word	Texto ignorado tras nombre de función
+
+#
+# Teclas de flecha en modo de teclado
+#
+#"\M-OD":        backward-char
+#"\M-OC":        forward-char
+#"\M-OA":        previous-history
+#"\M-OB":        next-history
+#
+# Teclas de flecha en modo ANSI
+#
+"\M-[D":        backward-char
+"\M-[C":        forward-char
+"\M-[A":        previous-history
+"\M-[B":        next-history
+#
+# Teclas de flecha en modo de teclado de 8 bits
+#
+#"\M-\C-OD":       backward-char
+#"\M-\C-OC":       forward-char
+#"\M-\C-OA":       previous-history
+#"\M-\C-OB":       next-history
+#
+# Teclas de flechas en modo ANSI de 8 bits
+#
+#"\M-\C-[D":       backward-char
+#"\M-\C-[C":       forward-char
+#"\M-\C-[A":       previous-history
+#"\M-\C-[B":       next-history
+
+C-q: quoted-insert
+
+$endif
+
+# Una asociaci@'on de estilo antiguo.  Esta resulta ser la predeterminada.
+TAB: complete
+
+# Macros que son convenientes para la interacci@'on del int@'erprete
+$if Bash
+# edita la ruta
+"\C-xp": "PATH=$@{PATH@}\e\C-e\C-a\ef\C-f"
+# prepara para teclear una palabra entrecomillada --
+# inserta comillas dobles de apertura y cierre
+# y se mueve justo despu@'es de la comilla de apertura
+"\C-x\"": "\"\"\C-b"
+# inserta una barra invertida (probando escapes de
+# barras invertidas en secuencias y macros)
+"\C-x\\": "\\"
+# Entrecomilla la palabra actual o previa
+"\C-xq": "\eb\"\ef\""
+# A@~nade una asociaci@'on para refrescar la l@'{@dotless{i}}nea, la cual no est@'a asociada
+"\C-xr": redraw-current-line
+# Edita variable en l@'{@dotless{i}}nea actual.
+"\M-\C-v": "\C-a\C-k$\C-y\M-\C-e\C-a\C-y="
+$endif
+
+# usa un timbre visible si hay uno disponible
+set bell-style visible
+
+# no cortes car@'acteres a 7 bits al leer
+set input-meta on
+
+# permite que sean insertados caracteres iso-latin1
+# en vez de convertidos a secuencias de meta prefijadas
+set convert-meta off
+
+# muestra caracteres con el octavo bit establecido
+# directamente en vez de como caracteres 
+# prefijados por meta
+set output-meta on
+
+# si hay m@'as de 150 posibles compleciones para una
+# palabra, pregunta al usuario si quiere verlas todas
+set completion-query-items 150
+
+# Para FTP
+$if Ftp
+"\C-xg": "get \M-?"
+"\C-xt": "put \M-?"
+"\M-.": yank-last-arg
+$endif
+@end example
+
+@node @'Ordenes Asociables de Readline
+@section @'Ordenes Asociables de Readline
+
+@menu
+* @'Ordenes para Moverse::   Moverse por la l@'{@dotless{i}}nea.
+* @'Ordenes para el Historial::  Accediendo a l@'{@dotless{i}}neas 
+                                   anteriores.
+* @'Ordenes para Texto::     @'Ordenes para cambiar texto.
+* @'Ordenes para Cortar::    Instrucciones para cortar y pegar.
+* Argumentos Num@'ericos::   Especificando argumentos num@'ericos, cuentas 
+                               de repetici@'on.
+* @'Ordenes para Compleci@'on::  Hacer que Readline escriba por usted.
+* Macros de Teclado::        Guardando y volviendo a ejecutar caracteres 
+                               escritos
+* @'Ordenes de Miscel@'anea::  Otras @'ordenes de miscel@'anea.
+@end menu
+
+Esta secci@'on describe las @'ordenes de Readline que pueden estar asociadas
+a secuencias de caracteres.
+@ifset BashFeatures
+Puede listar sus asociaciones de caracteres ejecutando @w{@code{bind -P}} o,
+para un formato m@'as terso, v@'alido para un archivo @var{inputrc},
+@w{@code{bind -p}}.  (@xref{Instrucciones Integradas de Bash}.)
+@end ifset
+Por defecto, los nombres de @'ordenes sin una secuencia de teclas que los
+acompa@~nen no est@'an asociados.
+
+En las siguientes descripciones, @dfn{punto} se refiere a la posici@'on
+actual del cursor, y @dfn{marca} se refiere a una posici@'on del cursor
+guardada por la orden @code{set-mark}.  Se hace referencia al texto entre el
+punto y la marca como @dfn{regi@'on}.
+
+@node @'Ordenes para Moverse
+@subsection @'Ordenes para Moverse
+@ftable @code
+@item beginning-of-line (C-a)
+Se mueve al inicio de la l@'{@dotless{i}}nea actual.
+
+@item end-of-line (C-e)
+Se mueve al final de la l@'{@dotless{i}}nea.
+
+@item forward-char (C-f)
+Se mueve adelante un car@'acter.
+
+@item backward-char (C-b)
+Se mueve atr@'as un car@'acter.
+
+@item forward-word (M-f)
+Se mueve adelante hasta el final de la siguiente palabra.  Las palabras se
+componen de letras y d@'{@dotless{i}}gitos.
+
+@item backward-word (M-b)
+Se mueve atr@'as hasta el principio de la siguiente o la anterior palabra.
+Las palabras est@'an compuestas de letras y d@'{@dotless{i}}gitos.
+
+@ifset BashFeatures
+@item shell-forward-word ()
+Se mueve adelante hasta el final de la siguiente palabra.  Las palabras
+est@'an delimitadas por metacaracteres del int@'erprete sin entrecomillar.
+
+@item shell-backward-word ()
+Se mueve atr@'as al comienzo de la actual o siguiente palabra.  Las palabras
+est@'an delimitadas por metacaracteres del int@'erprete sin entrecomillar.
+@end ifset
+
+@item clear-screen (C-l)
+Limpia la pantalla y vuelve a dibujar la l@'{@dotless{i}}nea actual, dejando
+la l@'{@dotless{i}}nea actual en la parte superior de la pantalla.
+
+@item redraw-current-line ()
+Recarga la l@'{@dotless{i}}nea actual.  Por defecto, esto est@'a sin
+asociar.
+
+@end ftable
+
+@node @'Ordenes para el Historial
+@subsection @'Ordenes para Manipular el Historial
+
+@ftable @code
+@item accept-line (Nueva L@'{@dotless{i}}nea o Retorno)
+@ifset BashFeatures
+Acepta la l@'{@dotless{i}}nea sin importar d@'onde est@'e el cursor.  Si
+esta l@'{@dotless{i}}nea no est@'a vac@'{@dotless{i}}a, la a@~nade a la
+lista del historial seg@'un los ajustes de las variables @env{HISTCONTROL} y
+@env{HISTIGNORE}.  Si esta l@'{@dotless{i}}nea es una l@'{@dotless{i}}nea
+del historial modificada, entonces restablece la l@'{@dotless{i}}nea del
+historial a su estado original.
+@end ifset
+@ifclear BashFeatures
+Acepta la l@'{@dotless{i}}nea sin importar donde est@'e el cursor.  Si esta
+l@'{@dotless{i}}nea no est@'a vac@'{@dotless{i}}a, puede ser a@~nadida a la
+lista del historial para otra llamada futura con @code{add_history()}.  Si
+esta l@'{@dotless{i}}nea es una l@'{@dotless{i}}nea del historial
+modificada, la l@'{@dotless{i}}nea del historial se restablece a su estado
+original.
+@end ifclear
+
+@item previous-history (C-p)
+Se mueve `atr@'as' a trav@'es de la lista del historial, obteniendo
+anteriores instrucciones.
+
+@item next-history (C-n)
+Se mueve `adelante' a trav@'es de la lista del historial, obteniendo la
+siguiente instrucci@'on.
+
+@item beginning-of-history (M-<)
+Se mueve a la primera l@'{@dotless{i}}nea en el historial.
+
+@item end-of-history (M->)
+Se mueve al final de la entrada del historial, es decir, la
+l@'{@dotless{i}}nea que está siendo introducida actualmente.
+
+@item reverse-search-history (C-r)
+Busca hacia tras empezando en la l@'{@dotless{i}}nea actual y movi@'endose
+`arriba' a trav@'es del historial seg@'un sea necesario.  Esto es una
+b@'usqueda incremental.
+
+@item forward-search-history (C-s)
+Busca hacia delante empezando en la l@'{@dotless{i}}nea actual y
+movi@'endose `abajo' a trav@'es del historial seg@'un sea necesario.  Esto
+es una b@'usqueda incremental.
+
+@item non-incremental-reverse-search-history (M-p)
+Busca hacia tras empezando en la l@'{@dotless{i}}nea actual y movi@'endose
+`arriba' a trav@'es del historial seg@'un sea necesario usando una
+b@'usqueda no incremental para una cadena proporcionada por el usuario.  La
+cadena de b@'usqueda puede coincidir en cualquier lugar en una
+l@'{@dotless{i}}nea del historial.
+
+@item non-incremental-forward-search-history (M-n)
+Busca hacia delante empezando en la l@'{@dotless{i}}nea actual y
+movi@'endose `abajo' a trav@'es del historial seg@'un sea necesario usando
+una b@'usqueda no incremental para una cadena proporcionada por el usuario.
+La cadena de b@'usqueda puede coincidir en cualquier lugar en una
+l@'{@dotless{i}}nea del historial.
+
+@item history-search-forward ()
+Busca hacia delante a trav@'es del historial para la cadena de caracteres
+entre el comienzo de la l@'{@dotless{i}}nea actual y el punto.  La cadena de
+b@'usqueda debe coincidir al principio de la l@'{@dotless{i}}nea del
+historial.  Esto es una b@'usqueda no incremental.  Por defecto, esta
+instrucci@'on no est@'a asociada.
+
+@item history-search-backward ()
+Busca hacia tras a trav@'es del historial para la cadena de caracteres entre
+el comienzo de la l@'{@dotless{i}}nea actual y el punto.  La cadena de
+b@'usqueda debe coincidir al principio de la l@'{@dotless{i}}nea del
+historial.  Esto es una b@'usqueda no incremental.  Por defecto, esta
+instrucci@'on no est@'a asociada.
+
+@item history-substr-search-forward ()
+Busca hacia delante a trav@'es del historial para la cadena de caracteres
+entre el comienzo de la l@'{@dotless{i}}nea actual y el punto.  La cadena de
+b@'usqueda puede coincidir en cualquier lugar de la l@'{@dotless{i}}nea del
+historial.  Esto es una b@'usqueda no incremental.  Por defecto, esta
+instrucci@'on no est@'a asociada.
+
+@item history-substr-search-backward ()
+Busca hacia tras a trav@'es del historial para la cadena de caracteres entre
+el comienzo de la l@'{@dotless{i}}nea actual y el punto.  La cadena de
+b@'usqueda puede coincidir en cualquier lugar de la l@'{@dotless{i}}nea del
+historial.  Esto es una b@'usqueda no incremental.  Por defecto, esta
+instrucci@'on no est@'a asociada.
+
+@item yank-nth-arg (M-C-y)
+Inserta el primer argumento para la instrucci@'on previa (normalmente la
+segunda palabra en la l@'{@dotless{i}}nea anterior) en el punto.  Con un
+argumento @var{n}, inserta la palabra n@'umero @var{n} de la instrucci@'on
+anterior (las palabras en la instrucci@'on anterior comienzan con palabra
+0).  Un argumento negativo inserta la palabra n@'umero @var{n} desde el
+final de la instrucci@'on previa.  Una vez que sea computado el argumento
+@var{n}, se extrae el argumento como si se hubiera especificado la
+expansi@'on del historial @samp{!@var{n}}. 
+
+@item yank-last-arg (M-. or M-_)
+Inserta el @'ultimo argumento de la instrucci@'on anterior (la @'ultima
+palabra de la anterior entrada del historial).  Con un argumento num@'erico,
+se comporta exactamente como @code{yank-nth-arg}.  Las llamadas sucesivas a
+@code{yank-last-arg} se mueven atr@'as a trav@'es de la lista del historial,
+insertando la @'ultima palabra (o la palabra especificada por el argumento
+de la primera llamada) de cada l@'{@dotless{i}}nea en orden.  Cualquier
+argumento num@'erico proporcionado a estas llamadas sucesivas determina la
+direcci@'on a la que moverse por el historial.  Un argumento negativo
+alterna la direcci@'on por el historial (atr@'as o adelante).  Se usan las
+herramientas de expansi@'on del historial para extraer el @'ultimo
+argumento, como si se hubiera especificado la expansi@'on del historial
+@samp{!$}.
+
+@end ftable
+
+@node @'Ordenes para Texto
+@subsection @'Ordenes para Cambiar Texto
+
+@ftable @code
+
+@item @i{end-of-file} (usually C-d)
+El car@'acter que indica fin-de-fichero como establece, por ejemplo,
+@code{stty}.  Si se lee este car@'acter cuando no hay caracteres en la
+l@'{@dotless{i}}nea y el punto est@'a al principio de la
+l@'{@dotless{i}}nea, Readline lo interpreta como el final de entrada y
+devuelve @sc{eof}.
+
+@item delete-char (C-d)
+Borra el car@'acter en el punto.  Si est@'a funci@'on est@'a asociada al
+mismo car@'acter que el car@'acter tty @sc{eof}, como est@'a com@'unmente
+@kbd{C-d}, consulte arriba los efectos.
+
+@item backward-delete-char (Rubout)
+Borra el car@'acter antes del cursor.  Un argumento num@'erico significa
+cortar los caracteres en vez de borrarlos.
+
+@item forward-backward-delete-char ()
+Borra el car@'acter bajo el cursor, a no ser que el cursor est@'e al final
+de la l@'{@dotless{i}}nea, en cuyo caso es borrado el car@'acter antes del
+cursor.  Por defecto, esto no est@'a asociado a una tecla.
+
+@item quoted-insert (C-q or C-v)
+A@~nade el siguiente car@'acter tecleado a la l@'{@dotless{i}}nea literal.
+Esto es c@'omo insertar secuencias de teclas como @kbd{C-q}, por ejemplo.
+
+@ifclear BashFeatures
+@item tab-insert (M-@key{TAB})
+Inserta un car@'acter de tabulaci@'on.
+@end ifclear
+
+@item self-insert (a, b, A, 1, !, @dots{})
+Inserte por s@'{@dotless{i}} mismo.
+
+@item bracketed-paste-begin ()
+Esta funci@'on est@'a pensada para estar asociada a la secuencia de escape
+«bracketed paste» enviada por algunas terminales, y tal asociaci@'on está
+asignada por defecto.  Permite a Readline insertar el texto pegado como una
+@'unica unidad sin tratar cada car@'acter como si hubiera sido
+le@'{@dotless{i}}do del teclado.  Los caracteres se insertan como si cada
+uno estuviera asociado a @code{self-insert} en vez de ejecutar las @'ordenes
+de edici@'on.
+
+@item transpose-chars (C-t)
+Arrastra el car@'acter antes del cursor adelante del car@'acter en el
+cursor, moviendo tambi@'en el cursor adelante.  Si el punto de inserci@'on
+est@'a al final de la l@'{@dotless{i}}nea, esto transpone los @'ultimos dos
+caracteres de la l@'{@dotless{i}}nea.  Los argumentos negativos no tienen
+efecto.
+
+@item transpose-words (M-t)
+Arrastra la palabra antes del punto tras la palabra despu@'es del punto,
+moviendo el punto tambi@'en tras esa palabra.  Si el punto de inserci@'on
+est@'a al final de la l@'{@dotless{i}}nea, esto traspone las dos @'ultimas
+palabras en la l@'{@dotless{i}}nea.
+
+@item upcase-word (M-u)
+Pone en may@'uscula la actual (o siguiente) palabra.  Con un argumento
+negativo, pone en may@'uscula la palabra anterior, pero no mueve el cursor.
+
+@item downcase-word (M-l)
+Pone en min@'uscula la actual (o siguiente) palabra.  Con un argumento
+negativo, pone en min@'uscula la palabra anterior, pero no mueve el cursor.
+
+@item capitalize-word (M-c)
+Pone la primera letra de la actual (o siguiente) palabra en mayúscula.  Con
+un argumento negativo se aplica a la palabra anterior, pero no mueve el
+cursor.
+
+@item overwrite-mode ()
+Alterna el modo de sobrescritura.  Con un argumento num@'erico positivo
+expl@'{@dotless{i}}cito, cambia al modo de sobrescritura.  Con un argumento
+no positivo expl@'{@dotless{i}}cito, cambia al modo de inserci@'on.  Esta
+orden solo afecta al modo @code{emacs}; el modo @code{vi} sobrescribe de
+forma diferente.  Cada llamada a @code{readline()} empieza en modo de
+inserci@'on.
+
+En el modo de sobrescritura, los caracteres asociados a @code{self-insert}
+reemplazan el texto en el punto en vez de empujar el texto a la derecho.
+Los caracteres asociados a @code{backward-delete-char} reemplazan el
+car@'acter antes del punto con un espacio.
+
+Por defecto, esta orden no est@'a asociada.
+
+@end ftable
+
+@node @'Ordenes para Cortar
+@subsection Cortar y Pegar
+
+@ftable @code
+
+@item kill-line (C-k)
+Corta el texto desde punto hasta el final de la l@'{@dotless{i}}nea.
+
+@item backward-kill-line (C-x Rubout)
+Corta atr@'as desde el cursor hasta el principio de la l@'{@dotless{i}}nea
+actual.
+
+@item unix-line-discard (C-u)
+Corta atr@'as desde el cursor hasta el principio de la l@'{@dotless{i}}nea
+actual.
+
+@item kill-whole-line ()
+Corta todos los caracteres en la l@'{@dotless{i}}nea actual, no importa
+d@'onde est@'e el punto.  Por defecto, esto est@'a sin asociar.
+
+@item kill-word (M-d)
+Corta desde el punto hasta el final de la palabra actual, o si est@'a entre
+palabras, hasta el final de la siguiente palabra.  Los l@'{@dotless{i}}mites
+de palabra son los mismos que con @code{forward-word}.
+
+@item backward-kill-word (M-@key{SUPR})
+Corta la palabra antes del punto.  Los l@'{@dotless{i}}mites de palabra son
+los mismos que con @code{backward-word}.
+
+@ifset BashFeatures
+@item shell-kill-word ()
+Corta desde el punto hasta el final de la palabra actual o, cuando entre
+palabras, hasta el final de la siguiente palabra.  Los l@'{@dotless{i}}mites
+de palabra son los mismos que con @code{shell-forward-word}.
+
+@item shell-backward-kill-word ()
+Corta la palabra antes del punto.  Los l@'{@dotless{i}}mites de palabra son
+los mismos que los de @code{shell-backward-word}.
+@end ifset
+
+@item unix-word-rubout (C-w)
+Corta la palabra antes del punto, usando el espacio en blanco como un
+l@'{@dotless{i}}mite de palabra.  El texto cortado se guarda en el anillo de
+corte.
+
+@item unix-filename-rubout ()
+Corta la palabra antes del punto, usando el espacio en blanco y el
+car@'acter de barra como los l@'{@dotless{i}}mites de palabra.  El texto
+cortado se guarda en el anillo de corte.
+
+@item delete-horizontal-space ()
+Elimina todos los espacios y tabulaciones alrededor del punto.  Por defecto,
+esto est@'a sin asociar.
+
+@item kill-region ()
+Corta el texto en la regi@'on actual.  Por defecto, esta orden est@'a sin
+asociar.
+
+@item copy-region-as-kill ()
+Copia el texto de la regi@'on al b@'ufer de corte, para que pueda ser pegado
+inmediatamente.  Por defecto, esta orden est@'a sin asignar.
+
+@item copy-backward-word ()
+Copia la palabra antes del punto al b@'ufer de corte.  Los
+l@'{@dotless{i}}mites de palabra son los mismos que los de
+@code{backward-word}.  Por defecto, esta orden no est@'a asociada.
+
+@item copy-forward-word ()
+Copia la palabra que sigue al punto al b@'ufer de corte.  Los
+l@'{@dotless{i}}mites de palabra son los mismos que los de
+@code{backward-word}.  Por defecto, esta orden no est@'a asociada.
+
+@item yank (C-y)
+Pega lo superior del anillo de corte en el b@'ufer en el punto.
+
+@item yank-pop (M-y)
+Rota el kill-ring y pega lo que hay nuevo arriba.  Solo puede hacer esto si
+la anterior orden es @code{yank} o @code{yank-pop}.
+@end ftable
+
+@node Argumentos Num@'ericos
+@subsection Especificando Argumentos Num@'ericos
+@ftable @code
+
+@item digit-argument (@kbd{M-0}, @kbd{M-1}, @dots{} @kbd{M--})
+A@~nade este d@'{@dotless{i}}gito al argumento que ya se est@'e acumulando o
+empieza un nuevo argumento.  @kbd{M--} empieza un argumento negativo.
+
+@item universal-argument ()
+Esto es otro modo de especificar un argumento.  Si esta orden es seguida de
+uno o m@'as d@'{@dotless{i}}gitos, opcionalmente con un signo de menos
+inicial, esos d@'{@dotless{i}}gitos definen el argumento.  Si la orden es
+seguida por d@'{@dotless{i}}gitos, ejecutar @code{universal-argument} de
+nuevo acaba el argumento num@'erico, pero es ignorado de lo contrario.  Como
+caso especial, si esta orden es inmediatamente seguida por un car@'acter que
+no es un d@'{@dotless{i}}gito ni un signo de menos, la cuenta de argumentos
+para la siguiente instrucci@'on se multiplica por cuatro.  La cuenta de
+argumentos es inicialmente uno, as@'{@dotless{i}} que ejecutar esta
+funci@'on la primera vez hace la cuenta de argumentos cuatro, una segunda
+vez hace la cuenta de argumentos diecis@'eis y as@'{@dotless{i}}
+sucesivamente.  Por defecto, no est@'a asociada a una tecla.
+@end ftable
+
+@node @'Ordenes para Compleci@'on
+@subsection Dejar a Readline Escribir por Usted
+
+@ftable @code
+@item complete (@key{TAB})
+Trata de realizar una compleci@'on en el texto antes del punto.  La
+compleci@'on real realizada es especifica de la aplicaci@'on.
+@ifset BashFeatures
+Bash intenta la compleci@'on tratando el texto como una variable (si el
+texto empieza por @samp{$}), nombre de usuario (si el texto empieza por
+@samp{~}), nombre de anfitri@'on (si el texto empieza por @samp{@@}) o
+instrucci@'on (incluyendo aliases y funciones) en orden.  Si ninguna de
+estas produce una coincidencia, se intenta la compleci@'on de nombre de
+archivo.
+@end ifset
+@ifclear BashFeatures
+Lo predeterminado es la compleci@'on de nombre de archivo.
+@end ifclear
+
+@item possible-completions (M-?)
+Lista las posibles compleciones del texto antes del punto.  Al mostrar
+compleciones, Readline establece el n@'umero de columnas usadas para mostrar
+el valor de @code{completion-display-width}, el valor de la variable de
+entorno @env{COLUMNS} o la anchura de la pantalla, en ese orden.
+
+@item insert-completions (M-*)
+Inserta todas las compleciones de texto antes del punto que
+habr@'{@dotless{i}}an sido generadas por @code{possible-completions}.
+
+@item menu-complete ()
+Similar a @code{complete}, pero reemplaza la palabra que se va a completar
+con una @'unica coincidencia de la lista de posibles compleciones.  La
+ejecuci@'on repetida de @code{menu-complete} recorre la lista de posibles
+compleciones, insertando cada coincidencia en orden.  Al final de la lista
+de compleciones, suena el timbre (sujeto al ajuste de @code{bell-style})  y
+se restablece el texto original.  Un argumento de @var{n} se mueve @var{n}
+posiciones adelante en la lista de coincidencias; un argumento negativo se
+puede usar para moverse atr@'as a trav@'es de la lista.  Esta instrucci@'on
+est@'a pensada para ser asociada a @key{TAB}, pero por defecto no est@'a
+asociada.
+
+@item menu-complete-backward ()
+Idéntica a @code{menu-complete}, pero se mueve atr@'as a trav@'es de la
+lista de posibles compleciones, como si a @code{menu-complete} se le hubiera
+dado un argumento negativo.
+
+@item delete-char-or-list ()
+Elimina el car@'acter bajo el cursor si no est@'a al principio o al final de
+la l@'{@dotless{i}}nea (como @code{delete-char}).  Si est@'a al final de la
+l@'{@dotless{i}}nea, se comporta de forma id@'entica a
+@code{possible-completions}.  Esta orden est@'a sin asignar por defecto.
+
+@ifset BashFeatures
+@item complete-filename (M-/)
+Intenta la compleci@'on de nombre de archivo en el texto antes del punto.
+
+@item possible-filename-completions (C-x /)
+Lista las posibles compleciones del texto antes del punto, trat@'andolo como
+un nombre de archivo.
+
+@item complete-username (M-~)
+Intenta la compleci@'on en el texto antes del punto, trat@'andolo como un
+nombre de archivo.
+
+@item possible-username-completions (C-x ~)
+Lista las posibles compleciones del texto antes del punto, trat@'andolo como
+un nombre de usuario.
+
+@item complete-variable (M-$)
+Intenta la compleci@'on en el texto antes del punto, trat@'andolo como una
+variable del int@'erprete.
+
+@item possible-variable-completions (C-x $)
+Lista las posibles compleciones del texto antes del punto, trat@'andolo como
+una variable del int@'erprete.
+
+@item complete-hostname (M-@@)
+Intenta la compleci@'on del texto antes del punto, trat@'andolo como un
+nombre de anfitri@'on.
+
+@item possible-hostname-completions (C-x @@)
+Lista las posibles compleciones del texto antes del punto, trat@'andolo como
+un nombre de anfitri@'on.
+
+@item complete-command (M-!)
+Intenta la compleci@'on en el texto antes del punto, trat@'andolo como un
+nombre de instrucci@'on.  La compleci@'on de instrucciones trata de hacer
+coincidir el texto con aliases, palabras reservadas, funciones del
+int@'erprete, instrucciones integradas del int@'erprete y finalmente nombres
+de archivo ejecutables, en ese orden.
+
+@item possible-command-completions (C-x !)
+Lista las posibles compleciones del texto antes del punto, trat@'andolo como
+un nombre de orden.
+
+@item dynamic-complete-history (M-@key{TAB})
+Intenta la compleci@'on del texto antes del punto, compar@'ando el texto con
+l@'{@dotless{i}}neas de la lista del historial en busca de posibles
+coincidencias de compleci@'on.
+
+@item dabbrev-expand ()
+Intenta la compleci@'on de men@'u en el texto antes del punto, comparando el
+texto con las l@'{@dotless{i}}neas de la lista del historial en busca de
+posibles coincidencias de compleci@'on.
+
+@item complete-into-braces (M-@{)
+Realiza la compleci@'on de nombre de archivo e inserta la lista de
+compleciones posibles entre llaves para que la lista est@'e disponible para
+el int@'erprete (@pxref{Expansi@'on de Llaves}).
+
+@end ifset
+@end ftable
+
+@node Macros de Teclado
+@subsection Macros de Teclado
+@ftable @code
+
+@item start-kbd-macro (C-x ()
+Empieza a guardar los caracteres escritos en la macro actual de teclado.
+
+@item end-kbd-macro (C-x ))
+Deja de guardar los caracteres escritos en la macro actual de teclado y
+guarda la definici@'on.
+
+@item call-last-kbd-macro (C-x e)
+Vuelve a ejecutar la @'ultima macro de teclado definida, haciendo que los
+caracteres en la macro aparezcan como si fueran teclados en el teclado.
+
+@item print-last-kbd-macro ()
+Imprime la @'ultima macro de teclado definida en un forma compatible con el
+archivo @var{inputrc}.
+
+@end ftable
+
+@node @'Ordenes de Miscel@'anea
+@subsection Algunas @'Ordenes Variadas
+@ftable @code
+
+@item re-read-init-file (C-x C-r)
+Lee en el contenido del archivo @var{inputrc} e incorpora las asociaciones o
+asignaciones de variable encontradas ah@'{@dotless{i}}.
+
+@item abort (C-g)
+Aborta la orden que se est@'a editando actualmente y suena el timbre de la
+terminal (sujeto al ajuste de @code{bell-style}).
+
+@item do-uppercase-version (M-a, M-b, M-@var{x}, @dots{})
+Si el car@'acter metaficado @var{x} est@'a en min@'uscula, ejecuta la
+instrucci@'on que est@'a asociada al car@'acter correspondiente en
+may@'uscula.
+
+@item prefix-meta (@key{ESC})
+Metafica el siguiente car@'acter escrito.  Esto es para teclados sin una
+tecla meta.  Escribir @samp{@key{ESC} f} es equivalente a teclear @kbd{M-f}.
+
+@item undo (C-_ or C-x C-u)
+Deshacer incremental, recordado separadamente para cada l@'{@dotless{i}}nea.
+
+@item revert-line (M-r)
+Deshace todos los cambios hechos a esta l@'{@dotless{i}}nea.  Esto es como
+ejecutar la orden @code{undo} las veces suficientes para volver al comienzo.
+
+@ifset BashFeatures
+@item tilde-expand (M-&)
+@end ifset
+@ifclear BashFeatures
+@item tilde-expand (M-~)
+@end ifclear
+Realiza la expansi@'on de virgulilla en la palabra actual.
+
+@item set-mark (C-@@)
+Establece la marca en el punto.  Si se proporciona un argumento num@'erico,
+la marca se establece en esa posici@'on.
+
+@item exchange-point-and-mark (C-x C-x)
+Intercambia el punto con la marca.  La posici@'on del cursor actual se
+establece a la posici@'on guardada, y la posici@'on antigua del cursor se
+guarda como la marca.
+
+@item character-search (C-])
+Un car@'acter es le@'{@dotless{i}}do, y el punto se mueve a la siguiente
+ocurrencia de ese car@'acter.  Una cuenta negativa busca ocurrencias
+previas.
+
+@item character-search-backward (M-C-])
+Un car@'acter es le@'{@dotless{i}}do, y el punto se mueve a la anterior
+ocurrencia de ese car@'acter.  Una cuenta negativa busca ocurrencias
+posteriores.
+
+@item skip-csi-sequence ()
+Lee suficientes caracteres para consumir una secuencia multitecla como
+aquellas definidas por teclas como Inicio y Fin.  Estas secuencias comienzan
+con un Indicador de Secuencia de Control (ISC), normalmente ESC-[.  Si esta
+secuencia est@'a asociada a "\e[", las teclas que produzcan tales secuencias
+no tendr@'an efecto a no ser que sean espec@'{@dotless{i}}ficamente
+asociadas a una orden readline, en vez de insertar caracteres inconexos en
+el b@'ufer de edici@'on.  Esto est@'a sin asociar por defecto, pero
+normalmente asociado a ESC-[.
+
+@item insert-comment (M-#)
+Sin un argumento num@'erico, el valor de la variable @code{comment-begin} se
+inserta al comienzo de la l@'{@dotless{i}}nea actual.  Si se proporciona un
+argumento num@'erico, esta orden act@'ua como un centinela: si los
+caracteres al comienzo de la l@'{@dotless{i}}nea no coinciden con el valor
+de @code{comment-begin}, el valor es insertado; de lo contrario, los
+caracteres en @code{comment-begin} son eliminados del comienzo de la
+l@'{@dotless{i}}nea.  En ambos casos, la l@'{@dotless{i}}nea se acepta como
+si se hubiera tecleado una nueva l@'{@dotless{i}}nea.
+@ifset BashFeatures
+El valor predeterminado de @code{comment-begin} hace que esta orden haga la
+l@'{@dotless{i}}nea actual un comentario del int@'erprete.  Si un argumento
+num@'erico hace que el car@'acter de comentario sea eliminado, el
+l@'{@dotless{i}}nea ser@'a ejecutada por el int@'erprete.
+@end ifset
+
+@item dump-functions ()
+Imprime todas las funciones y sus asociaciones de teclas en el flujo de
+salida de Readline.  Si se proporciona un argumento num@'erico, la salida se
+formatea en una forma que se puede hacer parte de un archivo @var{inputrc}.
+Esta orden est@'a sin asociar por defecto.
+
+@item dump-variables ()
+Imprime todas las variables que pueden ser establecidas y sus valores al
+flujo de salida de Readline.  Si se proporciona un argumento num@'erico, la
+salida se formatea de una forma que se puede hacer parte de un archivo
+@var{inputrc}.  Esta orden est@'a sin asociar por defecto.
+
+@item dump-macros ()
+Imprime todas las secuencias de teclas de Readline asociadas a macros y las
+cadenas que producen.  Si se proporciona un argumento num@'erico,  la salida
+se formatea de una forma que se puede hacer parte de un archivo
+@var{inputrc}.  Esta orden est@'a sin asociar por defecto.
+
+@ifset BashFeatures
+@item glob-complete-word (M-g)
+La palabra antes del punto se trata como un patr@'on para la expansi@'on de
+nombre de patr@'on, con un asterisco a@~nadido
+impl@'{@dotless{i}}citamente.  Este patr@'on se usa para generar una lista
+de nombres de archivos coincidentes para posibles compleciones.
+
+@item glob-expand-word (C-x *)
+La palabra antes del punto se trata como un patr@'on para la compleci@'on de
+nombre de archivo, y es insertada la lista de nombres de archivos
+coincidentes, reemplazando la palabra.  Si se proporciona un argumento
+num@'erico, se a@~nade un @samp{*} antes de la expansi@'on de nombre de
+archivo.
+
+@item glob-list-expansions (C-x g)
+Se muestra la lista de expansiones que han sido generadas por
+@code{glob-expand-word}, y se vuelve a dibujar la l@'{@dotless{i}}nea.  Si
+se proporciona un argumento num@'erico, se a@~nade un @samp{*} antes de la
+expansi@'on de nombre de ruta.
+
+@item display-shell-version (C-x C-v)
+Muestra la informaci@'on de versi@'on de la instancia actual de Bash.
+
+@item shell-expand-line (M-C-e)
+Expande la l@'{@dotless{i}}nea como hace el int@'erprete.  Esto realiza la
+expansi@'on de alias y de historial as@'{@dotless{i}} como todas las
+expansiones de palabra del int@'erprete (@pxref{Expansiones del
+Int@'erprete}).
+
+@item history-expand-line (M-^)
+Realiza la expansi@'on de historial en la l@'{@dotless{i}}nea actual.
+
+@item magic-space ()
+Realiza la expansi@'on de historial en la l@'{@dotless{i}}nea actual e
+inserta un espacio (@pxref{Interacci@'on con el Historial}).
+
+@item alias-expand-line ()
+Realiza la expansi@'on de alias en la l@'{@dotless{i}}nea actual
+(@pxref{Aliases}).
+
+@item history-and-alias-expand-line ()
+Realiza expansi@'on de alias y de historial en la l@'{@dotless{i}}nea
+actual.
+
+@item insert-last-argument (M-. or M-_)
+Un sin@'onimo de @code{yank-last-arg}.
+
+@item operate-and-get-next (C-o)
+Acepta la l@'{@dotless{i}}nea actual para ejecuci@'on y obtiene la siguiente
+l@'{@dotless{i}}nea relativa a la l@'{@dotless{i}}nea actual del historial
+para editar.  Se ignora cualquier argumento.
+
+@item edit-and-execute-command (C-xC-e)
+Llama a un editor en la l@'{@dotless{i}}nea actual de orden y ejecuta el
+resultado como instrucciones del int@'erprete.  Bash trata de llamar a
+@code{$VISUAL}, @code{$EDITOR} y @code{emacs} como el editor, en ese orden.
+
+@end ifset
+
+@ifclear BashFeatures
+@item emacs-editing-mode (C-e)
+Cuando est@'a en el modo de orden de @code{vi}, esto causa un cambio al modo
+de edici@'on de @code{emacs}.
+
+@item vi-editing-mode (M-C-j)
+Cuando est@'a en el modo de orden de @code{emacs}, esto causa un cambio al
+modo de edici@'on de @code{vi}.
+
+@end ifclear
+
+@end ftable
+
+@node Modo vi de Readline
+@section Modo vi de Readline
+
+Si bien la biblioteca Readline tiene un conjunto completo de las funciones
+de edici@'on de @code{vi}, contiene lo suficiente para permitir la edici@'on
+simple de la l@'{@dotless{i}}nea.  El modo @code{vi} de Readline se comporta
+como se especifica en el est@'andar @sc{posix}.
+
+@ifset BashFeatures
+Para alternar interactivamente entre los modos de edici@'on de @code{emacs}
+y @code{vi}, use las instrucciones @samp{set -o emacs} y @samp{set -o vi}
+(@pxref{La Instrucci@'on Integrada Set}).
+@end ifset
+@ifclear BashFeatures
+Para alternar interactivamente entre los modos de edici@'on de @code{emacs}
+y @code{vi}, use la @'orden @kbd{M-C-j} (asociada con emacs-editing-mode en
+modo @code{vi} y con vi-editing-mode en modo @code{emacs}).
+@end ifclear
+El predeterminado de Readline es el modo @code{emacs}.
+
+Cuando introduces una l@'{@dotless{i}}nea en el modo @code{vi}, ya est@'a
+metido en el modo de `inserci@'on', como si hubiera escrito @samp{i}.
+Pulsar @key{ESC} le cambia al modo de `@'ordenes', donde puede editar el
+texto de la l@'{@dotless{i}}nea con las teclas de movimiento est@'andares de
+@code{vi}, moverse a l@'{@dotless{i}}neas del historial previas con @samp{k}
+y a l@'{@dotless{i}}neas siguientes con @samp{j} y dem@'as.
+
+@ifset BashFeatures
+@node Compleci@'on Programable
+@section Compleci@'on Programable
+@cindex compleci@'on programable
+
+Cuando se intenta la compleci@'on de palabra para un argumento de una
+instrucci@'on para la que ha sido definida una especificaci@'on de
+compleci@'on (una @var{compspec}) usando la instrucci@'on integrada
+@code{complete} (@pxref{Instrucciones Integradas de Compleci@'on
+Programable}), se llaman a las utilidades de compleci@'on. 
+
+Primero, el se identifica el nombre de la instrucci@'on.  Si ha sido
+definida una compspec para esa instrucci@'on, la compspec es usada para
+generar la lista de posibles compleciones para la palabra.  Si la palabra de
+instrucci@'on es la cadena vac@'{@dotless{i}}a (compleci@'on intentada al
+comienzo de una l@'{@dotless{i}}nea vac@'{@dotless{i}}a), se usa cualquier
+compspec definida con la opci@'on @option{-E} de @code{complete}.  Si la
+palabra de instrucci@'on es un nombre de ruta completo, se busca primero una
+compspec para el nombre de ruta completo.  Si no se encuentra ninguna
+compspec para el nombre de ruta completo, se realiza un intento para
+encontrar una compspec para la porci@'on que sigue a la barra final.  Si
+esas b@'usquedas no resultan en una compspec, cualquier compspec definida
+usando la opci@'on @option{-D} de @code{complete} se usa como
+predeterminada.
+
+Una vez que se haya encontrado una compspec, se usa para generar la lista de
+palabras coincidentes.  Si no se ha encontrado una compspec, se realiza la
+compleci@'on predeterminada de Bash descrita anteriormente (@pxref{@'Ordenes
+para Compleci@'on}).
+
+Primero se usan las acciones especificadas por la compspec.  Solo son
+devueltas las coincidencias prefijadas por la palabra que est@'a siendo
+completada.  Cuando se usa la opci@'on @option{-f} o @option{-d} para la
+compleci@'on de nombre de archivo o directorio, se usa la variable del
+int@'erprete @env{FIGNORE} para filtrar las coincidencias.  @xref{Variables
+de Bash}, para una descripci@'on de @env{FIGNORE}.
+
+Todas las compleciones especificadas por un patr@'on de expansi@'on de
+nombre de archivo para la opci@'on @option{-G} son generadas despu@'es.  Las
+palabras generadas por el patr@'on no necesitan coincidir con la palabra que
+est@'a siendo completada.  La variable del int@'erprete @env{GLOBIGNORE} no
+se usa para filtrar las coincidencias, sino que se usa la variable del
+int@'erprete @env{FIGIGNORE}.
+
+A continuaci@'on, se considera la cadena especificada como el argumento para
+la opci@'on @option{-W}.  La cadena se divide primero usando los caracteres
+en la variable especial @env{IFS} como delimitadores.  Se respeta el
+entrecomillado del int@'erprete.  Cada palabra es entonces expandida usando
+la expansi@'on de llaves, expansi@'on de virgulilla, expansi@'on de
+par@'ametro y variable, sustituci@'on de instrucci@'on y expansi@'on
+aritm@'etica, como se describe anteriormente (@pxref{Expansiones del
+Int@'erprete}).  Los resultados se dividen usando las reglas descritas
+anteriormente (@pxref{Divisi@'on de Palabras}).  Los resultados de la
+expansi@'on son coincididos con los prefijos con la palabra que est@'a
+siendo completada, y las palabras coincidentes se convierten en las posibles
+compleciones.
+
+Despu@'es de que estas coincidencias hayan sido generadas, se llama a
+cualquier funci@'on o instrucci@'on del int@'erprete especificada con las
+opciones @option{-F} y @option{-C}.  Cuando se llama a la instrucci@'on o
+funci@'on, se asignan valores a las variables @env{COMP_LINE},
+@env{COMP_POINT}, @env{COMP_KEY} y @env{COMP_TYPE} como se describe
+anteriormente (@pxref{Variables de Bash}).  Si se est@'a llamando a una
+funci@'on del int@'erprete, se establecen tambi@'en las variables
+@env{COMP_WORDS} y @env{COMP_CWORD}.  Cuando se llama a la funci@'on o
+instrucci@'on, el primer argumento ($1) es el nombre de la instrucci@'on
+cuyos argumentos est@'an siendo completados, el segundo argumento ($2) es la
+palabra que est@'a siendo completada y el tercer argumento ($3) es la
+palabra que precede a la palabra que est@'a siendo completada en la
+l@'{@dotless{i}}nea de @'ordenes actual.  No se realiza ning@'un filtrado de
+las compleciones generadas sobre la palabra que est@'a siendo completada; la
+funci@'on o instrucci@'on tiene libertad absoluta para generar las
+coincidencias.
+
+Se llama primero a cualquier funci@'on especificada con @option{-F}.  La
+funci@'on puede usar cualquiera de las herramientas del int@'erprete,
+incluyendo las instrucciones integradas @code{compgen} y @code{compopt}
+descritas a continuaci@'on (@pxref{Instrucciones Integradas de Compleci@'on
+Programable}), para generar las coincidencias.  Debe poner las posibles
+compleciones en la variable de vector @env{COMPREPLY}, una por elemento de
+vector.
+
+A continuaci@'on, se llama a cualquier instrucci@'on especificada con la
+opci@'on @option{-C} en un entorno equivalente a la sustituci@'on de
+instrucci@'on.  Deber@'{@dotless{i}}a imprimir una lista de compleciones,
+una por l@'{@dotless{i}}nea, en la salida est@'andar.  La barra invertida
+puede ser usada para escapar una nueva l@'{@dotless{i}}nea, si es necesario.
+
+Despu@'es de que sean generadas todas las posibles compleciones, se aplica a
+la lista cualquier filtro especificado con la opci@'on @option{-X}.  El
+filtro es un patr@'on como el que se usa para la expansi@'on de nombre de
+archivo; un @samp{&} en el patr@'on es reemplazado por el texto de la
+palabra que est@'a siendo completada.  Un @samp{&} literal se puede escapar
+con una barra invertida; se elimina la barra invertida antes de intentar una
+coincidencia.  Cualquier compleci@'on que coincida con el patr@'on ser@'a
+eliminada de la lista.  Un @samp{!} inicial niega el patr@'on; en este caso
+se eliminar@'a cualquier compleci@'on que no coincida con el patr@'on.  Si
+la opci@'on del int@'erprete @code{nocasematch} (vea la descripci@'on de
+@code{shopt} en @ref{La Instrucci@'on Integrada Shopt})  est@'a activada, la
+coincidencia se realiza sin tener en cuenta las may@'usculas y min@'usculas
+de caracteres alfab@'eticos.
+
+Finalmente, los prefijos y sufijos especificados con las opciones
+@option{-P} y @option{-S} se a@~naden a cada miembro de la lista de
+compleci@'on, y el resultado es devuelto al c@'odigo de compleci@'on de
+Readline como la lisa de compleciones posibles.
+
+Si las acciones aplicadas anteriormente no generan ning@'un resultado y la
+opci@'on @option{-o dirnames} fue proporcionada a @code{complete} cuando
+compspec fue definida, se intenta la compleci@'on de nombre de directorio. 
+
+Si la opci@'on @option{-o plusdirs} fue proporcionada a @code{complete}
+cuando la compspec fue definida, se intenta la compleci@'on de nombre de
+directorio y las coincidencias se a@~naden a los resultados de las otras
+acciones.
+
+Por defecto, si se encuentra una compspec, lo que sea que genere es devuelto
+al c@'odigo de compleci@'on como el conjunto completo de compleciones
+posibles.  Las compleciones predeterminadas de Bash no se intentan, y se
+deshabilita el valor predeterminado de Readline de compleci@'on de nombre de
+archivo.  Si la opci@'on @option{-o bashdefault} fue proporcionada a
+@code{complete} cuando la compspec fue definida, se intentan las
+compleciones predeterminadas de Bash si compspec no genera coincidencias.
+Si la opci@'on @option{-o default} fue proporcionada a @code{complete}
+cuando la compspec fue definida, la compleci@'on predeterminada de Readline
+se realizar@'a si la compspec (y, si se intenta, las compleciones
+predeterminadas de Bash)  no genera coincidencias.
+
+Cuando una compspec indica que se desea la compleci@'on de nombre de
+directorio, las funciones de compleci@'on programables forza a Readline a
+a@~nadir una barra a los nombres completados que son enlaces simb@'olicos a
+directorios, sujetos al valor de la variable de Readline
+@var{mark-directories}, sin importar el ajuste de la variable de Readline
+@var{mark-symlinked-directories}.
+
+Hay alg@'un soporte para modificar din@'amicamente compleciones.  Esto es
+muy @'util cuando se usa en conjunto con una compleci@'on predeterminada
+especificada con @option{-D}.  Es posible para las funciones del
+int@'erprete ser ejecutadas como manejadores de compleci@'on para indicar
+que la compleci@'on deber@'{@dotless{i}}a ser reintentada devolviendo un
+estado de salida de 124.  Si una funci@'on del int@'erprete devuelve 124 y
+cambia la compspec asociada con la instrucci@'on en que la compleci@'on se
+est@'a intentando (proporcionada como el primer argumento cuando se ejecuta
+la funci@'on), la compleci@'on programable se reinicia desde el principio,
+con un intento de encontrar una nueva compspec para esa instrucci@'on.  Esto
+permite que un conjunto de compleciones sea construido din@'amicamente
+mientras se intenta la compleci@'on, en vez de ser cargado de golpe.
+
+Por ejemplo, asumiendo que hubiera una biblioteca de compspecs, cada una en
+un archivo correspondiente al nombre de la instrucci@'on, la siguiente
+compleci@'on predeterminada cargar@'{@dotless{i}}a compleciones
+din@'amicamente:
+
+@example
+_completion_loader()
+@{
+    . "/etc/bash_completion.d/$1.sh" >/dev/null 2>&1 && return 124
+@}
+complete -D -F _completion_loader -o bashdefault -o default
+@end example
+
+@node Instrucciones Integradas de Compleci@'on Programable
+@section Instrucciones Integradas de Compleci@'on Programable
+@cindex instrucciones integradas de compleci@'on
+
+Hay disponibles tres instrucciones integradas para manipular las
+herramientas de compleci@'on programables: una para especificar c@'omo van a
+ser completados los argumentos para una instrucci@'on particular, y dos para
+modificar la compleci@'on mientras ocurre.
+
+@table @code
+@item compgen
+@btindex compgen
+@example
+@code{compgen [@var{opci@'on}] [@var{palabra}]}
+@end example
+
+Genera posibles coincidencias de compleci@'on para @var{palabra} de acuedo a
+las @var{opcione}s, que pueden ser cualquier opci@'on aceptada por la
+instrucci@'on integrada @code{complete} con la excepci@'on de @option{-p} y
+@option{-r}, y escribe las coincidencias a la salida est@'andar.  Al usar
+las opciones @option{-F} o @option{-C}, las distintas variables del
+int@'erprete establecidas por las herramientas de compleci@'on programables,
+mientras est@'en disponibles, no tendr@'an valores @'utiles.
+
+Las coincidencias ser@'an generadas de la misma forma que si el c@'odigo de
+la compleci@'on programable las hubiera generado directamente de una
+especificaci@'on de compleci@'on con las mismas banderas.  Si se especifica
+@var{palabra}, solo se mostrar@'an aquellas compleciones que coincidan con
+@var{palabra}.
+
+El valor de retorno es verdadero a no ser que se proporcione una opci@'on
+inv@'alida o no se hayan generado coincidencias.
+
+@item complete
+@btindex complete
+@example
+@code{complete [-abcdefgjksuv] [-o @var{opci@'on-comp}] [-DE] [-A @var{acci@'on}] [-G @var{rutglob}] [-W @var{lista-palabras}]
+[-F @var{funci@'on}] [-C @var{instrucci@'on}] [-X @var{filtrapat}]
+[-P @var{prefijo}] [-S @var{sufijo}] @var{nombre} [@var{nombre} @dots{}]}
+@code{complete -pr [-DE] [@var{nombre} @dots{}]}
+@end example
+
+Especifica c@'omo los argumentos para cada @var{nombre}
+deber@'{@dotless{i}}an ser completados.  Si se proporciona la opci@'on
+@option{-p}, o si no se proporcionan opciones, las especificaciones de
+compleci@'on existentes son imprimidas de forma que les permite ser reusadas
+como entrada.  La opci@'on @option{-r} elimina una especificaci@'on de
+compleci@'on para cada @var{nombre} o, si no se proporciona ning@'un
+@var{nombre}, todas las especificaciones de compleci@'on.  La opci@'on
+@option{-D} indica que las opciones y acciones restantes
+deber@'{@dotless{i}}an aplicar la compleci@'on de instrucci@'on
+@guillemetleft{}predeterminada@guillemetright{}; es decir, la compleci@'on
+intentada en una instrucci@'on para la que ninguna compleci@'on ha sido
+definida previamente.  La opci@'on @option{-E} indica que las opciones y
+acciones restantes se deben aplicar a compleciones de instrucciones
+@guillemetleft{}vac@'{@dotless{i}}as@guillemetright{}; es decir, a
+compleciones intentadas en una l@'{@dotless{i}}nea en blanco.
+
+El proceso de aplicar estas especificaciones de compleci@'on cuando se
+intenta la compleci@'on de palabra se describe arriba (@pxref{Compleci@'on
+Programable}).  La opci@'on @option{-D} toma precedencia sobre @option{-E}.
+
+Otras opciones, si se especifican, tienen los siguientes significados.  Los
+argumentos para las opciones @option{-G}, @option{-W}, and @option{-X} (y,
+si es necesario, las opciones @option{-P} y @option{-S})  deben ser
+entrecomillados para protejerlos de la expansi@'on antes de que sea llamada
+la instrucci@'on integrada @code{complete}.
+
+
+@table @code
+@item -o @var{opci@'on-comp}
+La @var{opci@'on-comp} controla varios aspectos del comportamiento de
+compspec m@'as all@'a de la simple generaci@'on de compleciones.
+@var{opci@'on-comp} puede ser una de: 
+
+@table @code
+
+@item bashdefault
+Realiza el resto de las compleciones predeterminadas de Bash si la compspec
+no genera coincidencias.
+
+@item default
+Una la compleci@'on de nombre de archivo predeterminada de Readline si la
+compspec no genera coincidencias.
+
+@item dirnames
+Realiza compleci@'on de nombre de directorio si la compspec no genera
+coincidencias.
+
+@item filenames
+Le dice a Readline que la compspec genera nombres de archivo, para pueda
+realizar cualquier procesamiento espec@'{@dotless{i}}fico para nombes de
+archivo (como a@~nadir una barra a nombres de directorio, entrecomillar
+caracteres especiales o suprimir los espacios finales).  Esta opci@'on
+est@'a pensada para usarse con la funci@'on del int@'erprete especificada
+con @option{-F}.
+
+@item noquote
+Le dice a Readline que no entrecomille las palabras completadas si son
+nombres de archivo (entrecomillar nombres de archivo es lo predeterminado).
+
+@item nosort
+Le dice a Readline que no ordene la lista de posibles compleciones
+alfab@'eticamente.
+
+@item nospace
+Le dice a Readline que no a@~nada un espacio (lo predeterminado) a palabras
+completadas al final de la l@'{@dotless{i}}nea.
+
+@item plusdirs
+Despu@'es de que las coincidencias definidas por la compspec hayan sido
+generadas, se intenta la compleci@'on de nombre de directorio y se a@~naden
+las coincidencias a los resultados de las otras acciones.
+
+@end table
+
+@item -A @var{acci@'on}
+La @var{acci@'on} puede ser una de las siguientes para generar una lista de
+posibles compleciones:
+
+@table @code
+@item alias
+Nombres de alias.  Tambi@'en puede ser especificada como @option{-a}.
+
+@item arrayvar
+Nombres de variable de vector.
+
+@item binding
+Nombres de asociaci@'on de teclas de Readline (@pxref{@'Ordenes Asociables
+de Readline}).
+
+@item builtin
+Nombres de instrucciones integradas del int@'erprete.  Tambi@'en puede ser
+especificado como @option{-b}.
+
+@item command
+Nombres de instrucciones.  Tambi@'en puede ser especificado como
+@option{-c}.
+
+@item directory
+Nombres de directorio.  Tambi@'en puede ser especificado como @option{-d}.
+
+@item disabled
+Nombres de instrucciones integradas deshabilitadas.
+
+@item enabled
+Nombres de instrucciones integradas habilitadas.
+
+@item export
+Nombres de variables del int@'erprete exportadas.  Tambi@'en puede ser
+especificado como @option{-e}.
+
+@item file
+Nombes de archivo.  Tambi@'en puede ser especificado como @option{-f}.
+
+@item function
+Nombres de funciones del int@'erprete.
+
+@item group
+Nombres de grupo.  Tambi@'en puede ser especificado como @option{-g}.
+
+@item helptopic
+Temas de ayuda como acepta la instrucci@'on integrada @code{help}
+(@pxref{Instrucciones Integradas del Int@'erprete}).
+
+@item hostname
+Nombres de anfitri@'on, como son tomados por el archivo especificado por la
+variable del int@'erprete @env{HOSTNAME} (@pxref{Variables de Bash}).
+
+@item job
+Nombres de tarea, si el control de tareas est@'a activo.  Tambi@'en puede
+ser especificado como @option{-j}.
+
+@item keyword
+Palabras reservadas del int@'erprete.  Tambi@'en puede ser especificado como
+@option{-k}.
+
+@item running
+Nombres de tareas ejecut@'andose, si el control de tareas est@'a activado.
+
+@item service
+Nombres de servicios.  Tambi@'en puede ser especificado como @option{-s}.
+
+@item setopt
+Argumentos v@'alidos para la opci@'on @option{-o} de la instrucci@'on
+integrada @code{set} (@pxref{La Instrucci@'on Integrada Set}).
+
+@item shopt
+Los nombres de opci@'on del int@'erprete como acepta la instrucci@'on
+integrada @code{shopt} (@pxref{Instrucciones Integradas de Bash}).
+
+@item signal
+Nombres de se@~nal.
+
+@item stopped
+Nombres de tareas detenidas, si est@'a activado el control de tareas.
+
+@item user
+Nombres de usuario.  Tambi@'en puede ser especificado como @option{-u}.
+
+@item variable
+Nombres de todas las variables del int@'erprete.  Tambi@'en puede ser
+especificado como @option{-v}.
+@end table
+
+@item -C @var{instrucci@'on}
+@var{instrucci@'on} se ejecuta en un entorno de subint@'erprete y su salida
+se usa como las posibles compleciones.
+
+@item -F @var{funci@'on}
+La funci@'on del int@'erprete @var{funci@'on} se ejecuta en el entorno
+actual del int@'erprete.  Cuando se ejecuta, $1 es el nombre de la
+instrucci@'on cuyos argumentos est@'an siendo completados, $2 es la palabra
+siendo completada, y $3 es la palabra que precede a la palabra siendo
+completada, como se describe anteriormente (@pxref{Compleci@'on
+Programable}).  Cuando finaliza, se recuperan las posibles compleciones del
+valor de la variable de vector @env{COMPREPLY}.
+
+@item -G @var{patglob}
+La expansi@'on de nombre de archivo @var{patglob} se expande para generar
+las posibles compleciones.
+
+@item -P @var{prefijo}
+@var{prefijo} se a@~nade al comienzo de cada posible compleci@'on despu@'es
+de que se hayan aplicado todas las otras opciones.
+
+@item -S @var{sufijo}
+@var{sufijo} se a@~nade a cada compleci@'on posible despu@'es de que se
+hayan aplicado todas las otras opciones.
+
+@item -W @var{lista-de-palabras}
+La @var{lista-de-palabras} se divide usando los caracteres en la variable
+especial @env{IFS} como delimitadores, y se expande cada palabra
+resultante.  Las posibles compleciones son los miembros de la lista
+resultante que coinciden con la palabra que est@'a siendo completada.
+
+@item -X @var{filtrapat}
+@var{filtrapat} es un patr@'on como se usa para la expansi@'on de nombre de
+archivo.  Se aplica a la lista de posibles compleciones generada por las
+opciones y argumentos precedentes, y cada compleci@'on coincidente con
+@var{filtrapat} se elimina de la lista.  Un @samp{!} inicial en
+@var{filtrapat} niega el patr@'on; en este caso, cualquier compleci@'on que
+no coincide con @var{filtrapat} es eliminada.
+@end table
+
+El valor de retorno es verdadero a no ser que se proporcione una opci@'on
+inv@'alida, una opci@'on diferente de @option{-p} o @option{-r} se
+proporcione sin un argumento @var{nombre}, se realice un intento para
+eliminar una especificaci@'on de compleci@'on para un @var{nombre} para el
+cual no existe ninguna especificaci@'on u ocurre un error a@~nadiendo una
+especificaci@'on de compleci@'on.
+
+@item compopt
+@btindex compopt
+@example
+@code{opc-comp} [-o @var{opci@'on}] [-DE] [+o @var{opci@'on}] [@var{nombre}]
+@end example
+Modifica opciones de compleci@'on para cada @var{nombre} de acuerdo a las
+@var{opcion}es, o para la compleci@'on actualmente en ejecuci@'on si no se
+proporcionan @var{nombre}s.  Si no se pasa ninguna @var{opci@'on}, muestra
+las opciones de compleci@'on para cada @var{nombre} o la compleci@'on
+actual.  Los posibles valores de @var{opci@'on} son aquellos v@'alidos para
+la instrucci@'on integrada @code{complete} descrita anteriormente.  La
+opci@'on @option{-D} indica que el resto de opciones deber@'{@dotless{i}}a
+aplicar la compleci@'on de instrucci@'on
+@guillemetleft{}predeterminada@guillemetright{}; es decir, compleci@'on
+intentada en una instrucci@'on para la que ninguna compleci@'on ha sido
+previamente definida.  La opci@'on @option{-E} indica que el resto de
+opciones se deber@'{@dotless{i}}a aplicar para la compleci@'on de
+instrucciones @guillemetleft{}vac@'{@dotless{i}}as@guillemetright{}; es
+decir, la compleci@'on intentada en una l@'{@dotless{i}}nea en blanco.
+
+La opci@'on @option{-D} tiene precedencia sobre @option{-E}.
+
+El valor de retorno es verdadero a no ser que se proporcione una opci@'on
+inv@'alida, se realice un intento de modificar las opciones para un
+@var{nombre} para el que no existe especificaci@'on de compleci@'on u ocurra
+un error de salida.
+
+@end table
+
+@node Un Ejemplo de Compleci@'on Programable
+@section Un Ejemplo de Compleci@'on Programable
+
+La forma m@'as com@'un de obtener funcionalidad de compleci@'on adicional
+m@'as all@'a de las acciones predeterminadas que proporcionan
+@code{complete} y @code{compgen} es usar una funci@'on del int@'erprete y
+asociarla a una instrucci@'on particular usando @code{complete -F}.
+
+La siguiente funci@'on proporciona compleciones para la instrucci@'on
+integrada @code{cd}.  Es un ejemplo razonablemente bueno de lo que las
+funciones del int@'erprete deben hacer cuando se usan para compleci@'on.
+Esta funci@'on usa la palabra pasada como @code{$2} para determinar el
+nombre de directorio que completar.  Tambi@'en puede usar la variable de
+vector @code{COMP_WORDS}; la palabra actual es indexada por la variable
+@code{COMP_CWORD}.
+
+Esta funci@'on cuenta con las instrucciones integradas @code{complete} y
+@code{compgen} para hacer gran parte del trabajo, a@~nadiendo solo las casos
+que el @code{cd} de Bash hace m@'as all@'a de aceptar nombres de directorios
+b@'asicos: expansi@'on de virgulilla (@pxref{Expansi@'on de Virgulilla}),
+buscar directorios en @var{$CDPATH}, que se describe anteriormente
+(@pxref{Instrucciones Integradas del Bourne Shell}), y un soporte b@'asico
+para la opci@'on del int@'erprete (@pxref{La Instrucci@'on Integrada Shopt})
+@code{cdable_vars}.  @code{_comp_cd} modifica el valor de @var{IFS} de forma
+que contiene solo una nueva l@'{@dotless{i}}nea para acomodar los nombres de
+archivos que contienen espacios y tabulaciones ---@code{compgen} imprime las
+posibles compleciones que genera una por l@'{@dotless{i}}nea---.
+
+Las posibles compleciones van en la variable de vector @var{COMPREPLY}, una
+compleci@'on por elemento de vector.  El sistema de compleci@'on programable
+recoge las compleciones desde ah@'{@dotless{i}} cuando la funci@'on retorna.
+
+@example
+# Una funci@'on de compleci@'on para la instrucci@'on integrada cd
+# basada en la funci@'on de compleci@'on de cd del paquete bash_completion
+_comp_cd()
+@{
+    local IFS=$' \t\n'    # normaliza IFS
+    local cur _skipdot _cdpath
+    local i j k
+
+    # Expansi@'on de virgulilla, con el efecto secundario
+    # de expandir la virgulilla al nombre de ruta completo
+    case "$2" in
+    \~*)    eval cur="$2" ;;
+    *)      cur=$2 ;;
+    esac
+
+    # ning@'un cdpath o nombre de ruta absoluto,
+    # compleci@'on de directorio directa
+    if [[ -z "$@{CDPATH:-@}" ]] || [[ "$cur" == @@(./*|../*|/*) ]]; then
+        # compgen imprime una ruta por l@'{@dotless{i}}nea;
+        # tambi@'en se podr@'{@dotless{i}}a usar bucle while
+        IFS=$'\n'
+        COMPREPLY=( $(compgen -d -- "$cur") )
+        IFS=$' \t\n'
+    # CDPATH+directorios en el directorio actual si no est@'a en CDPATH
+    else
+        IFS=$'\n'
+        _skipdot=false
+        # preprocesa CDPATH para convertir nombres de directorio nulos
+        # a .
+        _cdpath=$@{CDPATH/#:/.:@}
+        _cdpath=$@{_cdpath//::/:.:@}
+        _cdpath=$@{_cdpath/%:/:.@}
+        for i in $@{_cdpath//:/$'\n'@}; do
+            if [[ $i -ef . ]]; then _skipdot=true; fi
+            k="$@{#COMPREPLY[@@]@}"
+            for j in $( compgen -d -- "$i/$cur" ); do
+                COMPREPLY[k++]=$@{j#$i/@}        # Recortar directorio
+            done
+        done
+        $_skipdot || COMPREPLY+=( $(compgen -d -- "$cur") )
+        IFS=$' \t\n'
+    fi
+
+    # nombres de variable si establecida opci@'on del
+    # int@'erprete apropiada y no compleciones
+    if shopt -q cdable_vars && [[ $@{#COMPREPLY[@@]@} -eq 0 ]]; then
+        COMPREPLY=( $(compgen -v -- "$cur") )
+    fi
+
+    return 0
+@}
+@end example
+
+Instalamos la funci@'on de compleci@'on usando la opci@'on @option{-F} para
+@code{complete}:
+
+@example
+# Ordena a readline entrecomillar apropiadamente y a@~nadir barras a
+# directorios; usa la compleci@'on predeterminada de bash para otros
+# argumentos
+complete -o filenames -o nospace -o bashdefault -F _comp_cd cd
+@end example
+
+@noindent
+Puesto que nos gustar@'{@dotless{i}}a que Bash y Readline se hicieran cargo
+de algunos de los otros detalles por nosotros, usamos otras varias opciones
+para decirles a Bash y a Readline qu@'e hacer.  La opci@'on @option{-o
+nombres-de-archivo} le indica a Readline que las posibles compleciones
+deber@'{@dotless{i}}an ser tratadas como nombres de archivo, y
+entrecomilladas apropiadamente.  Esta opci@'on tambi@'en har@'a que Readline
+a@~nada una barra a nombres de archivo que pueda reconocer como directorios
+(por lo cual puede que queramos extender @code{_comp_cd} para a@~nadir una
+barra si estamos usando directorios encontrados mediante @var{CDPATH}:
+Readline no puede distinguir si esas compleciones son directorios).  La
+opci@'on @option{-o nospace} le dice a Readline que no a@~nada un car@'acter
+de espacio al nombre de directorio, en caso de que queramos agreg@'arselo.
+La opci@'on @option{-o bashdefault} trae el resto de las compleciones
+«predeterminadas de Bash»  ---posible compleci@'on que Bash a@~nade al
+conjunto de Readline habilitado por defecto---.  Estas incluyen cosas como
+la compleci@'on de nombres de instrucciones, compleci@'on de variables para
+palabras que empiezan por @samp{@{}, compleciones que contienen patrones de
+expansi@'on de nombres de archivo (@pxref{Expansi@'on de Nombre de Archivo})
+y dem@'as.
+
+Una vez instalada usando @code{complete}, @code{_comp_cd} ser@'a llamado
+cada vez que intentemos una compleci@'on de palabra para una instrucci@'on
+@code{cd}.
+
+Muchos m@'as ejemplos ---una extensa colecci@'on de compleciones para la
+mayor@'{@dotless{i}}a de las instrucciones comunes de GNU, Unix y Linux---
+est@'an disponibles como parte del proyecto bash_completion.  Esto est@'a
+instalado por defecto en muchas distribuciones de GNU/Linux.  Originalmente
+escrito por Ian Macdonald, el projecto vive ahora en
+@url{http://bash-completion.alioth.debian.org/}. Hay puertos para otros
+sistemas como Solaris y Mac OS X.
+
+Una versi@'on m@'as antigua del paquete bash_completion se distribuye con
+bash en el subdirectorio @file{examples/complete}.
+
+@end ifset

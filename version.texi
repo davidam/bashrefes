@@ -1,0 +1,29 @@
+@ignore
+Copyright (C) 1988-2017 Free Software Foundation, Inc.
+Copyright (C) 2017 Jorge Maldonado Ventura
+@end ignore
+
+@ignore
+
+Versión original
+
+@set LASTCHANGE Wed Sep  7 17:12:22 EDT 2016
+
+@set EDITION 4.4
+@set VERSION 4.4
+
+@set UPDATED 7 September 2016
+@set UPDATED-MONTH September 2016
+
+
+Simplemente uso el mismo archivo para la traducción, ya que es tan corto que no
+vale la pena realizar la traducción con gettext.
+@end ignore
+
+@set LASTCHANGE Mi@'e Sep  7 17:12:22 EDT 2016
+
+@set EDITION 4.4
+@set VERSION 4.4
+
+@set UPDATED 7 de septiembre de 2016
+@set UPDATED-MONTH Septiembre de 2016

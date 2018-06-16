@@ -1,0 +1,912 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-01-24 17:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: chapter
+#: ./hsuser.texi:26 ./hsuser.texi:27
+#, no-wrap
+msgid "Using History Interactively"
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:39
+msgid ""
+"This chapter describes how to use the @sc{gnu} History Library "
+"interactively, from a user's standpoint.  It should be considered a user's "
+"guide.  For information on using the @sc{gnu} History Library in other "
+"programs, see the @sc{gnu} Readline Library Manual."
+msgstr ""
+
+#. type: ifclear
+#: ./hsuser.texi:45
+msgid ""
+"This chapter describes how to use the @sc{gnu} History Library "
+"interactively, from a user's standpoint.  It should be considered a user's "
+"guide.  For information on using the @sc{gnu} History Library in your own "
+"programs, @pxref{Programming with GNU History}."
+msgstr ""
+
+#. type: section
+#: ./hsuser.texi:54 ./hsuser.texi:63 ./hsuser.texi:64
+#, no-wrap
+msgid "Bash History Facilities"
+msgstr ""
+
+#. type: menuentry
+#: ./hsuser.texi:54
+msgid "How Bash lets you manipulate your command history."
+msgstr ""
+
+#. type: section
+#: ./hsuser.texi:54 ./hsuser.texi:129 ./hsuser.texi:130
+#, no-wrap
+msgid "Bash History Builtins"
+msgstr ""
+
+#. type: menuentry
+#: ./hsuser.texi:54
+msgid "The Bash builtin commands that manipulate the command history."
+msgstr ""
+
+#. type: node
+#: ./hsuser.texi:54 ./hsuser.texi:59 ./hsuser.texi:239
+#, no-wrap
+msgid "History Interaction"
+msgstr ""
+
+#. type: menuentry
+#: ./hsuser.texi:54 ./hsuser.texi:59
+msgid "What it feels like using History as a user."
+msgstr ""
+
+#. type: cindex
+#: ./hsuser.texi:65
+#, no-wrap
+msgid "command history"
+msgstr ""
+
+#. type: cindex
+#: ./hsuser.texi:66
+#, no-wrap
+msgid "history list"
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:81
+msgid ""
+"When the @option{-o history} option to the @code{set} builtin is enabled "
+"(@pxref{The Set Builtin}), the shell provides access to the @dfn{command "
+"history}, the list of commands previously typed.  The value of the "
+"@env{HISTSIZE} shell variable is used as the number of commands to save in a "
+"history list.  The text of the last @env{$HISTSIZE} commands (default 500) "
+"is saved.  The shell stores each command in the history list prior to "
+"parameter and variable expansion but after history expansion is performed, "
+"subject to the values of the shell variables @env{HISTIGNORE} and "
+"@env{HISTCONTROL}."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:99
+msgid ""
+"When the shell starts up, the history is initialized from the file named by "
+"the @env{HISTFILE} variable (default @file{~/.bash_history}).  The file "
+"named by the value of @env{HISTFILE} is truncated, if necessary, to contain "
+"no more than the number of lines specified by the value of the "
+"@env{HISTFILESIZE} variable.  When a shell with history enabled exits, the "
+"last @env{$HISTSIZE} lines are copied from the history list to the file "
+"named by @env{$HISTFILE}.  If the @code{histappend} shell option is set "
+"(@pxref{Bash Builtins}), the lines are appended to the history file, "
+"otherwise the history file is overwritten.  If @env{HISTFILE} is unset, or "
+"if the history file is unwritable, the history is not saved.  After saving "
+"the history, the history file is truncated to contain no more than "
+"@env{$HISTFILESIZE} lines.  If @env{HISTFILESIZE} is unset, or set to null, "
+"a non-numeric value, or a numeric value less than zero, the history file is "
+"not truncated."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:106
+msgid ""
+"If the @env{HISTTIMEFORMAT} is set, the time stamp information associated "
+"with each history entry is written to the history file, marked with the "
+"history comment character.  When the history file is read, lines beginning "
+"with the history comment character followed immediately by a digit are "
+"interpreted as timestamps for the following history entry."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:114
+msgid ""
+"The builtin command @code{fc} may be used to list or edit and re-execute a "
+"portion of the history list.  The @code{history} builtin may be used to "
+"display or modify the history list and manipulate the history file.  When "
+"using command-line editing, search commands are available in each editing "
+"mode that provide access to the history list (@pxref{Commands For History})."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:128
+msgid ""
+"The shell allows control over which commands are saved on the history list.  "
+"The @env{HISTCONTROL} and @env{HISTIGNORE} variables may be set to cause the "
+"shell to save only a subset of the commands entered.  The @code{cmdhist} "
+"shell option, if enabled, causes the shell to attempt to save each line of a "
+"multi-line command in the same history entry, adding semicolons where "
+"necessary to preserve syntactic correctness.  The @code{lithist} shell "
+"option causes the shell to save the command with embedded newlines instead "
+"of semicolons.  The @code{shopt} builtin is used to set these options.  "
+"@xref{Bash Builtins}, for a description of @code{shopt}."
+msgstr ""
+
+#. type: cindex
+#: ./hsuser.texi:131
+#, no-wrap
+msgid "history builtins"
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:135
+msgid ""
+"Bash provides two builtin commands which manipulate the history list and "
+"history file."
+msgstr ""
+
+#. type: btindex
+#: ./hsuser.texi:138 ./hsuser.texi:139
+#, no-wrap
+msgid "fc"
+msgstr ""
+
+#. type: example
+#: ./hsuser.texi:143
+#, no-wrap
+msgid ""
+"@code{fc [-e @var{ename}] [-lnr] [@var{first}] [@var{last}]}\n"
+"@code{fc -s [@var{pat}=@var{rep}] [@var{command}]}\n"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:164
+msgid ""
+"The first form selects a range of commands from @var{first} to @var{last} "
+"from the history list and displays or edits and re-executes them.  Both "
+"@var{first} and @var{last} may be specified as a string (to locate the most "
+"recent command beginning with that string) or as a number (an index into the "
+"history list, where a negative number is used as an offset from the current "
+"command number).  If @var{last} is not specified it is set to @var{first}.  "
+"If @var{first} is not specified it is set to the previous command for "
+"editing and @minus{}16 for listing.  If the @option{-l} flag is given, the "
+"commands are listed on standard output.  The @option{-n} flag suppresses the "
+"command numbers when listing.  The @option{-r} flag reverses the order of "
+"the listing.  Otherwise, the editor given by @var{ename} is invoked on a "
+"file containing those commands.  If @var{ename} is not given, the value of "
+"the following variable expansion is used: "
+"@code{$@{FCEDIT:-$@{EDITOR:-vi@}@}}.  This says to use the value of the "
+"@env{FCEDIT} variable if set, or the value of the @env{EDITOR} variable if "
+"that is set, or @code{vi} if neither is set.  When editing is complete, the "
+"edited commands are echoed and executed."
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:168
+msgid ""
+"In the second form, @var{command} is re-executed after each instance of "
+"@var{pat} in the selected command is replaced by @var{rep}.  @var{command} "
+"is intepreted the same as @var{first} above."
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:172
+msgid ""
+"A useful alias to use with the @code{fc} command is @code{r='fc -s'}, so "
+"that typing @samp{r cc} runs the last command beginning with @code{cc} and "
+"typing @samp{r} re-executes the last command (@pxref{Aliases})."
+msgstr ""
+
+#. type: btindex
+#: ./hsuser.texi:173 ./hsuser.texi:174
+#, no-wrap
+msgid "history"
+msgstr ""
+
+#. type: example
+#: ./hsuser.texi:181
+#, no-wrap
+msgid ""
+"history [@var{n}]\n"
+"history -c\n"
+"history -d @var{offset}\n"
+"history [-anrw] [@var{filename}]\n"
+"history -ps @var{arg}\n"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:191
+msgid ""
+"With no options, display the history list with line numbers.  Lines prefixed "
+"with a @samp{*} have been modified.  An argument of @var{n} lists only the "
+"last @var{n} lines.  If the shell variable @env{HISTTIMEFORMAT} is set and "
+"not null, it is used as a format string for @var{strftime} to display the "
+"time stamp associated with each displayed history entry.  No intervening "
+"blank is printed between the formatted time stamp and the history line."
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:193
+msgid "Options, if supplied, have the following meanings:"
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:195
+#, no-wrap
+msgid "-c"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:198
+msgid ""
+"Clear the history list.  This may be combined with the other options to "
+"replace the history list completely."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:199
+#, no-wrap
+msgid "-d @var{offset}"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:203
+msgid ""
+"Delete the history entry at position @var{offset}.  @var{offset} should be "
+"specified as it appears when the history is displayed."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:204
+#, no-wrap
+msgid "-a"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:208
+msgid ""
+"Append the new history lines to the history file.  These are history lines "
+"entered since the beginning of the current Bash session, but not already "
+"appended to the history file."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:209
+#, no-wrap
+msgid "-n"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:213
+msgid ""
+"Append the history lines not already read from the history file to the "
+"current history list.  These are lines appended to the history file since "
+"the beginning of the current Bash session."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:214
+#, no-wrap
+msgid "-r"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:217
+msgid "Read the history file and append its contents to the history list."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:218
+#, no-wrap
+msgid "-w"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:220
+msgid "Write out the current history list to the history file."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:221
+#, no-wrap
+msgid "-p"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:224
+msgid ""
+"Perform history substitution on the @var{arg}s and display the result on the "
+"standard output, without storing the results in the history list."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:225
+#, no-wrap
+msgid "-s"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:228
+msgid "The @var{arg}s are added to the end of the history list as a single entry."
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:235
+msgid ""
+"When any of the @option{-w}, @option{-r}, @option{-a}, or @option{-n} "
+"options is used, if @var{filename} is given, then it is used as the history "
+"file.  If not, then the value of the @env{HISTFILE} variable is used."
+msgstr ""
+
+#. type: section
+#: ./hsuser.texi:240
+#, no-wrap
+msgid "History Expansion"
+msgstr ""
+
+#. type: cindex
+#: ./hsuser.texi:241
+#, no-wrap
+msgid "history expansion"
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:246
+msgid ""
+"The History library provides a history expansion feature that is similar to "
+"the history expansion provided by @code{csh}.  This section describes the "
+"syntax used to manipulate the history information."
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:251
+msgid ""
+"History expansions introduce words from the history list into the input "
+"stream, making it easy to repeat commands, insert the arguments to a "
+"previous command into the current input line, or fix errors in previous "
+"commands quickly."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:255
+msgid ""
+"History expansion is performed immediately after a complete line is read, "
+"before the shell breaks it into words."
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:268
+msgid ""
+"History expansion takes place in two parts.  The first is to determine which "
+"line from the history list should be used during substitution.  The second "
+"is to select portions of that line for inclusion into the current one.  The "
+"line selected from the history is called the @dfn{event}, and the portions "
+"of that line that are acted upon are called @dfn{words}.  Various "
+"@dfn{modifiers} are available to manipulate the selected words.  The line is "
+"broken into words in the same fashion that Bash does, so that several words "
+"surrounded by quotes are considered one word.  History expansions are "
+"introduced by the appearance of the history expansion character, which is "
+"@samp{!} by default."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:273
+msgid ""
+"Only @samp{\\} and @samp{'} may be used to escape the history expansion "
+"character, but the history expansion character is also treated as quoted if "
+"it immediately precedes the closing double quote in a double-quoted string."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:293
+msgid ""
+"Several shell options settable with the @code{shopt} builtin (@pxref{Bash "
+"Builtins}) may be used to tailor the behavior of history expansion.  If the "
+"@code{histverify} shell option is enabled, and Readline is being used, "
+"history substitutions are not immediately passed to the shell parser.  "
+"Instead, the expanded line is reloaded into the Readline editing buffer for "
+"further modification.  If Readline is being used, and the @code{histreedit} "
+"shell option is enabled, a failed history expansion will be reloaded into "
+"the Readline editing buffer for correction.  The @option{-p} option to the "
+"@code{history} builtin command may be used to see what a history expansion "
+"will do before using it.  The @option{-s} option to the @code{history} "
+"builtin may be used to add commands to the end of the history list without "
+"actually executing them, so that they are available for subsequent recall.  "
+"This is most useful in conjunction with Readline."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:299
+msgid ""
+"The shell allows control of the various characters used by the history "
+"expansion mechanism with the @code{histchars} variable, as explained above "
+"(@pxref{Bash Variables}).  The shell uses the history comment character to "
+"mark history timestamps when writing the history file."
+msgstr ""
+
+#. type: subsection
+#: ./hsuser.texi:305 ./hsuser.texi:307 ./hsuser.texi:308
+#, no-wrap
+msgid "Event Designators"
+msgstr ""
+
+#. type: menuentry
+#: ./hsuser.texi:305
+msgid "How to specify which history line to use."
+msgstr ""
+
+#. type: subsection
+#: ./hsuser.texi:305 ./hsuser.texi:362 ./hsuser.texi:363
+#, no-wrap
+msgid "Word Designators"
+msgstr ""
+
+#. type: menuentry
+#: ./hsuser.texi:305
+msgid "Specifying which words are of interest."
+msgstr ""
+
+#. type: subsection
+#: ./hsuser.texi:305 ./hsuser.texi:428 ./hsuser.texi:429
+#, no-wrap
+msgid "Modifiers"
+msgstr ""
+
+#. type: menuentry
+#: ./hsuser.texi:305
+msgid "Modifying the results of substitution."
+msgstr ""
+
+#. type: cindex
+#: ./hsuser.texi:309
+#, no-wrap
+msgid "event designators"
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:315
+msgid ""
+"An event designator is a reference to a command line entry in the history "
+"list.  Unless the reference is absolute, events are relative to the current "
+"position in the history list."
+msgstr ""
+
+#. type: cindex
+#: ./hsuser.texi:315
+#, no-wrap
+msgid "history events"
+msgstr ""
+
+#. type: code{#1}
+#: ./hsuser.texi:319
+#, no-wrap
+msgid "!"
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:324
+msgid ""
+"Start a history substitution, except when followed by a space, tab, the end "
+"of the line, @samp{=} or @samp{(} (when the @code{extglob} shell option is "
+"enabled using the @code{shopt} builtin)."
+msgstr ""
+
+#. type: ifclear
+#: ./hsuser.texi:328
+msgid ""
+"Start a history substitution, except when followed by a space, tab, the end "
+"of the line, or @samp{=}."
+msgstr ""
+
+#. type: code{#1}
+#: ./hsuser.texi:330
+#, no-wrap
+msgid "!@var{n}"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:332
+msgid "Refer to command line @var{n}."
+msgstr ""
+
+#. type: code{#1}
+#: ./hsuser.texi:333
+#, no-wrap
+msgid "!-@var{n}"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:335
+msgid "Refer to the command @var{n} lines back."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:336 ./hsuser.texi:376
+#, no-wrap
+msgid "!!"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:338
+msgid "Refer to the previous command.  This is a synonym for @samp{!-1}."
+msgstr ""
+
+#. type: code{#1}
+#: ./hsuser.texi:339
+#, no-wrap
+msgid "!@var{string}"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:343
+msgid ""
+"Refer to the most recent command preceding the current position in the "
+"history list starting with @var{string}."
+msgstr ""
+
+#. type: code{#1}
+#: ./hsuser.texi:344
+#, no-wrap
+msgid "!?@var{string}[?]"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:351
+msgid ""
+"Refer to the most recent command preceding the current position in the "
+"history list containing @var{string}.  The trailing @samp{?} may be omitted "
+"if the @var{string} is followed immediately by a newline."
+msgstr ""
+
+#. type: code{#1}
+#: ./hsuser.texi:352
+#, no-wrap
+msgid "^@var{string1}^@var{string2}^"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:356
+msgid ""
+"Quick Substitution.  Repeat the last command, replacing @var{string1} with "
+"@var{string2}.  Equivalent to @code{!!:s/@var{string1}/@var{string2}/}."
+msgstr ""
+
+#. type: code{#1}
+#: ./hsuser.texi:357
+#, no-wrap
+msgid "!#"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:359
+msgid "The entire command line typed so far."
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:371
+msgid ""
+"Word designators are used to select desired words from the event.  A "
+"@samp{:} separates the event specification from the word designator.  It may "
+"be omitted if the word designator begins with a @samp{^}, @samp{$}, "
+"@samp{*}, @samp{-}, or @samp{%}.  Words are numbered from the beginning of "
+"the line, with the first word being denoted by 0 (zero).  Words are inserted "
+"into the current line separated by single spaces."
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:374
+msgid "For example,"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:379
+msgid ""
+"designates the preceding command.  When you type this, the preceding command "
+"is repeated in toto."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:380
+#, no-wrap
+msgid "!!:$"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:383
+msgid ""
+"designates the last argument of the preceding command.  This may be "
+"shortened to @code{!$}."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:384
+#, no-wrap
+msgid "!fi:2"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:387
+msgid ""
+"designates the second argument of the most recent command starting with the "
+"letters @code{fi}."
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:391
+msgid "Here are the word designators:"
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:394
+#, no-wrap
+msgid "0 (zero)"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:396
+msgid "The @code{0}th word.  For many applications, this is the command word."
+msgstr ""
+
+#. type: var{#1}
+#: ./hsuser.texi:397
+#, no-wrap
+msgid "n"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:399
+msgid "The @var{n}th word."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:400
+#, no-wrap
+msgid "^"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:402
+msgid "The first argument; that is, word 1."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:403
+#, no-wrap
+msgid "$"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:405
+msgid "The last argument."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:406
+#, no-wrap
+msgid "%"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:408
+msgid "The word matched by the most recent @samp{?@var{string}?} search."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:409
+#, no-wrap
+msgid "@var{x}-@var{y}"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:411
+msgid "A range of words; @samp{-@var{y}} abbreviates @samp{0-@var{y}}."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:412
+#, no-wrap
+msgid "*"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:416
+msgid ""
+"All of the words, except the @code{0}th.  This is a synonym for @samp{1-$}.  "
+"It is not an error to use @samp{*} if there is just one word in the event; "
+"the empty string is returned in that case."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:417
+#, no-wrap
+msgid "@var{x}*"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:419
+msgid "Abbreviates @samp{@var{x}-$}"
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:420
+#, no-wrap
+msgid "@var{x}-"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:422
+msgid "Abbreviates @samp{@var{x}-$} like @samp{@var{x}*}, but omits the last word."
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:427
+msgid ""
+"If a word designator is supplied without an event specification, the "
+"previous command is used as the event."
+msgstr ""
+
+#. type: Plain text
+#: ./hsuser.texi:433
+msgid ""
+"After the optional word designator, you can add a sequence of one or more of "
+"the following modifiers, each preceded by a @samp{:}."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:436
+#, no-wrap
+msgid "h"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:438
+msgid "Remove a trailing pathname component, leaving only the head."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:439
+#, no-wrap
+msgid "t"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:441
+msgid "Remove all leading pathname components, leaving the tail."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:442
+#, no-wrap
+msgid "r"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:445
+msgid ""
+"Remove a trailing suffix of the form @samp{.@var{suffix}}, leaving the "
+"basename."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:446
+#, no-wrap
+msgid "e"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:448
+msgid "Remove all but the trailing suffix."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:449
+#, no-wrap
+msgid "p"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:451
+msgid "Print the new command but do not execute it."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:453
+#, no-wrap
+msgid "q"
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:455
+msgid "Quote the substituted words, escaping further substitutions."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:456
+#, no-wrap
+msgid "x"
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:459
+msgid ""
+"Quote the substituted words as with @samp{q}, but break into words at "
+"spaces, tabs, and newlines."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:461
+#, no-wrap
+msgid "s/@var{old}/@var{new}/"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:469
+msgid ""
+"Substitute @var{new} for the first occurrence of @var{old} in the event "
+"line.  Any delimiter may be used in place of @samp{/}.  The delimiter may be "
+"quoted in @var{old} and @var{new} with a single backslash.  If @samp{&} "
+"appears in @var{new}, it is replaced by @var{old}.  A single backslash will "
+"quote the @samp{&}.  The final delimiter is optional if it is the last "
+"character on the input line."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:470
+#, no-wrap
+msgid "&"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:472
+msgid "Repeat the previous substitution."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:473
+#, no-wrap
+msgid "g"
+msgstr ""
+
+#. type: itemx
+#: ./hsuser.texi:474
+#, no-wrap
+msgid "a"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:478
+msgid ""
+"Cause changes to be applied over the entire event line.  Used in conjunction "
+"with @samp{s}, as in @code{gs/@var{old}/@var{new}/}, or with @samp{&}."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:479
+#, no-wrap
+msgid "G"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:481
+msgid "Apply the following @samp{s} modifier once to each word in the event."
+msgstr ""

@@ -1,0 +1,503 @@
+@ignore
+This file documents the user interface to the GNU History library.
+
+Copyright (C) 1988--2016 Free Software Foundation, Inc.
+Authored by Brian Fox and Chet Ramey.
+
+Permission is granted to make and distribute verbatim copies of this manual
+provided the copyright notice and this permission notice are preserved on
+all copies.
+
+Permission is granted to process this file through Tex and print the
+results, provided the printed document carries copying permission notice
+identical to this one except for the removal of this paragraph (this
+paragraph not being relevant to the printed manual).
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that the
+GNU Copyright statement is available to the distributee, and provided that
+the entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions.
+@end ignore
+
+@node Usando el Historial Interactivamente
+@chapter Usando el Historial Interactivamente
+
+@ifclear BashFeatures
+@defcodeindex bt
+@end ifclear
+
+@ifset BashFeatures
+Este cap@'{@dotless{i}}tulo describe c@'omo usar la @sc{gnu} History Library
+interactivamente, desde el punto de vista de un usuario.
+Deber@'{@dotless{i}}a ser considerado una gu@'{@dotless{i}}a de usuario.
+Para informaci@'on sobre el uso de @sc{gnu} History Library en otros
+programas, consulta el @sc{gnu} Manual de la Readline Library.
+@end ifset
+@ifclear BashFeatures
+Este cap@'{@dotless{i}}tulo describe c@'omo usar la @sc{gnu} History Library
+interactivamete, desde el punto de vista del usuario.  Deber@'{@dotless{i}}a
+ser considerada una gu@'{@dotless{i}}a de usuario.  Para informaci@'on sobre
+el uso de la @{gnu} History Library en tus propios programas,
+@pxref{Programando con GNU History}.
+@end ifclear
+
+@ifset BashFeatures
+@menu
+* Servicios del Historial de Bash::  C@'omo te permite Bash manipular tu 
+                                       historial de instrucciones.
+* Instrucciones Integradas del Historial de Bash::  Las instrucciones 
+                                                      integradas de Bash que 
+                                                      manipulan el historial 
+                                                      deinstrucciones.
+* Interacci@'on con el Historial::  Qu@'e se siente al usar History como 
+                                      usuario.
+@end menu
+@end ifset
+@ifclear BashFeatures
+@menu
+* Interacci@'on con el Historial::  Qu@'e se siente al usar History como 
+                                      usuario.
+@end menu
+@end ifclear
+
+@ifset BashFeatures
+@node Servicios del Historial de Bash
+@section Servicios del Historial de Bash
+@cindex historial de instrucciones
+@cindex lista del historial
+
+Cuando la opci@'on @option{-o history} para la instrucci@'on integrada
+@code{set} est@'a habilitada (@pxref{La Instrucci@'on Integrada Set}), el
+int@'erprete proporciona acceso al @dfn{historial de instrucciones}, la
+lista de instrucciones tecleadas anteriormente.  El valor de la variable del
+int@'erprete @env{HISTSIZE} es usada como el n@'umero de instrucciones que
+guardar en una lista del historial.  El texto de las @env{$HISTSIZE}
+@'ultimas instrucciones (por defecto 500) es guardado.  El int@'erprete
+almacena cada instrucci@'on en la lista del historial antes de la
+expansi@'on de par@'ametros y de variables, pero tras realizar la
+expansi@'on de historial, sujeta a los valores de las variables del
+int@'erprete @env{HISTIGNORE} y @env{HISTCONTROL}.
+
+Cuando el int@'erprete se inicia, el historial es inicializado desde el
+archivo llamado por la variable @env{HISTFILE} (por defecto,
+@file{~/.bash_history}).  El archivo llamado por el valor de @env{HISTFILE}
+es cortado, si es necesario, para contener nada m@'as que el n@'umero de
+l@'{@dotless{i}}neas especificado por el valor de la variable
+@env{HISTFILESIZE}.  Cuando se cierra un int@'erprete con el historial
+habilitado, son copiadas las @'ultimas @env{$HISTSIZE} l@'{@dotless{i}}neas
+desde la lista del historial al archivo nombrado por @env{$HISTFILE}.  Si
+est@'a establecida (@pxref{Instrucciones Integradas de Bash}) la opci@'on
+del int@'erprete @code{histappend}, las l@'{@dotless{i}}neas son a@~nadidas
+al archivo del historial; en caso contrario es sobreescrito el archivo del
+historial.  Si @env{HISTFILE} est@'a sin establecer, o si el archivo del
+historial no se puede escribir, no se guarda el historial.  Despu@'es de
+guardar el historial, el archivo del historial es cortado para no contener
+m@'as de @env{$HISTFILESIZE} l@'{@dotless{i}}neas.  Si @env{HISTFILESIZE} no
+est@'a establecido, o est@'a establecido a nulo, o un valor no num@'erico, o
+un valor num@'erico menor que cero, no se corta el archivo del historial.
+
+Si el @env{HISTTIMEFORMAT} est@'a establecido, la informaci@'on de marca de
+tiempo asociada con cada entrada del historial es escrita al archivo del
+historial, marcada con el car@'acter de comentario del historial.  Cuando el
+archivo del historial es le@'{@dotless{i}}do, las l@'{@dotless{i}}neas que
+comienzan por el car@'acter de comentario del historial seguidas
+inmediatamente por un d@'{@dotless{i}}gito son interpretadas como marcas de
+tiempo por la siguiente entrada del historial.
+
+La instrucci@'on integrada @code{fc} puede ser usada para listar o editar y
+reejecutar una porci@'on de la lista del historial.  La instrucci@'on
+integrada @code{history} puede ser usada para mostrar o modificar la lista
+del historial y manipular el archivo del historial. Al usar la edici@'on en
+l@'{@dotless{i}}nea de @'ordenes, est@'an disponibles las instrucciones de
+b@'usqueda en cada modo de edici@'on que proporciona acceso a la lista del
+historial (@pxref{@'Ordenes para el Historial}).
+
+El int@'erprete proporciona control sobre qu@'e instrucciones son guardadas
+en la lista del historial.  Las variables @env{HISTCONTROL} y
+@env{HISTIGNORE} pueden ser establecidas para hacer que el int@'erprete solo
+guarde un subconjunto de las instrucciones introducidas.  La opci@'on del
+int@'erprete @code{cmdhist}, si est@'a habilitada, hace que el int@'erprete
+trate de guardar cada l@'{@dotless{i}}nea de una instrucci@'on de
+m@'ultiples l@'{@dotless{i}}neas en la misma entrada del historial,
+a@~nadiendo puntos y comas donde sea necesario para preservar la
+correcci@'on sint@'actica.  La opci@'on del int@'erprete @code{lithist} hace
+que el int@'erprete guarde la instrucci@'on con nuevas l@'{@dotless{i}}neas
+intercaladas en vez de puntos y comas.  La opci@'on integrada @code{shopt}
+es usada para habilitar estas opciones.  @xref{Instrucciones Integradas de
+Bash}, para una descripci@'on de @code{shopt}.
+
+@node Instrucciones Integradas del Historial de Bash
+@section Instrucciones Integradas del Historial de Bash
+@cindex instrucciones integradas de historial
+
+Bash proporciona dos instrucciones integradas que manipulan la lista del
+historial y el archivo del historial.
+
+@table @code
+
+@item fc
+@btindex fc
+@example
+@code{fc [-e @var{nombre-editor}] [-lnr] [@var{primera}] [@var{@'ultima}]}
+@code{fc -s [@var{pat}=@var{rem}] [@var{instrucci@'on}]}
+@end example
+
+La primera forma selecciona un rango de instrucciones desde @var{primera}
+hasta @var{@'ultima} de la lista del historial y lo muestra o edita y vuelve
+a ejecutarlo.  Tanto @var{primera} como @var{@'ultima} pueden ser
+especificadas como cadenas (para ubicar la instrucci@'on m@'as reciente que
+comienza por esa cadena) o como n@'umeros (un @'{@dotless{i}}ndice en la
+lista del historial, donde se usa un n@'umero negativo como desplazamiento
+del n@'umero de instrucci@'on actual).  Si @var{@'ultima} no es
+especificada, es establecida a @var{primera}.  Si @var{primera} no es
+especificada, es establecida a la anterior instrucci@'on para editar y
+@minus{}16 para listar.  Si se pasa la bandera @option{-l}, la instrucciones
+son listadas en la salida est@'andar.  La bandera @option{-n} suprime los
+n@'umeros de instrucciones cuando se listan.  La opci@'on @option{-r}
+invierte el orden del listado. De lo contrario, el editor pasado por
+@var{nombre-editor} es llamado en un sobre archivo que contiene esas
+instrucciones.  Si no se pasa @var{nombre-editor}, se usa el valor de la
+siguiente expansi@'on de variable: @code{$@{FCEDIT:-$@{EDITOR:-vi@}@}}.
+Esto dice que se use el valor de la variable @env{FCEDIT} si est@'a
+establecida, o el valor de la variable @env{EDITOR} si este est@'a
+establecido, o @code{vi} si ninguno est@'a establecido.  Cuando est@'a
+completada la edici@'on, las instrucciones editadas son mostradas y
+ejecutadas.
+
+En la segunda forma, @var{instrucci@'on} se vuelve a ejecutar despu@'es de
+que cada instancia de @var{pat} en la instrucci@'on seleccionada es
+reemplazada por @var{rem}. @var{instrucci@'on} se interpreta igual que
+@var{primera} arriba.
+
+Un alias @'util para usar con la instrucci@'on @code{fc} es @code{r='fc -s},
+para que teclear @samp{r cc} ejecuta la @'ultima instrucci@'on que comienza
+por @code{cc} y teclear @samp{r} vuelva a ejecutar la @'ultima instrucci@'on
+(@pxref{Aliases}).
+
+@item history
+@btindex history
+@example
+history [@var{n}]
+history -c
+history -d @var{desplazamiento}
+history [-anrw] [@var{nombre-de-archivo}]
+history -ps @var{arg}
+@end example
+
+Sin opciones muestra la lista del historial con n@'umeros de
+l@'{@dotless{i}}nea.  Las l@'{@dotless{i}}neas prefijadas con un @samp{*}
+han sido modificadas.  Un argumento de @var{n} lista solo las @'ultimas
+@var{n} l@'{@dotless{i}}neas.  Si la variable del int@'erprete
+@env{HISTTIMEFORMAT} est@'a establecida y no es nula, es usada como una
+cadena de formato por @var{strfttime} para mostrar la marca temporal
+asociada con cada entrada de historial mostrada.  Ning@'un
+vac@'{@dotless{i}}o intermedio es mostrado entre la marca temporal
+formateada y la l@'{@dotless{i}}nea del historial.
+
+Las opciones, si se proporcionan, tienen los siguientes significados:
+
+@table @code
+@item -c
+Limpia la lista del historial.  Esto puede ser combinado con las otras
+opciones para reemplazar la lista del historial completamente.
+
+@item -d @var{desplazamiento}
+Borra la entrada del historial en la posici@'on @var{desplazamiento}.
+@var{desplazamiento} debe ser especificado tal como aparece cuando se
+muestra el historial.
+
+@item -a
+A@~nade las nuevas l@'{@dotless{i}}neas de historial al archivo del
+historial.  Estas son l@'{@dotless{i}}neas de historial introducidas desde
+el comienzo de la actual sesi@'on de Bash, pero no a@~nadidas a@'un al
+archivo del historial.
+
+@item -n
+A@~nade las l@'{@dotless{i}}neas del historial no cargadas a@'un del archivo
+del historial a la lista actual del historial.  Estas son
+l@'{@dotless{i}}neas a@~nadidas al archivo del historial desde el comienzo
+de la actual sesi@'on de Bash.
+
+@item -r
+Lee el archivo del historial y a@~nade su contenido a la lista del
+historial.
+
+@item -w
+Escribe entera la lista del historial actual al archivo del historial.
+
+@item -p
+Realiza una sustituci@'on de historial en @var{arg}s y muestra el resultado
+en la salida est@'andar, sin guardar los resultados en la lista del
+historial.
+
+@item -s
+Los @var{arg}s son a@~nadidos al final de la lista del historial como una
+@'unica entrada.
+
+@end table
+
+Cuando alguna de las opciones @option{-w}, @option{-r}, @option{-a} o
+@option{-n} es usada, si se pasa @var{nombre-de-archivo}, entonces este es
+usado como el archivo del historial.  Si no, es usado el valor de la
+variable @env{HISTFILE}.
+
+@end table
+@end ifset
+
+@node Interacci@'on con el Historial
+@section Expansi@'on del Historial
+@cindex expansi@'on del historial
+
+La librer@'{@dotless{i}}a History proporciona una funcionalidad de
+expansi@'on de historial que es similar a la expansi@'on de historial
+proporcionada por @code{csh}.  Esta secci@'on describe la sintaxis usada
+para manipular la informaci@'on del historial.
+
+Las expansiones del historial introducen palabras desde la lista del
+historial al flujo de entrada, facilitando repetir instrucciones, insertar
+los argumentos para una instrucci@'on anterior en la l@'{@dotless{i}}nea de
+entrada actual o arreglar errores en las instrucciones anteriores
+r@'apidamente.
+
+@ifset BashFeatures
+La expansi@'on del historial es realizada inmediatamente despu@'es de que
+sea le@'{@dotless{i}}da una l@'{@dotless{i}}nea completa, antes de que el
+int@'erprete la divida en palabras.
+@end ifset
+
+La expansi@'on del historial tiene lugar en dos partes.  La primera es para
+determinar qu@'e l@'{@dotless{i}}nea de la lista del historial
+deber@'{@dotless{i}}a ser usada durante la sustituci@'on.  La segunda es
+para seleccionar porciones de esa l@'{@dotless{i}}nea para la inclusi@'on en
+la actual.  La l@'{@dotless{i}}nea seleccionada del historial es llamada el
+@dfn{evento}, y las porciones de esa l@'{@dotless{i}}nea sobre las que se
+act@'ua son llamadas @dfn{palabras}.  Varios @dfn{modificadores} est@'an
+disponibles para manipular las palabras seleccionadas.  La
+l@'{@dotless{i}}nea es dividida en palabras de la misma forma que hace Bash,
+para que varias palabras rodeadas por comillas sean consideradas una
+palabras.  Las expansiones del historial son introducidas por la aparici@'on
+del car@'acter de expansi@'on de historial, que es @samp{!} por defecto.
+@ifset BashFeatures
+Solo @samp{\} y @samp{'} pueden ser usados para escapar el car@'acter de
+expansi@'on del historial, pero el car@'acter de expansi@'on del historial
+tambi@'en es tratado como entrecomillado si precede inmediatamente a la
+comillas dobles de cierre en una cadena entrecomillada con comillas dobles. 
+@end ifset
+
+@ifset BashFeatures
+Varias opciones del int@'erprete que pueden ser habilitadas con la
+instrucci@'on integrada @code{shopt} (@pxref{Instrucciones Integradas de
+Bash}) pueden ser utilizadas para adaptar el comportamiento de la
+expansi@'on del historial.  Si la opci@'on del int@'erprete
+@code{histverify} est@'a habilitada, y se est@'a usando Readline, las
+sustituciones del historial no son pasadas inmediatamente al analizador del
+int@'erprete.  En su lugar, la l@'{@dotless{i}}nea expandida es vuelta a
+cargar en el b@'ufer de edici@'on de Readline para su posterior
+modificaci@'on.  Si se est@'a usando Readline, y la opci@'on del
+int@'erprete @code{histreedit} est@'a habilitada, se volver@'a a cargar una
+expansi@'on de historial fallida en el b@'ufer de edici@'on de Readline para
+su correcci@'on.  La opci@'on @option{-p} para la instrucci@'on integrada
+@code{history} puede ser usada para ver qu@'e har@'a una expansi@'on de
+historial antes de usarla.  La opci@'on @option{-s} para la instrucci@'on
+integrada @code{history} puede ser usada para a@~nadir instrucciones al
+final de la lista del historial sin realmente ejecutarlas, para que estas
+est@'en disponibles para volver a ser llamadas posteriormente.  Eso tiene la
+mayor utilidad en conjunto con Readline.
+
+El int@'erprete permite el control de varios caracteres usados por el
+mecanismo de expansi@'on del historial con la variable @code{histchars},
+como se explic@'o anteriormente  (@pxref{Variables de Bash}).  El
+int@'erprete usa el car@'acter de comentario del historial para se@~nalar
+las marcas del tiempo al escribir el archivo del historial.
+@end ifset
+
+@menu
+* Designadores de Eventos::  C@'omo especificar qu@'e l@'{@dotless{i}}nea 
+                               del historial usar.
+* Designadores de Palabras::  Especificando qu@'e palabras son de inter@'es.
+* Modificadores::            Modificando los resultados de la sustituci@'on.
+@end menu
+
+@node Designadores de Eventos
+@subsection Designadores de Eventos
+@cindex designadores de eventos
+
+Un designador de evento es una referencia a una l@'{@dotless{i}}nea de
+entrada en la lista del historial.  A no ser que la referencia sea absoluta,
+los eventos son relativos a la actual posici@'on en la lista del historial.
+@cindex eventos del historial
+
+@table @asis
+
+@item @code{!}
+@ifset BashFeatures
+Comienza una sustituci@'on del historial, excepto cuando lo sigue un
+espacio, tabulaci@'on, el final de l@'{@dotless{i}}nea, @samp{=} o @samp{(}
+(cuando la opci@'on del int@'erprete @code{extglob} es habilitada usando la
+instrucci@'on integrada @code{shopt}).
+@end ifset
+@ifclear BashFeatures
+Comienza una sustituci@'on del historial, excepto cuando lo sigue un
+espacio, tabulaci@'on, el final de l@'{@dotless{i}}nea o @samp{=}.
+@end ifclear
+
+@item @code{!@var{n}}
+Alude a la l@'{@dotless{i}}nea de instrucci@'on @var{n}.
+
+@item @code{!-@var{n}}
+Alude a la instrucci@'on @var{n} l@'{@dotless{i}}neas atr@'as.
+
+@item @code{!!}
+Alude a la instrucci@'on anterior.  Esto es un sin@'onimo de @samp{!-1}.
+
+@item @code{!@var{cadena}}
+Alude a la instrucci@'on m@'as reciente que precede a la actual posici@'on
+en la lista del historial que comienza por @var{cadena}.
+
+@item @code{!?@var{cadena}[?]}
+Alude a la instrucci@'on m@'as reciente que precede a la actual posici@'on
+en la lista del historial que contiene @var{cadena}.  El @samp{?} al final
+puede ser omitido si @var{cadena} es seguida inmediatamente por una nueva
+l@'{@dotless{i}}nea.
+
+@item @code{^@var{cadena1}^@var{cadena2}^}
+Sustituci@'on r@'apida.  Repite la @'ultima instrucci@'on, reemplazando
+@var{cadena1} por @var{cadena2}.  Equivalente a
+@code{!!:s/@var{cadena1}/@var{cadena2}/}.
+
+@item @code{!#}
+La l@'{@dotless{i}}nea de instrucci@'on completa escrita hasta ahora.
+
+@end table
+
+@node Designadores de Palabras
+@subsection Designadores de Palabras
+
+Los designadores de palabras son usados para seleccionar las palabras
+deseadas del evento.  Un @samp{:} separa la especificaci@'on de evento del
+designador de palabra.  Puede ser omitido si el designador de palabra
+empieza por @samp{^}, @samp{$}, @samp{*}, @samp{-} o @samp{%}.  Las palabras
+son numeradas desde el comienzo de la l@'{@dotless{i}}nea, con la primera
+palabra indicada por un 0 (cero).  Las palabras son insertadas en la
+l@'{@dotless{i}}nea actual separadas por espacios @'unicos.
+
+@need 0.75
+Por ejemplo,
+
+@table @code
+@item !!
+designa la instrucci@'on precedente.  Cuando escribes esto, la instrucci@'on
+precedente es repetida en su totalidad.
+
+@item !!:$
+designa el @'ultimo argumento de la instrucci@'on precedente.  Esto puede
+ser acortado a @code{!$}.
+
+@item !fi:2
+designa el segundo argumento de la instrucci@'on m@'as reciente que comienza
+por las letras @code{fi}.
+@end table
+
+@need 0.75
+Aqu@'{@dotless{i}} est@'an los designadores de palabras:
+ 
+@table @code
+
+@item 0 (cero)
+La palabra n@'umero @code{0}.  Para muchas aplicaciones, esto es la palabra
+de instrucci@'on.
+
+@item @var{n}
+La palabra n@'umero @var{n}.
+
+@item ^
+El primer argumento, es decir, palabra 1.
+
+@item $
+El @'ultimo argumento.
+
+@item %
+La palabra que coincide con la b@'usqueda @samp{?@var{string}?} m@'as
+reciente.
+
+@item @var{x}-@var{y}
+Un rango de palabras; @samp{-@var{y}} abrevia a @samp{0-@var{y}}.
+
+@item *
+Todas las palabras, excepto la n@'umero @code{0}.  Esto es un sin@'onimo de
+@samp{1-$}.  No es incorrecto usar @samp{*} si solo hay una palabra en el
+evento; la cadena vac@'{@dotless{i}}a es devuelta en ese caso.
+
+@item @var{x}*
+Abrevia @samp{@var{x}-$}
+
+@item @var{x}-
+Abrevia @samp{@var{x}-$} como @samp{@var{x}*}, pero omite la @'ultima
+palabra.
+
+@end table
+
+Si se proporciona un designador de palabra sin una especificaci@'on de
+evento, la anterior instrucci@'on es usada como el evento.
+
+@node Modificadores
+@subsection Modificadores
+
+Despu@'es del designador de palabra opcional, puedes a@~nadir una secuencia
+de uno o m@'as de los siguientes modificadores, cada uno precedido por un
+@samp{:}.
+
+@table @code
+
+@item h
+Elimina un componente de nombre de ruta al final, dejando solo la cabeza.
+
+@item t
+Elimina todos los componentes de ruta iniciales, dejando la cola.
+
+@item r
+Elimina un sufijo al final de la forma de @samp{.@var{sufijo}}, dejando el
+nombre base.
+
+@item e
+Elimina todo excepto el sufijo al final.
+
+@item p
+Imprime la nueva instrucci@'on pero no la ejecuta.
+
+@ifset BashFeatures
+@item q
+Entrecomilla las palabras sustituidas, escapando sustituciones adicionales.
+
+@item x
+Entrecomilla las palabras sustituidas como con @samp{q}, pero divide las
+palabras por espacios, tabulaciones y nuevas l@'{@dotless{i}}neas.
+@end ifset
+
+@item s/@var{viejo}/@var{nuevo}/
+Sustituye @var{nuevo} por la primera ocurrencia de @var{viejo} en la
+l@'{@dotless{i}}nea de evento.  Cualquier delimitador puede ser usado en
+lugar de @samp{/}.  El delimitador puede ser entrecomillado en @var{viejo} y
+@var{nuevo} con una @'unica barra invertida.  Si @samp{&} aparece en
+@var{nuevo}, es reemplazado por @var{viejo}.  Usa @'unica barra invertida
+entrecomillar@'a el @samp{&}.  El delimitador final es opcional si es el
+@'ultimo car@'acter en la l@'{@dotless{i}}nea de entrada.
+
+@item &
+Repite la sustituci@'on anterior.
+
+@item g
+@itemx a
+Hace que los cambios sean aplicados sobre la l@'{@dotless{i}}nea de evento
+completa.  Usado en conjunto con @samp{s}, como en
+@code{gs/@var{viejo}/@var{nuevo}/}, o con @samp{&}.
+
+@item G
+Aplica el siguiente modificador @samp{s} una vez para cada palabra en el
+evento.
+
+@end table
