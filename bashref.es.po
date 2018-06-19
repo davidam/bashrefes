@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2017-12-23 20:30+0100\n"
-"PO-Revision-Date: 2018-06-19 09:08+0200\n"
+"PO-Revision-Date: 2018-06-19 09:28+0200\n"
 "Language-Team: Libremanuals\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5553,25 +5553,28 @@ msgid ""
 "case modification operation is applied to each member of the array in turn, and "
 "the expansion is the resultant list."
 msgstr ""
-"La expansi@'on modifica las may@'usculas y min@'usculas de los caracteres "
-"alfab@'eticos.  El @var{patr@'on} se expande para producir un patr@'on de la "
-"misma manera que en la expansi@'on de nombre de archivo.  Cada car@'acter en el "
-"valor expandido de @var{par@'ametro} es comprobado contra @var{patr@'on}, y, si "
-"coincide con el patr@'on, se alterna entre may@'usculas y min@'usculas.  El "
-"patr@'on no deber@'{@dotless{i}}a tratar de coincidir con m@'as de un car@'acter.  El "
-"operador @samp{^} convierte ĺetras min@'usculas que coinciden con @var{patr@'on} "
-"a may@'usculas; el operador @samp{,} convierte letras may@'usculas coincidentes "
-"a min@'usculas.  Las expansiones @samp{^^} y @samp{,,} convierten cada "
-"car@'acter coincidente en el valor expandido; las las expansiones @samp{^} y "
-"@samp{,} coinciden y convierten solo el primer car@'acter en el valor "
-"expandido.  Si se omite @var{patr@'on}, se trata como un @samp{?}, que coincide "
-"con cualquier car@'acter.  Si @var{par@'ametro} es @samp{@@} o @samp{*}, la "
-"operaci@'on de modificaci@'on de alternaci@'on entre may@'usculas y min@'usculas "
-"se aplica a cada par@'ametro posicional en orden y la expansi@'on es la lista "
-"resultante.  Si @var{par@'ametro} es una variable de vector subindexada con "
-"@samp{@@} o @samp{*}, la operaci@'on de modificaci@'on de alternaci@'on entre "
-"may@'usculas y min@'usculas se aplica a cada miembro en orden y la expansi@'on "
-"es la lista resultante."
+"La expansi@'on modifica las may@'usculas y min@'usculas de los\n"
+"caracteres alfab@'eticos.  El @var{patr@'on} se expande para producir\n"
+"un patr@'on de la misma manera que en la expansi@'on de nombre de\n"
+"archivo.  Cada car@'acter en el valor expandido de @var{par@'ametro}\n"
+"es comprobado contra @var{patr@'on}, y, si coincide con el patr@'on,\n"
+"se alterna entre may@'usculas y min@'usculas.  El patr@'on no\n"
+"deber@'{@dotless{i}}a tratar de coincidir con m@'as de un car@'acter.\n"
+"El operador @samp{^} convierte letras min@'usculas que coinciden con\n"
+"@var{patr@'on} a may@'usculas; el operador @samp{,} convierte letras\n"
+"may@'usculas coincidentes a min@'usculas.  Las expansiones @samp{^^} y\n"
+"@samp{,,} convierten cada car@'acter coincidente en el valor\n"
+"expandido; las expansiones @samp{^} y @samp{,} coinciden y\n"
+"convierten solo el primer car@'acter en el valor expandido.  Si se\n"
+"omite @var{patr@'on}, se trata como un @samp{?}, que coincide con\n"
+"cualquier car@'acter.  Si @var{par@'ametro} es @samp{@@} o @samp{*},\n"
+"la operaci@'on de modificaci@'on de alternaci@'on entre may@'usculas y\n"
+"min@'usculas se aplica a cada par@'ametro posicional en orden y la\n"
+"expansi@'on es la lista resultante.  Si @var{par@'ametro} es una\n"
+"variable de vector subindexada con @samp{@@} o @samp{*}, la\n"
+"operaci@'on de modificaci@'on de alternaci@'on entre may@'usculas y\n"
+"min@'usculas se aplica a cada miembro en orden y la expansi@'on es la\n"
+"lista resultante."
 
 #. type: item
 #: bashref.texi:2205
@@ -5763,8 +5766,9 @@ msgid ""
 "If the substitution appears within double quotes, word splitting and filename "
 "expansion are not performed on the results."
 msgstr ""
-"Si la sustituci@'on aparece entre comillas dobles, la divisi@'on de palabras y "
-"la expansi@'on de nombre de archivo no se realizan en los resultados."
+"Si la sustituci@'on aparece entre comillas dobles, la divisi@'on de\n"
+"palabras y la expansi@'on de nombre de archivo no se realiza en los\n"
+"resultados."
 
 #. type: cindex
 #: bashref.texi:2282
@@ -5778,9 +5782,9 @@ msgid ""
 "Arithmetic expansion allows the evaluation of an arithmetic expression and the "
 "substitution of the result.  The format for arithmetic expansion is:"
 msgstr ""
-"La expansi@'on aritm@'etica permite la evaluaci@'on de una expresi@'on "
-"aritm@'etica y la sustituci@'on del resultado.  El formato para la expansi@'on "
-"aritm@'etica es:"
+"La expansi@'on aritm@'etica permite la evaluaci@'on de una expresi@'on\n"
+"aritm@'etica y la sustituci@'on del resultado.  El formato para la\n"
+"expansi@'on aritm@'etica es:"
 
 #. type: example
 #: bashref.texi:2290
@@ -6414,9 +6418,9 @@ msgid ""
 "directs both standard output (file descriptor 1) and standard error (file "
 "descriptor 2) to the file @var{dirlist}, while the command"
 msgstr ""
-"dirige tanto la salida est@'andar (descriptor de archivo 1) como el error "
-"est@'andar (descriptor de archivo 2) al archivo @var{lista-de-dir}, mientras que "
-"la instrucci@'on"
+"dirige tanto la salida est@'andar (descriptor de archivo 1) como el\n"
+"error est@'andar (descriptor de archivo 2) al archivo\n"
+"@var{lista-de-dir}, mientras que la instrucci@'on:"
 
 #. type: example
 #: bashref.texi:2592
@@ -6874,7 +6878,7 @@ msgstr "Duplicando Descriptores de Archivo"
 #. type: Plain text
 #: bashref.texi:2774 bashref.texi:2805 bashref.texi:2823
 msgid "The redirection operator"
-msgstr "El operador de redirecci@'on"
+msgstr "El operador de redirecci@'on:"
 
 #. type: example
 #: bashref.texi:2776
@@ -6903,7 +6907,7 @@ msgstr ""
 #. type: Plain text
 #: bashref.texi:2789
 msgid "The operator"
-msgstr "El operador"
+msgstr "El operador:"
 
 #. type: example
 #: bashref.texi:2791
@@ -6957,7 +6961,7 @@ msgstr ""
 #. type: Plain text
 #: bashref.texi:2814
 msgid "Similarly, the redirection operator"
-msgstr "De forma similar, el operador de redirecci@'on"
+msgstr "De forma similar, el operador de redirecci@'on:"
 
 #. type: example
 #: bashref.texi:2816
