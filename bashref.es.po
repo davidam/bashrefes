@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2017-12-23 20:30+0100\n"
-"PO-Revision-Date: 2018-06-21 04:09+0200\n"
+"PO-Revision-Date: 2018-06-21 04:44+0200\n"
 "Language-Team: Libremanuals\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10270,8 +10270,10 @@ msgid ""
 "Evaluate @var{callback} each time @var{quantum}P lines are read.  The @option{-"
 "c} option specifies @var{quantum}."
 msgstr ""
-"Eval@'ua @var{retrollamada} cada vez que @var{cuant@'{@dotless{i}}a} l@'{@dotless{i}}neas son le@'{@dotless{i}}das.  "
-"La opci@'on @option{-c} especifica @var{cuant@'{@dotless{i}}a}."
+"Eval@'ua @var{retrollamada} (@samp{callback}) cada vez que\n"
+"@var{cuant@'{@dotless{i}}a} l@'{@dotless{i}}neas son\n"
+"le@'{@dotless{i}}das.  La opci@'on @option{-c} especifica\n"
+"@var{cuant@'{@dotless{i}}a}."
 
 #. type: item
 #: bashref.texi:4297 bashref.texi:4561 bashref.texi:6258 bashref.texi:7104
@@ -10283,7 +10285,8 @@ msgstr "-c"
 #: bashref.texi:4299
 msgid "Specify the number of lines read between each call to @var{callback}."
 msgstr ""
-"Especifica el n@'umero de l@'{@dotless{i}}neas le@'{@dotless{i}}das entre cada llamada a @var{callback}."
+"Especifica el n@'umero de l@'{@dotless{i}}neas le@'{@dotless{i}}das\n"
+"entre cada llamada a @var{retrollamada} (@samp{callback})."
 
 #. type: table
 #: bashref.texi:4308
@@ -10294,11 +10297,14 @@ msgid ""
 "arguments.  @var{callback} is evaluated after the line is read but before the "
 "array element is assigned."
 msgstr ""
-"Si @option{-C} se proporciona sin @option{-c}, la cuant@'{@dotless{i}}a por defecto es "
-"5000.  Cuando se eval@'ua @var{retrollamada}, es proporcionado el @'{@dotless{i}}ndice del "
-"siguiente elemento vector a ser asignado y la l@'{@dotless{i}}nea a ser asignada a ese "
-"elemento como argumentos adicionales.  @var{retrollamada} se eval@'ua despu@'es "
-"de que la l@'{@dotless{i}}nea sea le@'{@dotless{i}}da, pero antes de que el elemento vector sea asignado."
+"Si @option{-C} se proporciona sin @option{-c}, la\n"
+"cuant@'{@dotless{i}}a por defecto es 5000.  Cuando se eval@'ua\n"
+"@var{retrollamada} (@samp{callback}), es proporcionado el\n"
+"@'{@dotless{i}}ndice del siguiente elemento vector a ser asignado y la\n"
+"l@'{@dotless{i}}nea a ser asignada a ese elemento como argumentos\n"
+"adicionales.  @var{retrollamada} se eval@'ua despu@'es de que la\n"
+"l@'{@dotless{i}}nea sea le@'{@dotless{i}}da, pero antes de que el\n"
+"elemento vector sea asignado."
 
 #. type: table
 #: bashref.texi:4311
