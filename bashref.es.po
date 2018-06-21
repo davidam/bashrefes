@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2017-12-23 20:30+0100\n"
-"PO-Revision-Date: 2018-06-20 18:47+0200\n"
+"PO-Revision-Date: 2018-06-21 04:03+0200\n"
 "Language-Team: Libremanuals\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15772,7 +15772,9 @@ msgstr ""
 #. type: Plain text
 #: bashref.texi:6374
 msgid "So, typically, your @file{~/.bash_profile} contains the line"
-msgstr "As@'{@dotless{i}}, t@'{@dotless{i}}picamente, su @file{~/.bash_profile} contiene la l@'{@dotless{i}}nea"
+msgstr ""
+"As@'{@dotless{i}}, t@'{@dotless{i}}picamente, su\n"
+"@file{~/.bash_profile} contiene la l@'{@dotless{i}}nea:"
 
 #. type: example
 #: bashref.texi:6376
@@ -18054,12 +18056,13 @@ msgid ""
 "the command number is the position in the sequence of commands executed during "
 "the current shell session."
 msgstr ""
-"El n@'umero de instrucci@'on y el n@'umero de historial son normalmente "
-"diferentes: el n@'umero de historial de una instrucci@'on es su posici@'on en la "
-"lista del historial, que puede incluir instrucciones recuperadas del archivo del "
-"historial (@pxref{Servicios del Historial de Bash}), mientras que el n@'umero de "
-"instrucci@'on es la posici@'on en la secuencia de instrucciones ejecutada "
-"durante la sesi@'on actual del int@'erprete."
+"El n@'umero de instrucci@'on y el n@'umero de historial son\n"
+"normalmente diferentes: el n@'umero de historial de una instrucci@'on\n"
+"es su posici@'on en la lista del historial, que puede incluir\n"
+"instrucciones recuperadas del archivo del historial (@pxref{Servicios\n"
+"del Historial de Bash}), mientras que el n@'umero de instrucci@'on es\n"
+"la posici@'on en la secuencia de instrucciones ejecutadas durante la\n"
+"sesi@'on actual del int@'erprete."
 
 #. type: Plain text
 #: bashref.texi:7264
@@ -18795,10 +18798,10 @@ msgid ""
 "interrupt the @code{wait} builtin and cause it to return immediately.  The trap "
 "command is run once for each child that exits."
 msgstr ""
-"La llegada de @code{SIGCHLD} cuando una trap est@'a establecida en "
-"@code{SIGCHLD} no interrumpe la instrucci@'on integrada @code{wait} y hace que "
-"retorne inmediatamente.  La instrucci@'on trap es ejecutada una vez por cada "
-"cada hijo que finalice."
+"La llegada de @code{SIGCHLD} cuando una trap est@'a establecida en\n"
+"@code{SIGCHLD} no interrumpe la instrucci@'on integrada @code{wait} y\n"
+"hace que retorne inmediatamente.  La instrucci@'on trap es ejecutada\n"
+"una vez por cada hijo que finalice."
 
 #. type: enumerate
 #: bashref.texi:7594
@@ -18838,10 +18841,10 @@ msgid ""
 "if @code{FCEDIT} is unset, rather than defaulting directly to @code{ed}.  "
 "@code{fc} uses @code{ed} if @code{EDITOR} is unset."
 msgstr ""
-"La instrucci@'on integrada @code{fc} comprueba @code{$EDITOR} como un programa "
-"para editar entrada de historial si @code{FCEDIT} est@'a sin establecer, en vez "
-"de recurrir directamente a @code{ed}.  @code{fc} usa @code{ed} si @code{EDITOR} "
-"est@'a sin establecer."
+"La instrucci@'on integrada @code{fc} comprueba @code{$EDITOR} como un\n"
+"programa para editar entrada de historial si @code{FCEDIT} est@'a sin\n"
+"establecer, en vez de recurrir directamente a @code{ed}.  @code{fc}\n"
+"usa @code{ed} si la variable @code{EDITOR} est@'a sin establecer."
 
 #. type: enumerate
 #: bashref.texi:7615
