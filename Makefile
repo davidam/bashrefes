@@ -38,3 +38,6 @@ actualiza_pot:
 	po4a-gettextize -f texinfo -m $(BASHREF) -p $(BASHREF_POT)
 	po4a-gettextize -f texinfo -m $(HSUSER) -p $(HSUSER_POT)
 	po4a-gettextize -f texinfo -m $(RLUSER) -p $(RLUSER_POT)
+
+clean: 
+	rm -f *.dvi *.aux *.cps *.kys *.toc *.vrs *.cp *.ky *.log *.vr bashref.es.texi *.pdf *.tmp*
