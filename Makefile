@@ -24,10 +24,6 @@ html: texi
 info: texi
 	makeinfo $(BASHREF_ES)
 
-libro: texi
-	sed -i "/Version @value{VERSION}/ a\\\nPuede descargar las fuentes del documento desde\nhttps://notabug.org/jorgesumle/bashrefes" $(BASHREF_ES)
-	texi2pdf $(BASHREF_ES)
-
 texi:
 	po4a-translate -f texinfo -m $(BASHREF) -p $(BASHREF_PO) -l $(BASHREF_ES)
 	po4a-translate -f texinfo -m $(RLUSER) -p $(RLUSER_PO) -l $(RLUSER_ES)
