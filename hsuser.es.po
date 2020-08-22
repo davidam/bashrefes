@@ -1,21 +1,20 @@
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Copyright (C) 2019 Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# Jorge Maldonado Ventura <jorgesumle@freakspot.net>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-01-24 17:11+0100\n"
-"PO-Revision-Date: 2018-06-21 08:16+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2019-01-08 01:16+0100\n"
+"PO-Revision-Date: 2019-01-11 15:25+0100\n"
+"Last-Translator: Jorge Maldonado Ventura <jorgesumle@freakspot.net>\n"
+"Language-Team: C <kde-i18n-doc@kde.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
-"Last-Translator: Jorge Maldonado Ventura <jorgesumle@freakspot.net>\n"
+"X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: es\n"
 
 #. type: chapter
 #: hsuser.texi:26 hsuser.texi:27
@@ -31,11 +30,11 @@ msgid ""
 "guide.  For information on using the @sc{gnu} History Library in other "
 "programs, see the @sc{gnu} Readline Library Manual."
 msgstr ""
-"Este cap@'{@dotless{i}}tulo describe c@'omo usar la @sc{gnu} History Library "
-"interactivamente, desde el punto de vista de un usuario.  Deber@'{@dotless{i}}a ser "
-"considerado una gu@'{@dotless{i}}a de usuario.  Para informaci@'on sobre el uso de @sc{gnu} "
-"History Library en otros programas, consulta el @sc{gnu} Manual de la "
-"Readline Library."
+"Este capítulo describe cómo usar la @sc{gnu} History Library "
+"interactivamente, desde el punto de vista de un usuario.  "
+"Debería ser considerado una guía de usuario.  "
+"Para información sobre el uso de @sc{gnu} History Library en otros "
+"programas, consulta el @sc{gnu} Manual de la Readline Library."
 
 #. type: ifclear
 #: hsuser.texi:45
@@ -45,11 +44,11 @@ msgid ""
 "guide.  For information on using the @sc{gnu} History Library in your own "
 "programs, @pxref{Programming with GNU History}."
 msgstr ""
-"Este cap@'{@dotless{i}}tulo describe c@'omo usar la @sc{gnu} History Library "
-"interactivamete, desde el punto de vista del usuario.  Deber@'{@dotless{i}}a ser "
-"considerada una gu@'{@dotless{i}}a de usuario.  Para informaci@'on sobre el uso de la @{gnu} "
-"History Library en tus propios programas, @pxref{Programando con GNU "
-"History}."
+"Este capítulo describe cómo usar la @sc{gnu} History Library "
+"interactivamete, desde el punto de vista del usuario.  Debería "
+"ser considerada una guía de usuario.  Para información sobre "
+"el uso de la @{gnu} History Library en tus propios programas, "
+"@pxref{Programando con GNU History}."
 
 #. type: section
 #: hsuser.texi:54 hsuser.texi:63 hsuser.texi:64
@@ -60,7 +59,7 @@ msgstr "Servicios del Historial de Bash"
 #. type: menuentry
 #: hsuser.texi:54
 msgid "How Bash lets you manipulate your command history."
-msgstr "C@'omo te permite Bash manipular tu historial de instrucciones."
+msgstr "Cómo te permite Bash manipular tu historial de instrucciones."
 
 #. type: section
 #: hsuser.texi:54 hsuser.texi:129 hsuser.texi:130
@@ -76,15 +75,15 @@ msgstr ""
 "instrucciones."
 
 #. type: node
-#: hsuser.texi:54 hsuser.texi:59 hsuser.texi:239
+#: hsuser.texi:54 hsuser.texi:59 hsuser.texi:249
 #, no-wrap
 msgid "History Interaction"
-msgstr "Interacci@'on con el Historial"
+msgstr "Interacción con el Historial"
 
 #. type: menuentry
 #: hsuser.texi:54 hsuser.texi:59
 msgid "What it feels like using History as a user."
-msgstr "Qu@'e se siente al usar History como usuario."
+msgstr "Qué se siente al usar History como usuario."
 
 #. type: cindex
 #: hsuser.texi:65
@@ -111,16 +110,17 @@ msgid ""
 "subject to the values of the shell variables @env{HISTIGNORE} and "
 "@env{HISTCONTROL}."
 msgstr ""
-"Cuando la opci@'on @option{-o history} para la instrucci@'on integrada "
-"@code{set} est@'a habilitada (@pxref{La Instrucci@'on Integrada Set}), el "
-"int@'erprete proporciona acceso al @dfn{historial de instrucciones}, la lista "
-"de instrucciones tecleadas anteriormente.  El valor de la variable del "
-"int@'erprete @env{HISTSIZE} es usada como el n@'umero de instrucciones que "
-"guardar en una lista del historial.  El texto de las @env{$HISTSIZE} @'ultimas "
-"instrucciones (por defecto 500) es guardado.  El int@'erprete almacena cada "
-"instrucci@'on en la lista del historial antes de la expansi@'on de par@'ametros y "
-"de variables, pero tras realizar la expansi@'on de historial, sujeta a los "
-"valores de las variables del int@'erprete @env{HISTIGNORE} y @env{HISTCONTROL}."
+"Cuando la opción @option{-o history} para la instrucción integrada "
+"@code{set} está habilitada (@pxref{La Instrucción Integrada Set}), el "
+"intérprete proporciona acceso al @dfn{historial de instrucciones}, la "
+"lista de instrucciones tecleadas anteriormente.  El valor de la variable del "
+"intérprete @env{HISTSIZE} es usada como el número de instrucciones que "
+"guardar en una lista del historial.  El texto de las @env{$HISTSIZE} "
+"últimas instrucciones (por defecto 500) es guardado.  El intérprete "
+"almacena cada instrucción en la lista del historial antes de la "
+"expansión de parámetros y de variables, pero tras realizar la "
+"expansión de historial, sujeta a los valores de las variables del "
+"intérprete @env{HISTIGNORE} y @env{HISTCONTROL}."
 
 #. type: ifset
 #: hsuser.texi:99
@@ -140,22 +140,23 @@ msgid ""
 "a non-numeric value, or a numeric value less than zero, the history file is "
 "not truncated."
 msgstr ""
-"Cuando el int@'erprete se inicia, el historial es inicializado desde el "
+"Cuando el intérprete se inicia, el historial es inicializado desde el "
 "archivo llamado por la variable @env{HISTFILE} (por defecto, @file{~/."
 "bash_history}).  El archivo llamado por el valor de @env{HISTFILE} es "
-"cortado, si es necesario, para contener nada m@'as que el n@'umero de l@'{@dotless{i}}neas "
-"especificado por el valor de la variable @env{HISTFILESIZE}.  Cuando se "
-"cierra un int@'erprete con el historial habilitado, son copiadas las @'ultimas "
-"@env{$HISTSIZE} l@'{@dotless{i}}neas desde la lista del historial al archivo nombrado por "
-"@env{$HISTFILE}.  Si est@'a establecida (@pxref{Instrucciones Integradas de "
-"Bash}) la opci@'on del int@'erprete @code{histappend}, las l@'{@dotless{i}}neas son a@~nadidas "
+"cortado, si es necesario, para contener nada más que el número de "
+"líneas especificado por el valor de la variable "
+"@env{HISTFILESIZE}.  Cuando se cierra un intérprete con el historial "
+"habilitado, son copiadas las últimas @env{$HISTSIZE} líneas "
+"desde la lista del historial al archivo nombrado por @env{$HISTFILE}.  Si "
+"está establecida (@pxref{Instrucciones Integradas de Bash}) la opción "
+"del intérprete @code{histappend}, las líneas son añadidas "
 "al archivo del historial; en caso contrario es sobreescrito el archivo del "
-"historial.  Si @env{HISTFILE} est@'a sin establecer, o si el archivo del "
-"historial no se puede escribir, no se guarda el historial.  Despu@'es de "
+"historial.  Si @env{HISTFILE} está sin establecer, o si el archivo del "
+"historial no se puede escribir, no se guarda el historial.  Después de "
 "guardar el historial, el archivo del historial es cortado para no contener "
-"m@'as de @env{$HISTFILESIZE} l@'{@dotless{i}}neas.  Si @env{HISTFILESIZE} no est@'a "
-"establecido, o est@'a establecido a nulo, o un valor no num@'erico, o un valor "
-"num@'erico menor que cero, no se corta el archivo del historial."
+"más de @env{$HISTFILESIZE} líneas.  Si @env{HISTFILESIZE} no "
+"está establecido, o está establecido a nulo, o un valor no numérico, o "
+"un valor numérico menor que cero, no se corta el archivo del historial."
 
 #. type: ifset
 #: hsuser.texi:106
@@ -166,12 +167,13 @@ msgid ""
 "with the history comment character followed immediately by a digit are "
 "interpreted as timestamps for the following history entry."
 msgstr ""
-"Si el @env{HISTTIMEFORMAT} est@'a establecido, la informaci@'on de marca de "
+"Si el @env{HISTTIMEFORMAT} está establecido, la información de marca de "
 "tiempo asociada con cada entrada del historial es escrita al archivo del "
-"historial, marcada con el car@'acter de comentario del historial.  Cuando el "
-"archivo del historial es le@'{@dotless{i}}do, las l@'{@dotless{i}}neas que comienzan por el car@'acter de "
-"comentario del historial seguidas inmediatamente por un d@'{@dotless{i}}gito son "
-"interpretadas como marcas de tiempo por la siguiente entrada del historial."
+"historial, marcada con el carácter de comentario del historial.  Cuando el "
+"archivo del historial es leído, las líneas que "
+"comienzan por el carácter de comentario del historial seguidas "
+"inmediatamente por un dígito son interpretadas como marcas de "
+"tiempo por la siguiente entrada del historial."
 
 #. type: ifset
 #: hsuser.texi:114
@@ -182,13 +184,13 @@ msgid ""
 "using command-line editing, search commands are available in each editing "
 "mode that provide access to the history list (@pxref{Commands For History})."
 msgstr ""
-"La instrucci@'on integrada @code{fc} puede ser usada para listar o editar y "
-"reejecutar una porci@'on de la lista del historial.  La instrucci@'on integrada "
-"@code{history} puede ser usada para mostrar o modificar la lista del "
-"historial y manipular el archivo del historial. Al usar la edici@'on en l@'{@dotless{i}}nea "
-"de @'ordenes, est@'an disponibles las instrucciones de b@'usqueda en cada modo de "
-"edici@'on que proporciona acceso a la lista del historial (@pxref{@'Ordenes para "
-"el Historial})."
+"La instrucción integrada @code{fc} puede ser usada para listar o editar y "
+"reejecutar una porción de la lista del historial.  La instrucción "
+"integrada @code{history} puede ser usada para mostrar o modificar la lista "
+"del historial y manipular el archivo del historial. Al usar la edición en "
+"línea de órdenes, están disponibles las instrucciones de "
+"búsqueda en cada modo de edición que proporciona acceso a la lista del "
+"historial (@pxref{Órdenes para el Historial})."
 
 #. type: ifset
 #: hsuser.texi:128
@@ -201,20 +203,25 @@ msgid ""
 "necessary to preserve syntactic correctness.  The @code{lithist} shell "
 "option causes the shell to save the command with embedded newlines instead "
 "of semicolons.  The @code{shopt} builtin is used to set these options.  "
-"@xref{Bash Builtins}, for a description of @code{shopt}."
+"@xref{The Shopt Builtin}, for a description of @code{shopt}."
 msgstr ""
-"El int@'erprete proporciona control sobre qu@'e instrucciones son guardadas en "
+"El intérprete proporciona control sobre qué instrucciones son guardadas"
+" en "
 "la lista del historial.  Las variables @env{HISTCONTROL} y @env{HISTIGNORE} "
-"pueden ser establecidas para hacer que el int@'erprete solo guarde un "
-"subconjunto de las instrucciones introducidas.  La opci@'on del int@'erprete "
-"@code{cmdhist}, si est@'a habilitada, hace que el int@'erprete trate de guardar "
-"cada l@'{@dotless{i}}nea de una instrucci@'on de m@'ultiples l@'{@dotless{i}}neas en la misma entrada del "
-"historial, a@~nadiendo puntos y comas donde sea necesario para preservar la "
-"correcci@'on sint@'actica.  La opci@'on del int@'erprete @code{lithist} hace que el "
-"int@'erprete guarde la instrucci@'on con nuevas l@'{@dotless{i}}neas intercaladas en vez de "
-"puntos y comas.  La opci@'on integrada @code{shopt} es usada para habilitar "
-"estas opciones.  @xref{Instrucciones Integradas de Bash}, para una "
-"descripci@'on de @code{shopt}."
+"pueden ser establecidas para hacer que el intérprete solo guarde un "
+"subconjunto de las instrucciones introducidas.  La opción del intérprete "
+"@code{cmdhist}, si está habilitada, hace que el intérprete trate de"
+" guardar "
+"cada línea de una instrucción de múltiples"
+" líneas en la misma entrada del "
+"historial, añadiendo puntos y comas donde sea necesario para preservar la "
+"corrección sintáctica.  La opción del intérprete @code{lithist} hace"
+" que el "
+"intérprete guarde la instrucción con nuevas líneas"
+" intercaladas en vez de "
+"puntos y comas.  La opción integrada @code{shopt} es usada para habilitar "
+"estas opciones.  @xref{La Instrucción Integrada Shopt}, para una "
+"descripción de @code{shopt}."
 
 #. type: cindex
 #: hsuser.texi:131
@@ -244,8 +251,8 @@ msgid ""
 "@code{fc [-e @var{ename}] [-lnr] [@var{first}] [@var{last}]}\n"
 "@code{fc -s [@var{pat}=@var{rep}] [@var{command}]}\n"
 msgstr ""
-"@code{fc [-e @var{nombre-editor}] [-lnr] [@var{primera}] [@var{@'ultima}]}\n"
-"@code{fc -s [@var{pat}=@var{rem}] [@var{instrucci@'on}]}\n"
+"@code{fc [-e @var{nombre-editor}] [-lnr] [@var{primera}] [@var{última}]}\n"
+"@code{fc -s [@var{pat}=@var{rem}] [@var{instrucción}]}\n"
 
 #. type: table
 #: hsuser.texi:164
@@ -255,8 +262,8 @@ msgid ""
 "@var{first} and @var{last} may be specified as a string (to locate the most "
 "recent command beginning with that string) or as a number (an index into the "
 "history list, where a negative number is used as an offset from the current "
-"command number).  If @var{last} is not specified it is set to @var{first}.  "
-"If @var{first} is not specified it is set to the previous command for "
+"command number).  If @var{last} is not specified, it is set to @var{first}.  "
+"If @var{first} is not specified, it is set to the previous command for "
 "editing and @minus{}16 for listing.  If the @option{-l} flag is given, the "
 "commands are listed on standard output.  The @option{-n} flag suppresses the "
 "command numbers when listing.  The @option{-r} flag reverses the order of "
@@ -268,28 +275,30 @@ msgid ""
 "is set.  When editing is complete, the edited commands are echoed and "
 "executed."
 msgstr ""
-"La primera forma selecciona un rango de instrucciones desde la\n"
-"@var{primera} hasta la @var{@'ultima} de la lista del historial y lo\n"
-"muestra o edita y vuelve a ejecutarlo.  Tanto la @var{primera} como la\n"
-"@var{@'ultima} pueden ser especificadas como cadenas (para ubicar la\n"
-"instrucci@'on m@'as reciente que comienza por esa cadena) o como\n"
-"n@'umeros (un @'{@dotless{i}}ndice en la lista del historial, donde se\n"
-"usa un n@'umero negativo como desplazamiento del n@'umero de\n"
-"instrucci@'on actual).  Si @var{@'ultima} no es especificada, es\n"
-"establecida a @var{primera}.  Si @var{primera} no es especificada, es\n"
-"establecida a la anterior instrucci@'on para editar y @minus{}16 para\n"
-"listar.  Si se pasa la bandera @option{-l}, la instrucciones son\n"
-"listadas en la salida est@'andar.  La bandera @option{-n} suprime los\n"
-"n@'umeros de instrucciones cuando se listan.  La opci@'on @option{-r}\n"
-"invierte el orden del listado. De lo contrario, el editor pasado por\n"
-"@var{nombre-editor} es llamado en un sobre archivo que contiene esas\n"
-"instrucciones.  Si no se pasa @var{nombre-editor}, se usa el valor de\n"
-"la siguiente expansi@'on de variable:\n"
-"@code{$@{FCEDIT:-$@{EDITOR:-vi@}@}}.  Esto dice que se use el valor de\n"
-"la variable @env{FCEDIT} si est@'a establecida, o el valor de la\n"
-"variable @env{EDITOR} si este est@'a establecido, o @code{vi} si\n"
-"ninguno est@'a establecido.  Cuando est@'a completada la edici@'on,\n"
-"las instrucciones editadas son mostradas y ejecutadas."
+"La primera forma selecciona un rango de instrucciones desde @var{primera} "
+"hasta @var{última} de la lista del historial y lo muestra o edita y vuelve"
+" a "
+"ejecutarlo.  Tanto @var{primera} como @var{última} pueden ser especificadas "
+"como cadenas (para ubicar la instrucción más reciente que comienza por"
+" esa "
+"cadena) o como números (un índice en la lista del historial,"
+" donde se usa un "
+"número negativo como desplazamiento del número de instrucción actual). "
+" Si "
+"@var{última} no es especificada, es establecida a @var{primera}.  Si "
+"@var{primera} no es especificada, es establecida a la anterior instrucción "
+"para editar y @minus{}16 para listar.  Si se pasa la bandera @option{-l}, la "
+"instrucciones son listadas en la salida estándar.  La bandera @option{-n} "
+"suprime los números de instrucciones cuando se listan.  La opción"
+" @option{-"
+"r} invierte el orden del listado. De lo contrario, el editor pasado por "
+"@var{nombre-editor} es llamado en un sobre archivo que contiene esas "
+"instrucciones.  Si no se pasa @var{nombre-editor}, se usa el valor de la "
+"siguiente expansión de variable: @code{$@{FCEDIT:-$@{EDITOR:-vi@}@}}.  Esto "
+"dice que se use el valor de la variable @env{FCEDIT} si está establecida, o "
+"el valor de la variable @env{EDITOR} si este está establecido, o @code{vi} "
+"si ninguno está establecido.  Cuando está completada la edición, las "
+"instrucciones editadas son mostradas y ejecutadas."
 
 #. type: table
 #: hsuser.texi:168
@@ -298,10 +307,10 @@ msgid ""
 "@var{pat} in the selected command is replaced by @var{rep}.  @var{command} "
 "is intepreted the same as @var{first} above."
 msgstr ""
-"En la segunda forma, @var{instrucci@'on} se vuelve a ejecutar despu@'es de que "
-"cada instancia de @var{pat} en la instrucci@'on seleccionada es reemplazada "
-"por @var{rem}. @var{instrucci@'on} se interpreta igual que @var{primera} "
-"arriba."
+"En la segunda forma, @var{instrucción} se vuelve a ejecutar después de "
+"que cada instancia de @var{pat} en la instrucción seleccionada es "
+"reemplazada por @var{rem}. @var{instrucción} se interpreta igual que "
+"@var{primera} arriba."
 
 #. type: table
 #: hsuser.texi:172
@@ -310,9 +319,9 @@ msgid ""
 "that typing @samp{r cc} runs the last command beginning with @code{cc} and "
 "typing @samp{r} re-executes the last command (@pxref{Aliases})."
 msgstr ""
-"Un alias @'util para usar con la instrucci@'on @code{fc} es @code{r='fc -s}, "
-"para que teclear @samp{r cc} ejecuta la @'ultima instrucci@'on que comienza por "
-"@code{cc} y teclear @samp{r} vuelva a ejecutar la @'ultima instrucci@'on "
+"Un alias útil para usar con la instrucción @code{fc} es @code{r='fc -s}, "
+"para que teclear @samp{r cc} ejecuta la última instrucción que comienza "
+"por @code{cc} y teclear @samp{r} vuelva a ejecutar la última instrucción "
 "(@pxref{Aliases})."
 
 #. type: btindex
@@ -322,23 +331,25 @@ msgid "history"
 msgstr "history"
 
 #. type: example
-#: hsuser.texi:181
+#: hsuser.texi:182
 #, no-wrap
 msgid ""
 "history [@var{n}]\n"
 "history -c\n"
 "history -d @var{offset}\n"
+"history -d @var{start}-@var{end}\n"
 "history [-anrw] [@var{filename}]\n"
 "history -ps @var{arg}\n"
 msgstr ""
 "history [@var{n}]\n"
 "history -c\n"
 "history -d @var{desplazamiento}\n"
+"history -d @var{inicio}-@var{fin}\n"
 "history [-anrw] [@var{nombre-de-archivo}]\n"
 "history -ps @var{arg}\n"
 
 #. type: table
-#: hsuser.texi:191
+#: hsuser.texi:192
 msgid ""
 "With no options, display the history list with line numbers.  Lines prefixed "
 "with a @samp{*} have been modified.  An argument of @var{n} lists only the "
@@ -347,27 +358,28 @@ msgid ""
 "time stamp associated with each displayed history entry.  No intervening "
 "blank is printed between the formatted time stamp and the history line."
 msgstr ""
-"Sin opciones muestra la lista del historial con n@'umeros de l@'{@dotless{i}}nea.  Las "
-"l@'{@dotless{i}}neas prefijadas con un @samp{*} han sido modificadas.  Un argumento de "
-"@var{n} lista solo las @'ultimas @var{n} l@'{@dotless{i}}neas.  Si la variable del "
-"int@'erprete @env{HISTTIMEFORMAT} est@'a establecida y no es nula, es usada como "
-"una cadena de formato por @var{strfttime} para mostrar la marca temporal "
-"asociada con cada entrada de historial mostrada.  Ning@'un vac@'{@dotless{i}}o intermedio es "
-"mostrado entre la marca temporal formateada y la l@'{@dotless{i}}nea del historial."
+"Sin opciones muestra la lista del historial con números de lí"
+"nea.  Las líneas prefijadas con un @samp{*} han sido "
+"modificadas.  Un argumento de @var{n} lista solo las últimas @var{n} "
+"líneas.  Si la variable del intérprete @env{HISTTIMEFORMAT} "
+"está establecida y no es nula, es usada como una cadena de formato por "
+"@var{strfttime} para mostrar la marca temporal asociada con cada entrada de "
+"historial mostrada.  Ningún vacío intermedio es mostrado "
+"entre la marca temporal formateada y la línea del historial."
 
 #. type: table
-#: hsuser.texi:193
+#: hsuser.texi:194
 msgid "Options, if supplied, have the following meanings:"
 msgstr "Las opciones, si se proporcionan, tienen los siguientes significados:"
 
 #. type: item
-#: hsuser.texi:195
+#: hsuser.texi:196
 #, no-wrap
 msgid "-c"
 msgstr "-c"
 
 #. type: table
-#: hsuser.texi:198
+#: hsuser.texi:199
 msgid ""
 "Clear the history list.  This may be combined with the other options to "
 "replace the history list completely."
@@ -376,109 +388,137 @@ msgstr ""
 "opciones para reemplazar la lista del historial completamente."
 
 #. type: item
-#: hsuser.texi:199
+#: hsuser.texi:200
 #, no-wrap
 msgid "-d @var{offset}"
 msgstr "-d @var{desplazamiento}"
 
 #. type: table
-#: hsuser.texi:203
+#: hsuser.texi:208
 msgid ""
-"Delete the history entry at position @var{offset}.  @var{offset} should be "
-"specified as it appears when the history is displayed."
+"Delete the history entry at position @var{offset}.  If @var{offset} is "
+"positive, it should be specified as it appears when the history is "
+"displayed.  If @var{offset} is negative, it is interpreted as relative to "
+"one greater than the last history position, so negative indices count back "
+"from the end of the history, and an index of @samp{-1} refers to the current "
+"@code{history -d} command."
 msgstr ""
-"Borra la entrada del historial en la posici@'on @var{desplazamiento}.  "
-"@var{desplazamiento} debe ser especificado tal como aparece cuando se "
-"muestra el historial."
+"Elimina la entrada del historial en la posición @var{desplazamiento}.  Si"
+" @var{desplazamiento} es positivo, debería ser especificado como si"
+" apareciera cuando se muestra el historial.  Si @var{desplazamiento} es"
+" negativo, se interpreta como relativo a uno mayor que la última posición"
+" del historial, de forma que los índices negativos cuentan hacia atrás"
+" desde el final del historial, y un índice de @samp{-1} se refiere a la"
+" actual instrucción @code{history -d}."
 
 #. type: item
-#: hsuser.texi:204
+#: hsuser.texi:209
+#, no-wrap
+msgid "-d @var{start}-@var{end}"
+msgstr "-d @var{inicio}-@var{fin}"
+
+#. type: table
+#: hsuser.texi:213
+msgid ""
+"Delete the history entries between positions @var{start} and @var{end}, "
+"inclusive.  Positive and negative values for @var{start} and @var{end} are "
+"interpreted as described above."
+msgstr ""
+"Elimina las entradas del historial entre las posiciones @var{inicio} y"
+" @var{fin}, inclusivas.  Los valores positivos y negativos para @var{start} y"
+" @var{end} se interpretan como se explica arriba."
+
+#. type: item
+#: hsuser.texi:214
 #, no-wrap
 msgid "-a"
 msgstr "-a"
 
 #. type: table
-#: hsuser.texi:208
+#: hsuser.texi:218
 msgid ""
 "Append the new history lines to the history file.  These are history lines "
 "entered since the beginning of the current Bash session, but not already "
 "appended to the history file."
 msgstr ""
-"A@~nade las nuevas l@'{@dotless{i}}neas de historial al archivo del historial.  Estas son "
-"l@'{@dotless{i}}neas de historial introducidas desde el comienzo de la actual sesi@'on de "
-"Bash, pero no a@~nadidas a@'un al archivo del historial."
+"Añade las nuevas líneas de historial al archivo del "
+"historial.  Estas son líneas de historial introducidas desde "
+"el comienzo de la actual sesión de Bash, pero no añadidas aún al "
+"archivo del historial."
 
 #. type: item
-#: hsuser.texi:209
+#: hsuser.texi:219
 #, no-wrap
 msgid "-n"
 msgstr "-n"
 
 #. type: table
-#: hsuser.texi:213
+#: hsuser.texi:223
 msgid ""
 "Append the history lines not already read from the history file to the "
 "current history list.  These are lines appended to the history file since "
 "the beginning of the current Bash session."
 msgstr ""
-"A@~nade las l@'{@dotless{i}}neas del historial no cargadas a@'un del archivo del historial a "
-"la lista actual del historial.  Estas son l@'{@dotless{i}}neas a@~nadidas al archivo del "
-"historial desde el comienzo de la actual sesi@'on de Bash."
+"Añade las líneas del historial no cargadas aún del archivo "
+"del historial a la lista actual del historial.  Estas son lí"
+"neas añadidas al archivo del historial desde el comienzo de la actual "
+"sesión de Bash."
 
 #. type: item
-#: hsuser.texi:214
+#: hsuser.texi:224
 #, no-wrap
 msgid "-r"
 msgstr "-r"
 
 #. type: table
-#: hsuser.texi:217
+#: hsuser.texi:227
 msgid "Read the history file and append its contents to the history list."
 msgstr ""
-"Lee el archivo del historial y a@~nade su contenido a la lista del historial."
+"Lee el archivo del historial y añade su contenido a la lista del historial."
 
 #. type: item
-#: hsuser.texi:218
+#: hsuser.texi:228
 #, no-wrap
 msgid "-w"
 msgstr "-w"
 
 #. type: table
-#: hsuser.texi:220
+#: hsuser.texi:230
 msgid "Write out the current history list to the history file."
 msgstr "Escribe entera la lista del historial actual al archivo del historial."
 
 #. type: item
-#: hsuser.texi:221
+#: hsuser.texi:231
 #, no-wrap
 msgid "-p"
 msgstr "-p"
 
 #. type: table
-#: hsuser.texi:224
+#: hsuser.texi:234
 msgid ""
 "Perform history substitution on the @var{arg}s and display the result on the "
 "standard output, without storing the results in the history list."
 msgstr ""
-"Realiza una sustituci@'on de historial en @var{arg}s y muestra el resultado en "
-"la salida est@'andar, sin guardar los resultados en la lista del historial."
+"Realiza una sustitución de historial en @var{arg}s y muestra el resultado "
+"en la salida estándar, sin guardar los resultados en la lista del "
+"historial."
 
 #. type: item
-#: hsuser.texi:225
+#: hsuser.texi:235
 #, no-wrap
 msgid "-s"
 msgstr "-s"
 
 #. type: table
-#: hsuser.texi:228
+#: hsuser.texi:238
 msgid ""
 "The @var{arg}s are added to the end of the history list as a single entry."
 msgstr ""
-"Los @var{arg}s son a@~nadidos al final de la lista del historial como una "
-"@'unica entrada."
+"Los @var{arg}s son añadidos al final de la lista del historial como una "
+"única entrada."
 
 #. type: table
-#: hsuser.texi:235
+#: hsuser.texi:245
 msgid ""
 "When any of the @option{-w}, @option{-r}, @option{-a}, or @option{-n} "
 "options is used, if @var{filename} is given, then it is used as the history "
@@ -490,31 +530,31 @@ msgstr ""
 "variable @env{HISTFILE}."
 
 #. type: section
-#: hsuser.texi:240
+#: hsuser.texi:250
 #, no-wrap
 msgid "History Expansion"
-msgstr "Expansi@'on del Historial"
+msgstr "Expansión del Historial"
 
 #. type: cindex
-#: hsuser.texi:241
+#: hsuser.texi:251
 #, no-wrap
 msgid "history expansion"
-msgstr "expansi@'on del historial"
+msgstr "expansión del historial"
 
 #. type: Plain text
-#: hsuser.texi:246
+#: hsuser.texi:256
 msgid ""
 "The History library provides a history expansion feature that is similar to "
 "the history expansion provided by @code{csh}.  This section describes the "
 "syntax used to manipulate the history information."
 msgstr ""
-"La librer@'{@dotless{i}}a History proporciona una funcionalidad de expansi@'on de historial "
-"que es similar a la expansi@'on de historial proporcionada por @code{csh}.  "
-"Esta secci@'on describe la sintaxis usada para manipular la informaci@'on del "
-"historial."
+"La librería History proporciona una funcionalidad de "
+"expansión de historial que es similar a la expansión de historial "
+"proporcionada por @code{csh}.  Esta sección describe la sintaxis usada "
+"para manipular la información del historial."
 
 #. type: Plain text
-#: hsuser.texi:251
+#: hsuser.texi:261
 msgid ""
 "History expansions introduce words from the history list into the input "
 "stream, making it easy to repeat commands, insert the arguments to a "
@@ -523,20 +563,26 @@ msgid ""
 msgstr ""
 "Las expansiones del historial introducen palabras desde la lista del "
 "historial al flujo de entrada, facilitando repetir instrucciones, insertar "
-"los argumentos para una instrucci@'on anterior en la l@'{@dotless{i}}nea de entrada actual o "
-"arreglar errores en las instrucciones anteriores r@'apidamente."
+"los argumentos para una instrucción anterior en la línea de "
+"entrada actual o arreglar errores en las instrucciones anteriores "
+"rápidamente."
 
 #. type: ifset
-#: hsuser.texi:255
+#: hsuser.texi:267
 msgid ""
 "History expansion is performed immediately after a complete line is read, "
-"before the shell breaks it into words."
+"before the shell breaks it into words, and is performed on each line "
+"individually.  Bash attempts to inform the history expansion functions about "
+"quoting still in effect from previous lines."
 msgstr ""
-"La expansi@'on del historial es realizada inmediatamente despu@'es de que sea "
-"le@'{@dotless{i}}da una l@'{@dotless{i}}nea completa, antes de que el int@'erprete la divida en palabras."
+"La expansión de historial se realiza inmediatamente después de que sea"
+" leída una línea completa, antes de que el intérprete la divida en"
+" palabras y se realiza en cada línea de forma individual.  Bash trata de"
+" informar a las funciones de expansión de historial sobre el antrecomillado"
+" aún en efecto de líneas anteriores."
 
 #. type: Plain text
-#: hsuser.texi:268
+#: hsuser.texi:280
 msgid ""
 "History expansion takes place in two parts.  The first is to determine which "
 "line from the history list should be used during substitution.  The second "
@@ -549,36 +595,60 @@ msgid ""
 "introduced by the appearance of the history expansion character, which is "
 "@samp{!} by default."
 msgstr ""
-"La expansi@'on del historial tiene lugar en dos partes.  La primera es para "
-"determinar qu@'e l@'{@dotless{i}}nea de la lista del historial deber@'{@dotless{i}}a ser usada durante la "
-"sustituci@'on.  La segunda es para seleccionar porciones de esa l@'{@dotless{i}}nea para la "
-"inclusi@'on en la actual.  La l@'{@dotless{i}}nea seleccionada del historial es llamada el "
-"@dfn{evento}, y las porciones de esa l@'{@dotless{i}}nea sobre las que se act@'ua son "
-"llamadas @dfn{palabras}.  Varios @dfn{modificadores} est@'an disponibles para "
-"manipular las palabras seleccionadas.  La l@'{@dotless{i}}nea es dividida en palabras de "
-"la misma forma que hace Bash, para que varias palabras rodeadas por comillas "
-"sean consideradas una palabras.  Las expansiones del historial son "
-"introducidas por la aparici@'on del car@'acter de expansi@'on de historial, que es "
-"@samp{!} por defecto."
+"La expansión del historial tiene lugar en dos partes.  La primera es para "
+"determinar qué línea de la lista del historial "
+"debería ser usada durante la sustitución.  La segunda es "
+"para seleccionar porciones de esa línea para la inclusión en "
+"la actual.  La línea seleccionada del historial es llamada el "
+"@dfn{evento}, y las porciones de esa línea sobre las que se "
+"actúa son llamadas @dfn{palabras}.  Varios @dfn{modificadores} están "
+"disponibles para manipular las palabras seleccionadas.  La lí"
+"nea es dividida en palabras de la misma forma que hace Bash, para que varias "
+"palabras rodeadas por comillas sean consideradas una palabras.  Las "
+"expansiones del historial son introducidas por la aparición del carácter "
+"de expansión de historial, que es @samp{!} por defecto."
+
+#. type: Plain text
+#: hsuser.texi:289
+msgid ""
+"History expansion implements shell-like quoting conventions: a backslash can "
+"be used to remove the special handling for the next character; single quotes "
+"enclose verbatim sequences of characters, and can be used to inhibit history "
+"expansion; and characters enclosed within double quotes may be subject to "
+"history expansion, since backslash can escape the history expansion "
+"character, but single quotes may not, since they are not treated specially "
+"within double quotes."
+msgstr ""
+"La expansión de historial implementa convenciones de entrecomillado del"
+" estilo del intérprete: una barra invertida puede ser usada para eliminar"
+" el tratamiento especial del siguiente carácter; las comillas simples"
+" rodean secuencias literales de caracteres y pueden ser usadas para inhibir"
+" la expansión de historial; y los caracteres rodeados por comillas dobles"
+" pueden estar sujetos a la expansión de carácter de historial, pero no"
+" las comillas dobles, puesto que no son tratadas de forma especial entre"
+" comillas dobles."
 
 #. type: ifset
-#: hsuser.texi:273
+#: hsuser.texi:295
 msgid ""
-"Only @samp{\\} and @samp{'} may be used to escape the history expansion "
-"character, but the history expansion character is also treated as quoted if "
-"it immediately precedes the closing double quote in a double-quoted string."
+"When using the shell, only @samp{\\} and @samp{'} may be used to escape the "
+"history expansion character, but the history expansion character is also "
+"treated as quoted if it immediately precedes the closing double quote in a "
+"double-quoted string."
 msgstr ""
-"Solo @samp{\\} y @samp{'} pueden ser usados para escapar el car@'acter de "
-"expansi@'on del historial, pero el car@'acter de expansi@'on del historial tambi@'en "
+"Al usar el intérprete, solo @samp{\\} y @samp{'} pueden ser usados para"
+" escapar el carácter de "
+"expansión del historial, pero el carácter de expansión del historial"
+" también "
 "es tratado como entrecomillado si precede inmediatamente a la comillas "
 "dobles de cierre en una cadena entrecomillada con comillas dobles."
 
 #. type: ifset
-#: hsuser.texi:293
+#: hsuser.texi:315
 msgid ""
-"Several shell options settable with the @code{shopt} builtin (@pxref{Bash "
-"Builtins}) may be used to tailor the behavior of history expansion.  If the "
-"@code{histverify} shell option is enabled, and Readline is being used, "
+"Several shell options settable with the @code{shopt} builtin (@pxref{The "
+"Shopt Builtin}) may be used to tailor the behavior of history expansion.  If "
+"the @code{histverify} shell option is enabled, and Readline is being used, "
 "history substitutions are not immediately passed to the shell parser.  "
 "Instead, the expanded line is reloaded into the Readline editing buffer for "
 "further modification.  If Readline is being used, and the @code{histreedit} "
@@ -590,214 +660,226 @@ msgid ""
 "actually executing them, so that they are available for subsequent recall.  "
 "This is most useful in conjunction with Readline."
 msgstr ""
-"Varias opciones del int@'erprete que pueden ser habilitadas con la instrucci@'on "
-"integrada @code{shopt} (@pxref{Instrucciones Integradas de Bash}) pueden ser "
-"utilizadas para adaptar el comportamiento de la expansi@'on del historial.  Si "
-"la opci@'on del int@'erprete @code{histverify} est@'a habilitada, y se est@'a usando "
+"Varias opciones del intérprete que pueden ser habilitadas con la"
+" instrucción "
+"integrada @code{shopt} (@pxref{La Instrucción Integrada Shopt}) pueden ser "
+"utilizadas para adaptar el comportamiento de la expansión del historial. "
+" Si "
+"la opción del intérprete @code{histverify} está habilitada, y se está"
+" usando "
 "Readline, las sustituciones del historial no son pasadas inmediatamente al "
-"analizador del int@'erprete.  En su lugar, la l@'{@dotless{i}}nea expandida es vuelta a "
-"cargar en el b@'ufer de edici@'on de Readline para su posterior modificaci@'on.  "
-"Si se est@'a usando Readline, y la opci@'on del int@'erprete @code{histreedit} "
-"est@'a habilitada, se volver@'a a cargar una expansi@'on de historial fallida en "
-"el b@'ufer de edici@'on de Readline para su correcci@'on.  La opci@'on @option{-p} "
-"para la instrucci@'on integrada @code{history} puede ser usada para ver qu@'e "
-"har@'a una expansi@'on de historial antes de usarla.  La opci@'on @option{-s} para "
-"la instrucci@'on integrada @code{history} puede ser usada para a@~nadir "
+"analizador del intérprete.  En su lugar, la línea expandida"
+" es vuelta a "
+"cargar en el búfer de edición de Readline para su posterior"
+" modificación.  "
+"Si se está usando Readline, y la opción del intérprete"
+" @code{histreedit} "
+"está habilitada, se volverá a cargar una expansión de historial fallida"
+" en "
+"el búfer de edición de Readline para su corrección.  La opción"
+" @option{-p} "
+"para la instrucción integrada @code{history} puede ser usada para ver qué "
+"hará una expansión de historial antes de usarla.  La opción @option{-s}"
+" para "
+"la instrucción integrada @code{history} puede ser usada para añadir "
 "instrucciones al final de la lista del historial sin realmente ejecutarlas, "
-"para que estas est@'en disponibles para volver a ser llamadas posteriormente.  "
+"para que estas estén disponibles para volver a ser llamadas posteriormente."
+"  "
 "Eso tiene la mayor utilidad en conjunto con Readline."
 
 #. type: ifset
-#: hsuser.texi:299
+#: hsuser.texi:321
 msgid ""
 "The shell allows control of the various characters used by the history "
 "expansion mechanism with the @code{histchars} variable, as explained above "
 "(@pxref{Bash Variables}).  The shell uses the history comment character to "
 "mark history timestamps when writing the history file."
 msgstr ""
-"El int@'erprete permite el control de varios caracteres usados por el "
-"mecanismo de expansi@'on del historial con la variable @code{histchars}, como "
-"se explic@'o anteriormente  (@pxref{Variables de Bash}).  El int@'erprete usa el "
-"car@'acter de comentario del historial para se@~nalar las marcas del tiempo al "
-"escribir el archivo del historial."
+"El intérprete permite el control de varios caracteres usados por el "
+"mecanismo de expansión del historial con la variable @code{histchars}, "
+"como se explicó anteriormente  (@pxref{Variables de Bash}).  El "
+"intérprete usa el carácter de comentario del historial para señalar "
+"las marcas del tiempo al escribir el archivo del historial."
 
 #. type: subsection
-#: hsuser.texi:305 hsuser.texi:307 hsuser.texi:308
+#: hsuser.texi:327 hsuser.texi:329 hsuser.texi:330
 #, no-wrap
 msgid "Event Designators"
 msgstr "Designadores de Eventos"
 
 #. type: menuentry
-#: hsuser.texi:305
+#: hsuser.texi:327
 msgid "How to specify which history line to use."
-msgstr "C@'omo especificar qu@'e l@'{@dotless{i}}nea del historial usar."
+msgstr "Cómo especificar qué línea del historial usar."
 
 #. type: subsection
-#: hsuser.texi:305 hsuser.texi:362 hsuser.texi:363
+#: hsuser.texi:327 hsuser.texi:384 hsuser.texi:385
 #, no-wrap
 msgid "Word Designators"
 msgstr "Designadores de Palabras"
 
 #. type: menuentry
-#: hsuser.texi:305
+#: hsuser.texi:327
 msgid "Specifying which words are of interest."
-msgstr "Especificando qu@'e palabras son de inter@'es."
+msgstr "Especificando qué palabras son de interés."
 
 #. type: subsection
-#: hsuser.texi:305 hsuser.texi:428 hsuser.texi:429
+#: hsuser.texi:327 hsuser.texi:450 hsuser.texi:451
 #, no-wrap
 msgid "Modifiers"
 msgstr "Modificadores"
 
 #. type: menuentry
-#: hsuser.texi:305
+#: hsuser.texi:327
 msgid "Modifying the results of substitution."
-msgstr "Modificando los resultados de la sustituci@'on."
+msgstr "Modificando los resultados de la sustitución."
 
 #. type: cindex
-#: hsuser.texi:309
+#: hsuser.texi:331
 #, no-wrap
 msgid "event designators"
 msgstr "designadores de eventos"
 
 #. type: Plain text
-#: hsuser.texi:315
+#: hsuser.texi:337
 msgid ""
 "An event designator is a reference to a command line entry in the history "
 "list.  Unless the reference is absolute, events are relative to the current "
 "position in the history list."
 msgstr ""
-"Un designador de evento es una referencia a una l@'{@dotless{i}}nea de entrada en la lista "
-"del historial.  A no ser que la referencia sea absoluta, los eventos son "
-"relativos a la actual posici@'on en la lista del historial."
+"Un designador de evento es una referencia a una línea de "
+"entrada en la lista del historial.  A no ser que la referencia sea absoluta, "
+"los eventos son relativos a la actual posición en la lista del historial."
 
 #. type: cindex
-#: hsuser.texi:315
+#: hsuser.texi:337
 #, no-wrap
 msgid "history events"
 msgstr "eventos del historial"
 
 #. type: code{#1}
-#: hsuser.texi:319
+#: hsuser.texi:341
 #, no-wrap
 msgid "!"
 msgstr "!"
 
 #. type: ifset
-#: hsuser.texi:324
+#: hsuser.texi:346
 msgid ""
 "Start a history substitution, except when followed by a space, tab, the end "
 "of the line, @samp{=} or @samp{(} (when the @code{extglob} shell option is "
 "enabled using the @code{shopt} builtin)."
 msgstr ""
-"Comienza una sustituci@'on del historial, excepto cuando lo sigue un espacio, "
-"tabulaci@'on, el final de l@'{@dotless{i}}nea, @samp{=} o @samp{(} (cuando la opci@'on del "
-"int@'erprete @code{extglob} es habilitada usando la instrucci@'on integrada "
-"@code{shopt})."
+"Comienza una sustitución del historial, excepto cuando lo sigue un "
+"espacio, tabulación, el final de línea, @samp{=} o @samp{(} "
+"(cuando la opción del intérprete @code{extglob} es habilitada usando la "
+"instrucción integrada @code{shopt})."
 
 #. type: ifclear
-#: hsuser.texi:328
+#: hsuser.texi:350
 msgid ""
 "Start a history substitution, except when followed by a space, tab, the end "
 "of the line, or @samp{=}."
 msgstr ""
-"Comienza una sustituci@'on del historial, excepto cuando lo sigue un espacio, "
-"tabulaci@'on, el final de l@'{@dotless{i}}nea o @samp{=}."
+"Comienza una sustitución del historial, excepto cuando lo sigue un "
+"espacio, tabulación, el final de línea o @samp{=}."
 
 #. type: code{#1}
-#: hsuser.texi:330
+#: hsuser.texi:352
 #, no-wrap
 msgid "!@var{n}"
 msgstr "!@var{n}"
 
 #. type: table
-#: hsuser.texi:332
+#: hsuser.texi:354
 msgid "Refer to command line @var{n}."
-msgstr "Alude a la l@'{@dotless{i}}nea de instrucci@'on @var{n}."
+msgstr "Alude a la línea de instrucción @var{n}."
 
 #. type: code{#1}
-#: hsuser.texi:333
+#: hsuser.texi:355
 #, no-wrap
 msgid "!-@var{n}"
 msgstr "!-@var{n}"
 
 #. type: table
-#: hsuser.texi:335
+#: hsuser.texi:357
 msgid "Refer to the command @var{n} lines back."
-msgstr "Alude a la instrucci@'on @var{n} l@'{@dotless{i}}neas atr@'as."
+msgstr "Alude a la instrucción @var{n} líneas atrás."
 
 #. type: item
-#: hsuser.texi:336 hsuser.texi:376
+#: hsuser.texi:358 hsuser.texi:398
 #, no-wrap
 msgid "!!"
 msgstr "!!"
 
 #. type: table
-#: hsuser.texi:338
+#: hsuser.texi:360
 msgid "Refer to the previous command.  This is a synonym for @samp{!-1}."
-msgstr "Alude a la instrucci@'on anterior.  Esto es un sin@'onimo de @samp{!-1}."
+msgstr ""
+"Alude a la instrucción anterior.  Esto es un sinónimo de @samp{!-1}."
 
 #. type: code{#1}
-#: hsuser.texi:339
+#: hsuser.texi:361
 #, no-wrap
 msgid "!@var{string}"
 msgstr "!@var{cadena}"
 
 #. type: table
-#: hsuser.texi:343
+#: hsuser.texi:365
 msgid ""
 "Refer to the most recent command preceding the current position in the "
 "history list starting with @var{string}."
 msgstr ""
-"Alude a la instrucci@'on m@'as reciente que precede a la actual posici@'on en la "
-"lista del historial que comienza por @var{cadena}."
+"Alude a la instrucción más reciente que precede a la actual posición "
+"en la lista del historial que comienza por @var{cadena}."
 
 #. type: code{#1}
-#: hsuser.texi:344
+#: hsuser.texi:366
 #, no-wrap
 msgid "!?@var{string}[?]"
 msgstr "!?@var{cadena}[?]"
 
 #. type: table
-#: hsuser.texi:351
+#: hsuser.texi:373
 msgid ""
 "Refer to the most recent command preceding the current position in the "
 "history list containing @var{string}.  The trailing @samp{?} may be omitted "
 "if the @var{string} is followed immediately by a newline."
 msgstr ""
-"Alude a la instrucci@'on m@'as reciente que precede a la actual posici@'on en la "
-"lista del historial que contiene @var{cadena}.  El @samp{?} al final puede "
-"ser omitido si @var{cadena} es seguida inmediatamente por una nueva l@'{@dotless{i}}nea."
+"Alude a la instrucción más reciente que precede a la actual posición "
+"en la lista del historial que contiene @var{cadena}.  El @samp{?} al final "
+"puede ser omitido si @var{cadena} es seguida inmediatamente por una nueva "
+"línea."
 
 #. type: code{#1}
-#: hsuser.texi:352
+#: hsuser.texi:374
 #, no-wrap
 msgid "^@var{string1}^@var{string2}^"
 msgstr "^@var{cadena1}^@var{cadena2}^"
 
 #. type: table
-#: hsuser.texi:356
+#: hsuser.texi:378
 msgid ""
 "Quick Substitution.  Repeat the last command, replacing @var{string1} with "
 "@var{string2}.  Equivalent to @code{!!:s/@var{string1}/@var{string2}/}."
 msgstr ""
-"Sustituci@'on r@'apida.  Repite la @'ultima instrucci@'on, reemplazando "
+"Sustitución rápida.  Repite la última instrucción, reemplazando "
 "@var{cadena1} por @var{cadena2}.  Equivalente a @code{!!:s/@var{cadena1}/"
 "@var{cadena2}/}."
 
 #. type: code{#1}
-#: hsuser.texi:357
+#: hsuser.texi:379
 #, no-wrap
 msgid "!#"
 msgstr "!#"
 
 #. type: table
-#: hsuser.texi:359
+#: hsuser.texi:381
 msgid "The entire command line typed so far."
-msgstr "La l@'{@dotless{i}}nea de instrucci@'on completa escrita hasta ahora."
+msgstr "La línea de instrucción completa escrita hasta ahora."
 
 #. type: Plain text
-#: hsuser.texi:371
+#: hsuser.texi:393
 msgid ""
 "Word designators are used to select desired words from the event.  A "
 "@samp{:} separates the event specification from the word designator.  It may "
@@ -807,222 +889,224 @@ msgid ""
 "into the current line separated by single spaces."
 msgstr ""
 "Los designadores de palabras son usados para seleccionar las palabras "
-"deseadas del evento.  Un @samp{:} separa la especificaci@'on de evento del "
+"deseadas del evento.  Un @samp{:} separa la especificación de evento del "
 "designador de palabra.  Puede ser omitido si el designador de palabra "
 "empieza por @samp{^}, @samp{$}, @samp{*}, @samp{-} o @samp{%}.  Las palabras "
-"son numeradas desde el comienzo de la l@'{@dotless{i}}nea, con la primera palabra indicada "
-"por un 0 (cero).  Las palabras son insertadas en la l@'{@dotless{i}}nea actual separadas "
-"por espacios @'unicos."
+"son numeradas desde el comienzo de la línea, con la primera "
+"palabra indicada por un 0 (cero).  Las palabras son insertadas en la "
+"línea actual separadas por espacios únicos."
 
 #. type: Plain text
-#: hsuser.texi:374
+#: hsuser.texi:396
 msgid "For example,"
 msgstr "Por ejemplo,"
 
 #. type: table
-#: hsuser.texi:379
+#: hsuser.texi:401
 msgid ""
 "designates the preceding command.  When you type this, the preceding command "
 "is repeated in toto."
 msgstr ""
-"designa la instrucci@'on precedente.  Cuando escribes esto, la instrucci@'on "
+"designa la instrucción precedente.  Cuando escribes esto, la instrucción "
 "precedente es repetida en su totalidad."
 
 #. type: item
-#: hsuser.texi:380
+#: hsuser.texi:402
 #, no-wrap
 msgid "!!:$"
 msgstr "!!:$"
 
 #. type: table
-#: hsuser.texi:383
+#: hsuser.texi:405
 msgid ""
 "designates the last argument of the preceding command.  This may be "
 "shortened to @code{!$}."
 msgstr ""
-"designa el @'ultimo argumento de la instrucci@'on precedente.  Esto puede ser "
-"acortado a @code{!$}."
+"designa el último argumento de la instrucción precedente.  Esto puede "
+"ser acortado a @code{!$}."
 
 #. type: item
-#: hsuser.texi:384
+#: hsuser.texi:406
 #, no-wrap
 msgid "!fi:2"
 msgstr "!fi:2"
 
 #. type: table
-#: hsuser.texi:387
+#: hsuser.texi:409
 msgid ""
 "designates the second argument of the most recent command starting with the "
 "letters @code{fi}."
 msgstr ""
-"designa el segundo argumento de la instrucci@'on m@'as reciente que comienza por "
-"las letras @code{fi}."
+"designa el segundo argumento de la instrucción más reciente que comienza "
+"por las letras @code{fi}."
 
 #. type: Plain text
-#: hsuser.texi:391
+#: hsuser.texi:413
 msgid "Here are the word designators:"
-msgstr "Aqu@'{@dotless{i}} est@'an los designadores de palabras:"
+msgstr "Aquí están los designadores de palabras:"
 
 #. type: item
-#: hsuser.texi:394
+#: hsuser.texi:416
 #, no-wrap
 msgid "0 (zero)"
 msgstr "0 (cero)"
 
 #. type: table
-#: hsuser.texi:396
+#: hsuser.texi:418
 msgid "The @code{0}th word.  For many applications, this is the command word."
 msgstr ""
-"La palabra n@'umero @code{0}.  Para muchas aplicaciones, esto es la palabra de "
-"instrucci@'on."
+"La palabra número @code{0}.  Para muchas aplicaciones, esto es la palabra "
+"de instrucción."
 
 #. type: var{#1}
-#: hsuser.texi:397
+#: hsuser.texi:419
 #, no-wrap
 msgid "n"
 msgstr "n"
 
 #. type: table
-#: hsuser.texi:399
+#: hsuser.texi:421
 msgid "The @var{n}th word."
-msgstr "La palabra n@'umero @var{n}."
+msgstr "La palabra número @var{n}."
 
 #. type: item
-#: hsuser.texi:400
+#: hsuser.texi:422
 #, no-wrap
 msgid "^"
 msgstr "^"
 
 #. type: table
-#: hsuser.texi:402
+#: hsuser.texi:424
 msgid "The first argument; that is, word 1."
 msgstr "El primer argumento, es decir, palabra 1."
 
 #. type: item
-#: hsuser.texi:403
+#: hsuser.texi:425
 #, no-wrap
 msgid "$"
 msgstr "$"
 
 #. type: table
-#: hsuser.texi:405
+#: hsuser.texi:427
 msgid "The last argument."
-msgstr "El @'ultimo argumento."
+msgstr "El último argumento."
 
 #. type: item
-#: hsuser.texi:406
+#: hsuser.texi:428
 #, no-wrap
 msgid "%"
 msgstr "%"
 
 #. type: table
-#: hsuser.texi:408
+#: hsuser.texi:430
 msgid "The word matched by the most recent @samp{?@var{string}?} search."
 msgstr ""
-"La palabra que coincide con la b@'usqueda @samp{?@var{string}?} m@'as reciente."
+"La palabra que coincide con la búsqueda @samp{?@var{string}?} más "
+"reciente."
 
 #. type: item
-#: hsuser.texi:409
+#: hsuser.texi:431
 #, no-wrap
 msgid "@var{x}-@var{y}"
 msgstr "@var{x}-@var{y}"
 
 #. type: table
-#: hsuser.texi:411
+#: hsuser.texi:433
 msgid "A range of words; @samp{-@var{y}} abbreviates @samp{0-@var{y}}."
 msgstr "Un rango de palabras; @samp{-@var{y}} abrevia a @samp{0-@var{y}}."
 
 #. type: item
-#: hsuser.texi:412
+#: hsuser.texi:434
 #, no-wrap
 msgid "*"
 msgstr "*"
 
 #. type: table
-#: hsuser.texi:416
+#: hsuser.texi:438
 msgid ""
 "All of the words, except the @code{0}th.  This is a synonym for @samp{1-$}.  "
 "It is not an error to use @samp{*} if there is just one word in the event; "
 "the empty string is returned in that case."
 msgstr ""
-"Todas las palabras, excepto la n@'umero @code{0}.  Esto es un sin@'onimo de "
+"Todas las palabras, excepto la número @code{0}.  Esto es un sinónimo de "
 "@samp{1-$}.  No es incorrecto usar @samp{*} si solo hay una palabra en el "
-"evento; la cadena vac@'{@dotless{i}}a es devuelta en ese caso."
+"evento; la cadena vacía es devuelta en ese caso."
 
 #. type: item
-#: hsuser.texi:417
+#: hsuser.texi:439
 #, no-wrap
 msgid "@var{x}*"
 msgstr "@var{x}*"
 
 #. type: table
-#: hsuser.texi:419
+#: hsuser.texi:441
 msgid "Abbreviates @samp{@var{x}-$}"
 msgstr "Abrevia @samp{@var{x}-$}"
 
 #. type: item
-#: hsuser.texi:420
+#: hsuser.texi:442
 #, no-wrap
 msgid "@var{x}-"
 msgstr "@var{x}-"
 
 #. type: table
-#: hsuser.texi:422
+#: hsuser.texi:444
 msgid ""
 "Abbreviates @samp{@var{x}-$} like @samp{@var{x}*}, but omits the last word."
 msgstr ""
-"Abrevia @samp{@var{x}-$} como @samp{@var{x}*}, pero omite la @'ultima palabra."
+"Abrevia @samp{@var{x}-$} como @samp{@var{x}*}, pero omite la última "
+"palabra."
 
 #. type: Plain text
-#: hsuser.texi:427
+#: hsuser.texi:449
 msgid ""
 "If a word designator is supplied without an event specification, the "
 "previous command is used as the event."
 msgstr ""
-"Si se proporciona un designador de palabra sin una especificaci@'on de evento, "
-"la anterior instrucci@'on es usada como el evento."
+"Si se proporciona un designador de palabra sin una especificación de "
+"evento, la anterior instrucción es usada como el evento."
 
 #. type: Plain text
-#: hsuser.texi:433
+#: hsuser.texi:455
 msgid ""
 "After the optional word designator, you can add a sequence of one or more of "
 "the following modifiers, each preceded by a @samp{:}."
 msgstr ""
-"Despu@'es del designador de palabra opcional, puedes a@~nadir una secuencia de "
-"uno o m@'as de los siguientes modificadores, cada uno precedido por un "
+"Después del designador de palabra opcional, puedes añadir una secuencia "
+"de uno o más de los siguientes modificadores, cada uno precedido por un "
 "@samp{:}."
 
 #. type: item
-#: hsuser.texi:436
+#: hsuser.texi:458
 #, no-wrap
 msgid "h"
 msgstr "h"
 
 #. type: table
-#: hsuser.texi:438
+#: hsuser.texi:460
 msgid "Remove a trailing pathname component, leaving only the head."
 msgstr ""
 "Elimina un componente de nombre de ruta al final, dejando solo la cabeza."
 
 #. type: item
-#: hsuser.texi:439
+#: hsuser.texi:461
 #, no-wrap
 msgid "t"
 msgstr "t"
 
 #. type: table
-#: hsuser.texi:441
+#: hsuser.texi:463
 msgid "Remove all leading pathname components, leaving the tail."
 msgstr "Elimina todos los componentes de ruta iniciales, dejando la cola."
 
 #. type: item
-#: hsuser.texi:442
+#: hsuser.texi:464
 #, no-wrap
 msgid "r"
 msgstr "r"
 
 #. type: table
-#: hsuser.texi:445
+#: hsuser.texi:467
 msgid ""
 "Remove a trailing suffix of the form @samp{.@var{suffix}}, leaving the "
 "basename."
@@ -1031,62 +1115,62 @@ msgstr ""
 "nombre base."
 
 #. type: item
-#: hsuser.texi:446
+#: hsuser.texi:468
 #, no-wrap
 msgid "e"
 msgstr "e"
 
 #. type: table
-#: hsuser.texi:448
+#: hsuser.texi:470
 msgid "Remove all but the trailing suffix."
 msgstr "Elimina todo excepto el sufijo al final."
 
 #. type: item
-#: hsuser.texi:449
+#: hsuser.texi:471
 #, no-wrap
 msgid "p"
 msgstr "p"
 
 #. type: table
-#: hsuser.texi:451
+#: hsuser.texi:473
 msgid "Print the new command but do not execute it."
-msgstr "Imprime la nueva instrucci@'on pero no la ejecuta."
+msgstr "Imprime la nueva instrucción pero no la ejecuta."
 
 #. type: item
-#: hsuser.texi:453
+#: hsuser.texi:475
 #, no-wrap
 msgid "q"
 msgstr "q"
 
 #. type: ifset
-#: hsuser.texi:455
+#: hsuser.texi:477
 msgid "Quote the substituted words, escaping further substitutions."
 msgstr ""
 "Entrecomilla las palabras sustituidas, escapando sustituciones adicionales."
 
 #. type: item
-#: hsuser.texi:456
+#: hsuser.texi:478
 #, no-wrap
 msgid "x"
 msgstr "x"
 
 #. type: ifset
-#: hsuser.texi:459
+#: hsuser.texi:481
 msgid ""
 "Quote the substituted words as with @samp{q}, but break into words at "
 "spaces, tabs, and newlines."
 msgstr ""
 "Entrecomilla las palabras sustituidas como con @samp{q}, pero divide las "
-"palabras por espacios, tabulaciones y nuevas l@'{@dotless{i}}neas."
+"palabras por espacios, tabulaciones y nuevas líneas."
 
 #. type: item
-#: hsuser.texi:461
+#: hsuser.texi:483
 #, no-wrap
 msgid "s/@var{old}/@var{new}/"
 msgstr "s/@var{viejo}/@var{nuevo}/"
 
 #. type: table
-#: hsuser.texi:469
+#: hsuser.texi:491
 msgid ""
 "Substitute @var{new} for the first occurrence of @var{old} in the event "
 "line.  Any delimiter may be used in place of @samp{/}.  The delimiter may be "
@@ -1095,56 +1179,201 @@ msgid ""
 "quote the @samp{&}.  The final delimiter is optional if it is the last "
 "character on the input line."
 msgstr ""
-"Sustituye @var{nuevo} por la primera ocurrencia de @var{viejo} en la l@'{@dotless{i}}nea "
-"de evento.  Cualquier delimitador puede ser usado en lugar de @samp{/}.  El "
-"delimitador puede ser entrecomillado en @var{viejo} y @var{nuevo} con una "
-"@'unica barra invertida.  Si @samp{&} aparece en @var{nuevo}, es reemplazado "
-"por @var{viejo}.  Usa @'unica barra invertida entrecomillar@'a el @samp{&}.  El "
-"delimitador final es opcional si es el @'ultimo car@'acter en la l@'{@dotless{i}}nea de "
-"entrada."
+"Sustituye @var{nuevo} por la primera ocurrencia de @var{viejo} en la "
+"línea de evento.  Cualquier delimitador puede ser usado en "
+"lugar de @samp{/}.  El delimitador puede ser entrecomillado en @var{viejo} y "
+"@var{nuevo} con una única barra invertida.  Si @samp{&} aparece en "
+"@var{nuevo}, es reemplazado por @var{viejo}.  Usa única barra invertida "
+"entrecomillará el @samp{&}.  El delimitador final es opcional si es el "
+"último carácter en la línea de entrada."
 
 #. type: item
-#: hsuser.texi:470
+#: hsuser.texi:492
 #, no-wrap
 msgid "&"
 msgstr "&"
 
 #. type: table
-#: hsuser.texi:472
+#: hsuser.texi:494
 msgid "Repeat the previous substitution."
-msgstr "Repite la sustituci@'on anterior."
+msgstr "Repite la sustitución anterior."
 
 #. type: item
-#: hsuser.texi:473
+#: hsuser.texi:495
 #, no-wrap
 msgid "g"
 msgstr "g"
 
 #. type: itemx
-#: hsuser.texi:474
+#: hsuser.texi:496
 #, no-wrap
 msgid "a"
 msgstr "a"
 
 #. type: table
-#: hsuser.texi:478
+#: hsuser.texi:500
 msgid ""
 "Cause changes to be applied over the entire event line.  Used in conjunction "
 "with @samp{s}, as in @code{gs/@var{old}/@var{new}/}, or with @samp{&}."
 msgstr ""
-"Hace que los cambios sean aplicados sobre la l@'{@dotless{i}}nea de evento completa.  "
-"Usado en conjunto con @samp{s}, como en @code{gs/@var{viejo}/@var{nuevo}/}, "
-"o con @samp{&}."
+"Hace que los cambios sean aplicados sobre la línea de evento "
+"completa.  Usado en conjunto con @samp{s}, como en @code{gs/@var{viejo}/"
+"@var{nuevo}/}, o con @samp{&}."
 
 #. type: item
-#: hsuser.texi:479
+#: hsuser.texi:501
 #, no-wrap
 msgid "G"
 msgstr "G"
 
 #. type: table
-#: hsuser.texi:481
+#: hsuser.texi:503
 msgid "Apply the following @samp{s} modifier once to each word in the event."
 msgstr ""
 "Aplica el siguiente modificador @samp{s} una vez para cada palabra en el "
 "evento."
+
+#~ msgid ""
+#~ "The shell allows control over which commands are saved on the history "
+#~ "list.  The @env{HISTCONTROL} and @env{HISTIGNORE} variables may be set to "
+#~ "cause the shell to save only a subset of the commands entered.  The "
+#~ "@code{cmdhist} shell option, if enabled, causes the shell to attempt to "
+#~ "save each line of a multi-line command in the same history entry, adding "
+#~ "semicolons where necessary to preserve syntactic correctness.  The "
+#~ "@code{lithist} shell option causes the shell to save the command with "
+#~ "embedded newlines instead of semicolons.  The @code{shopt} builtin is "
+#~ "used to set these options.  @xref{Bash Builtins}, for a description of "
+#~ "@code{shopt}."
+#~ msgstr ""
+#~ "El intérprete proporciona control sobre qué instrucciones son "
+#~ "guardadas en la lista del historial.  Las variables @env{HISTCONTROL} y "
+#~ "@env{HISTIGNORE} pueden ser establecidas para hacer que el intérprete "
+#~ "solo guarde un subconjunto de las instrucciones introducidas.  La "
+#~ "opción del intérprete @code{cmdhist}, si está habilitada, hace que "
+#~ "el intérprete trate de guardar cada línea de una "
+#~ "instrucción de múltiples líneas en la misma entrada del "
+#~ "historial, añadiendo puntos y comas donde sea necesario para preservar "
+#~ "la corrección sintáctica.  La opción del intérprete "
+#~ "@code{lithist} hace que el intérprete guarde la instrucción con "
+#~ "nuevas líneas intercaladas en vez de puntos y comas.  La "
+#~ "opción integrada @code{shopt} es usada para habilitar estas opciones.  "
+#~ "@xref{Instrucciones Integradas de Bash}, para una descripción de "
+#~ "@code{shopt}."
+
+#~ msgid ""
+#~ "The first form selects a range of commands from @var{first} to @var{last} "
+#~ "from the history list and displays or edits and re-executes them.  Both "
+#~ "@var{first} and @var{last} may be specified as a string (to locate the "
+#~ "most recent command beginning with that string) or as a number (an index "
+#~ "into the history list, where a negative number is used as an offset from "
+#~ "the current command number).  If @var{last} is not specified it is set to "
+#~ "@var{first}.  If @var{first} is not specified it is set to the previous "
+#~ "command for editing and @minus{}16 for listing.  If the @option{-l} flag "
+#~ "is given, the commands are listed on standard output.  The @option{-n} "
+#~ "flag suppresses the command numbers when listing.  The @option{-r} flag "
+#~ "reverses the order of the listing.  Otherwise, the editor given by "
+#~ "@var{ename} is invoked on a file containing those commands.  If "
+#~ "@var{ename} is not given, the value of the following variable expansion "
+#~ "is used: @code{$@{FCEDIT:-$@{EDITOR:-vi@}@}}.  This says to use the value "
+#~ "of the @env{FCEDIT} variable if set, or the value of the @env{EDITOR} "
+#~ "variable if that is set, or @code{vi} if neither is set.  When editing is "
+#~ "complete, the edited commands are echoed and executed."
+#~ msgstr ""
+#~ "La primera forma selecciona un rango de instrucciones desde @var{primera} "
+#~ "hasta @var{última} de la lista del historial y lo muestra o edita y "
+#~ "vuelve a ejecutarlo.  Tanto @var{primera} como @var{última} pueden ser "
+#~ "especificadas como cadenas (para ubicar la instrucción más reciente "
+#~ "que comienza por esa cadena) o como números (un índice en "
+#~ "la lista del historial, donde se usa un número negativo como "
+#~ "desplazamiento del número de instrucción actual).  Si @var{última} "
+#~ "no es especificada, es establecida a @var{primera}.  Si @var{primera} no "
+#~ "es especificada, es establecida a la anterior instrucción para editar y "
+#~ "@minus{}16 para listar.  Si se pasa la bandera @option{-l}, la "
+#~ "instrucciones son listadas en la salida estándar.  La bandera @option{-"
+#~ "n} suprime los números de instrucciones cuando se listan.  La opción "
+#~ "@option{-r} invierte el orden del listado. De lo contrario, el editor "
+#~ "pasado por @var{nombre-editor} es llamado en un sobre archivo que "
+#~ "contiene esas instrucciones.  Si no se pasa @var{nombre-editor}, se usa "
+#~ "el valor de la siguiente expansión de variable: @code{$@{FCEDIT:-"
+#~ "$@{EDITOR:-vi@}@}}.  Esto dice que se use el valor de la variable "
+#~ "@env{FCEDIT} si está establecida, o el valor de la variable "
+#~ "@env{EDITOR} si este está establecido, o @code{vi} si ninguno está "
+#~ "establecido.  Cuando está completada la edición, las instrucciones "
+#~ "editadas son mostradas y ejecutadas."
+
+#~ msgid ""
+#~ "history [@var{n}]\n"
+#~ "history -c\n"
+#~ "history -d @var{offset}\n"
+#~ "history [-anrw] [@var{filename}]\n"
+#~ "history -ps @var{arg}\n"
+#~ msgstr ""
+#~ "history [@var{n}]\n"
+#~ "history -c\n"
+#~ "history -d @var{desplazamiento}\n"
+#~ "history [-anrw] [@var{nombre-de-archivo}]\n"
+#~ "history -ps @var{arg}\n"
+
+#~ msgid ""
+#~ "Delete the history entry at position @var{offset}.  @var{offset} should "
+#~ "be specified as it appears when the history is displayed."
+#~ msgstr ""
+#~ "Borra la entrada del historial en la posición @var{desplazamiento}.  "
+#~ "@var{desplazamiento} debe ser especificado tal como aparece cuando se "
+#~ "muestra el historial."
+
+#~ msgid ""
+#~ "History expansion is performed immediately after a complete line is read, "
+#~ "before the shell breaks it into words."
+#~ msgstr ""
+#~ "La expansión del historial es realizada inmediatamente después de que "
+#~ "sea leída una línea completa, antes de que el "
+#~ "intérprete la divida en palabras."
+
+#~ msgid ""
+#~ "Only @samp{\\} and @samp{'} may be used to escape the history expansion "
+#~ "character, but the history expansion character is also treated as quoted "
+#~ "if it immediately precedes the closing double quote in a double-quoted "
+#~ "string."
+#~ msgstr ""
+#~ "Solo @samp{\\} y @samp{'} pueden ser usados para escapar el carácter de "
+#~ "expansión del historial, pero el carácter de expansión del "
+#~ "historial también es tratado como entrecomillado si precede "
+#~ "inmediatamente a la comillas dobles de cierre en una cadena "
+#~ "entrecomillada con comillas dobles."
+
+#~ msgid ""
+#~ "Several shell options settable with the @code{shopt} builtin (@pxref{Bash "
+#~ "Builtins}) may be used to tailor the behavior of history expansion.  If "
+#~ "the @code{histverify} shell option is enabled, and Readline is being "
+#~ "used, history substitutions are not immediately passed to the shell "
+#~ "parser.  Instead, the expanded line is reloaded into the Readline editing "
+#~ "buffer for further modification.  If Readline is being used, and the "
+#~ "@code{histreedit} shell option is enabled, a failed history expansion "
+#~ "will be reloaded into the Readline editing buffer for correction.  The "
+#~ "@option{-p} option to the @code{history} builtin command may be used to "
+#~ "see what a history expansion will do before using it.  The @option{-s} "
+#~ "option to the @code{history} builtin may be used to add commands to the "
+#~ "end of the history list without actually executing them, so that they are "
+#~ "available for subsequent recall.  This is most useful in conjunction with "
+#~ "Readline."
+#~ msgstr ""
+#~ "Varias opciones del intérprete que pueden ser habilitadas con la "
+#~ "instrucción integrada @code{shopt} (@pxref{Instrucciones Integradas de "
+#~ "Bash}) pueden ser utilizadas para adaptar el comportamiento de la "
+#~ "expansión del historial.  Si la opción del intérprete "
+#~ "@code{histverify} está habilitada, y se está usando Readline, las "
+#~ "sustituciones del historial no son pasadas inmediatamente al analizador "
+#~ "del intérprete.  En su lugar, la línea expandida es "
+#~ "vuelta a cargar en el búfer de edición de Readline para su posterior "
+#~ "modificación.  Si se está usando Readline, y la opción del "
+#~ "intérprete @code{histreedit} está habilitada, se volverá a cargar "
+#~ "una expansión de historial fallida en el búfer de edición de "
+#~ "Readline para su corrección.  La opción @option{-p} para la "
+#~ "instrucción integrada @code{history} puede ser usada para ver qué "
+#~ "hará una expansión de historial antes de usarla.  La opción "
+#~ "@option{-s} para la instrucción integrada @code{history} puede ser "
+#~ "usada para añadir instrucciones al final de la lista del historial sin "
+#~ "realmente ejecutarlas, para que estas estén disponibles para volver a "
+#~ "ser llamadas posteriormente.  Eso tiene la mayor utilidad en conjunto con "
+#~ "Readline."

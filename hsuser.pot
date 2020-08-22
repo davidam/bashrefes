@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-01-24 17:11+0100\n"
+"POT-Creation-Date: 2019-01-08 01:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,7 +63,7 @@ msgid "The Bash builtin commands that manipulate the command history."
 msgstr ""
 
 #. type: node
-#: ./hsuser.texi:54 ./hsuser.texi:59 ./hsuser.texi:239
+#: ./hsuser.texi:54 ./hsuser.texi:59 ./hsuser.texi:249
 #, no-wrap
 msgid "History Interaction"
 msgstr ""
@@ -149,7 +149,7 @@ msgid ""
 "necessary to preserve syntactic correctness.  The @code{lithist} shell "
 "option causes the shell to save the command with embedded newlines instead "
 "of semicolons.  The @code{shopt} builtin is used to set these options.  "
-"@xref{Bash Builtins}, for a description of @code{shopt}."
+"@xref{The Shopt Builtin}, for a description of @code{shopt}."
 msgstr ""
 
 #. type: cindex
@@ -187,8 +187,8 @@ msgid ""
 "@var{first} and @var{last} may be specified as a string (to locate the most "
 "recent command beginning with that string) or as a number (an index into the "
 "history list, where a negative number is used as an offset from the current "
-"command number).  If @var{last} is not specified it is set to @var{first}.  "
-"If @var{first} is not specified it is set to the previous command for "
+"command number).  If @var{last} is not specified, it is set to @var{first}.  "
+"If @var{first} is not specified, it is set to the previous command for "
 "editing and @minus{}16 for listing.  If the @option{-l} flag is given, the "
 "commands are listed on standard output.  The @option{-n} flag suppresses the "
 "command numbers when listing.  The @option{-r} flag reverses the order of "
@@ -224,18 +224,19 @@ msgid "history"
 msgstr ""
 
 #. type: example
-#: ./hsuser.texi:181
+#: ./hsuser.texi:182
 #, no-wrap
 msgid ""
 "history [@var{n}]\n"
 "history -c\n"
 "history -d @var{offset}\n"
+"history -d @var{start}-@var{end}\n"
 "history [-anrw] [@var{filename}]\n"
 "history -ps @var{arg}\n"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:191
+#: ./hsuser.texi:192
 msgid ""
 "With no options, display the history list with line numbers.  Lines prefixed "
 "with a @samp{*} have been modified.  An argument of @var{n} lists only the "
@@ -246,44 +247,62 @@ msgid ""
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:193
+#: ./hsuser.texi:194
 msgid "Options, if supplied, have the following meanings:"
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:195
+#: ./hsuser.texi:196
 #, no-wrap
 msgid "-c"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:198
+#: ./hsuser.texi:199
 msgid ""
 "Clear the history list.  This may be combined with the other options to "
 "replace the history list completely."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:199
+#: ./hsuser.texi:200
 #, no-wrap
 msgid "-d @var{offset}"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:203
+#: ./hsuser.texi:208
 msgid ""
-"Delete the history entry at position @var{offset}.  @var{offset} should be "
-"specified as it appears when the history is displayed."
+"Delete the history entry at position @var{offset}.  If @var{offset} is "
+"positive, it should be specified as it appears when the history is "
+"displayed.  If @var{offset} is negative, it is interpreted as relative to "
+"one greater than the last history position, so negative indices count back "
+"from the end of the history, and an index of @samp{-1} refers to the current "
+"@code{history -d} command."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:204
+#: ./hsuser.texi:209
+#, no-wrap
+msgid "-d @var{start}-@var{end}"
+msgstr ""
+
+#. type: table
+#: ./hsuser.texi:213
+msgid ""
+"Delete the history entries between positions @var{start} and @var{end}, "
+"inclusive.  Positive and negative values for @var{start} and @var{end} are "
+"interpreted as described above."
+msgstr ""
+
+#. type: item
+#: ./hsuser.texi:214
 #, no-wrap
 msgid "-a"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:208
+#: ./hsuser.texi:218
 msgid ""
 "Append the new history lines to the history file.  These are history lines "
 "entered since the beginning of the current Bash session, but not already "
@@ -291,13 +310,13 @@ msgid ""
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:209
+#: ./hsuser.texi:219
 #, no-wrap
 msgid "-n"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:213
+#: ./hsuser.texi:223
 msgid ""
 "Append the history lines not already read from the history file to the "
 "current history list.  These are lines appended to the history file since "
@@ -305,53 +324,53 @@ msgid ""
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:214
+#: ./hsuser.texi:224
 #, no-wrap
 msgid "-r"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:217
+#: ./hsuser.texi:227
 msgid "Read the history file and append its contents to the history list."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:218
+#: ./hsuser.texi:228
 #, no-wrap
 msgid "-w"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:220
+#: ./hsuser.texi:230
 msgid "Write out the current history list to the history file."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:221
+#: ./hsuser.texi:231
 #, no-wrap
 msgid "-p"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:224
+#: ./hsuser.texi:234
 msgid ""
 "Perform history substitution on the @var{arg}s and display the result on the "
 "standard output, without storing the results in the history list."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:225
+#: ./hsuser.texi:235
 #, no-wrap
 msgid "-s"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:228
+#: ./hsuser.texi:238
 msgid "The @var{arg}s are added to the end of the history list as a single entry."
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:235
+#: ./hsuser.texi:245
 msgid ""
 "When any of the @option{-w}, @option{-r}, @option{-a}, or @option{-n} "
 "options is used, if @var{filename} is given, then it is used as the history "
@@ -359,19 +378,19 @@ msgid ""
 msgstr ""
 
 #. type: section
-#: ./hsuser.texi:240
+#: ./hsuser.texi:250
 #, no-wrap
 msgid "History Expansion"
 msgstr ""
 
 #. type: cindex
-#: ./hsuser.texi:241
+#: ./hsuser.texi:251
 #, no-wrap
 msgid "history expansion"
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:246
+#: ./hsuser.texi:256
 msgid ""
 "The History library provides a history expansion feature that is similar to "
 "the history expansion provided by @code{csh}.  This section describes the "
@@ -379,7 +398,7 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:251
+#: ./hsuser.texi:261
 msgid ""
 "History expansions introduce words from the history list into the input "
 "stream, making it easy to repeat commands, insert the arguments to a "
@@ -388,14 +407,16 @@ msgid ""
 msgstr ""
 
 #. type: ifset
-#: ./hsuser.texi:255
+#: ./hsuser.texi:267
 msgid ""
 "History expansion is performed immediately after a complete line is read, "
-"before the shell breaks it into words."
+"before the shell breaks it into words, and is performed on each line "
+"individually.  Bash attempts to inform the history expansion functions about "
+"quoting still in effect from previous lines."
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:268
+#: ./hsuser.texi:280
 msgid ""
 "History expansion takes place in two parts.  The first is to determine which "
 "line from the history list should be used during substitution.  The second "
@@ -409,20 +430,33 @@ msgid ""
 "@samp{!} by default."
 msgstr ""
 
-#. type: ifset
-#: ./hsuser.texi:273
+#. type: Plain text
+#: ./hsuser.texi:289
 msgid ""
-"Only @samp{\\} and @samp{'} may be used to escape the history expansion "
-"character, but the history expansion character is also treated as quoted if "
-"it immediately precedes the closing double quote in a double-quoted string."
+"History expansion implements shell-like quoting conventions: a backslash can "
+"be used to remove the special handling for the next character; single quotes "
+"enclose verbatim sequences of characters, and can be used to inhibit history "
+"expansion; and characters enclosed within double quotes may be subject to "
+"history expansion, since backslash can escape the history expansion "
+"character, but single quotes may not, since they are not treated specially "
+"within double quotes."
 msgstr ""
 
 #. type: ifset
-#: ./hsuser.texi:293
+#: ./hsuser.texi:295
 msgid ""
-"Several shell options settable with the @code{shopt} builtin (@pxref{Bash "
-"Builtins}) may be used to tailor the behavior of history expansion.  If the "
-"@code{histverify} shell option is enabled, and Readline is being used, "
+"When using the shell, only @samp{\\} and @samp{'} may be used to escape the "
+"history expansion character, but the history expansion character is also "
+"treated as quoted if it immediately precedes the closing double quote in a "
+"double-quoted string."
+msgstr ""
+
+#. type: ifset
+#: ./hsuser.texi:315
+msgid ""
+"Several shell options settable with the @code{shopt} builtin (@pxref{The "
+"Shopt Builtin}) may be used to tailor the behavior of history expansion.  If "
+"the @code{histverify} shell option is enabled, and Readline is being used, "
 "history substitutions are not immediately passed to the shell parser.  "
 "Instead, the expanded line is reloaded into the Readline editing buffer for "
 "further modification.  If Readline is being used, and the @code{histreedit} "
@@ -436,7 +470,7 @@ msgid ""
 msgstr ""
 
 #. type: ifset
-#: ./hsuser.texi:299
+#: ./hsuser.texi:321
 msgid ""
 "The shell allows control of the various characters used by the history "
 "expansion mechanism with the @code{histchars} variable, as explained above "
@@ -445,46 +479,46 @@ msgid ""
 msgstr ""
 
 #. type: subsection
-#: ./hsuser.texi:305 ./hsuser.texi:307 ./hsuser.texi:308
+#: ./hsuser.texi:327 ./hsuser.texi:329 ./hsuser.texi:330
 #, no-wrap
 msgid "Event Designators"
 msgstr ""
 
 #. type: menuentry
-#: ./hsuser.texi:305
+#: ./hsuser.texi:327
 msgid "How to specify which history line to use."
 msgstr ""
 
 #. type: subsection
-#: ./hsuser.texi:305 ./hsuser.texi:362 ./hsuser.texi:363
+#: ./hsuser.texi:327 ./hsuser.texi:384 ./hsuser.texi:385
 #, no-wrap
 msgid "Word Designators"
 msgstr ""
 
 #. type: menuentry
-#: ./hsuser.texi:305
+#: ./hsuser.texi:327
 msgid "Specifying which words are of interest."
 msgstr ""
 
 #. type: subsection
-#: ./hsuser.texi:305 ./hsuser.texi:428 ./hsuser.texi:429
+#: ./hsuser.texi:327 ./hsuser.texi:450 ./hsuser.texi:451
 #, no-wrap
 msgid "Modifiers"
 msgstr ""
 
 #. type: menuentry
-#: ./hsuser.texi:305
+#: ./hsuser.texi:327
 msgid "Modifying the results of substitution."
 msgstr ""
 
 #. type: cindex
-#: ./hsuser.texi:309
+#: ./hsuser.texi:331
 #, no-wrap
 msgid "event designators"
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:315
+#: ./hsuser.texi:337
 msgid ""
 "An event designator is a reference to a command line entry in the history "
 "list.  Unless the reference is absolute, events are relative to the current "
@@ -492,19 +526,19 @@ msgid ""
 msgstr ""
 
 #. type: cindex
-#: ./hsuser.texi:315
+#: ./hsuser.texi:337
 #, no-wrap
 msgid "history events"
 msgstr ""
 
 #. type: code{#1}
-#: ./hsuser.texi:319
+#: ./hsuser.texi:341
 #, no-wrap
 msgid "!"
 msgstr ""
 
 #. type: ifset
-#: ./hsuser.texi:324
+#: ./hsuser.texi:346
 msgid ""
 "Start a history substitution, except when followed by a space, tab, the end "
 "of the line, @samp{=} or @samp{(} (when the @code{extglob} shell option is "
@@ -512,66 +546,66 @@ msgid ""
 msgstr ""
 
 #. type: ifclear
-#: ./hsuser.texi:328
+#: ./hsuser.texi:350
 msgid ""
 "Start a history substitution, except when followed by a space, tab, the end "
 "of the line, or @samp{=}."
 msgstr ""
 
 #. type: code{#1}
-#: ./hsuser.texi:330
+#: ./hsuser.texi:352
 #, no-wrap
 msgid "!@var{n}"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:332
+#: ./hsuser.texi:354
 msgid "Refer to command line @var{n}."
 msgstr ""
 
 #. type: code{#1}
-#: ./hsuser.texi:333
+#: ./hsuser.texi:355
 #, no-wrap
 msgid "!-@var{n}"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:335
+#: ./hsuser.texi:357
 msgid "Refer to the command @var{n} lines back."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:336 ./hsuser.texi:376
+#: ./hsuser.texi:358 ./hsuser.texi:398
 #, no-wrap
 msgid "!!"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:338
+#: ./hsuser.texi:360
 msgid "Refer to the previous command.  This is a synonym for @samp{!-1}."
 msgstr ""
 
 #. type: code{#1}
-#: ./hsuser.texi:339
+#: ./hsuser.texi:361
 #, no-wrap
 msgid "!@var{string}"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:343
+#: ./hsuser.texi:365
 msgid ""
 "Refer to the most recent command preceding the current position in the "
 "history list starting with @var{string}."
 msgstr ""
 
 #. type: code{#1}
-#: ./hsuser.texi:344
+#: ./hsuser.texi:366
 #, no-wrap
 msgid "!?@var{string}[?]"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:351
+#: ./hsuser.texi:373
 msgid ""
 "Refer to the most recent command preceding the current position in the "
 "history list containing @var{string}.  The trailing @samp{?} may be omitted "
@@ -579,31 +613,31 @@ msgid ""
 msgstr ""
 
 #. type: code{#1}
-#: ./hsuser.texi:352
+#: ./hsuser.texi:374
 #, no-wrap
 msgid "^@var{string1}^@var{string2}^"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:356
+#: ./hsuser.texi:378
 msgid ""
 "Quick Substitution.  Repeat the last command, replacing @var{string1} with "
 "@var{string2}.  Equivalent to @code{!!:s/@var{string1}/@var{string2}/}."
 msgstr ""
 
 #. type: code{#1}
-#: ./hsuser.texi:357
+#: ./hsuser.texi:379
 #, no-wrap
 msgid "!#"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:359
+#: ./hsuser.texi:381
 msgid "The entire command line typed so far."
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:371
+#: ./hsuser.texi:393
 msgid ""
 "Word designators are used to select desired words from the event.  A "
 "@samp{:} separates the event specification from the word designator.  It may "
@@ -614,122 +648,122 @@ msgid ""
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:374
+#: ./hsuser.texi:396
 msgid "For example,"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:379
+#: ./hsuser.texi:401
 msgid ""
 "designates the preceding command.  When you type this, the preceding command "
 "is repeated in toto."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:380
+#: ./hsuser.texi:402
 #, no-wrap
 msgid "!!:$"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:383
+#: ./hsuser.texi:405
 msgid ""
 "designates the last argument of the preceding command.  This may be "
 "shortened to @code{!$}."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:384
+#: ./hsuser.texi:406
 #, no-wrap
 msgid "!fi:2"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:387
+#: ./hsuser.texi:409
 msgid ""
 "designates the second argument of the most recent command starting with the "
 "letters @code{fi}."
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:391
+#: ./hsuser.texi:413
 msgid "Here are the word designators:"
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:394
+#: ./hsuser.texi:416
 #, no-wrap
 msgid "0 (zero)"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:396
+#: ./hsuser.texi:418
 msgid "The @code{0}th word.  For many applications, this is the command word."
 msgstr ""
 
 #. type: var{#1}
-#: ./hsuser.texi:397
+#: ./hsuser.texi:419
 #, no-wrap
 msgid "n"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:399
+#: ./hsuser.texi:421
 msgid "The @var{n}th word."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:400
+#: ./hsuser.texi:422
 #, no-wrap
 msgid "^"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:402
+#: ./hsuser.texi:424
 msgid "The first argument; that is, word 1."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:403
+#: ./hsuser.texi:425
 #, no-wrap
 msgid "$"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:405
+#: ./hsuser.texi:427
 msgid "The last argument."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:406
+#: ./hsuser.texi:428
 #, no-wrap
 msgid "%"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:408
+#: ./hsuser.texi:430
 msgid "The word matched by the most recent @samp{?@var{string}?} search."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:409
+#: ./hsuser.texi:431
 #, no-wrap
 msgid "@var{x}-@var{y}"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:411
+#: ./hsuser.texi:433
 msgid "A range of words; @samp{-@var{y}} abbreviates @samp{0-@var{y}}."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:412
+#: ./hsuser.texi:434
 #, no-wrap
 msgid "*"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:416
+#: ./hsuser.texi:438
 msgid ""
 "All of the words, except the @code{0}th.  This is a synonym for @samp{1-$}.  "
 "It is not an error to use @samp{*} if there is just one word in the event; "
@@ -737,130 +771,130 @@ msgid ""
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:417
+#: ./hsuser.texi:439
 #, no-wrap
 msgid "@var{x}*"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:419
+#: ./hsuser.texi:441
 msgid "Abbreviates @samp{@var{x}-$}"
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:420
+#: ./hsuser.texi:442
 #, no-wrap
 msgid "@var{x}-"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:422
+#: ./hsuser.texi:444
 msgid "Abbreviates @samp{@var{x}-$} like @samp{@var{x}*}, but omits the last word."
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:427
+#: ./hsuser.texi:449
 msgid ""
 "If a word designator is supplied without an event specification, the "
 "previous command is used as the event."
 msgstr ""
 
 #. type: Plain text
-#: ./hsuser.texi:433
+#: ./hsuser.texi:455
 msgid ""
 "After the optional word designator, you can add a sequence of one or more of "
 "the following modifiers, each preceded by a @samp{:}."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:436
+#: ./hsuser.texi:458
 #, no-wrap
 msgid "h"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:438
+#: ./hsuser.texi:460
 msgid "Remove a trailing pathname component, leaving only the head."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:439
+#: ./hsuser.texi:461
 #, no-wrap
 msgid "t"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:441
+#: ./hsuser.texi:463
 msgid "Remove all leading pathname components, leaving the tail."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:442
+#: ./hsuser.texi:464
 #, no-wrap
 msgid "r"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:445
+#: ./hsuser.texi:467
 msgid ""
 "Remove a trailing suffix of the form @samp{.@var{suffix}}, leaving the "
 "basename."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:446
+#: ./hsuser.texi:468
 #, no-wrap
 msgid "e"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:448
+#: ./hsuser.texi:470
 msgid "Remove all but the trailing suffix."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:449
+#: ./hsuser.texi:471
 #, no-wrap
 msgid "p"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:451
+#: ./hsuser.texi:473
 msgid "Print the new command but do not execute it."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:453
+#: ./hsuser.texi:475
 #, no-wrap
 msgid "q"
 msgstr ""
 
 #. type: ifset
-#: ./hsuser.texi:455
+#: ./hsuser.texi:477
 msgid "Quote the substituted words, escaping further substitutions."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:456
+#: ./hsuser.texi:478
 #, no-wrap
 msgid "x"
 msgstr ""
 
 #. type: ifset
-#: ./hsuser.texi:459
+#: ./hsuser.texi:481
 msgid ""
 "Quote the substituted words as with @samp{q}, but break into words at "
 "spaces, tabs, and newlines."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:461
+#: ./hsuser.texi:483
 #, no-wrap
 msgid "s/@var{old}/@var{new}/"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:469
+#: ./hsuser.texi:491
 msgid ""
 "Substitute @var{new} for the first occurrence of @var{old} in the event "
 "line.  Any delimiter may be used in place of @samp{/}.  The delimiter may be "
@@ -871,42 +905,42 @@ msgid ""
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:470
+#: ./hsuser.texi:492
 #, no-wrap
 msgid "&"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:472
+#: ./hsuser.texi:494
 msgid "Repeat the previous substitution."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:473
+#: ./hsuser.texi:495
 #, no-wrap
 msgid "g"
 msgstr ""
 
 #. type: itemx
-#: ./hsuser.texi:474
+#: ./hsuser.texi:496
 #, no-wrap
 msgid "a"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:478
+#: ./hsuser.texi:500
 msgid ""
 "Cause changes to be applied over the entire event line.  Used in conjunction "
 "with @samp{s}, as in @code{gs/@var{old}/@var{new}/}, or with @samp{&}."
 msgstr ""
 
 #. type: item
-#: ./hsuser.texi:479
+#: ./hsuser.texi:501
 #, no-wrap
 msgid "G"
 msgstr ""
 
 #. type: table
-#: ./hsuser.texi:481
+#: ./hsuser.texi:503
 msgid "Apply the following @samp{s} modifier once to each word in the event."
 msgstr ""

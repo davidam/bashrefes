@@ -24,10 +24,17 @@ html: texi
 info: texi
 	makeinfo $(BASHREF_ES)
 
+libro: texi
+	sed -i "/Version @value{VERSION}/ a\\\nPuede descargar las fuentes del documento desde\nhttps://notabug.org/jorgesumle/bashrefes" $(BASHREF_ES)
+	texi2pdf $(BASHREF_ES)
+
 texi:
-	po4a-translate -f texinfo -m $(BASHREF) -p $(BASHREF_PO) -l $(BASHREF_ES)
-	po4a-translate -f texinfo -m $(RLUSER) -p $(RLUSER_PO) -l $(RLUSER_ES)
-	po4a-translate -f texinfo -m $(HSUSER) -p $(HSUSER_PO) -l $(HSUSER_ES)
+	sed -f tildes_a_texi.sed $(BASHREF_PO) > "$(BASHREF_PO).tmp"
+	sed -f tildes_a_texi.sed $(RLUSER_PO) > "$(RLUSER_PO).tmp"
+	sed -f tildes_a_texi.sed $(HSUSER_PO) > "$(HSUSER_PO).tmp"
+	po4a-translate -f texinfo -m $(BASHREF) -p "$(BASHREF_PO).tmp" -l $(BASHREF_ES)
+	po4a-translate -f texinfo -m $(RLUSER) -p "$(RLUSER_PO).tmp" -l $(RLUSER_ES)
+	po4a-translate -f texinfo -m $(HSUSER) -p "$(HSUSER_PO).tmp" -l $(HSUSER_ES)
 	sed -i -f ediciones-finales.sed $(BASHREF_ES)
 
 actualiza_pot:
@@ -35,5 +42,5 @@ actualiza_pot:
 	po4a-gettextize -f texinfo -m $(HSUSER) -p $(HSUSER_POT)
 	po4a-gettextize -f texinfo -m $(RLUSER) -p $(RLUSER_POT)
 
-clean: 
-	rm -f *.dvi *.aux *.cps *.kys *.toc *.vrs *.cp *.ky *.log *.vr bashref.es.texi *.pdf *.tmp*
+clean:
+   rm -f *.dvi *.aux *.cps *.kys *.toc *.vrs *.cp *.ky *.log *.vr bashref.es.texi *.pdf *.tmp*

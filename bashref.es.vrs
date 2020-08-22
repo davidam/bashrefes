@@ -1,189 +1,193 @@
 \initial {!}
-\entry {\code {!}}{22}
+\entry{\code {!}}{23}
 \initial {#}
-\entry {\code {#}}{22}
+\entry{\code {#}}{23}
 \initial {$}
-\entry {\code {$}}{22}
-\entry {\code {$!}}{22}
-\entry {\code {$#}}{22}
-\entry {\code {$$}}{22}
-\entry {\code {$*}}{21}
-\entry {\code {$-}}{22}
-\entry {\code {$?}}{22}
-\entry {\code {$@}}{22}
-\entry {\code {$_}}{22}
-\entry {\code {$0}}{22}
+\entry{\code {$}}{23}
+\entry{\code {$!}}{23}
+\entry{\code {$#}}{23}
+\entry{\code {$$}}{23}
+\entry{\code {$*}}{23}
+\entry{\code {$-}}{23}
+\entry{\code {$?}}{23}
+\entry{\code {$_}}{24}
+\entry{\code {$\@}}{23}
+\entry{\code {$0}}{23}
 \initial {*}
-\entry {\code {*}}{21}
+\entry{\code {*}}{23}
 \initial {-}
-\entry {\code {-}}{22}
+\entry{\code {-}}{23}
 \initial {?}
-\entry {\code {?}}{22}
-\initial {@}
-\entry {\code {@}}{22}
+\entry{\code {?}}{23}
 \initial {_}
-\entry {\code {_}}{22}
+\entry{\code {_}}{24}
+\initial {{\indexatchar}}
+\entry{\code {\@}}{23}
 \initial {0}
-\entry {\code {0}}{22}
+\entry{\code {0}}{23}
 \initial {A}
-\entry {\code {auto_resume}}{112}
+\entry{\code {auto_resume}}{116}
 \initial {B}
-\entry {\code {BASH}}{78}
-\entry {\code {BASH_ALIASES}}{78}
-\entry {\code {BASH_ARGC}}{78}
-\entry {\code {BASH_ARGV}}{78}
-\entry {\code {BASH_CMDS}}{78}
-\entry {\code {BASH_COMMAND}}{79}
-\entry {\code {BASH_COMPAT}}{79}
-\entry {\code {BASH_ENV}}{79}
-\entry {\code {BASH_EXECUTION_STRING}}{79}
-\entry {\code {BASH_LINENO}}{79}
-\entry {\code {BASH_LOADABLES_PATH}}{79}
-\entry {\code {BASH_REMATCH}}{79}
-\entry {\code {BASH_SOURCE}}{80}
-\entry {\code {BASH_SUBSHELL}}{80}
-\entry {\code {BASH_VERSINFO}}{80}
-\entry {\code {BASH_VERSION}}{80}
-\entry {\code {BASH_XTRACEFD}}{80}
-\entry {\code {BASHOPTS}}{78}
-\entry {\code {BASHPID}}{78}
-\entry {\code {bell-style}}{117}
-\entry {\code {bind-tty-special-chars}}{117}
-\entry {\code {blink-matching-paren}}{117}
+\entry{\code {BASH}}{81}
+\entry{\code {BASH_ALIASES}}{81}
+\entry{\code {BASH_ARGC}}{81}
+\entry{\code {BASH_ARGV}}{81}
+\entry{\code {BASH_ARGV0}}{82}
+\entry{\code {BASH_CMDS}}{82}
+\entry{\code {BASH_COMMAND}}{82}
+\entry{\code {BASH_COMPAT}}{82}
+\entry{\code {BASH_ENV}}{82}
+\entry{\code {BASH_EXECUTION_STRING}}{82}
+\entry{\code {BASH_LINENO}}{83}
+\entry{\code {BASH_LOADABLES_PATH}}{83}
+\entry{\code {BASH_REMATCH}}{83}
+\entry{\code {BASH_SOURCE}}{83}
+\entry{\code {BASH_SUBSHELL}}{83}
+\entry{\code {BASH_VERSINFO}}{83}
+\entry{\code {BASH_VERSION}}{84}
+\entry{\code {BASH_XTRACEFD}}{84}
+\entry{\code {BASHOPTS}}{81}
+\entry{\code {BASHPID}}{81}
+\entry{\code {bell-style}}{121}
+\entry{\code {bind-tty-special-chars}}{121}
+\entry{\code {blink-matching-paren}}{121}
 \initial {C}
-\entry {\code {CDPATH}}{77}
-\entry {\code {CHILD_MAX}}{80}
-\entry {\code {colored-completion-prefix}}{117}
-\entry {\code {colored-stats}}{117}
-\entry {\code {COLUMNS}}{81}
-\entry {\code {comment-begin}}{118}
-\entry {\code {COMP_CWORD}}{81}
-\entry {\code {COMP_KEY}}{81}
-\entry {\code {COMP_LINE}}{81}
-\entry {\code {COMP_POINT}}{81}
-\entry {\code {COMP_TYPE}}{81}
-\entry {\code {COMP_WORDBREAKS}}{81}
-\entry {\code {COMP_WORDS}}{81}
-\entry {\code {completion-display-width}}{118}
-\entry {\code {completion-ignore-case}}{118}
-\entry {\code {completion-map-case}}{118}
-\entry {\code {completion-prefix-display-length}}{118}
-\entry {\code {completion-query-items}}{118}
-\entry {\code {COMPREPLY}}{82}
-\entry {\code {convert-meta}}{118}
-\entry {\code {COPROC}}{82}
+\entry{\code {CDPATH}}{80}
+\entry{\code {CHILD_MAX}}{84}
+\entry{\code {colored-completion-prefix}}{121}
+\entry{\code {colored-stats}}{121}
+\entry{\code {COLUMNS}}{84}
+\entry{\code {comment-begin}}{122}
+\entry{\code {COMP_CWORD}}{84}
+\entry{\code {COMP_KEY}}{85}
+\entry{\code {COMP_LINE}}{84}
+\entry{\code {COMP_POINT}}{84}
+\entry{\code {COMP_TYPE}}{84}
+\entry{\code {COMP_WORDBREAKS}}{85}
+\entry{\code {COMP_WORDS}}{85}
+\entry{\code {completion-display-width}}{122}
+\entry{\code {completion-ignore-case}}{122}
+\entry{\code {completion-map-case}}{122}
+\entry{\code {completion-prefix-display-length}}{122}
+\entry{\code {completion-query-items}}{122}
+\entry{\code {COMPREPLY}}{85}
+\entry{\code {convert-meta}}{122}
+\entry{\code {COPROC}}{85}
 \initial {D}
-\entry {\code {DIRSTACK}}{82}
-\entry {\code {disable-completion}}{118}
+\entry{\code {DIRSTACK}}{85}
+\entry{\code {disable-completion}}{123}
 \initial {E}
-\entry {\code {echo-control-characters}}{119}
-\entry {\code {editing-mode}}{119}
-\entry {\code {emacs-mode-string}}{119}
-\entry {\code {EMACS}}{82}
-\entry {\code {enable-bracketed-paste}}{119}
-\entry {\code {enable-keypad}}{119}
-\entry {\code {ENV}}{82}
-\entry {\code {EUID}}{82}
-\entry {\code {EXECIGNORE}}{82}
-\entry {\code {expand-tilde}}{119}
+\entry{\code {echo-control-characters}}{123}
+\entry{\code {editing-mode}}{123}
+\entry{\code {emacs-mode-string}}{123}
+\entry{\code {EMACS}}{85}
+\entry{\code {enable-bracketed-paste}}{123}
+\entry{\code {enable-keypad}}{123}
+\entry{\code {ENV}}{85}
+\entry{\code {EPOCHREALTIME}}{85}
+\entry{\code {EPOCHSECONDS}}{86}
+\entry{\code {EUID}}{86}
+\entry{\code {EXECIGNORE}}{86}
+\entry{\code {expand-tilde}}{123}
 \initial {F}
-\entry {\code {FCEDIT}}{82}
-\entry {\code {FIGNORE}}{82}
-\entry {\code {FUNCNAME}}{82}
-\entry {\code {FUNCNEST}}{83}
+\entry{\code {FCEDIT}}{86}
+\entry{\code {FIGNORE}}{86}
+\entry{\code {FUNCNAME}}{86}
+\entry{\code {FUNCNEST}}{86}
 \initial {G}
-\entry {\code {GLOBIGNORE}}{83}
-\entry {\code {GROUPS}}{83}
+\entry{\code {GLOBIGNORE}}{87}
+\entry{\code {GROUPS}}{87}
 \initial {H}
-\entry {\code {histchars}}{83}
-\entry {\code {HISTCMD}}{83}
-\entry {\code {HISTCONTROL}}{83}
-\entry {\code {HISTFILE}}{84}
-\entry {\code {HISTFILESIZE}}{84}
-\entry {\code {HISTIGNORE}}{84}
-\entry {\code {history-preserve-point}}{119}
-\entry {\code {history-size}}{120}
-\entry {\code {HISTSIZE}}{84}
-\entry {\code {HISTTIMEFORMAT}}{84}
-\entry {\code {HOME}}{77}
-\entry {\code {horizontal-scroll-mode}}{120}
-\entry {\code {HOSTFILE}}{85}
-\entry {\code {HOSTNAME}}{85}
-\entry {\code {HOSTTYPE}}{85}
+\entry{\code {histchars}}{87}
+\entry{\code {HISTCMD}}{87}
+\entry{\code {HISTCONTROL}}{87}
+\entry{\code {HISTFILE}}{87}
+\entry{\code {HISTFILESIZE}}{87}
+\entry{\code {HISTIGNORE}}{88}
+\entry{\code {history-preserve-point}}{124}
+\entry{\code {history-size}}{124}
+\entry{\code {HISTSIZE}}{88}
+\entry{\code {HISTTIMEFORMAT}}{88}
+\entry{\code {HOME}}{80}
+\entry{\code {horizontal-scroll-mode}}{124}
+\entry{\code {HOSTFILE}}{88}
+\entry{\code {HOSTNAME}}{88}
+\entry{\code {HOSTTYPE}}{89}
 \initial {I}
-\entry {\code {IFS}}{77}
-\entry {\code {IGNOREEOF}}{85}
-\entry {\code {input-meta}}{120}
-\entry {\code {INPUTRC}}{85}
-\entry {\code {isearch-terminators}}{120}
+\entry{\code {IFS}}{80}
+\entry{\code {IGNOREEOF}}{89}
+\entry{\code {input-meta}}{124}
+\entry{\code {INPUTRC}}{89}
+\entry{\code {INSIDE_EMACS}}{89}
+\entry{\code {isearch-terminators}}{124}
 \initial {K}
-\entry {\code {keymap}}{120}
+\entry{\code {keymap}}{124}
 \initial {L}
-\entry {\code {LANG}}{85}
-\entry {\code {LC_ALL}}{85}
-\entry {\code {LC_COLLATE}}{85}
-\entry {\code {LC_CTYPE}}{85}
-\entry {\code {LC_MESSAGES}}{7, 86}
-\entry {\code {LC_NUMERIC}}{86}
-\entry {\code {LC_TIME}}{86}
-\entry {\code {LINENO}}{86}
-\entry {\code {LINES}}{86}
+\entry{\code {LANG}}{89}
+\entry{\code {LC_ALL}}{89}
+\entry{\code {LC_COLLATE}}{89}
+\entry{\code {LC_CTYPE}}{89}
+\entry{\code {LC_MESSAGES}}{7, 89}
+\entry{\code {LC_NUMERIC}}{89}
+\entry{\code {LC_TIME}}{89}
+\entry{\code {LINENO}}{89}
+\entry{\code {LINES}}{89}
 \initial {M}
-\entry {\code {MACHTYPE}}{86}
-\entry {\code {MAIL}}{77}
-\entry {\code {MAILCHECK}}{86}
-\entry {\code {MAILPATH}}{77}
-\entry {\code {MAPFILE}}{86}
-\entry {\code {mark-modified-lines}}{121}
-\entry {\code {mark-symlinked-directories}}{121}
-\entry {\code {match-hidden-files}}{121}
-\entry {\code {menu-complete-display-prefix}}{121}
-\entry {\code {meta-flag}}{120}
+\entry{\code {MACHTYPE}}{90}
+\entry{\code {MAIL}}{80}
+\entry{\code {MAILCHECK}}{90}
+\entry{\code {MAILPATH}}{80}
+\entry{\code {MAPFILE}}{90}
+\entry{\code {mark-modified-lines}}{125}
+\entry{\code {mark-symlinked-directories}}{125}
+\entry{\code {match-hidden-files}}{125}
+\entry{\code {menu-complete-display-prefix}}{125}
+\entry{\code {meta-flag}}{124}
 \initial {O}
-\entry {\code {OLDPWD}}{86}
-\entry {\code {OPTARG}}{77}
-\entry {\code {OPTERR}}{86}
-\entry {\code {OPTIND}}{77}
-\entry {\code {OSTYPE}}{86}
-\entry {\code {output-meta}}{121}
+\entry{\code {OLDPWD}}{90}
+\entry{\code {OPTARG}}{80}
+\entry{\code {OPTERR}}{90}
+\entry{\code {OPTIND}}{80}
+\entry{\code {OSTYPE}}{90}
+\entry{\code {output-meta}}{125}
 \initial {P}
-\entry {\code {page-completions}}{121}
-\entry {\code {PATH}}{77}
-\entry {\code {PIPESTATUS}}{86}
-\entry {\code {POSIXLY_CORRECT}}{86}
-\entry {\code {PPID}}{87}
-\entry {\code {PROMPT_COMMAND}}{87}
-\entry {\code {PROMPT_DIRTRIM}}{87}
-\entry {\code {PS0}}{87}
-\entry {\code {PS1}}{77}
-\entry {\code {PS2}}{77}
-\entry {\code {PS3}}{87}
-\entry {\code {PS4}}{87}
-\entry {\code {PWD}}{87}
+\entry{\code {page-completions}}{126}
+\entry{\code {PATH}}{80}
+\entry{\code {PIPESTATUS}}{90}
+\entry{\code {POSIXLY_CORRECT}}{90}
+\entry{\code {PPID}}{90}
+\entry{\code {PROMPT_COMMAND}}{90}
+\entry{\code {PROMPT_DIRTRIM}}{90}
+\entry{\code {PS0}}{91}
+\entry{\code {PS1}}{80}
+\entry{\code {PS2}}{80}
+\entry{\code {PS3}}{91}
+\entry{\code {PS4}}{91}
+\entry{\code {PWD}}{91}
 \initial {R}
-\entry {\code {RANDOM}}{87}
-\entry {\code {READLINE_LINE}}{87}
-\entry {\code {READLINE_POINT}}{87}
-\entry {\code {REPLY}}{87}
-\entry {\code {revert-all-at-newline}}{121}
+\entry{\code {RANDOM}}{91}
+\entry{\code {READLINE_LINE}}{91}
+\entry{\code {READLINE_POINT}}{91}
+\entry{\code {REPLY}}{91}
+\entry{\code {revert-all-at-newline}}{126}
 \initial {S}
-\entry {\code {SECONDS}}{87}
-\entry {\code {SHELL}}{87}
-\entry {\code {SHELLOPTS}}{87}
-\entry {\code {SHLVL}}{88}
-\entry {\code {show-all-if-ambiguous}}{122}
-\entry {\code {show-all-if-unmodified}}{122}
-\entry {\code {show-mode-in-prompt}}{122}
-\entry {\code {skip-completed-text}}{122}
+\entry{\code {SECONDS}}{91}
+\entry{\code {SHELL}}{91}
+\entry{\code {SHELLOPTS}}{91}
+\entry{\code {SHLVL}}{91}
+\entry{\code {show-all-if-ambiguous}}{126}
+\entry{\code {show-all-if-unmodified}}{126}
+\entry{\code {show-mode-in-prompt}}{126}
+\entry{\code {skip-completed-text}}{126}
 \initial {T}
-\entry {\code {TEXTDOMAIN}}{7}
-\entry {\code {TEXTDOMAINDIR}}{7}
-\entry {\code {TIMEFORMAT}}{88}
-\entry {\code {TMOUT}}{88}
-\entry {\code {TMPDIR}}{88}
+\entry{\code {TEXTDOMAIN}}{7}
+\entry{\code {TEXTDOMAINDIR}}{7}
+\entry{\code {TIMEFORMAT}}{92}
+\entry{\code {TMOUT}}{92}
+\entry{\code {TMPDIR}}{92}
 \initial {U}
-\entry {\code {UID}}{88}
+\entry{\code {UID}}{92}
 \initial {V}
-\entry {\code {vi-cmd-mode-string}}{122}
-\entry {\code {vi-ins-mode-string}}{122}
-\entry {\code {visible-stats}}{123}
+\entry{\code {vi-cmd-mode-string}}{127}
+\entry{\code {vi-ins-mode-string}}{127}
+\entry{\code {visible-stats}}{127}

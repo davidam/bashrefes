@@ -1,108 +1,110 @@
-\entry{beginning-of-line (C-a)}{129}{\code {beginning-of-line (C-a)}}
-\entry{end-of-line (C-e)}{129}{\code {end-of-line (C-e)}}
-\entry{forward-char (C-f)}{129}{\code {forward-char (C-f)}}
-\entry{backward-char (C-b)}{129}{\code {backward-char (C-b)}}
-\entry{forward-word (M-f)}{129}{\code {forward-word (M-f)}}
-\entry{backward-word (M-b)}{129}{\code {backward-word (M-b)}}
-\entry{shell-forward-word ()}{129}{\code {shell-forward-word ()}}
-\entry{shell-backward-word ()}{129}{\code {shell-backward-word ()}}
-\entry{clear-screen (C-l)}{129}{\code {clear-screen (C-l)}}
-\entry{redraw-current-line ()}{130}{\code {redraw-current-line ()}}
-\entry{accept-line (Nueva Linea o Retorno)}{130}{\code {accept-line (Nueva L\'{\dotless {i}}nea o Retorno)}}
-\entry{previous-history (C-p)}{130}{\code {previous-history (C-p)}}
-\entry{next-history (C-n)}{130}{\code {next-history (C-n)}}
-\entry{beginning-of-history (M-<)}{130}{\code {beginning-of-history (M-<)}}
-\entry{end-of-history (M->)}{130}{\code {end-of-history (M->)}}
-\entry{reverse-search-history (C-r)}{130}{\code {reverse-search-history (C-r)}}
-\entry{forward-search-history (C-s)}{130}{\code {forward-search-history (C-s)}}
-\entry{non-incremental-reverse-search-history (M-p)}{130}{\code {non-incremental-reverse-search-history (M-p)}}
-\entry{non-incremental-forward-search-history (M-n)}{130}{\code {non-incremental-forward-search-history (M-n)}}
-\entry{history-search-forward ()}{130}{\code {history-search-forward ()}}
-\entry{history-search-backward ()}{131}{\code {history-search-backward ()}}
-\entry{history-substr-search-forward ()}{131}{\code {history-substr-search-forward ()}}
-\entry{history-substr-search-backward ()}{131}{\code {history-substr-search-backward ()}}
-\entry{yank-nth-arg (M-C-y)}{131}{\code {yank-nth-arg (M-C-y)}}
-\entry{yank-last-arg (M-. or M-_)}{131}{\code {yank-last-arg (M-. or M-_)}}
-\entry{end-of-file (usually C-d)}{131}{\code {\i {end-of-file} (usually C-d)}}
-\entry{delete-char (C-d)}{131}{\code {delete-char (C-d)}}
-\entry{backward-delete-char (Rubout)}{132}{\code {backward-delete-char (Rubout)}}
-\entry{forward-backward-delete-char ()}{132}{\code {forward-backward-delete-char ()}}
-\entry{quoted-insert (C-q or C-v)}{132}{\code {quoted-insert (C-q or C-v)}}
-\entry{self-insert (a, b, A, 1, !, ...{})}{132}{\code {self-insert (a, b, A, 1, !, \dots {})}}
-\entry{bracketed-paste-begin ()}{132}{\code {bracketed-paste-begin ()}}
-\entry{transpose-chars (C-t)}{132}{\code {transpose-chars (C-t)}}
-\entry{transpose-words (M-t)}{132}{\code {transpose-words (M-t)}}
-\entry{upcase-word (M-u)}{132}{\code {upcase-word (M-u)}}
-\entry{downcase-word (M-l)}{132}{\code {downcase-word (M-l)}}
-\entry{capitalize-word (M-c)}{132}{\code {capitalize-word (M-c)}}
-\entry{overwrite-mode ()}{132}{\code {overwrite-mode ()}}
-\entry{kill-line (C-k)}{133}{\code {kill-line (C-k)}}
-\entry{backward-kill-line (C-x Rubout)}{133}{\code {backward-kill-line (C-x Rubout)}}
-\entry{unix-line-discard (C-u)}{133}{\code {unix-line-discard (C-u)}}
-\entry{kill-whole-line ()}{133}{\code {kill-whole-line ()}}
-\entry{kill-word (M-d)}{133}{\code {kill-word (M-d)}}
-\entry{backward-kill-word (M-SUPR)}{133}{\code {backward-kill-word (M-\key {SUPR})}}
-\entry{shell-kill-word ()}{133}{\code {shell-kill-word ()}}
-\entry{shell-backward-kill-word ()}{133}{\code {shell-backward-kill-word ()}}
-\entry{unix-word-rubout (C-w)}{133}{\code {unix-word-rubout (C-w)}}
-\entry{unix-filename-rubout ()}{133}{\code {unix-filename-rubout ()}}
-\entry{delete-horizontal-space ()}{133}{\code {delete-horizontal-space ()}}
-\entry{kill-region ()}{133}{\code {kill-region ()}}
-\entry{copy-region-as-kill ()}{134}{\code {copy-region-as-kill ()}}
-\entry{copy-backward-word ()}{134}{\code {copy-backward-word ()}}
-\entry{copy-forward-word ()}{134}{\code {copy-forward-word ()}}
-\entry{yank (C-y)}{134}{\code {yank (C-y)}}
-\entry{yank-pop (M-y)}{134}{\code {yank-pop (M-y)}}
-\entry{digit-argument (M-0, M-1, ...{} M--)}{134}{\code {digit-argument (\kbd {M-0}, \kbd {M-1}, \dots {} \kbd {M--})}}
-\entry{universal-argument ()}{134}{\code {universal-argument ()}}
-\entry{complete (TAB)}{134}{\code {complete (\key {TAB})}}
-\entry{possible-completions (M-?)}{134}{\code {possible-completions (M-?)}}
-\entry{insert-completions (M-*)}{135}{\code {insert-completions (M-*)}}
-\entry{menu-complete ()}{135}{\code {menu-complete ()}}
-\entry{menu-complete-backward ()}{135}{\code {menu-complete-backward ()}}
-\entry{delete-char-or-list ()}{135}{\code {delete-char-or-list ()}}
-\entry{complete-filename (M-/)}{135}{\code {complete-filename (M-/)}}
-\entry{possible-filename-completions (C-x /)}{135}{\code {possible-filename-completions (C-x /)}}
-\entry{complete-username (M-~)}{135}{\code {complete-username (M-~)}}
-\entry{possible-username-completions (C-x ~)}{135}{\code {possible-username-completions (C-x ~)}}
-\entry{complete-variable (M-$)}{135}{\code {complete-variable (M-$)}}
-\entry{possible-variable-completions (C-x $)}{135}{\code {possible-variable-completions (C-x $)}}
-\entry{complete-hostname (M-@)}{135}{\code {complete-hostname (M-@)}}
-\entry{possible-hostname-completions (C-x @)}{135}{\code {possible-hostname-completions (C-x @)}}
-\entry{complete-command (M-!)}{136}{\code {complete-command (M-!)}}
-\entry{possible-command-completions (C-x !)}{136}{\code {possible-command-completions (C-x !)}}
-\entry{dynamic-complete-history (M-TAB)}{136}{\code {dynamic-complete-history (M-\key {TAB})}}
-\entry{dabbrev-expand ()}{136}{\code {dabbrev-expand ()}}
-\entry{complete-into-braces (M-{\indexlbrace })}{136}{\code {complete-into-braces (M-{\tt \char 123})}}
-\entry{start-kbd-macro (C-x ()}{136}{\code {start-kbd-macro (C-x ()}}
-\entry{end-kbd-macro (C-x ))}{136}{\code {end-kbd-macro (C-x ))}}
-\entry{call-last-kbd-macro (C-x e)}{136}{\code {call-last-kbd-macro (C-x e)}}
-\entry{print-last-kbd-macro ()}{136}{\code {print-last-kbd-macro ()}}
-\entry{re-read-init-file (C-x C-r)}{136}{\code {re-read-init-file (C-x C-r)}}
-\entry{abort (C-g)}{136}{\code {abort (C-g)}}
-\entry{do-uppercase-version (M-a, M-b, M-x, ...{})}{136}{\code {do-uppercase-version (M-a, M-b, M-\var {x}, \dots {})}}
-\entry{prefix-meta (ESC)}{137}{\code {prefix-meta (\key {ESC})}}
-\entry{undo (C-_ or C-x C-u)}{137}{\code {undo (C-_ or C-x C-u)}}
-\entry{revert-line (M-r)}{137}{\code {revert-line (M-r)}}
-\entry{tilde-expand (M-&)}{137}{\code {tilde-expand (M-&)}}
-\entry{set-mark (C-@)}{137}{\code {set-mark (C-@)}}
-\entry{exchange-point-and-mark (C-x C-x)}{137}{\code {exchange-point-and-mark (C-x C-x)}}
-\entry{character-search (C-])}{137}{\code {character-search (C-])}}
-\entry{character-search-backward (M-C-])}{137}{\code {character-search-backward (M-C-])}}
-\entry{skip-csi-sequence ()}{137}{\code {skip-csi-sequence ()}}
-\entry{insert-comment (M-#)}{137}{\code {insert-comment (M-#)}}
-\entry{dump-functions ()}{137}{\code {dump-functions ()}}
-\entry{dump-variables ()}{138}{\code {dump-variables ()}}
-\entry{dump-macros ()}{138}{\code {dump-macros ()}}
-\entry{glob-complete-word (M-g)}{138}{\code {glob-complete-word (M-g)}}
-\entry{glob-expand-word (C-x *)}{138}{\code {glob-expand-word (C-x *)}}
-\entry{glob-list-expansions (C-x g)}{138}{\code {glob-list-expansions (C-x g)}}
-\entry{display-shell-version (C-x C-v)}{138}{\code {display-shell-version (C-x C-v)}}
-\entry{shell-expand-line (M-C-e)}{138}{\code {shell-expand-line (M-C-e)}}
-\entry{history-expand-line (M-^)}{138}{\code {history-expand-line (M-^)}}
-\entry{magic-space ()}{138}{\code {magic-space ()}}
-\entry{alias-expand-line ()}{138}{\code {alias-expand-line ()}}
-\entry{history-and-alias-expand-line ()}{138}{\code {history-and-alias-expand-line ()}}
-\entry{insert-last-argument (M-. or M-_)}{139}{\code {insert-last-argument (M-. or M-_)}}
-\entry{operate-and-get-next (C-o)}{139}{\code {operate-and-get-next (C-o)}}
-\entry{edit-and-execute-command (C-xC-e)}{139}{\code {edit-and-execute-command (C-xC-e)}}
+\entry{beginning-of-line (C-a)}{134}{\code {beginning-of-line (C-a)}}
+\entry{end-of-line (C-e)}{134}{\code {end-of-line (C-e)}}
+\entry{forward-char (C-f)}{134}{\code {forward-char (C-f)}}
+\entry{backward-char (C-b)}{134}{\code {backward-char (C-b)}}
+\entry{forward-word (M-f)}{134}{\code {forward-word (M-f)}}
+\entry{backward-word (M-b)}{134}{\code {backward-word (M-b)}}
+\entry{shell-forward-word ()}{134}{\code {shell-forward-word ()}}
+\entry{shell-backward-word ()}{134}{\code {shell-backward-word ()}}
+\entry{previous-screen-line ()}{134}{\code {previous-screen-line ()}}
+\entry{next-screen-line ()}{135}{\code {next-screen-line ()}}
+\entry{clear-screen (C-l)}{135}{\code {clear-screen (C-l)}}
+\entry{redraw-current-line ()}{135}{\code {redraw-current-line ()}}
+\entry{accept-line (Nueva Linea o Retorno)}{135}{\code {accept-line (Nueva L\'{\dotless {i}}nea o Retorno)}}
+\entry{previous-history (C-p)}{135}{\code {previous-history (C-p)}}
+\entry{next-history (C-n)}{135}{\code {next-history (C-n)}}
+\entry{beginning-of-history (M-<)}{135}{\code {beginning-of-history (M-<)}}
+\entry{end-of-history (M->)}{135}{\code {end-of-history (M->)}}
+\entry{reverse-search-history (C-r)}{135}{\code {reverse-search-history (C-r)}}
+\entry{forward-search-history (C-s)}{135}{\code {forward-search-history (C-s)}}
+\entry{non-incremental-reverse-search-history (M-p)}{135}{\code {non-incremental-reverse-search-history (M-p)}}
+\entry{non-incremental-forward-search-history (M-n)}{136}{\code {non-incremental-forward-search-history (M-n)}}
+\entry{history-search-forward ()}{136}{\code {history-search-forward ()}}
+\entry{history-search-backward ()}{136}{\code {history-search-backward ()}}
+\entry{history-substring-search-forward ()}{136}{\code {history-substring-search-forward ()}}
+\entry{history-substring-search-backward ()}{136}{\code {history-substring-search-backward ()}}
+\entry{yank-nth-arg (M-C-y)}{136}{\code {yank-nth-arg (M-C-y)}}
+\entry{yank-last-arg (M-. or M-_)}{136}{\code {yank-last-arg (M-. or M-_)}}
+\entry{end-of-file (usually C-d)}{137}{\code {\i {end-of-file} (usually C-d)}}
+\entry{delete-char (C-d)}{137}{\code {delete-char (C-d)}}
+\entry{backward-delete-char (Rubout)}{137}{\code {backward-delete-char (Rubout)}}
+\entry{forward-backward-delete-char ()}{137}{\code {forward-backward-delete-char ()}}
+\entry{quoted-insert (C-q or C-v)}{137}{\code {quoted-insert (C-q or C-v)}}
+\entry{self-insert (a, b, A, 1, !, ...)}{137}{\code {self-insert (a, b, A, 1, !, \dots {})}}
+\entry{bracketed-paste-begin ()}{137}{\code {bracketed-paste-begin ()}}
+\entry{transpose-chars (C-t)}{137}{\code {transpose-chars (C-t)}}
+\entry{transpose-words (M-t)}{137}{\code {transpose-words (M-t)}}
+\entry{upcase-word (M-u)}{137}{\code {upcase-word (M-u)}}
+\entry{downcase-word (M-l)}{137}{\code {downcase-word (M-l)}}
+\entry{capitalize-word (M-c)}{138}{\code {capitalize-word (M-c)}}
+\entry{overwrite-mode ()}{138}{\code {overwrite-mode ()}}
+\entry{kill-line (C-k)}{138}{\code {kill-line (C-k)}}
+\entry{backward-kill-line (C-x Rubout)}{138}{\code {backward-kill-line (C-x Rubout)}}
+\entry{unix-line-discard (C-u)}{138}{\code {unix-line-discard (C-u)}}
+\entry{kill-whole-line ()}{138}{\code {kill-whole-line ()}}
+\entry{kill-word (M-d)}{138}{\code {kill-word (M-d)}}
+\entry{backward-kill-word (M-SUPR)}{138}{\code {backward-kill-word (M-\key {SUPR})}}
+\entry{shell-kill-word ()}{138}{\code {shell-kill-word ()}}
+\entry{shell-backward-kill-word ()}{138}{\code {shell-backward-kill-word ()}}
+\entry{unix-word-rubout (C-w)}{138}{\code {unix-word-rubout (C-w)}}
+\entry{unix-filename-rubout ()}{139}{\code {unix-filename-rubout ()}}
+\entry{delete-horizontal-space ()}{139}{\code {delete-horizontal-space ()}}
+\entry{kill-region ()}{139}{\code {kill-region ()}}
+\entry{copy-region-as-kill ()}{139}{\code {copy-region-as-kill ()}}
+\entry{copy-backward-word ()}{139}{\code {copy-backward-word ()}}
+\entry{copy-forward-word ()}{139}{\code {copy-forward-word ()}}
+\entry{yank (C-y)}{139}{\code {yank (C-y)}}
+\entry{yank-pop (M-y)}{139}{\code {yank-pop (M-y)}}
+\entry{digit-argument (M-0, M-1, ... M--)}{139}{\code {digit-argument (\kbd {M-0}, \kbd {M-1}, \dots {} \kbd {M--})}}
+\entry{universal-argument ()}{139}{\code {universal-argument ()}}
+\entry{complete (TAB)}{139}{\code {complete (\key {TAB})}}
+\entry{possible-completions (M-?)}{140}{\code {possible-completions (M-?)}}
+\entry{insert-completions (M-*)}{140}{\code {insert-completions (M-*)}}
+\entry{menu-complete ()}{140}{\code {menu-complete ()}}
+\entry{menu-complete-backward ()}{140}{\code {menu-complete-backward ()}}
+\entry{delete-char-or-list ()}{140}{\code {delete-char-or-list ()}}
+\entry{complete-filename (M-/)}{140}{\code {complete-filename (M-/)}}
+\entry{possible-filename-completions (C-x /)}{140}{\code {possible-filename-completions (C-x /)}}
+\entry{complete-username (M-~)}{140}{\code {complete-username (M-~)}}
+\entry{possible-username-completions (C-x ~)}{140}{\code {possible-username-completions (C-x ~)}}
+\entry{complete-variable (M-$)}{140}{\code {complete-variable (M-$)}}
+\entry{possible-variable-completions (C-x $)}{141}{\code {possible-variable-completions (C-x $)}}
+\entry{complete-hostname (M-{\indexatchar})}{141}{\code {complete-hostname (M-\@)}}
+\entry{possible-hostname-completions (C-x {\indexatchar})}{141}{\code {possible-hostname-completions (C-x \@)}}
+\entry{complete-command (M-!)}{141}{\code {complete-command (M-!)}}
+\entry{possible-command-completions (C-x !)}{141}{\code {possible-command-completions (C-x !)}}
+\entry{dynamic-complete-history (M-TAB)}{141}{\code {dynamic-complete-history (M-\key {TAB})}}
+\entry{dabbrev-expand ()}{141}{\code {dabbrev-expand ()}}
+\entry{complete-into-braces (M-{\indexlbrace})}{141}{\code {complete-into-braces (M-\lbracechar {})}}
+\entry{start-kbd-macro (C-x ()}{141}{\code {start-kbd-macro (C-x ()}}
+\entry{end-kbd-macro (C-x ))}{141}{\code {end-kbd-macro (C-x ))}}
+\entry{call-last-kbd-macro (C-x e)}{141}{\code {call-last-kbd-macro (C-x e)}}
+\entry{print-last-kbd-macro ()}{141}{\code {print-last-kbd-macro ()}}
+\entry{re-read-init-file (C-x C-r)}{142}{\code {re-read-init-file (C-x C-r)}}
+\entry{abort (C-g)}{142}{\code {abort (C-g)}}
+\entry{do-lowercase-version (M-A, M-B, M-x, ...)}{142}{\code {do-lowercase-version (M-A, M-B, M-\var {x}, \dots {})}}
+\entry{prefix-meta (ESC)}{142}{\code {prefix-meta (\key {ESC})}}
+\entry{undo (C-_ or C-x C-u)}{142}{\code {undo (C-_ or C-x C-u)}}
+\entry{revert-line (M-r)}{142}{\code {revert-line (M-r)}}
+\entry{tilde-expand (M-&)}{142}{\code {tilde-expand (M-&)}}
+\entry{set-mark (C-{\indexatchar})}{142}{\code {set-mark (C-\@)}}
+\entry{exchange-point-and-mark (C-x C-x)}{142}{\code {exchange-point-and-mark (C-x C-x)}}
+\entry{character-search (C-])}{142}{\code {character-search (C-])}}
+\entry{character-search-backward (M-C-])}{142}{\code {character-search-backward (M-C-])}}
+\entry{skip-csi-sequence ()}{142}{\code {skip-csi-sequence ()}}
+\entry{insert-comment (M-#)}{143}{\code {insert-comment (M-#)}}
+\entry{dump-functions ()}{143}{\code {dump-functions ()}}
+\entry{dump-variables ()}{143}{\code {dump-variables ()}}
+\entry{dump-macros ()}{143}{\code {dump-macros ()}}
+\entry{glob-complete-word (M-g)}{143}{\code {glob-complete-word (M-g)}}
+\entry{glob-expand-word (C-x *)}{143}{\code {glob-expand-word (C-x *)}}
+\entry{glob-list-expansions (C-x g)}{143}{\code {glob-list-expansions (C-x g)}}
+\entry{display-shell-version (C-x C-v)}{143}{\code {display-shell-version (C-x C-v)}}
+\entry{shell-expand-line (M-C-e)}{144}{\code {shell-expand-line (M-C-e)}}
+\entry{history-expand-line (M-^)}{144}{\code {history-expand-line (M-^)}}
+\entry{magic-space ()}{144}{\code {magic-space ()}}
+\entry{alias-expand-line ()}{144}{\code {alias-expand-line ()}}
+\entry{history-and-alias-expand-line ()}{144}{\code {history-and-alias-expand-line ()}}
+\entry{insert-last-argument (M-. or M-_)}{144}{\code {insert-last-argument (M-. or M-_)}}
+\entry{operate-and-get-next (C-o)}{144}{\code {operate-and-get-next (C-o)}}
+\entry{edit-and-execute-command (C-xC-e)}{144}{\code {edit-and-execute-command (C-xC-e)}}

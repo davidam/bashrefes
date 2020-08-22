@@ -1,35 +1,35 @@
 \initial {!}
-\entry {\code {!}}{8}
+\entry{\code {!}}{8}
 \initial {[}
-\entry {\code {[[}}{13}
+\entry{\code {[[}}{13}
 \initial {]}
-\entry {\code {]]}}{13}
-\initial {{\indexlbrace }}
-\entry {\code {{\tt \char 123}}}{16}
-\initial {{\indexrbrace }}
-\entry {\code {{\tt \char 125}}}{16}
+\entry{\code {]]}}{13}
+\initial {{\indexlbrace}}
+\entry{\code {\lbracechar {}}}{16}
+\initial {{\indexrbrace}}
+\entry{\code {\rbracechar {}}}{16}
 \initial {C}
-\entry {\code {case}}{11}
+\entry{\code {case}}{12}
 \initial {D}
-\entry {\code {do}}{10}
-\entry {\code {done}}{10}
+\entry{\code {do}}{10}
+\entry{\code {done}}{10}
 \initial {E}
-\entry {\code {elif}}{11}
-\entry {\code {else}}{11}
-\entry {\code {esac}}{11}
+\entry{\code {elif}}{11}
+\entry{\code {else}}{11}
+\entry{\code {esac}}{12}
 \initial {F}
-\entry {\code {fi}}{11}
-\entry {\code {for}}{11}
-\entry {\code {function}}{18}
+\entry{\code {fi}}{11}
+\entry{\code {for}}{11}
+\entry{\code {function}}{18}
 \initial {I}
-\entry {\code {if}}{11}
-\entry {\code {in}}{11}
+\entry{\code {if}}{11}
+\entry{\code {in}}{12}
 \initial {S}
-\entry {\code {select}}{12}
+\entry{\code {select}}{12}
 \initial {T}
-\entry {\code {then}}{11}
-\entry {\code {time}}{8}
+\entry{\code {then}}{11}
+\entry{\code {time}}{8}
 \initial {U}
-\entry {\code {until}}{10}
+\entry{\code {until}}{10}
 \initial {W}
-\entry {\code {while}}{10}
+\entry{\code {while}}{10}

@@ -1,7 +1,7 @@
 @ignore
 This file documents the user interface to the GNU History library.
 
-Copyright (C) 1988--2016 Free Software Foundation, Inc.
+Copyright (C) 1988--2018 Free Software Foundation, Inc.
 Authored by Brian Fox and Chet Ramey.
 
 Permission is granted to make and distribute verbatim copies of this manual
@@ -52,7 +52,7 @@ el uso de la @{gnu} History Library en tus propios programas,
 * Instrucciones Integradas del Historial de Bash::  Las instrucciones 
                                                       integradas de Bash que 
                                                       manipulan el historial 
-                                                      deinstrucciones.
+                                                      de instrucciones.
 * Interacci@'on con el Historial::  Qu@'e se siente al usar History como 
                                       usuario.
 @end menu
@@ -127,8 +127,8 @@ a@~nadiendo puntos y comas donde sea necesario para preservar la
 correcci@'on sint@'actica.  La opci@'on del int@'erprete @code{lithist} hace
 que el int@'erprete guarde la instrucci@'on con nuevas l@'{@dotless{i}}neas
 intercaladas en vez de puntos y comas.  La opci@'on integrada @code{shopt}
-es usada para habilitar estas opciones.  @xref{Instrucciones Integradas de
-Bash}, para una descripci@'on de @code{shopt}.
+es usada para habilitar estas opciones.  @xref{La Instrucci@'on Integrada
+Shopt}, para una descripci@'on de @code{shopt}.
 
 @node Instrucciones Integradas del Historial de Bash
 @section Instrucciones Integradas del Historial de Bash
@@ -184,6 +184,7 @@ por @code{cc} y teclear @samp{r} vuelva a ejecutar la @'ultima instrucci@'on
 history [@var{n}]
 history -c
 history -d @var{desplazamiento}
+history -d @var{inicio}-@var{fin}
 history [-anrw] [@var{nombre-de-archivo}]
 history -ps @var{arg}
 @end example
@@ -206,9 +207,19 @@ Limpia la lista del historial.  Esto puede ser combinado con las otras
 opciones para reemplazar la lista del historial completamente.
 
 @item -d @var{desplazamiento}
-Borra la entrada del historial en la posici@'on @var{desplazamiento}.
-@var{desplazamiento} debe ser especificado tal como aparece cuando se
-muestra el historial.
+Elimina la entrada del historial en la posici@'on @var{desplazamiento}.  Si
+@var{desplazamiento} es positivo, deber@'{@dotless{i}}a ser especificado
+como si apareciera cuando se muestra el historial.  Si @var{desplazamiento}
+es negativo, se interpreta como relativo a uno mayor que la @'ultima
+posici@'on del historial, de forma que los @'{@dotless{i}}ndices negativos
+cuentan hacia atr@'as desde el final del historial, y un
+@'{@dotless{i}}ndice de @samp{-1} se refiere a la actual instrucci@'on
+@code{history -d}.
+
+@item -d @var{inicio}-@var{fin}
+Elimina las entradas del historial entre las posiciones @var{inicio} y
+@var{fin}, inclusivas.  Los valores positivos y negativos para @var{start} y
+@var{end} se interpretan como se explica arriba.
 
 @item -a
 A@~nade las nuevas l@'{@dotless{i}}neas de historial al archivo del
@@ -264,9 +275,12 @@ entrada actual o arreglar errores en las instrucciones anteriores
 r@'apidamente.
 
 @ifset BashFeatures
-La expansi@'on del historial es realizada inmediatamente despu@'es de que
-sea le@'{@dotless{i}}da una l@'{@dotless{i}}nea completa, antes de que el
-int@'erprete la divida en palabras.
+La expansi@'on de historial se realiza inmediatamente despu@'es de que sea
+le@'{@dotless{i}}da una l@'{@dotless{i}}nea completa, antes de que el
+int@'erprete la divida en palabras y se realiza en cada l@'{@dotless{i}}nea
+de forma individual.  Bash trata de informar a las funciones de expansi@'on
+de historial sobre el antrecomillado a@'un en efecto de l@'{@dotless{i}}neas
+anteriores.
 @end ifset
 
 La expansi@'on del historial tiene lugar en dos partes.  La primera es para
@@ -281,17 +295,28 @@ l@'{@dotless{i}}nea es dividida en palabras de la misma forma que hace Bash,
 para que varias palabras rodeadas por comillas sean consideradas una
 palabras.  Las expansiones del historial son introducidas por la aparici@'on
 del car@'acter de expansi@'on de historial, que es @samp{!} por defecto.
+
+La expansi@'on de historial implementa convenciones de entrecomillado del
+estilo del int@'erprete: una barra invertida puede ser usada para eliminar
+el tratamiento especial del siguiente car@'acter; las comillas simples
+rodean secuencias literales de caracteres y pueden ser usadas para inhibir
+la expansi@'on de historial; y los caracteres rodeados por comillas dobles
+pueden estar sujetos a la expansi@'on de car@'acter de historial, pero no
+las comillas dobles, puesto que no son tratadas de forma especial entre
+comillas dobles.
+
 @ifset BashFeatures
-Solo @samp{\} y @samp{'} pueden ser usados para escapar el car@'acter de
-expansi@'on del historial, pero el car@'acter de expansi@'on del historial
-tambi@'en es tratado como entrecomillado si precede inmediatamente a la
-comillas dobles de cierre en una cadena entrecomillada con comillas dobles. 
+Al usar el int@'erprete, solo @samp{\} y @samp{'} pueden ser usados para
+escapar el car@'acter de expansi@'on del historial, pero el car@'acter de
+expansi@'on del historial tambi@'en es tratado como entrecomillado si
+precede inmediatamente a la comillas dobles de cierre en una cadena
+entrecomillada con comillas dobles. 
 @end ifset
 
 @ifset BashFeatures
 Varias opciones del int@'erprete que pueden ser habilitadas con la
-instrucci@'on integrada @code{shopt} (@pxref{Instrucciones Integradas de
-Bash}) pueden ser utilizadas para adaptar el comportamiento de la
+instrucci@'on integrada @code{shopt} (@pxref{La Instrucci@'on Integrada
+Shopt}) pueden ser utilizadas para adaptar el comportamiento de la
 expansi@'on del historial.  Si la opci@'on del int@'erprete
 @code{histverify} est@'a habilitada, y se est@'a usando Readline, las
 sustituciones del historial no son pasadas inmediatamente al analizador del

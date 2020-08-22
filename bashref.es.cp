@@ -39,80 +39,80 @@
 \entry{coprocesos}{16}{coprocesos}
 \entry{funcion del interprete}{18}{funci\'on del int\'erprete}
 \entry{funciones, interprete}{18}{funciones, int\'erprete}
-\entry{parametros}{20}{par\'ametros}
-\entry{variable, interprete}{20}{variable, int\'erprete}
-\entry{variable del interprete}{20}{variable del int\'erprete}
-\entry{parametros, posicional}{21}{par\'ametros, posicional}
-\entry{parametros, especial}{21}{par\'ametros, especial}
-\entry{expansion}{23}{expansi\'on}
-\entry{expansion de llaves}{23}{expansi\'on de llaves}
-\entry{expansion, llave}{23}{expansi\'on, llave}
-\entry{expansion de virgulilla}{24}{expansi\'on de virgulilla}
-\entry{expansion, virgulilla}{24}{expansi\'on, virgulilla}
-\entry{expansion de parametros}{25}{expansi\'on de par\'ametros}
-\entry{expansion, parametro}{25}{expansi\'on, par\'ametro}
-\entry{sustitucion de instrucciones}{31}{sustituci\'on de instrucciones}
-\entry{expansion, aritmetica}{32}{expansi\'on, aritm\'etica}
-\entry{expansion aritmetica}{32}{expansi\'on aritm\'etica}
-\entry{sustitucion de proceso}{32}{sustituci\'on de proceso}
-\entry{division de palabras}{32}{divisi\'on de palabras}
-\entry{expansion, nombre de archivo}{33}{expansi\'on, nombre de archivo}
-\entry{expansion, nombre de ruta}{33}{expansi\'on, nombre de ruta}
-\entry{expansion de nombre de archivo}{33}{expansi\'on de nombre de archivo}
-\entry{expansion de nombre de ruta}{33}{expansi\'on de nombre de ruta}
-\entry{coincidencia de patron}{34}{coincidencia de patr\'on}
-\entry{coincidencia, patron}{34}{coincidencia, patr\'on}
-\entry{redireccion}{35}{redirecci\'on}
-\entry{expansion de instrucciones}{39}{expansi\'on de instrucciones}
-\entry{ejecucion de instrucciones}{40}{ejecuci\'on de instrucciones}
-\entry{busqueda de instrucciones}{40}{b\'usqueda de instrucciones}
-\entry{entorno de ejecucion}{40}{entorno de ejecuci\'on}
-\entry{entorno}{42}{entorno}
-\entry{estado de salida}{42}{estado de salida}
-\entry{manejo de senales}{43}{manejo de se\~nales}
-\entry{guion del interprete}{43}{guion del int\'erprete}
-\entry{instruccion integrada especial}{76}{instrucci\'on integrada especial}
-\entry{interprete de acceso}{91}{int\'erprete de acceso}
-\entry{interprete interactivo}{91}{int\'erprete interactivo}
-\entry{archivos de inicio}{91}{archivos de inicio}
-\entry{interprete interactivo}{93}{int\'erprete interactivo}
-\entry{interprete, interactivo}{93}{int\'erprete, interactivo}
-\entry{expresiones, condicionales}{95}{expresiones, condicionales}
-\entry{aritmetica, interprete}{97}{aritm\'etica, int\'erprete}
-\entry{aritmetica del interprete}{97}{aritm\'etica del int\'erprete}
-\entry{expresiones, aritmeticas}{97}{expresiones, aritm\'eticas}
-\entry{evaluacion, aritmetica}{97}{evaluaci\'on, aritm\'etica}
-\entry{evaluacion aritmetica}{97}{evaluaci\'on aritm\'etica}
-\entry{expansion de alias}{99}{expansi\'on de alias}
-\entry{vectores}{99}{vectores}
-\entry{pila de directorio}{101}{pila de directorio}
-\entry{prompt}{103}{prompt}
-\entry{interprete restringido}{104}{int\'erprete restringido}
-\entry{Modo POSIX}{105}{Modo POSIX}
-\entry{control de tareas}{109}{control de tareas}
-\entry{frente}{109}{frente}
-\entry{fondo}{109}{fondo}
-\entry{suspender tareas}{109}{suspender tareas}
-\entry{Readline, como usar}{112}{Readline, c\'omo usar}
-\entry{interaccion, readline}{113}{interacci\'on, readline}
-\entry{notacion, readline}{114}{notaci\'on, readline}
-\entry{edicion de ordenes}{114}{edici\'on de \'ordenes}
-\entry{editando lineas de ordenes}{114}{editando l\'{\dotless {i}}neas de \'ordenes}
-\entry{cortar texto}{115}{cortar texto}
-\entry{pegar texto}{115}{pegar texto}
-\entry{anillo de corte}{115}{anillo de corte}
-\entry{archivo de inicializacion, readline}{116}{archivo de inicializaci\'on, readline}
-\entry{variables, readline}{117}{variables, readline}
-\entry{complecion programable}{139}{compleci\'on programable}
-\entry{instrucciones integradas de complecion}{142}{instrucciones integradas de compleci\'on}
-\entry{Historial, como usar}{148}{Historial, c\'omo usar}
-\entry{historial de instrucciones}{149}{historial de instrucciones}
-\entry{lista del historial}{149}{lista del historial}
-\entry{instrucciones integradas de historial}{150}{instrucciones integradas de historial}
-\entry{expansion del historial}{151}{expansi\'on del historial}
-\entry{designadores de eventos}{152}{designadores de eventos}
-\entry{eventos del historial}{152}{eventos del historial}
-\entry{instalacion}{155}{instalaci\'on}
-\entry{configuracion}{155}{configuraci\'on}
-\entry{instalacion de Bash}{155}{instalaci\'on de Bash}
-\entry{configuracion de Bash}{155}{configuraci\'on de Bash}
+\entry{parametros}{21}{par\'ametros}
+\entry{variable, interprete}{21}{variable, int\'erprete}
+\entry{variable del interprete}{21}{variable del int\'erprete}
+\entry{parametros, posicional}{22}{par\'ametros, posicional}
+\entry{parametros, especial}{22}{par\'ametros, especial}
+\entry{expansion}{24}{expansi\'on}
+\entry{expansion de llaves}{24}{expansi\'on de llaves}
+\entry{expansion, llave}{24}{expansi\'on, llave}
+\entry{expansion de virgulilla}{25}{expansi\'on de virgulilla}
+\entry{expansion, virgulilla}{25}{expansi\'on, virgulilla}
+\entry{expansion de parametros}{26}{expansi\'on de par\'ametros}
+\entry{expansion, parametro}{26}{expansi\'on, par\'ametro}
+\entry{sustitucion de instrucciones}{33}{sustituci\'on de instrucciones}
+\entry{expansion, aritmetica}{33}{expansi\'on, aritm\'etica}
+\entry{expansion aritmetica}{33}{expansi\'on aritm\'etica}
+\entry{sustitucion de proceso}{33}{sustituci\'on de proceso}
+\entry{division de palabras}{34}{divisi\'on de palabras}
+\entry{expansion, nombre de archivo}{34}{expansi\'on, nombre de archivo}
+\entry{expansion, nombre de ruta}{34}{expansi\'on, nombre de ruta}
+\entry{expansion de nombre de archivo}{34}{expansi\'on de nombre de archivo}
+\entry{expansion de nombre de ruta}{34}{expansi\'on de nombre de ruta}
+\entry{coincidencia de patron}{35}{coincidencia de patr\'on}
+\entry{coincidencia, patron}{35}{coincidencia, patr\'on}
+\entry{redireccion}{37}{redirecci\'on}
+\entry{expansion de instrucciones}{41}{expansi\'on de instrucciones}
+\entry{ejecucion de instrucciones}{41}{ejecuci\'on de instrucciones}
+\entry{busqueda de instrucciones}{41}{b\'usqueda de instrucciones}
+\entry{entorno de ejecucion}{42}{entorno de ejecuci\'on}
+\entry{entorno}{43}{entorno}
+\entry{estado de salida}{44}{estado de salida}
+\entry{manejo de senales}{44}{manejo de se\~nales}
+\entry{guion del interprete}{45}{guion del int\'erprete}
+\entry{instruccion integrada especial}{79}{instrucci\'on integrada especial}
+\entry{interprete de acceso}{95}{int\'erprete de acceso}
+\entry{interprete interactivo}{95}{int\'erprete interactivo}
+\entry{archivos de inicio}{95}{archivos de inicio}
+\entry{interprete interactivo}{97}{int\'erprete interactivo}
+\entry{interprete, interactivo}{97}{int\'erprete, interactivo}
+\entry{expresiones, condicionales}{99}{expresiones, condicionales}
+\entry{aritmetica, interprete}{101}{aritm\'etica, int\'erprete}
+\entry{aritmetica del interprete}{101}{aritm\'etica del int\'erprete}
+\entry{expresiones, aritmeticas}{101}{expresiones, aritm\'eticas}
+\entry{evaluacion, aritmetica}{101}{evaluaci\'on, aritm\'etica}
+\entry{evaluacion aritmetica}{101}{evaluaci\'on aritm\'etica}
+\entry{expansion de alias}{103}{expansi\'on de alias}
+\entry{vectores}{103}{vectores}
+\entry{pila de directorio}{105}{pila de directorio}
+\entry{prompt}{107}{prompt}
+\entry{interprete restringido}{108}{int\'erprete restringido}
+\entry{Modo POSIX}{109}{Modo POSIX}
+\entry{control de tareas}{113}{control de tareas}
+\entry{frente}{113}{frente}
+\entry{fondo}{113}{fondo}
+\entry{suspender tareas}{113}{suspender tareas}
+\entry{Readline, como usar}{116}{Readline, c\'omo usar}
+\entry{interaccion, readline}{117}{interacci\'on, readline}
+\entry{notacion, readline}{118}{notaci\'on, readline}
+\entry{edicion de ordenes}{118}{edici\'on de \'ordenes}
+\entry{editando lineas de ordenes}{118}{editando l\'{\dotless {i}}neas de \'ordenes}
+\entry{cortar texto}{119}{cortar texto}
+\entry{pegar texto}{119}{pegar texto}
+\entry{anillo de corte}{119}{anillo de corte}
+\entry{archivo de inicializacion, readline}{120}{archivo de inicializaci\'on, readline}
+\entry{variables, readline}{121}{variables, readline}
+\entry{complecion programable}{144}{compleci\'on programable}
+\entry{instrucciones integradas de complecion}{147}{instrucciones integradas de compleci\'on}
+\entry{Historial, como usar}{154}{Historial, c\'omo usar}
+\entry{historial de instrucciones}{155}{historial de instrucciones}
+\entry{lista del historial}{155}{lista del historial}
+\entry{instrucciones integradas de historial}{156}{instrucciones integradas de historial}
+\entry{expansion del historial}{157}{expansi\'on del historial}
+\entry{designadores de eventos}{158}{designadores de eventos}
+\entry{eventos del historial}{158}{eventos del historial}
+\entry{instalacion}{161}{instalaci\'on}
+\entry{configuracion}{161}{configuraci\'on}
+\entry{instalacion de Bash}{161}{instalaci\'on de Bash}
+\entry{configuracion de Bash}{161}{configuraci\'on de Bash}

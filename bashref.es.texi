@@ -21,18 +21,17 @@ Esta es la Edici@'on @value{EDITION}, actualizada por @'ultima vez
 @value{UPDATED}, de @cite{Manual de Referencia de Bash}, para
 @code{Bash}, Version @value{VERSION}.
 
-Las fuentes de este documento están accesibles desde
-https://github.com/davidam/bashrefes.git
-
-Copyright @copyright{} 1988--2016 Free Software Foundation, Inc.
+Copyright @copyright{} 1988--2018 Free Software Foundation, Inc.
 
 @quotation
-Permission is granted to copy, distribute and/or modify this document under
-the terms of the GNU Free Documentation License, Version 1.3 or any later
-version published by the Free Software Foundation; with no Invariant
-Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the
-license is included in the section entitled ``GNU Free Documentation
-License''.
+Se otorga permiso para copiar, distribuir y/o modificar este documento bajo
+los t@'erminos de la GNU Free Documentation License [Licencia de
+Documentaci@'on Libre de GNU], Version 1.3 o cualquier versi@'on posterior
+publicada por la Free Software Foundation; sin Invariant Sections [secciones
+invariables], sin Front-Cover Texts [textos en la cubierta frontal] y sin
+Back-Cover Texts [textos en la cubierta trasera].  Se incluye una copia de
+est@'a licencia en la secci@'on titulada ``GNU Free Documentation
+License''."
 @end quotation
 @end copying
 
@@ -76,9 +75,6 @@ Esta es la Edici@'on @value{EDITION}, actualizada por @'ultima vez
 @value{UPDATED}, de @cite{Manual de Referencia de Bash}, para
 @code{Bash}, Version @value{VERSION}.
 
-Las fuentes de este documento están accesibles desde
-https://github.com/davidam/bashrefes.git
-
 Bash contiene funcionalidades que aparecen en otros int@'erpretes de
 instrucciones populares, y algunas funcionalidades que solo aparecen en
 Bash.  Algunos de los int@'erpretes de los que Bash ha tomado conceptos son
@@ -109,8 +105,8 @@ compartamiento del int@'erprete de @'ordenes.
 * Edici@'on en L@'{@dotless{i}}nea de @'Ordenes::  Cap@'{@dotless{i}}tulo 
                                                      que describe las 
                                                      funcionalidades de la 
-                                                     edici@'on 
-                                                     enl@'{@dotless{i}}nea de 
+                                                     edici@'on en 
+                                                     l@'{@dotless{i}}nea de 
                                                      @'ordenes.
 * Usando el Historial Interactivamente::  Expansi@'on del Historial de 
                                             @'Ordenes
@@ -120,8 +116,8 @@ compartamiento del int@'erprete de @'ordenes.
                                                            de las diferencias 
                                                            entre Bash y 
                                                            versiones 
-                                                           hist@'oricas 
-                                                           de/bin/sh.
+                                                           hist@'oricas de 
+                                                           /bin/sh.
 * GNU Free Documentation License::  Copiar y compartir esta documentaci@'on.
 * Traducci@'on de GNU Free Documentation License::  Copiar y compartir esta documentaci@'on (en espa@~nol).
 * Glosarios::                Varios glosarios para este manual.
@@ -445,7 +441,8 @@ salida (@pxref{Estado de Salida}).
 * Comillas Simples::         C@'omo inhibir toda interpretaci@'on de una 
                                secuencia de caracteres.
 * Comillas Dobles::          C@'omo suprimir la mayor parte de la 
-                               interpretaci@'on de una secuencia decaracteres.
+                               interpretaci@'on de una secuencia de 
+                               caracteres.
 * Entrecomillado ANSI-C::    C@'omo expandir secuencias de ANSI-C en cadenas 
                                entrecomilladas.
 * Traducci@'on de Localizaci@'on::  C@'omo traducir cadenas a diferentes 
@@ -551,8 +548,8 @@ comilla doble
 @item \?
 s@'{@dotless{i}}mbolo de interrogaci@'on de cierre
 @item \@var{nnn}
-la secuencia de caracteres de ocho bits cuyo valor es el valor octal
-@var{nnn} (de uno a tres d@'{@dotless{i}}gitos)
+el car@'acter de ocho bits cuyo valor es el valor octal @var{nnn} (de uno a
+tres d@'{@dotless{i}}gitos octales).
 @item \x@var{HH}
 el car@'acter de ocho bits cuyo valor es el valor hexadecimal @var{HH} (uno
 o dos d@'{@dotless{i}}gitos hexadecimales)
@@ -683,22 +680,20 @@ del error est@'andar a la salida est@'andar es realizada despu@'es de
 cualquier redirecci@'on especificada por la instrucci@'on.
 
 La palabra reservada @code{time} hace que sean imprimidas
-estad@'{@dotless{i}}sticas temporales para la tuber@'{@dotless{i}}a
-una vez finalice.  Las estad@'{@dotless{i}}sticas constan actualmente
-del tiempo (de reloj) transcurrido y del tiempo de usuario y de
-sistema consumido por la ejecuci@'on de la instrucci@'on.  La opci@'on
-@option{-p} cambia el formato de salida al especificado por
-@sc{posix}.  Cuando el int@'erprete est@'a en el modo @sc{posix}
-(@pxref{Modo POSIX de Bash}), no reconoce @code{time} como una palabra
-reservada si el siguiente s@'{@dotless{i}}mbolo comienza por @samp{-}.
-La variable @env{TIMEFORMAT} puede ser establecida a un formato que
-especifica c@'omo debe ser mostrada la informaci@'on temporal.
-@xref{Variables de Bash}, para una descripci@'on de los formatos
-disponibles.  El uso de @code{time} como una palabra reservada permite
-el cronometraje de las instrucciones integradas del int@'erprete,
-funciones del int@'erprete y tuber@'{@dotless{i}}as.  Una
-instrucci@'on @code{time} externa no puede cronometrar estas
-f@'acilmente.
+estad@'{@dotless{i}}sticas temporales para la tuber@'{@dotless{i}}a una vez
+finalice.  Las estad@'{@dotless{i}}sticas constan actualmente del tiempo (de
+reloj) transcurrido y del tiempo de usuario y de sistema consumido por la
+ejecuci@'on de la instrucci@'on.  La opci@'on @option{-p} cambia el formato
+de salida al especificado por @sc{posix}.  Cuando el int@'erprete est@'a en
+el modo @sc{posix} (@pxref{Modo POSIX de Bash}), no reconoce @code{time}
+como una palabra reservada si el siguiente s@'{@dotless{i}}mbolo comienza
+por @samp{-}.  La variable @env{TIMEFORMAT} puede ser establecida a una
+cadena de formato que especifica c@'omo debe ser mostrada la informaci@'on
+temporal.  @xref{Variables de Bash}, para una descripci@'on de los formatos
+disponibles.  El uso de @code{time} como una palabra reservada permite el
+cronometraje de las instrucciones integradas del int@'erprete, funciones del
+int@'erprete y tuber@'{@dotless{i}}as.  Una instrucci@'on @code{time}
+externa no puede cronometrar estas f@'acilmente.
 
 Cuando el int@'erprete est@'a en modo @sc{posix} (@pxref{Modo POSIX de
 Bash}), @code{time} puede ser seguido por una nueva l@'{@dotless{i}}nea.  En
@@ -710,19 +705,23 @@ Si la tuber@'{@dotless{i}}a no es ejecutada as@'{@dotless{i}}ncronamete
 (@pxref{Listas}), el int@'erprete espera a que todas las instrucciones en la
 tuber@'{@dotless{i}}a se completen.
 
-Cada instrucci@'on en una tuber@'{@dotless{i}}a es ejecutada en su propio
-subint@'erprete (@pxref{Entorno de Ejecuci@'on de Instrucciones}).  El
-estado de salida de una tuber@'{@dotless{i}}a es el estado de salida de la
-@'ultima instrucci@'on en la tuber@'{@dotless{i}}a, a no ser que est@'e
-habilitada la opci@'on @code{pipefail} (@pxref{La Instrucci@'on Integrada
-Set}).  Si est@'a habilitada @code{pipefail}, el estado de retorno de la
-tuber@'{@dotless{i}}a es el valor de la @'ultima (la m@'as a la derecha)
-instrucci@'on que finalice con un estado error distinto a cero, o de cero si
-todas las instrucciones finalizan con @'exito.  Si la palabra reservada
-@samp{!} precede a la tuber@'{@dotless{i}}a, el estado de salida es la
-negaci@'on l@'ogica del estado de salida como se describi@'o anteriormente.
-El int@'erprete espera a que todas las instrucciones en la
-tuber@'{@dotless{i}}a finalicen antes de devolver un valor.
+Cada instrucci@'on en una tuber@'ia se ejecuta en su propio subint@'erprete,
+que es un proceso separado (@pxref{Entorno de Ejecuci@'on de
+Instrucciones}).  Si la opci@'on @code{lastpipe} est@'a activada por medio
+de la instrucci@'on integrada @code{shopt} (@pxref{La Instrucci@'on
+Integrada Shopt}), el @'ultimo elemento de una tuber@'ia puede ser ejecutado
+por el proceso del int@'erprete.
+
+El estado de salida de una tuber@'ia es el estado de salida de la @'ultima
+instrucci@'on en la tuber@'ia, a no ser que est@'e activada la opci@'on
+@code{pipefail} (@pxref{La Instrucci@'on Integrada Set}).  Si
+@code{pipefail} est@'a habilitada, el estado de retorno de la tuber@'ia es
+el valor de la @'ultima (la m@'as a la derecha) instrucci@'on que finalice
+con un estado distinto a cero, o cero si todas las instrucciones finalizan
+con @'exito.  Si la palabra reservada @samp{!} precede a la tuber@'ia, el
+estado de salida es la negaci@'on l@'ogica del estado de salida descrito
+anteriormente.  El int@'erprete espera a que finalicen todas las
+instrucciones en la tuber@'ia antes de devolver un valor.
 
 @node Listas
 @subsection Listas de Instrucciones
@@ -743,7 +742,8 @@ coma.
 Si se termina una instrucci@'on con el operador de control @samp{&}, el
 int@'erprete ejecuta la instrucci@'on as@'{@dotless{i}}ncronamente en un
 subint@'erprete.  Esto se conoce como ejecutar la instrucci@'on en
-@var{segundo plano}.  El int@'erprete no espera a que termine la
+@var{segundo plano}, y estas se conocen como instrucciones
+@var{as@'incronas}.  El int@'erprete no espera a que termine la
 instrucci@'on, y el estado de retorno es 0 (verdadero).  Cuando el control
 de tareas no est@'a activo (@pxref{Control de Tareas}), la entrada
 est@'andar para instrucciones as@'{@dotless{i}}ncronas, en ausencia de
@@ -766,7 +766,7 @@ Una lista @sc{and} tiene la forma
 
 @noindent
 @var{instrucci@'on2} es ejecutada @'unicamente si @var{instrucci@'on1}
-devuelve un estado de salida de cero.
+devuelve un estado de salida de cero (@'exito).
 
 Una lista @sc{or} tiene la forma
 @example
@@ -792,12 +792,12 @@ de la @'ultima instrucci@'on ejecutada en la lista.
 * Instrucciones Agrupativas::  Formas de agrupar instrucciones.
 @end menu
 
-Las instrucciones compuestas son las construcciones de programaci@'on del
-int@'erprete.  Cada construcci@'on empieza con una palabra reservada u
-operador de control y termina con una palabra reservada u operador
-correspondiente.  Cualquier redirecci@'on (@pxref{Redirecciones}) asociada a
-una instrucci@'on compuesta se aplica a todas las instrucciones dentro de
-esa instrucci@'on compuesta a no ser que sea reemplazada
+Las instrucciones compuestas son las construcciones del lenguaje de
+programaci@'on del int@'erprete.  Cada construcci@'on empieza con una
+palabra reservada u operador de control y termina con una palabra reservada
+u operador correspondiente.  Cualquier redirecci@'on (@pxref{Redirecciones})
+asociada a una instrucci@'on compuesta se aplica a todas las instrucciones
+dentro de esa instrucci@'on compuesta a no ser que sea reemplazada
 expl@'{@dotless{i}}citamente.
 
 En la mayor@'{@dotless{i}}a de los casos, una lista de instrucciones en una
@@ -856,16 +856,16 @@ La sintaxis de la instrucci@'on @code{for} es:
 for @var{nombre} [ [in [@var{palabras} @dots{}] ] ; ] do @var{instrucciones}; done
 @end example
 
-Expande @var{palabras} y ejecuta @var{instrucciones} una vez por cada
-elemento en la lista resultante, con @var{nombre} vinculado al elemento
-actual.  Si @samp{in @var{palabras}} no est@'a presente, la
-instrucci@'on @code{for} ejecuta las @var{instrucciones} una vez por
-cada par@'ametro posicional que est@'e establecido, como si @samp{in
-"$@@"} hubiera sido especificado (@pxref{Par@'ametros Especiales}).
-El estado de retorno es el estado de salida de la @'ultima
-instrucci@'on que se ejecuta.  Si no hay elementos en la expansi@'on
-de @var{palabras}, no ejecuta instrucciones, y el estado de retorno es
-cero.
+Expande @var{palabras} (@pxref{Expansiones del Int@'erprete}) y ejecuta
+@var{instrucciones} una vez por cada elemento en la lista resultante, con
+@var{nombre} vinculado al miembro actual.  Si @samp{in @var{palabras}} no
+est@'a presente, la instrucci@'on @code{for} ejecuta las @var{instrucciones}
+una vez por cada par@'ametro posicional que est@'e establecido, como si
+@samp{in "$@@"} hubiera sido especificado (@pxref{Par@'ametros Especiales}).
+
+El estado de retorno es el estado de salida de la @'ultima instrucci@'on que
+ejecuta.  Si no hay elementos en la expansi@'on de @var{palabras}, no se
+ejecutan instrucciones y el estado de retorno es cero.
 
 Tambi@'en se acepta una forma alternativa de la instrucci@'on @code{for}:
 
@@ -903,25 +903,24 @@ La sintaxis de la instrucci@'on @code{if} es:
 
 @example
 if @var{instrucciones-test}; then
-  @var{instrucciones-consecuentes};
+  @var{instrucciones-consiguientes};
 [elif @var{m@'as-instrucciones-test}; then
-  @var{m@'as-consecuentes};]
-[else @var{consecuentes-alternativos};]
+  @var{m@'as-consiguientes};]
+[else @var{consiguientes-alternativas};]
 fi
 @end example
 
-La lista de @var{instrucciones-test} es interpretada, y si su estado de
-retorno es cero, la lista de @var{instrucciones-consecuentes} se
-ejecuta.  Si @var{instrucciones-test} devuelve un estado de retorno
-distinto de cero, cada lista @code{elif} es ejecutada en orden, y si
-su estado es cero, el @var{m@'as-consecuentes} correspondiente se
-ejecuta y la instrucci@'on se completa.  Si @samp{else
-@var{consecuentes-alternativos}} est@'a presente, y la instrucci@'on
-final en la @'ultima cl@'ausula @code{if} o @code{elif} tiene un
-estado de salida distinto de cero, entonces
-@var{consiguientes-alternativos} se ejecutan.  El estado de retorno
-es el estado de salida de la @'ultima instrucci@'on ejecutada, o cero
-si ninguna condici@'on se evalu@'o a verdadera.
+La lista de @var{instrucciones-test} es ejecutada, y si su estado de retorno
+es cero, la lista de @var{instrucciones-consiguientes} es ejecutada.  Si
+@var{instrucciones-test} devuelve un estado de retorno distinto de cero,
+cada lista @code{elif} es ejecutada en orden, y si su estado es cero, el
+@var{m@'as-consiguientes} correspondiente es ejecutado y la instrucci@'on se
+completa.  Si @samp{else @var{consiguientes-alternativas}} est@'a presente,
+y la instrucci@'on final en la @'ultima cl@'ausula @code{if} o @code{elif}
+tiene un estado de salida distinto de cero, entonces
+@var{consiguientes-alternativas} es ejecutado.  El estado de retorno es el
+estado de salida de la @'ultima instrucci@'on ejecutada, o cero si ninguna
+condici@'on se evalu@'o a verdadero.
 
 @item case
 @rwindex case
@@ -930,27 +929,29 @@ si ninguna condici@'on se evalu@'o a verdadera.
 La sintaxis de la instrucci@'on @code{case} es:
 
 @example
-case @var{palabra} in [ [(] @var{patr@'on} [| @var{patr@'on}]@dots{})
-@var{lista-de-instrucciones} ;;]@dots{} esac
+case @var{palabra} in
+    [ [(] @var{patr@'on} [| @var{patr@'on}]@dots{}) @var{lista-de-instrucciones} ;;]@dots{}
+esac
 @end example
 
 @code{case} ejecutar@'a selectivamente la @var{lista-de-instrucciones}
-correspondiente al primer @var{patr@'on} que coincide con la
-@var{palabra}.  Si la opci@'on del int@'erprete @code{nocasematch}
-(vea la descripci@'on de @code{shopt} en @ref{La Instrucci@'on
-Integrada Shopt}) est@'a habilitada, la coincidencia se realiza sin
-tener en cuenta las may@'usculas y min@'usculas de caracteres
-alfab@'eticos.  El @samp{|} es usado para separar m@'ultiples
-patrones, y el operador @samp{)} finaliza una lista de patr@'on.  Se
-llama @var{cl@'ausula} a la lista de patrones y a su lista de
-instrucciones asociada.
+correspondiente al primer @var{patr@'on} que coincide con @var{palabra}.  La
+coincidencia se realiza seg@'un las reglas descritas m@'as adelante en
+@ref{Coincidencia de Patrones}. Si la opci@'on del int@'erprete
+@code{nocasematch} (vea la descripci@'on de @code{shopt} en @ref{La
+Instrucci@'on Integrada Shopt}) est@'a habilitada, la coincidencia se
+realiza sin tener en cuenta las may@'usculas y min@'usculas de caracteres
+alfab@'eticos.  El @samp{|} es usado para separar m@'ultiples patrones, y el
+operador @samp{)} finaliza una lista de patr@'on.  Se llama @var{cl@'ausula}
+a la lista de patrones y a su lista de instrucciones asociada.
 
-Cada cl@'ausula debe terminar en @samp{;;}, @samp{;&} o @samp{;;&}.
-La @var{palabra} pasa por la expansi@'on de virgulilla, expansi@'on de
-par@'ametro, sustituci@'on de instrucci@'on, expansi@'on aritm@'etica
-y eliminaci@'on de comillas antes de que se intente la coincidencia.
-Cada @var{patr@'on} pasa por la expansi@'on de virgulilla,
-sustituci@'on de instrucci@'on y expansi@'on aritm@'etica.
+Cada cl@'ausula debe terminar en @samp{;;}, @samp{;&} o @samp{;;&}.  La
+@var{palabra} pasa por la expansi@'on de virgulilla, expansi@'on de
+par@'ametro, sustituci@'on de instrucci@'on, expansi@'on aritm@'etica y
+eliminaci@'on de comillas (@pxref{Expansi@'on de Par@'ametros del
+Int@'erprete}) antes de que se intente la coincidencia.  Cada @var{patr@'on}
+pasa por la expansi@'on de virgulilla, sustituci@'on de instrucci@'on y
+expansi@'on aritm@'etica.
 
 Puede haber un n@'umero arbitrario de cl@'ausulas @code{case}, cada una
 terminada en @samp{;;}, @samp{;&} o @samp{;;&}.  El primer patr@'on que
@@ -1000,8 +1001,8 @@ select @var{nombre} [in @var{palabras} @dots{}]; do @var{instrucciones}; done
 @end example
 
 La lista de palabras detr@'as de @code{in} es expandida, generando una lista
-de elementos.  El conjunto de palabras expandidas es impreso en el flujo de
-la salida de error est@'andar, cada una precedida por un n@'umero.  Si se
+de elementos.  El conjunto de palabras expandidas es imprimido en el flujo
+de la salida de error est@'andar, cada una precedida por un n@'umero.  Si se
 omite el @samp{in @var{palabras}}, se imprimen los par@'ametros
 posicionales, como si @samp{in "$@@"} hubiera sido especificado.  El prompt
 @env{PS3} es entonces mostrado y es le@'{@dotless{i}}da una
@@ -1014,9 +1015,9 @@ muestran de nuevo.  Si es le@'{@dotless{i}}do @code{EOF}, la instrucci@'on
 que @var{nombre} se establezca a nulo.  La l@'{@dotless{i}}nea
 le@'{@dotless{i}}da es guardada en la variable @env{REPLY}.
 
-Las @var{instrucciones} son ejecutadas despu@'es de cada selecci@'on hasta
-que se ejecute una instrucci@'on @code{break}, en cuyo momento la
-instrucci@'on @code{select} se completa.
+Las @var{instrucciones} se ejecutan despu@'es de cada selecci@'on hasta que
+se ejecute una instrucci@'on @code{break}, en cuyo momento la instrucci@'on
+@code{select} se completa.
 
 He aqu@'{@dotless{i}} un ejemplo que permite al usuario escoger un nombre de
 archivo del directorio actual y muestra el nombre y el @'{@dotless{i}}ndice
@@ -1074,7 +1075,7 @@ la opci@'on del int@'erprete @code{extglob} estuviera habilitada.  El
 operador @samp{=} es id@'entico a @samp{==}.  Si la opci@'on del
 int@'erprete @code{nocasematch} (vea la descripci@'on de @code{shopt} en
 @ref{La Instrucci@'on Integrada Shopt}) est@'a habilitada, la
-correspondencia es realizada sin importar las may@'usculas y min@'usculas de
+correspondencia se realiza sin importar las may@'usculas y min@'usculas de
 los caracteres alfab@'eticos.  El valor de retorno es 0 si la cadena
 coincide (@samp{==}) o no coincide (@samp{!=}) con el patr@'on, y 1 en caso
 contrario.  Cualquier parte del patr@'on puede ser entrecomillada para
@@ -1082,21 +1083,21 @@ forzar la porci@'on entrecomillada a que sea coincidida con una cadena.
 
 Un operador binario adicional, @samp{=~}, est@'a disponible, con la misma
 precedencia que @samp{==} y @samp{!=}.  Cuando se usa, la cadena a la
-derecha del operador es considerada una expresi@'on regular extendida y es
-coincidida correspondientemente (como en @i{regex}3)).  El valor de retorno
-es 0 si la cadena coincide con el patr@'on, y 1 en caso contrario.  Si la
-expresi@'on regular es sint@'acticamente incorrecta, el valor de retorno de
-la expresi@'on condicional es 2.  Si est@'a habilitada la opci@'on del
-int@'erprete @code{nocasematch} (vea la descripci@'on dee @code{shopt} en
-@ref{La Instrucci@'on Integrada Shopt}), la coincidencia es realizada sin
-consideraci@'on de may@'usculas y min@'usculas de los caracteres
+derecha del operador es considerada una expresi@'on regular extendida
+@sc{POSIX} y coincide debidamente (como en @i{regex}3)).  El valor de
+retorno es 0 si la cadena coincide con el patr@'on, y 1 en caso contrario.
+Si la expresi@'on regular es sint@'acticamente incorrecta, el valor de
+retorno de la expresi@'on condicional es 2.  Si est@'a habilitada la
+opci@'on del int@'erprete @code{nocasematch} (vea la descripci@'on de
+@code{shopt} en @ref{La Instrucci@'on Integrada Shopt}), la coincidencia se
+realiza sin consideraci@'on de may@'usculas y min@'usculas de los caracteres
 alfab@'eticos.  Cualquier parte del patr@'on puede ser entrecomillada para
 obligar a que la porci@'on entrecomillada sea coincidida como cadena.  Las
 expresiones de llaves en expresiones regulares deben ser tratadas
 cuidadosamente, pues los caracteres de entrecomillado normales pierden sus
-significados entre llaves.  Si el patr@'on es guardado en una variable del
+significados entre llaves.  Si el patr@'on se guardaen una variable del
 int@'erprete, entrecomillar la expansi@'on de variable fuerza el patr@'on
-entero a ser coincidido como cadena.  Las subcadenas coincididas por
+entero a que coincida como cadena.  Las subcadenas coincididas por
 subexpresiones entre par@'entesis dentro de la expresi@'on regular son
 guardadas en la variable de vector @code{BASH_REMATCH}.  El elemento de
 @code{BASH_REMATCH} con @'{@dotless{i}}ndice 0 es la porci@'on de la cadena
@@ -1111,7 +1112,7 @@ caracteres en el valor que conste de cualquier n@'umero, incluido cero, de
 caracteres de espacio, cero o m@'as instancias de @samp{a}, despu@'es una
 @samp{b}:
 @example
-[[ $linea =~ [[:space:]]*(a)?b ]]
+[[ $linea =~ [[:es:]]*?(a)b ]]
 @end example
 
 @noindent
@@ -1128,7 +1129,7 @@ expresiones regulares mientras se presta atenci@'on a la eliminaci@'on de
 comillas del int@'erprete.  Usar una variable del int@'erprete disminuye
 estos problemas.  Por ejemplo, lo siguiente es equivalente a lo anterior:
 @example
-patron='[[:space:]]*(a)?b'
+patron='[[:space:]]*?(a)b'
 [[ $linea =~ $patron ]]
 @end example
 
@@ -1192,7 +1193,7 @@ retorno de la expresi@'on condicional completa.
 @subsubsection Agrupaci@'on de Instrucciones
 @cindex instrucciones, agrupaci@'on
 
-Bash proporciona dos manera de agrupar una lista de instrucciones para ser
+Bash proporciona dos maneras de agrupar una lista de instrucciones para ser
 ejecutada como una @'unidad.  Cuando las instrucciones son agrupadas, las
 redirecciones pueden ser agrupadas por la lista de instrucciones
 completa. Por ejemplo, la salida de todas las instrucciones en la lista
@@ -1227,7 +1228,7 @@ despu@'es de @var{lista}.
 Adem@'as de la creaci@'on de un subint@'erprete, hay una sutil diferencia
 entre estas dos construcciones debido a razones hist@'oricas.  Las llaves
 son @code{palabras reservadas}, as@'{@dotless{i}} que tienen que estar
-separadas de @var{lista} por @code{blanco}s o otros metacaracteres del
+separadas de @var{lista} por @code{blanco}s u otros metacaracteres del
 int@'erprete.  Los par@'entesis son @code{operadores}, y son reconocidos
 como s@'{@dotless{i}}mbolos separados por el int@'erprete incluso si no
 est@'an separados de la @var{lista} por espacios en blanco.
@@ -1243,7 +1244,7 @@ Un @code{coproceso} es una instrucci@'on del int@'erprete precedida por la
 palabra reservada @code{coproc}.  Un coproceso es ejecutado
 as@'{@dotless{i}}ncronamente en un subint@'erprete, como si la instrucci@'on
 se hubiera terminado con el operador de control @samp{&}, con una
-tuber@'{@dotless{i}}a de dos sentidos establecida entre el intérprete en
+tuber@'{@dotless{i}}a de dos sentidos establecida entre el int@'erprete en
 ejecuci@'on y el coproceso.
 
 El formato para un coproceso es:
@@ -1255,8 +1256,8 @@ coproc [@var{NOMBRE}] @var{instrucci@'on} [@var{redirecciones}]
 Esto crea un coproceso llamado @var{NOMBRE}.  Si no se proporciona
 @var{NOMBRE}, el nombre predeterminado es @var{COPROC}.  @var{NOMBRE} no
 tiene que ser proporcionado si @var{instrucci@'on} es una instrucci@'on
-simple (@pxref{Instrucciones Simples}); de lo contrario, es interpretado
-como la primera palabra de una instrucci@'on simple.
+simple (@pxref{Instrucciones Simples}); de lo contrario, se interpreta como
+la primera palabra de una instrucci@'on simple.
 
 Cuando se ejecuta el coproceso, el int@'erprete crea una variable de vector
 (@pxref{Vectores}) llamada @env{NAME} en el contexto del int@'erprete en
@@ -1270,8 +1271,9 @@ int@'erprete en ejecuci@'on, y ese descriptor de archivo es asignado a
 redirecci@'on especificada por la instrucci@'on (@pxref{Redirecciones}).
 Los descriptores de archivo pueden ser utilizados como argumentos para
 instrucciones del int@'erprete y redirecciones usando expansiones de
-palabras est@'andares.  Los descriptores de archivos no est@'an disponibles
-en subint@'erpretes.
+palabras est@'andares.  Aparte de aquellos creados para ejecutar
+sustituciones de instrucciones y procesos, los descriptores de archivos no
+est@'an disponibles en subint@'erpretes.
 
 El identificador de proceso del int@'erprete generado para ejecutar el
 coproceso est@'a disponible como el valor de la variable @var{NAME}_PID.  La
@@ -1316,7 +1318,7 @@ en nombres de archivo, use la opci@'on de find @option{-print0} y la
 opci@'on de parallel @option{-0}.
 
 Puede usar Parallel para mover archivos desde el directorio actual cuando el
-n@'umero de archivos es muy grande para procesar can una llamada a
+n@'umero de archivos es muy grande para procesar con una llamada a
 @code{mv}:
 @example
 ls | parallel mv @{@} dirdest
@@ -1355,8 +1357,8 @@ nombres de archivo listados uno por l@'{@dotless{i}}nea):
 @noindent
 con una sintaxis m@'as compleja reminiscente de lambdas:
 @example
-cat lista | parallel "haz-algo1 @{@} config-@{@} ; haz-algo2 < @{@}" | \
-procesa-salida
+cat lista | parallel "haz-algo1 @{@} config-@{@} ; haz-algo2 < @{@}" |
+           procesa-salida
 @end example
 
 Parallel proporciona un mecanismo integrado para eliminar las extensiones de
@@ -1381,15 +1383,21 @@ parallel "zcat @{@} | bzip2 >@{.@}.bz2 && rm @{@}" ::: *.gz
 Si una instrucci@'on genera salida, puede que quieras preservar el orden de
 entrada en la salida.  Por ejemplo, la siguiente instrucci@'on
 @example
-@{ echo foss.org.my ; echo debian.org;
-echo freenetproject.org; @} | parallel traceroute
+@{
+    echo foss.org.my ;
+    echo debian.org ;
+    echo freenetproject.org ;
+@} | parallel traceroute
 @end example
 @noindent
 mostrar@'a como salida la llamada a traceroute que finalice primero.
 A@~nadiendo la opci@'on @option{-k} 
 @example
-@{ echo foss.org.my ; echo debian.org;
-echo freenetproject.org; @} | parallel -k traceroute
+@{
+    echo foss.org.my ;
+    echo debian.org ;
+    echo freenetproject.org ;
+@} | parallel -k traceroute
 @end example
 @noindent
 asegurar@'a que la salida de @code{traceroute foss.org.my} sea mostrada
@@ -1495,13 +1503,13 @@ mayor que 0, define el nivel m@'aximo de anidamiento de funciones.  Las
 llamadas de funciones que exceden el l@'{@dotless{i}}mite hacen que la
 instrucci@'on completa se aborte.
 
-Si la instrucci@'on integrada @code{return} es ejecutada en una funci@'on,
-la funci@'on finaliza y la ejecuci@'on se reanuda con la siguiente
+Si la instrucci@'on integrada @code{return} se ejecuta en una funci@'on, la
+funci@'on finaliza y la ejecuci@'on se reanuda con la siguiente
 instrucci@'on despu@'es de la llamada a la funci@'on.  Cualquier
 instrucci@'on asociada con la trap @code{RETURN} es ejecutada antes de que
 la ejecuci@'on se reanude.  Cuando una funci@'on finaliza, los valores de
-los par@'ametros posicionales y el par@'ametro especial @samp{#} son
-restablecidos a los valores que ten@'{@dotless{i}}an antes de la ejecuci@'on
+los par@'ametros posicionales y el par@'ametro especial @samp{#} se
+restablecen a los valores que ten@'{@dotless{i}}an antes de la ejecuci@'on
 de la funci@'on.  Si se le pasa un argumento num@'erico a @code{return},
 este es el estado de retorno de la funci@'on; si no, el estado de retorno de
 la funci@'on es el estado de salida de la @'ultima instrucci@'on ejecutada
@@ -1509,7 +1517,66 @@ antes de @code{return}.
 
 Las variables locales a la funci@'on pueden ser declaradas con la
 instrucci@'on integrada @code{local}.  Estas variables son solo visibles
-para la funci@'on y las instrucciones que invoca.
+para la funci@'on y las instrucciones que invoca.  Esto es especialmente
+importante cuando una funci@'on del int@'erprete llama a otras funciones.
+
+Las variables locales variables @guillemetleft{}sombra@guillemetright{} con
+el mismo nombre declarado en diferentes alcances.  Por ejemplo, una variable
+local declarada en una funci@'on esconde una variable global del mismo
+nombre: referencias y asignaciones se refieren a la variable local, dejando
+la variable global sin modificar.  Cuando la funci@'on retorna, la variable
+global es visible de nuevo.
+
+El int@'erprete usa el @var{alcance din@'amico} para controlar la
+visibilidad de una variables dentro de funciones.  Con el alcance
+din@'amico, las variables visibles y sus valores son un resultado de la
+secuencia de llamadas de funci@'on que hicieron que la ejecuci@'on llegara a
+la ubicaci@'on actual.  El valor de una variable que una funci@'on ve
+depende de su valor dentro de su ejecutor, si existe, si el ejecutor es el
+alcance @guillemetleft{}global@guillemetright{} u otra funci@'on del
+int@'erprete.  Esto tambi@'en es el valor a la que una declaraci@'on de
+variable local hace @guillemetleft{}sombra@guillemetright{} y el valor que
+es restablecido cuando la funci@'on retorna.
+
+Por ejemplo, si una variable @var{var} se declara como local en funci@'on
+@var{func1}, y @var{func1} llama a otra funci@'on @var{func2}, las
+referencias a @var{var} hechas desde dentro de @var{func2} resolver@'an a la
+variable local @var{var} de @var{func1}, haciendo sombra a cualquier
+variable global llamada @var{var}.
+
+El siguiente guion demuestra este comportamiento.  Al ser ejecutado, el
+guion muestra
+
+@example
+In func2, var = func1 local
+@end example
+
+@example
+func1()
+@{
+    local var='func1 local'
+    func2
+@}
+
+func2()
+@{
+    echo "In func2, var = $var"
+@}
+
+var=global
+func1
+@end example
+
+La instrucci@'on integrada @code{unset} tambi@'en act@'ua usando el mismo
+alcance din@'amico: si una variable es local al actual alcance, @code{unset}
+la eliminar@'a; de lo contrario, la eliminaci@'on se referir@'a a la
+variable encontrada en cualquier alcance de llamada descrito arriba.  Si una
+variable en el alcance local actual se elimina, permanecer@'a as@'i hasta
+que sea restablecida en ese alcance o hasta que la funci@'on retorne.  Una
+vez que la funci@'on retorna cualquier instancia de la variable en el
+alcance anterior se vuelve invisible.  Si la eliminaci@'on act@'ua sobre una
+variable en un alcance anterior, cualquier instancia de una variable con ese
+nombre a la que se ha hecho sombra se volver@'a invisible.
 
 Los nombres y definiciones de funciones pueden ser listados con la opci@'on
 @option{-f} para la instrucci@'on integrada @code{declare} (@code{typeset})
@@ -1517,13 +1584,9 @@ Los nombres y definiciones de funciones pueden ser listados con la opci@'on
 @code{declare} o @code{typeset} listar@'a solo los nombres de funciones (y
 opcionalmente el archivo fuente y el n@'umero de l@'{@dotless{i}}nea, si la
 opci@'on del int@'erprete @code{extdebug} est@'a habilitada).  Las funciones
-pueden ser importadas para que los subint@'erpretes las tengan definidas con
-la opci@'on @option{-f} para la instrucci@'on integrada @code{export}
-(@pxref{Instrucciones Integradas del Int@'erprete}).  Tenga en cuenta que
-las funciones y variables del int@'erprete con el mismo nombre pueden
-resultar en entradas m@'ultiples nombradas ind@'enticamente en el entorno
-pasado a los hijos del int@'erprete.  Se deber@'{@dotless{i}}a tener cuidado
-en casos en los que esto podr@'{@dotless{i}}a causar un problema.
+pueden ser importadas para que los subint@'erpretes las tengan definidas
+autom@'aticamente con la opci@'on @option{-f} para la instrucci@'on
+integrada @code{export} (@pxref{Instrucciones Integradas del Int@'erprete}).
 
 Las funciones pueden ser recursivas.  La variable @code{FUNCNEST} se puede
 usar para limitar la profundidad de la pila de llamadas y restringir el
@@ -1583,7 +1646,7 @@ valor a una variable o @'{@dotless{i}}ndice de vector (@pxref{Vectores}) del
 int@'erprete, el operador @samp{+=} puede ser usado para a@~nadir o sumar al
 valor previo de la variable.  Esto incluye argumentos de instrucciones
 integradas como @code{declare} que aceptan sentencias de asignaci@'on
-(instrucciones de @var{declaración}).  Cuando @samp{+=} se aplica a una
+(instrucciones de @var{declaraci@'on}).  Cuando @samp{+=} se aplica a una
 variable para la cual el atributo @var{integer} ha sido establecido,
 @var{valor} se eval@'ua como una expresi@'on aritm@'etica y se suma al valor
 actual de la variable, que tambi@'en es evaluado.  Cuando @samp{+=} se
@@ -1648,14 +1711,14 @@ temporalmente reemplazados cuando se ejecuta una funci@'on del int@'erprete
 (@pxref{Funciones del Int@'erprete}).
 
 Cuando un par@'ametro posicional que consta de un @'unico
-d@'{@dotless{i}}gito es expandido, debe estar rodeado de llaves.
+d@'{@dotless{i}}gito se expande, debe estar rodeado de llaves.
 
 @node Par@'ametros Especiales
 @subsection Par@'ametros Especiales
 @cindex par@'ametros, especial
 
 El int@'erprete trata varios par@'ametros de forma especial.  Estos
-parametros solo pueden ser referenciados; las asignaciones a ellos no
+par@'ametros solo pueden ser referenciados; las asignaciones a ellos no
 est@'an permitidas.
 
 @vtable @code
@@ -1671,21 +1734,27 @@ comillas dobles, se expande a una @'unica palabra con el valor de cada
 par@'ametro separado por el primer car@'acter de la variable especial
 @env{IFS}.  Es decir, @code{"$*} es equivalente a
 @code{"$1@var{c}$2@var{c}@dots{}"}, donde @var{c} es el primer car@'acter
-del valor de la variable @code{IFS}.  Si es eliminado @env{IFS}, los
-par@'ametros se separan por espacios.  Si @env{IFS} no está asignado, los
+del valor de la variable @code{IFS}.  Si se elimina @env{IFS}, los
+par@'ametros se separan por espacios.  Si @env{IFS} no est@'a asignado, los
 par@'ametros se unen sin separadores intermedios.
 
 @item @@
 @vindex $@@
-($@@) Se expande a los par@'ametros posicionales, empezando por uno.  Cuando
-la expansi@'on ocurre entre comillas dobles, cada par@'ametro se expande a
-una palabra separada.  Es decir, @code{"$@@"} es equivalente a @code{"$1"
-"$2" @dots{}}.  Si la expansi@'on de comillas dobles ocurre dentro de una
-palabra, la expansi@'on del primer par@'ametro se une con la parte inicial
-de la palabra original, y la expansi@'on del @'ultimo par@'ametro se une con
-la @'ultima parte de la palabra original.  Cuando no hay par@'ametros
-posicionales, @code{"$@@"} y @code{$@@} se expanden a nada (esto es, son
-eliminados).
+($@@) Se expande a los par@'ametros posicionales empezando por uno.  En
+contextos donde se realiza la divisi@'on de palabras, esto expande cada
+par@'ametro posicional a una palabra separada; si no est@'a entre comillas
+dobles, estas palabras est@'an sujetas a la divisi@'on de palabras.  En
+contextos donde no se realiza la divisi@'on de palabras, esto se expande a
+una @'unica palabra con cada par@'ametro posicional separado por un
+espacio.  Cuando la expansi@'on ocurre dentro de comillas dobles y se
+realiza la divisi@'on de palabras, cada par@'ametro se expande a una palabra
+separada.  Es decir, @code{"$@@"} es equivalente a @code{"$1" "$2"
+@dots{}}.  Si la expansi@'on rodeada entre comillas dobles ocurre dentro de
+una palabra, la expansi@'on del primer par@'ametro se una con la parte
+inicial de la palabra original y la expansi@'on del @'ultimo par@'ametro se
+una con la @'ultima parte de la palabra original.  Cuando no hay
+par@'ametros posicionales, @code{"$@@"} y @code{$@@} se expanden a nada (es
+decir, son eliminados).
 
 @item #
 @vindex $#
@@ -1720,10 +1789,10 @@ as@'{@dotless{i}}ncrona o usando la instrucci@'on integrada @code{bg}
 @vindex $0
 ($0) Se expande al nombre del int@'erprete o el guion del int@'erprete.
 Esto es establecido durante la inicializaci@'on del int@'erprete.  Si Bash
-es invocado con un archivo de instrucciones (@pxref{Guiones del
-Int@'erprete}), @code{$0} es establecido al nombre de ese archivo.  Si Bash
-es iniciado con la opci@'on @option{-c} (@pxref{Llamando a Bash}), entonces
-@code{$0} es establecido al primer argumento despu@'es de que la cadena sea
+se invoca con un archivo de instrucciones (@pxref{Guiones del
+Int@'erprete}), @code{$0} se establece al nombre de ese archivo.  Si Bash se
+inicia con la opci@'on @option{-c} (@pxref{Llamando a Bash}), entonces
+@code{$0} se establece al primer argumento despu@'es de que la cadena sea
 ejecutada, si una est@'a presente.  De lo contrario,  es establecido al
 nombre de archivo usado para llamar a Bash, como si fuera dado como
 argumento cero.
@@ -1734,17 +1803,18 @@ argumento cero.
 nombre de ruta absoluto usado para llamar al int@'erprete o el guion del
 int@'erprete ejecutado como se pasa en el entorno o en la lista de
 argumentos.  Posteriormente, se expande al @'ultimo argumento de la
-instrucci@'on anterior, despu@'es de la expansi@'on.  Tambi@'en asignada al
-nombre de ruta completo usado para llamar a cada instrucci@'on ejecutada y
-ubicada en el entorno exportado para esa instrucci@'on.  Al consultar el
-correo, este par@'ametro guarda el nombre del archivo de correo.
+instrucci@'on simple anterior, ejecutada en primer plano, despu@'es de la
+expansi@'on.  Tambi@'en asignada al nombre de ruta completo usado para
+llamar a cada instrucci@'on ejecutada y ubicada en el entorno exportado para
+esa instrucci@'on.  Al consultar el correo, este par@'ametro guarda el
+nombre del archivo de correo.
 @end vtable
 
 @node Expansiones del Int@'erprete
 @section Expansiones del Int@'erprete
 @cindex expansi@'on
 
-La expansi@'on es realizada en la l@'{@dotless{i}}nea de @'ordenes despu@'es
+La expansi@'on se realiza en la l@'{@dotless{i}}nea de @'ordenes despu@'es
 de que haya sido dividida en @code{s@'{@dotless{i}}mbolo}s.  Hay siete tipos
 de expansi@'on realizados:
 
@@ -1772,10 +1842,10 @@ de expansi@'on realizados:
 * Divisi@'on de Palabras::   C@'omo los resultados de expansi@'on son 
                                divididos en argumentos separados.
 * Expansi@'on de Nombre de Archivo::  Una abreviatura para especificar 
-                                        nombres de archivos que coinciden 
-                                        conpatrones.
+                                        nombres de archivos que coinciden con 
+                                        patrones.
 * Eliminaci@'on de Comillas::  C@'omo y cu@'ando los caracteres de 
-                                 entrecomillado son eliminados depalabras.
+                                 entrecomillado son eliminados de palabras.
 @end menu
 
 El orden de las expansiones es expansi@'on de llaves; expansi@'on de
@@ -1784,7 +1854,7 @@ aritm@'etica y sustituci@'on de instrucciones (hechas de izquierda a
 derecha); divisi@'on de palabras; y expansi@'on de nombre de archivo.
 
 En sistemas que lo soportan, hay un expansi@'on adicional disponible:
-@var{sustituci@'on de proceso}.  Esta es realizada al mismo tiempo que la
+@var{sustituci@'on de proceso}.  Esta se realiza al mismo tiempo que la
 expansi@'on de virgulilla, par@'ametros y variables y la sustituci@'on de
 instrucciones.
 
@@ -1793,10 +1863,10 @@ entrecomillado presentes en la palabra original son eliminados a no ser que
 estos mismos hayan sido entrecomillados (@var{eliminaci@'on de comillas}).
 
 Solo la expansi@'on de llaves, divisi@'on de palabras y la expansi@'on de
-nombre de archivo pueden cambiar el n@'umero de palabras de la expansi@'on;
+nombre de archivo pueden aumentar el n@'umero de palabras de la expansi@'on;
 otras expansiones expanden una sola palabra a una sola palabra.  Las
-@'unicas excepciones a esto son las expansiones de @code{"$@@"}
-(@pxref{Par@'ametros Especiales} y @code{"$@{@var{nombre}[@@]@}"}
+@'unicas excepciones a esto son las expansiones de @code{"$@@"} y @code{$*}
+(@pxref{Par@'ametros Especiales}, y @code{$@{@var{nombre}[*]@}}
 (@pxref{Vectores}).
 
 Despu@'es de todas las expansiones, se realiza la @code{eliminaci@'on de
@@ -1807,7 +1877,7 @@ comillas} (@pxref{Eliminaci@'on de Comillas}).
 @cindex expansi@'on de llaves
 @cindex expansi@'on, llave
 
-La expansi@'on de llaves en un mecanismo por el cual se pueden generar
+La expansi@'on de llaves es un mecanismo por el cual se pueden generar
 cadenas arbitrarias.  Este mecanismo es similar a la @var{expansi@'on de
 nombre de archivo} (@pxref{Expansi@'on de Nombre de Archivo}), pero los
 nombres de archivo generados no necesitan existir.  Los patrones que ser@'an
@@ -1827,17 +1897,17 @@ ade ace abe
 @end example
 
 Una expresi@'on secuencial toma la forma
-@code{@{@var{x}..@var{y}[..@var{incr}]@}}, donde @var{x} y @var{y} son
+@code{@{@var{x}..@var{y}[..@var{incr}]@}}, donde @var{x} e @var{y} son
 enteros o caracteres @'unicos, y @var{incr}, un incremento opcional, es un
 entero.  Cuando se proporcionan enteros, la expresi@'on se expande a cada
 n@'umero entre @var{x} y @var{y}, inclusive.  Los enteros proporcionados
-pueden ser prefijados con @samp{0} para forzar que cada termino tenga la
+pueden ser prefijados con @samp{0} para forzar que cada t@'ermino tenga la
 misma anchura.  Cuando @var{x} o @var{y} comienzan en cero, el int@'erprete
 trata de obligar a todos los t@'erminos generados contener el mismo n@'umero
 de d@'{@dotless{i}}gitos, rellenando con ceros donde sea necesario.  Cuando
 se proporcionan los caracteres, la expresi@'on se expande a cada car@'acter
-lexicogr@'aficamente entre @var{x} y @var{y}, inclusive, usando la
-configuraci@'on regional predeterminada C.  Observe que tanto @var{x} y
+lexicogr@'aficamente entre @var{x} e @var{y}, inclusive, usando la
+configuraci@'on regional predeterminada C.  Observe que tanto @var{x} e
 @var{y} deben ser del mismo tipo.  Cuando se proporciona el incremento, se
 usa como diferencia entre cada t@'ermino.  El incremento predeterminado es 1
 o -1 seg@'un corresponda.
@@ -1846,8 +1916,7 @@ La expansi@'on de llaves se realiza antes que cualquier otra expansi@'on, y
 se preservan todos los caracteres especiales de otras expansiones en el
 resultado.  Es estrictamente textual.  Bash no aplica ninguna
 interpretaci@'on sint@'actica al contexto de la expansi@'on o al texto entre
-las llaves.  Para evitar conflictos con la expansi@'on de par@'ametros, la
-cadena @samp{$@{} no se considera aceptable para la expansi@'on de llaves.
+las llaves.
 
 Una expansi@'on de llaves correctamente formada debe contener llaves de
 apertura y de cierre sin entrecomillar, y al menos una coma sin
@@ -1857,7 +1926,8 @@ de llaves formada incorrectamente se deja sin modificar.
 Un @{ o @samp{,} puede ser entrecomillado con una barra invertida para
 evitar que sea considerado parte de la expansi@'on de llaves.  Para evitar
 conflictos con la expansi@'on de par@'ametros, la cadena @samp{$@{} no se
-considera apta para la expansi@'on de llaves.
+considera apta para la expansi@'on de llaves e inhibe la expansi@'on de
+llaves hasta el @samp{@}} de cierre.
 
 Esta construcci@'on se usa t@'{@dotless{i}}picamente como atajo cuando el
 prefijo com@'un de las cadenas que van a ser generadas es m@'as largo que en
@@ -1881,8 +1951,8 @@ todos los caracteres, si no hay barra sin entrecomillar) son considerados un
 @var{prefijo de virgulilla}.  Si ninguno de los caracteres en el prefijo de
 virgulilla est@'a entrecomillado, los caracteres en el prefijo de virgulilla
 que siguen a la virgulilla son tratados como un posible @var{nombre de
-acceso}.  Si este nombre de acceso es la cadena nula, la virgulilla es
-reemplazada por el valor de la variable @env{HOME} del int@'erprete.  Si
+acceso}.  Si este nombre de acceso es la cadena nula, la virgulilla se
+reemplaza por el valor de la variable @env{HOME} del int@'erprete.  Si
 @env{HOME} no est@'a establecida, se sustituye el directorio personal del
 usuario ejecutando el int@'erprete en su lugar.  De lo contrario, se
 reemplaza el prefijo de virgulilla por el directorio personal asociado con
@@ -1941,6 +2011,12 @@ La cadena que ser@'{@dotless{i}}a mostrada por @samp{dirs +@var{N}}
 La cadena que ser@'{@dotless{i}}a mostrada por @samp{dirs -@var{N}}
 @end table
 
+Bash tambi@'en realiza la expansi@'on de virgulilla en palabras que
+satisfacen las condiciones de asignaci@'on de variables (@pxref{Par@'ametros
+del Int@'erprete})  cuando aparecen como argumentos de instrucciones
+simples.  Bash no hace esto, aparte de para las instrucciones de
+@var{declaraci@'on} listadas arriaba, en el modo @sc{posix}
+
 @node Expansi@'on de Par@'ametros del Int@'erprete
 @subsection Expansi@'on de Par@'ametros del Int@'erprete
 @cindex expansi@'on de par@'ametros
@@ -1969,16 +2045,18 @@ su nombre.
 
 Si el primer car@'acter de @var{par@'ametro} es un signo de exclamaci@'on
 (!) y @var{par@'ametro} no es un @var{nameref}, introduce un nivel de
-indirecci@'on de variable.  Bash usa el valor de la variable formada del
-resto del @var{par@'ametro} como el nombre de la variable; esta variable se
-expande entonces, y ese valor se usa en el resto de la sustituci@'on, en vez
-del valor de @var{par@'ametro} en s@'{@dotless{i}}.  Esto se conoce como
-@code{expansi@'on indirecta}.  Si @var{par@'ametro} es un nameref, esto se
+indirecci@'on.  Bash usa el valor formado al expandir el resto de
+@var{par@'ametro} como el nuevo @var{par@'ametro}; este es luego expandido y
+ese valor se usa en el resto de la expansi@'on, en vez de la expansi@'on del
+@var{par@'ametro} original. Esto se conoce como @code{expansi@'on
+indirecta}.  El valor est@'a sujeto a la expansi@'on de virgulilla, la
+expansi@'on de par@'ametros, la sustituci@'on de instrucciones y la
+expansi@'on aritm@'etica.  Si @var{par@'ametro} es un nameref, esto se
 expande al nombre de la variable referenciada por @var{par@'ametro} en vez
-de realizar la expansi@'on completa indireccional.  Las excepciones a esto
-son las expansiones de $@{!@var{prefijo}*@} y $@{!@var{nombre}[@@]@}
-descritas a continuaci@'on.  El signo de exclamaci@'on de cierre debe seguir
-inmediatamente a la llave izquierda para introducir indirecci@'on.
+de realizar la expansi@'on indirecta completa.  Las excepciones a esto son
+las expansiones de  $@{!@var{prefijo}*@} y $@{!@var{nombre}[@@]@} descritas
+abajo.  El signo de exclamaci@'on debe seguir inmediatamente a la llave
+izquierda para introducir la indirecci@'on.
 
 En todos los siguientes casos, @var{palabra} est@'a sujeta a la expansi@'on
 de virgulilla, expansi@'on de par@'ametro, sustituci@'on de instrucci@'on y
@@ -2114,7 +2192,7 @@ $ echo ${@:7:0}
 $ echo ${@:7:2}
 7 8
 $ echo ${@:7:-2}
-bash: -2: expresión de subcadena < 0
+bash: -2: expresi@'on de subcadena < 0
 $ echo ${@: -7:2}
 b c
 $ echo ${@:0}
@@ -2144,7 +2222,7 @@ $ echo ${vector[@]:7:2}
 $ echo ${vector[@]: -7:2}
 b c
 $ echo ${vector[@]: -7:-2}
-bash: -2: expresión de subcadena < 0
+bash: -2: expresi@'on de subcadena < 0
 $ echo ${vector[@]:0}
 0 1 2 3 4 5 6 7 8 9 0 a b c d e f g h
 $ echo ${vector[@]:0:2}
@@ -2190,32 +2268,33 @@ un @'{@dotless{i}}ndice de -1 referencie al @'ultimo elemento.
 
 @item $@{@var{par@'ametro}#@var{palabra}@}
 @itemx $@{@var{par@'ametro}##@var{palabra}@}
-La @var{palabra} se expande para producir un patr@'on de la misma manera que
-en una expansi@'on de nombre de archivo (@pxref{Expansi@'on de Nombre de
-Archivo}).  Si el patr@'on coincide con el principio del valor expandido de
+La @var{palabra} se expande para producir un patr@'on y es coincidida
+seg@'un las reglas descritas abajo (@pxref{Coincidencia de Patrones}).  Si
+el patr@'on coincide con el principio del valor expandido de
 @var{par@'ametro}, el resultado de la expansi@'on es el valor expandido de
-@var{par@'ametro} con el patr@'on m@'as corto coincidente (el caso @samp{#})
-o el patr@'on m@'as largo coincidente (el caso @samp{##}) eliminado.  Si
-@var{par@'ametro} es @samp{@@} o @samp{*}, la operaci@'on de eliminaci@'on
-de patr@'on se aplica a cada par@'ametro posicional en orden, y la
+@var{par@'ametro} con el patr@'on coincidente m@'as corto (el caso @samp{#})
+o el patr@'on coincidente m@'as largo (el caso @samp{##}).  Si
+@var{par@'ametro} es @samp{@@} o @samp{*}, se aplica la operaci@'on de
+eliminaci@'on de patr@'on a cada par@'ametro posicional en orden, y la
 expansi@'on es la lista resultante.  Si @var{par@'ametro} es una variable de
-sub@'{@dotless{i}}ndice de vector con @samp{@@} o @samp{*}, se aplica la
-operaci@'on de eliminaci@'on de patr@'on a cada miembro del vector en orden,
-y la expansi@'on es la lista resultante.
+vector subindexada con @samp{@@} o @samp{*}, la operaci@'on de eliminaci@'on
+de patr@'on se aplica a cada miembro del vector en orden, y la expansi@'on
+es la lista resultante.
 
 @item $@{@var{par@'ametro}%@var{palabra}@}
 @itemx $@{@var{par@'ametro}%%@var{palabra}@}
-La @var{palabra} se expande para producir un patr@'on de la misma manera que
-en la expansi@'on de nombre de archivo.  Si el patr@'on coincide con una
-porci@'on del final del valor expandido de @var{par@'ametro}, el resultado
-de la expansi@'on es el valor de @var{par@'ametro} con el patr@'on
-coincidente m@'as corto (el caso @samp{%})  o el patr@'on coincidente m@'as
-largo (el caso @samp{%%}).  Si @var{par@'ametro} es @samp{@@} o @samp{*}, se
-aplica la operaci@'on de eliminaci@'on de patr@'on a cada par@'ametro
-posicional en orden, y la expansi@'on es la lista resultante.  Si
-@var{par@'ametro} es una variable de vector subindexada con @samp{@@} o
-@samp{*}, la operaci@'on de eliminaci@'on de patr@'on se aplica a cada
-miembro del vector en orden, y la expansi@'on es la lista resultante.
+La @var{palabra} se expande para producir un patr@'on y es coincidida
+seg@'un las reglas descritas abajo (@pxref{Coincidencia de Patrones}).  Si
+el patr@'on coincide con una porci@'on del final del valor expandido de
+@var{par@'ametro}, el resultado de la expansi@'on es el valor de
+@var{par@'ametro} con el patr@'on coincidente m@'as corto (el caso @samp{%})
+o el patr@'on coincidente m@'as largo (el caso @samp{%%}).  Si
+@var{par@'ametro} es @samp{@@} o @samp{*}, se aplica la operaci@'on de
+eliminaci@'on de patr@'on a cada par@'ametro posicional en orden, y la
+expansi@'on es la lista resultante.  Si @var{par@'ametro} es una variable de
+vector subindexada con @samp{@@} o @samp{*}, la operaci@'on de eliminaci@'on
+de patr@'on se aplica a cada miembro del vector en orden, y la expansi@'on
+es la lista resultante.
 
 @item $@{@var{par@'ametro}/@var{patr@'on}/@var{cadena}@}
 
@@ -2223,16 +2302,18 @@ El @var{patr@'on} se expande para producir un patr@'on de la misma manera
 que en la expansi@'on de nombre de archivo.  Se expande @var{par@'ametro}, y
 se reemplaza por @var{cadena} la coincidencia de @var{patr@'on} con el valor
 m@'as largo.  Si @var{patr@'on} comienza por @samp{/}, todas las
-coincidencias de @var{patr@'on} son reemplazadas por @var{cadena}.
-Normalmente solo se reemplaza la primera coincidencia.  Si @var{patr@'on}
-comienza en @samp{#}, debe coincidir al comienzo del valor expandido de
-@var{par@'ametro}.  Si @var{patr@'on} comienza por @samp{%}, debe coincidir
-al final del valor expandido de @var{par@'ametro}.  Si @var{cadena} es nulo,
-las coincidencias de @var{patr@'on} son eliminadas y se puede omitir el
-@code{/} que sigue a @var{patr@'on}.  Si est@'a habilitada la opci@'on del
-int@'erprete @code{nocasematch} (consulte la descripci@'on de @code{shopt}
-en @ref{La Instrucci@'on Integrada Shopt}), la coincidencia se realiza sin
-importar las may@'usculas y min@'usculas de caracteres alfab@'eticos.  Si
+coincidencias de @var{patr@'on} son reemplazadas por @var{cadena}.  La
+coincidencia se realiza seg@'un las reglas descritas abajo
+(@pxref{Coincidencia de Patrones}). Normalmente solo se reemplaza la primera
+coincidencia.  Si @var{patr@'on} comienza en @samp{#}, debe coincidir al
+comienzo del valor expandido de @var{par@'ametro}.  Si @var{patr@'on}
+comienza por @samp{%}, debe coincidir al final del valor expandido de
+@var{par@'ametro}.  Si @var{cadena} es nulo, las coincidencias de
+@var{patr@'on} son eliminadas y se puede omitir el @code{/} que sigue a
+@var{patr@'on}.  Si est@'a habilitada la opci@'on del int@'erprete
+@code{nocasematch} (consulte la descripci@'on de @code{shopt} en @ref{La
+Instrucci@'on Integrada Shopt}), la coincidencia se realiza sin importar las
+may@'usculas y min@'usculas de caracteres alfab@'eticos.  Si
 @var{par@'ametro} es @samp{@@} o @samp{*}, la operaci@'on de sustituci@'on
 se aplica a cada par@'ametro posicional en orden y la expansi@'on es la
 lista resultante.  Si @var{par@'ametro} es una variable de vector
@@ -2250,19 +2331,19 @@ misma manera que en la expansi@'on de nombre de archivo.  Cada car@'acter en
 el valor expandido de @var{par@'ametro} es comprobado contra @var{patr@'on},
 y, si coincide con el patr@'on, se alterna entre may@'usculas y
 min@'usculas.  El patr@'on no deber@'{@dotless{i}}a tratar de coincidir con
-m@'as de un car@'acter.  El operador @samp{^} convierte ĺetras min@'usculas
+m@'as de un car@'acter.  El operador @samp{^} convierte letras min@'usculas
 que coinciden con @var{patr@'on} a may@'usculas; el operador @samp{,}
 convierte letras may@'usculas coincidentes a min@'usculas.  Las expansiones
 @samp{^^} y @samp{,,} convierten cada car@'acter coincidente en el valor
-expandido; las las expansiones @samp{^} y @samp{,} coinciden y convierten
-solo el primer car@'acter en el valor expandido.  Si se omite
-@var{patr@'on}, se trata como un @samp{?}, que coincide con cualquier
-car@'acter.  Si @var{par@'ametro} es @samp{@@} o @samp{*}, la operaci@'on de
-modificaci@'on de alternaci@'on entre may@'usculas y min@'usculas se aplica
-a cada par@'ametro posicional en orden y la expansi@'on es la lista
-resultante.  Si @var{par@'ametro} es una variable de vector subindexada con
-@samp{@@} o @samp{*}, la operaci@'on de modificaci@'on de alternaci@'on
-entre may@'usculas y min@'usculas se aplica a cada miembro en orden y la
+expandido; las expansiones @samp{^} y @samp{,} coinciden y convierten solo
+el primer car@'acter en el valor expandido.  Si se omite @var{patr@'on}, se
+trata como un @samp{?}, que coincide con cualquier car@'acter.  Si
+@var{par@'ametro} es @samp{@@} o @samp{*}, la operaci@'on de modificaci@'on
+de alternaci@'on entre may@'usculas y min@'usculas se aplica a cada
+par@'ametro posicional en orden y la expansi@'on es la lista resultante.  Si
+@var{par@'ametro} es una variable de vector subindexada con @samp{@@} o
+@samp{*}, la operaci@'on de modificaci@'on de alternaci@'on entre
+may@'usculas y min@'usculas se aplica a cada miembro en orden y la
 expansi@'on es la lista resultante.
 
 @item $@{@var{par@'ametro}@@@var{operador}@}
@@ -2390,7 +2471,7 @@ como un argumento deber@'{@dotless{i}}a ser le@'{@dotless{i}}do para obtener
 la salida de @var{lista}.  Observe que no puede aparecer ning@'un espacio
 entre @code{<} o @code{>} y el par@'entesis izquierdo, de lo contrario la
 construcci@'on ser@'{@dotless{i}}a interpretada como una redirecci@'on.  La
-sustituci@'on de procesos está soportada en sistemas que admiten
+sustituci@'on de procesos est@'a soportada en sistemas que admiten
 tuber@'{@dotless{i}}as nombradas (@sc{fifo}s) o el m@'etodo @file{/dev/fd}
 de nombrar archivos abiertos.
 
@@ -2470,10 +2551,15 @@ may@'usculas y min@'usculas de caracteres alfab@'eticos.
 Cuando se usa un patr@'on para la expansi@'on de nombre de archivo, el
 car@'acter @samp{.} al principio de un nombre de archivo o inmediatamente
 siguiendo a una barra debe ser coincidido expl@'{@dotless{i}}citamente, a no
-ser que la opci@'on del int@'erprete @code{dotglob} est@'e habilitada.  Al
-coincidir un nombre de archivo, el car@'acter de barra debe ser coincidido
-siempre expl@'{@dotless{i}}citamente.  En otros casos, el car@'acter
-@samp{.} no es tratado de forma especial.
+ser que la opci@'on del int@'erprete @code{dotglob} est@'e habilitada.  Los
+nombres de archivo @samp{.} y @samp{..} deben ser coincididos siempre
+expl@'{@dotless{i}}citamente, incluso si @code{dotglob} est@'a habilitada.
+En otros casos, el car@'acter @samp{.} no es tratado de forma especial.
+
+Al coincidir con un nombre de archivo, el car@'acter de barra debe ser
+siempre coincidido expl@'icitamente por una barra en el patr@'on, pero en
+otros contextos de coincidencia puede ser coincidido por un car@'acter de
+patr@'on especial como se describe abajo (@pxref{Coincidencia de Patrones}).
 
 Consulte la descripci@'on de @code{shopt} en @ref{La Instrucci@'on Integrada
 Shopt}, para una descripci@'on de las opciones @code{nocaseglob},
@@ -2514,7 +2600,7 @@ Coincide con cualquier cadena, incluida la cadena nula.  Cuando est@'a
 habilitada la opci@'on @code{globstar} y se usa @samp{*} en un contexto de
 expansi@'on de nombre de archivo, dos @samp{*} adyacentes usados como un
 patr@'on @'unico coincidir@'an con todos los archivos y cero o m@'as
-directorios y subdirectorios.  Detrás de una @samp{/}, dos @samp{*}
+directorios y subdirectorios.  Detr@'as de una @samp{/}, dos @samp{*}
 adyacentes solo coincidir@'an con directorios y subdirectorios.
 @item ?
 Coincide con un @'unico car@'acter.
@@ -2590,6 +2676,12 @@ Coincide con uno de los patrones dados.
 Coincide con cualquier cosa menos uno de los patrones dados.
 @end table
 
+Las coincidencias extendidas de patr@'on complicadas con cadenas largas es
+lenta, especialmente cuando los patrones contienen alteraciones y las
+cadenas contienen varias coincidencias.  Usar coincidencias separadas sobre
+cadenas m@'as cortas o usar vectores de cadenas en vez de una @'unica cadena
+larga, puede ser m@'as r@'apido.
+
 @node Eliminaci@'on de Comillas
 @subsection Eliminaci@'on de Comillas
 
@@ -2614,12 +2706,15 @@ seguir a una instrucci@'on.  Las redirecciones se procesan en el orden en
 que aparecen, de izquierda a derecha.
 
 Cada redirecci@'on que pueda ser precedida por un n@'umero de descriptor de
-archivo podr@'{@dotless{i}}a ser precedida en su lugar por una palabra de la
-forma @{@var{nombre-de-var}@}.  En este caso, por cada operador de
-redirecci@'on excepto >&- y <&-, el int@'erprete destinar@'a un descriptor
-de archivo mayor que 10 y lo asignar@'a a @{@var{nombre-de-var}@}.  Si >&- o
-<&- est@'a precedido por @{@var{nombre-de-var}@}, el valor de
-@var{nombre-de-var} define el descriptor de archivo que cerrar.
+archivo puede ser precedida en su lugar por una palabra de la forma
+@{@var{nombre-de-var}.  En este caso, para cada operador de redirecci@'on
+excepto >&- y <&-, el int@'erprete destinar@'a un descriptor de archivo
+mayor que 10 y lo asignar@'a a @{@var{nombre-de-var}.  Si >&- o <&- es
+precedido por @{@var{nombre-de-var}@}, el valor de @var{nombre-de-var}
+define el descriptor de archivo que cerrar.  Si se proporciona
+@{@var{nombre-de-var}@}, la redirecci@'on persiste m@'as all@'a del alcance
+de la instrucci@'on, permitiendo al programador del int@'erprete manejar el
+descriptor de archivo por su cuenta.
 
 En las siguientes descripciones, si se omite el n@'umero del descriptor de
 archivo y el primer car@'acter del operador de redirecci@'on es @samp{<}, la
@@ -2695,7 +2790,7 @@ expansi@'on de @var{palabra} sean abiertos para lectura en el descriptor de
 archivo @code{n}, o la entrada est@'andar (descriptor de archivo 0) si
 @code{n} no est@'a especificado.
 
-El formato generar para redirigir entrada es:
+El formato generar para redirigir una entrada es:
 @example
 [@var{n}]<@var{palabra}
 @end example
@@ -2707,7 +2802,7 @@ archivo @var{n}, o el error est@'andar (descriptor de archivo 1) si no se
 especifica @var{n}.  Si el archivo no existe, se crea; si existe, es
 truncado a tama@~no cero.
 
-El formato general para redirigir salida es:
+El formato general para redirigir una salida es:
 @example
 [@var{n}]>[|]@var{palabra}
 @end example
@@ -2726,7 +2821,7 @@ deriva de la expansi@'on de @var{palabra} sea abierto para a@~nadir en el
 descriptor de archivo @var{n}, o la salida est@'andar (descriptor de archivo
 1), si no se especifica @var{n}.  Si el archivo no existe, se crea.
 
-El formato generar para a@~nadir salida es:
+El formato general para a@~nadir una salida es:
 @example
 [@var{n}]>>@var{palabra}
 @end example
@@ -2810,13 +2905,13 @@ Una variante de documentos aqu@'{@dotless{i}}, el formato es:
 [@var{n}]<<< @var{palabra}
 @end example
 
-La @var{palabra} experimenta la expansi@'on de llaves, expansi@'on de
-virgulilla, expansi@'on de par@'ametro y variable, sustituci@'on de
-instrucci@'on, expansi@'on aritm@'etica y eliminaci@'on de comillas.  No se
-realizan la expansi@'on de nombre de ruta ni la divisi@'on de palabras.  El
-resultado es proporcionado como una cadena @'unica, con una nueva
-l@'{@dotless{i}}nea a@~nadida, a la instrucci@'on en su entrada est@'andar
-(o descriptor de archivo @var{n} si se especifica).
+La @var{palabra} experimenta la expansi@'on de virgulilla, expansi@'on de
+par@'ametro y variable, sustituci@'on de instrucci@'on, expansi@'on
+aritm@'etica y eliminaci@'on de comillas.  No se realizan la expansi@'on de
+nombre de ruta ni la divisi@'on de palabras.  El resultado es proporcionado
+como una cadena @'unica, con una nueva l@'{@dotless{i}}nea a@~nadida, a la
+instrucci@'on en su entrada est@'andar (o descriptor de archivo @var{n} si
+se especifica).
 
 @subsection Duplicando Descriptores de Archivo
 El operador de redirecci@'on
@@ -2890,7 +2985,7 @@ archivo no existe, se crea.
                                                  instrucciones y las ejecuta.
 * Entorno de Ejecuci@'on de Instrucciones::  El entorno en que Bash ejecuta 
                                                instrucciones que no son 
-                                               instruccionesintegradas del 
+                                               instrucciones integradas del 
                                                int@'erprete.
 * Entorno::                  El entorno dado a una instrucci@'on.
 * Estado de Salida::         El estado devuelto por instrucciones y c@'omo 
@@ -2962,7 +3057,7 @@ toman las siguientes acciones.
 @item
 Si el nombre de la instrucci@'on no contiene barras, el int@'erprete trata
 de localizarla.  Si existe una funci@'on del int@'erprete con ese nombre,
-ese funci@'on se llama como se describe en @ref{Funciones del Int@'erprete}.
+esa funci@'on se llama como se describe en @ref{Funciones del Int@'erprete}.
 
 @item
 Si el nombre no coincide con una funci@'on, el int@'erprete lo busca en la
@@ -2980,11 +3075,11 @@ Shell}).  Solo se realiza una b@'usqueda de los directorios en @env{$PATH}
 si la instrucci@'on no se encontr@'o en la tabla hash.  Si la b@'usqueda es
 infructuosa, el int@'erprete busca una funci@'on del int@'erprete definida
 llamada @code{command_not_found_handle}.  Si esa funci@'on existe, se llama
-con la instrucci@'on original y los argumentos de la instrucci@'on original
-como sus argumentos, y el estado de salida de la funci@'on se convierte en
-el estado de salida del int@'erprete.  Si no est@'a definida esa funci@'on,
-el int@'erprete imprime un mensaje de error y devuelve un estado de salida
-de 127.
+en un entorno de ejecuci@'on separado con la instrucci@'on original y los
+argumentos de la instrucci@'on original como sus argumentos, y el estado de
+salida de la funci@'on se convierte en el estado de salida de ese
+subint@'erprete.  Si no est@'a definida esa funci@'on, el int@'erprete
+imprime un mensaje de error y devuelve un estado de salida de 127.
 
 @item
 Si la b@'usqueda es exitosa o si el nombre de la instrucci@'on contiene una
@@ -2994,10 +3089,10 @@ resto de argumentos para la instrucci@'on se establecen a los argumentos
 proporcionados, si hay.
 
 @item
-Si esta ejecuci@'on fallo porque el archivo no est@'a en formato ejecutable,
-y el archivo no es un directorio, se toma por un @var{guion de int@'erprete}
-y el int@'erprete lo ejecuta como se describe en @ref{Guiones del
-Int@'erprete}.
+Si esta ejecuci@'on fall@'o porque el archivo no est@'a en formato
+ejecutable, y el archivo no es un directorio, se toma por un @var{guion de
+int@'erprete} y el int@'erprete lo ejecuta como se describe en @ref{Guiones
+del Int@'erprete}.
 
 @item
 Si la instrucci@'on no fue iniciada as@'{@dotless{i}}ncronamente, el
@@ -3298,9 +3393,8 @@ int@'erprete.
                                         espec@'{@dotless{i}}ficas de Bash.
 * Modificando el Comportamiento del Int@'erprete::  Instrucciones integradas 
                                                       para modificar atributos 
-                                                      del int@'erprete 
-                                                      ycomportamiento 
-                                                      opcional.
+                                                      del int@'erprete y 
+                                                      comportamiento opcional.
 * Instrucciones Integradas Especiales::  Instrucciones integradas 
                                            clasificadas de forma especial por 
                                            POSIX.
@@ -3332,14 +3426,14 @@ Bash.
 A no ser que se indique lo contrario, cada instrucci@'on integrada
 documentada como que acepta opciones precedidas por @samp{-} acepta
 @samp{--} para indicar el fin de las opciones.  Las instrucciones integradas
-@code{:}, @code{true}, @code{false} y @code{test} no aceptan opciones y no
-tratan @samp{--} de forma especial.  Las instrucciones integradas
-@code{exit}, @code{logout}, @code{return}, @code{break}, @code{continue},
-@code{let} y @code{shift} aceptan y procesan argumentos que empiezan con
-@samp{-} sin requerir @samp{--}.  Otras instrucciones integradas que aceptan
-argumentos pero no especifican que aceptan opciones, interpretan argumentos
-que empiezan con @samp{-} como opciones inv@'alidas y requieren @samp{--}
-para evitar esta interpretaci@'on.
+@code{:}, @code{true}, @code{false} y @code{test} / @code{[} no aceptan
+opciones y no tratan @samp{--} de forma especial.  Las instrucciones
+integradas @code{exit}, @code{logout}, @code{return}, @code{break},
+@code{continue}, @code{let} y @code{shift} aceptan y procesan argumentos que
+empiezan con @samp{-} sin requerir @samp{--}.  Otras instrucciones
+integradas que aceptan argumentos pero no especifican que aceptan opciones,
+interpretan argumentos que empiezan con @samp{-} como opciones inv@'alidas y
+requieren @samp{--} para evitar esta interpretaci@'on.
 
 @node Instrucciones Integradas del Bourne Shell
 @section Instrucciones Integradas del Bourne Shell
@@ -3415,12 +3509,12 @@ enlaces simb@'olicos son resueltos mientras @code{cd} est@'a recorriendo
 @var{directorio}.
 
 Por defecto, o cuando se proporciona la opci@'on @option{-L}, los enlaces
-simb@'olicos en @var{directory} son resueltos despu@'es de que @code{cd}
+simb@'olicos en @var{directorio} son resueltos despu@'es de que @code{cd}
 procesa una instancia de @samp{..} en @var{directorio}.
 
 Si @samp{..} aparece en @var{directorio}, se procesa eliminando el
 componente de nombre de ruta que le precede inmediatamente, de vuelta a una
-barra o al inicio de @var{directory}.
+barra o al inicio de @var{directorio}.
 
 Si la opci@'on @option{-e} es proporcionada junto a @option{-P} y el
 directorio de trabajo actual no se puede determinar con @'exito despu@'es de
@@ -3470,21 +3564,22 @@ argumentos vac@'{@dotless{i}}os, el estado de retorno es cero.
 exec [-cl] [-a @var{nombre}] [@var{instrucci@'on} [@var{argumentos}]]
 @end example
 
-Si se proporciona @var{instrucci@'on}, esta reemplaza al int@'erprete sin
-crear un nuevo proceso.  Si se proporciona la opci@'on @option{-l}, el
-int@'erprete ubica un guion al comienzo del argumento n@'umero cero pasado a
-@var{instrucci@'on}.  Esto es lo que el programa @code{login} hace.  La
-opci@'on @option{-c} causa que @var{instrucci@'on} se ejecute con un entorno
-vac@'{@dotless{i}}o.  Si se proporciona @option{-a}, el int@'erprete pasa
+Si se proporciona @var{instrucci@'o}, reemplaza el int@'erprete sin crear un
+nuevo proceso.  Si se proporciona la opci@'on @option{-l}, el int@'erprete
+pone una barra al comienzo del argumento n@'umero cero pasado a
+@var{instrucci@'on}.  Esto es lo que hace el programa @code{login}. La
+opci@'on @option{-c} hace que @var{instrucci@'on} sea ejecutada con un
+entorno vac@'io.  Si se proporciona @option{-a}, el int@'erprete pasa
 @var{nombre} como el argumento n@'umero cero a @var{instrucci@'on}.  Si por
-alguna raz@'on no se puede ejecutar @var{instrucci@'on}, un int@'erprete no
-interactivo se cierra, a no ser que la opci@'on del int@'erprete
-@code{execfail} est@'e habilitada.  En ese caso, devuelve error.  Un
-int@'erprete interactivo devuelve fallo si el archivo no puede ser
-ejecutado.  Si no hay @var{instrucci@'on} especificada, se pueden usar
-redirecciones para afectar al comportamiento del int@'erprete actual.  Si no
-hay errores de redirecci@'on, el estado de retorno es cero; en caso
-contrario, el estado de retorno es distinto a cero.
+alguna raz@'on no se puede ejecutar @var{instrucci@'on}, se cierra un
+int@'erprete no interactivo, a no ser que est@'e habilitada la opci@'on del
+int@'erprete @code{execfail}.  En ese caso devuelve fallo.  Un int@'erprete
+interactivo devuelve fallo si el archivo no puede ser ejecutado.  Un
+subint@'erprete finaliza de forma incondicional si @code{exec} falla.  Si no
+se especifica ninguna @var{instrucci@'on}, se pueden usar redirecciones para
+afectar al entorno actual del int@'erprete.  Si no hay errores de
+redirecci@'on, el estado de retorno es cero; de lo contrario, el estado de
+retorno es distinto a cero.
 
 @item exit
 @btindex exit
@@ -3726,7 +3821,7 @@ argumentos.
 La expresi@'on es falsa.
 
 @item 1 argumento
-La expresi@'on es verdadera solamente si el argumento no es nulo.
+La expresi@'on es verdadera solo si el argumento no es nulo.
 
 @item 2 argumentos
 Si el primer argumento es @samp{!}, la expresi@'on es verdadera solamente si
@@ -3737,17 +3832,25 @@ verdadera.  Si el primer argumento no es un operador unario v@'alido, la
 expresi@'on es falsa.
 
 @item 3 argumentos
-Las siguientes condiciones se aplican en el orden listado.  Si el segundo
-argumento es uno de los operadores condicionales binarios
+Las siguientes condiciones se aplican en el orden listado.
+
+@enumerate
+@item
+Si el segundo argumento es alguno de los operadores binarios condicionales
 (@pxref{Expresiones Condicionales de Bash}), el resultado de la expresi@'on
-es el resultado de la comprobaci@'on binaria usando el primer y tercer
-argumentos como operandos.  Los operadores @samp{-a} y @samp{-o} son
-considerados operadores binarios cuando hay tres argumentos.  Si el primer
-argumento es @samp{!}, el valor es la negaci@'on de la comprobaci@'on de dos
-argumentos usando el segundo y el tercer argumentos.  Si el primer argumento
-es exactamente @samp{)} y el tercer argumento es exactamente @samp{)}, el
-resultado es la comprobaci@'on de un argumento del segundo argumento.  De lo
-contrario, el expresi@'on es falsa.
+es el resultado de la comprobaci@'on binaria que usa el primer argumento y
+el tercero como operadores.  Los operadores @samp{-a} y @samp{-o} son
+considerados operadores binarios cuando hay tres argumentos.
+@item
+Si el primer argumento es @samp{!}, el valor es la negaci@'on de la
+comprobaci@'on de dos argumentos usando el segundo argumento y el tercero.
+@item
+Si el primer argumento es exactamente @samp{(} y el tercer argumento es
+exactamente @samp{)}, el resultado es la comprobaci@'on de un argumento del
+segundo argumento.
+@item
+De lo contrario, la expresi@'on es falsa.
+@end enumerate
 
 @item 4 argumentos
 Si el primer argumento es @samp{!}, el resultado es la negaci@'on de la
@@ -3809,7 +3912,7 @@ encontrar detalles de su efecto sobre la trap @code{DEBUG}.  Si un
 cada vez que una instrucci@'on del int@'erprete o un guion ejecutado con las
 instrucciones integradas @code{.} o @code{source} terminan de ejecutarse.
 
-Si el @var{sigspec} es @code{ERR}, la instrucci@'on @var{arg} es ejecutada
+Si el @var{sigspec} es @code{ERR}, la instrucci@'on @var{arg} se ejecuta
 cada vez que una tuber@'{@dotless{i}}a (que puede consistir de una @'unica
 instrucci@'on simple), una lista o una instrucci@'on compuesta devuelve un
 estado diferente de cero, de acuerdo a las siguientes condiciones.  El trap
@@ -3861,15 +3964,15 @@ unset [-fnv] [@var{nombre}]
 
 Elimina cada variable o funci@'on @var{nombre}.  Si se pasa la opci@'on
 @option{-v}, cada @var{nombre} se refiere a una variable del int@'erprete, y
-esa variable es eliminada.  Si se pasa la opci@'on @option{-f}, los
+esa variable se elimina.  Si se pasa la opci@'on @option{-f}, los
 @var{nombre}s se refieren a funciones del int@'erprete, y se elimina la
 definici@'on de la funci@'on.  Si se proporciona la opci@'on @option{-n}, y
 @var{nombre} es una variable con el atributo @var{nameref}, @var{nombre} se
 eliminar@'a en vez de la variable a la que hace referencia.  @option{-n} no
 tiene efecto si se proporciona la opci@'on @option{-f}.  Si no se
 proporcionan opciones, cada @var{nombre} se refiere a una variable; si no
-haya variable con ese nombre, cualquier funci@'on con ese nombre es
-eliminada.  Las variables y funciones de solo lectura no pueden ser
+haya variable con ese nombre, cualquier funci@'on con ese nombre se
+elimina.  Las variables y funciones de solo lectura no pueden ser
 eliminadas.  El estado de retorno es cero a no ser que @var{nombre} sea de
 solo lectura.
 @end table
@@ -3912,7 +4015,7 @@ bind [-m @var{mapa-de-teclas}]
 
 Muestra las asociaciones actuales de teclas y funciones Readline
 (@pxref{Edici@'on en L@'{@dotless{i}}nea de @'Ordenes}), asocia una
-secuencia de teclas a una funci@'on o macro de Readline o estaclece una
+secuencia de teclas a una funci@'on o macro de Readline o establece una
 variable de Readline.  Cada argumento que no es una opci@'on es una
 instrucci@'on tal como aparecer@'{@dotless{i}}a en un archivo de
 inicializaci@'on de Readline (@pxref{Archivo de Inicializaci@'on de
@@ -4048,7 +4151,7 @@ Si se proporciona la opci@'on @option{-V} o la @option{-v}, se imprime una
 descripci@'on de @var{instrucci@'on}.  La opci@'on @option{-v} hace que se
 muestre una @'unica palabra indicando el nombre de la instrucci@'on o
 archivo utilizado para llamar a @var{instrucci@'on}; la opci@'on @option{-V}
-produce una descripci@'on m@'as estensa.  En este caso, el estado de retorno
+produce una descripci@'on m@'as extensa.  En este caso, el estado de retorno
 es cero si @var{instrucci@'on} es encontrada, y distinto a cero en si no.
 
 @item declare
@@ -4135,13 +4238,13 @@ Marca cada @var{nombre} para exportar a posteriores instrucciones mediante
 el entorno.
 @end table
 
-Usar @samp{+} en vez de @samp{-} deshabilita el atributo, con las
-excepciones de que @samp{+a} no puede ser usado para destruir una variable
-de vector y @samp{+r} no eliminar@'a el atributo de solo lectura.  Cuando se
-usa en una funci@'on, @code{declare} hace cada @var{nombre} local, como con
-la instrucci@'on @code{local}, a no ser que se use la opci@'on @option{-g}.
-Si un nombre de variable es seguido de =@var{valor}, el valor de la variable
-es establecido a @var{valor}.
+Usar @samp{+} en vez de @samp{-} desactiva el atributo, con las excepciones
+de que @samp{+a} y @samp{+A} no pueden ser usados para destruir variables de
+vector y @samp{+r} no eliminar@'a el atributo readonly.  Cuando se usa en
+una funci@'on, @code{declare} hace cada @var{nombre} local, como con la
+instrucci@'on @code{local}, a no ser que se use la opci@'on @option{-g}.  Si
+un nombre de variable es seguido de =@var{valor}, se establece el valor de
+la variable a @var{valor}.
 
 Cuando se usa @option{-a} o @option{-A} y la sintaxis de asignaci@'on
 compuesta para crear variables de vector, los atributos adicionales no
@@ -4167,7 +4270,7 @@ echo [-neE] [@var{arg} @dots{}]
 Muestra los @var{arg}s, separados por espacios, terminado en una nueva
 l@'{@dotless{i}}nea.  El estado de retorno es 0 a no ser que ocurra un error
 de escritura.  Si se especifica @option{-n}, la nueva l@'{@dotless{i}}nea
-adicional es suprimida.  Si se pasa la opci@'on @option{-e}, se habilita la
+adicional se suprime.  Si se pasa la opci@'on @option{-e}, se habilita la
 interpretaci@'on de los siguientes caracteres escapados por barras
 invertidas.  La opci@'on @option{-E} deshabilita la interpretaci@'on de
 estos caracteres de escape, incluso en sistemas en los que son interpretados
@@ -4325,7 +4428,7 @@ mapfile [-d @var{delim}] [-n @var{cuenta}] [-O @var{origen}] [-s @var{cuenta}]
     [-t] [-u @var{da}] [-C @var{retrollamada}] [-c @var{cuant@'{@dotless{i}}a}] [@var{vector}]
 @end example
 
-Lee l@'{@dotless{i}}neas de la intrada est@'andar en la variable de vector
+Lee l@'{@dotless{i}}neas de la entrada est@'andar en la variable de vector
 indexado @var{vector}, o del descriptor de archivo @var{da} si se
 proporciona la opci@'on @option{-u}.  La variable @code{MAPFILE} es el
 @var{vector} predeterminado.  Si se proporcionan, las opciones tienen el
@@ -4334,8 +4437,10 @@ siguiente significado:
 @table @code
 
 @item -d
-El primer car@'acter de @var{delim} se usa para terminar cada
-l@'{@dotless{i}}nea de entrada, en vez de una nueva l@'{@dotless{i}}nea.
+Se usa el primer car@'acter de @var{delim} para terminar cada
+l@'{@dotless{i}}nea de entrada, en vez de nueva l@'{@dotless{i}}nea.  Si
+@var{delim} es la cadena vac@'ia, @code{mapfile} terminar@'a una l@'inea
+cuando lea un car@'acter NUL.
 @item -n
 Copia como m@'aximo @var{cuenta} l@'{@dotless{i}}neas.  Si @var{cuenta} es
 0, se copian todas las l@'{@dotless{i}}neas.
@@ -4357,7 +4462,7 @@ l@'{@dotless{i}}neas son le@'{@dotless{i}}das.  La opci@'on @option{-c}
 especifica @var{cuant@'{@dotless{i}}a}.
 @item -c
 Especifica el n@'umero de l@'{@dotless{i}}neas le@'{@dotless{i}}das entre
-cada llamada a @var{callback}.
+cada llamada a @var{retrollamada}.
 @end table
 
 Si @option{-C} se proporciona sin @option{-c}, la cuant@'{@dotless{i}}a por
@@ -4400,8 +4505,8 @@ Hace que @code{printf} expanda las secuencias de barras invertidas de escape
 en el @var{argumento} correspondiente de la misma forma que @code{echo -e}
 (@pxref{Instrucciones Integradas de Bash}).
 @item %q
-Hace que @code{printf} muestre el @var{argumento} correspondiente en
-un formato que puede ser reutilizado como entrada del int@'erprete.
+Hace que @code{printf} muestre el @var{argumento} correspondiente en un
+formato que puede ser reusado como entrada del int@'erprete.
 @item %(@var{datefmt})T
 Hace que @code{printf} muestre la cadena fecha-tiempo resultante de usar
 @var{datefmt} como una cadena de formato para @code{strftime}(3).  El
@@ -4419,12 +4524,12 @@ tratados como constantes del lenguaje C, excepto que se permite un signo de
 mayor o menor como prefijo, y si el car@'acter prefijado es una comilla
 simple o doble, el valor es el valor ASCII del siguiente car@'acter.
 
-El @var{formato} es reutilizado seg@'un sea necesario para consumir
-todos los @var{argumentos}.  Si el @var{format} requiere m@'as
-@var{par@'ametros} que los proporcionados, las especificaciones extra
-de formato se comportan como si un valor cero u nulo, seg@'un la
-conveniencia, hubiera sido proporcionado.  El valor de retorno es cero
-en caso de @'exito, distinto a cero en caso de fallo.
+El @var{formato} es reusado seg@'un sea necesario para consumir todos los
+@var{argumentos}.  Si el @var{format} requiere m@'as @var{par@'ametros} que
+los proporcionados, las especificaciones extra de formato se comportan como
+si un valor cero u nulo, seg@'un la conveniencia, hubiera sido
+proporcionado.  El valor de retorno es cero en caso de @'exito, distinto a
+cero en caso de fallo.
 
 @item read
 @btindex read
@@ -4466,13 +4571,16 @@ eliminados de @var{nombrev} antes de la asignaci@'on.  Otros argumentos
 
 @item -d @var{delim}
 Se usa el primer car@'acter de @var{delim} para terminar la
-l@'{@dotless{i}}nea de entrada, en vez de nueva l@'{@dotless{i}}nea.
+l@'{@dotless{i}}nea de entrada, en vez de nueva l@'{@dotless{i}}nea.  Si
+@var{delim} es la cadena vac@'ia, @code{read} terminar@'a una l@'inea cuando
+lea un car@'acter NUL.
 
 @item -e
 Readline (@pxref{Edici@'on en L@'{@dotless{i}}nea de @'Ordenes}) se usa para
 obtener la l@'{@dotless{i}}nea.  Readline usa los ajustes de edici@'on
 actuales (o predeterminados, si la edici@'on de l@'{@dotless{i}}nea no
-estaba previamente activa).
+estaba previamente activa), pero usa la compleci@'on de nombre de archivo
+predeterminada de Readline.
 
 @item -i @var{texto}
 Si Readline est@'a siendo usado para leer la l@'{@dotless{i}}nea,
@@ -4504,7 +4612,7 @@ procede de una terminal.
 Si se pasa esta opci@'on, la barra invertida no act@'ua como un car@'acter
 de escape.  Se considera que la barra invertida es parte de la
 l@'{@dotless{i}}nea.  En concreto, una pareja barra invertida-nueva
-l@'{@dotless{i}}nea no puede ser usada como una continuaci@'on de
+l@'{@dotless{i}}nea no puede ser usada entonces como una continuaci@'on de
 l@'{@dotless{i}}nea.
 
 @item -s
@@ -4535,8 +4643,8 @@ Lee entrada del descriptor de archivo @var{da}.
 @item readarray
 @btindex readarray
 @example
-readarray [-d @var{retrollamada}] [-n @var{cuenta}] [-O @var{origen}] [-s @var{cuenta}] [-t] [-u @var{da}]
-    [-C @var{callback}] [-c @var{cuant@'{@dotless{i}}a}] [@var{vector}]
+readarray [-d @var{delim}] [-n @var{cuenta}] [-O @var{origen}] [-s @var{cuenta}] [-t] [-u @var{da}]
+    [-C @var{retrollamada}] [-c @var{cuant@'{@dotless{i}}a}] [@var{vector}]
 @end example
 
 Lee l@'{@dotless{i}}neas de la entrada est@'andar en la variable de vector
@@ -4727,8 +4835,8 @@ Elimina cada @var{nombre} de la lista de aliases.  Si se proporciona
  
 @menu
 * La Instrucci@'on Integrada Set::  Cambia los valores de atributos del 
-                                      int@'erprete y de 
-                                      par@'ametrosposicionales.
+                                      int@'erprete y de par@'ametros 
+                                      posicionales.
 * La Instrucci@'on Integrada Shopt::  Modifica el comportamiento opcional 
                                         del int@'erprete.
 @end menu
@@ -4983,7 +5091,7 @@ int@'erpretes interactivos.
 @item -P
 Si est@'a habilitada, no resuelve enlaces simb@'olicos al realizar
 instrucciones como @code{cd} que cambian el directorio actual.  Se usa el
-directorio f@'{@dotless{i}}sico en su lugar.  Por defecto, Bash siga la
+directorio f@'{@dotless{i}}sico en su lugar.  Por defecto, Bash sigue la
 cadena l@'ogica de directorios cuando realiza instrucciones que cambian el
 directorio actual.
 
@@ -5055,10 +5163,11 @@ del int@'erprete.  Los ajustes pueden ser los listados a continuaci@'on o,
 si se usa la opci@'on @option{-o}, aquellos disponibles con la opci@'on
 @option{-o} para la instrucci@'on integrada @code{set} (@pxref{La
 Instrucci@'on Integrada Set}).  Sin opciones, o con la opci@'on @option{-p},
-se muestra una lista de las opciones que pueden ser habilitadas, con una
-indicaci@'on de si est@'a habilitada o no.  La opci@'on @option{-p} hace que
-la salida se muestre de forma que pueda ser reutilizada como entrada.  Las
-otras opciones tienen los siguientes significados:
+se muestra una lista de todas las opciones que pueden ser habilitadas, con
+una indicaci@'on de si est@'a habilitada o no; si se proporcionan
+@var{nombres-de-opciones}, se limita la salida a esas opciones.  La opci@'on
+@option{-p} hace que la salida se muestre de forma que pueda ser reutilizada
+como entrada.  Las otras opciones tienen los siguientes significados:
 
 @table @code
 @item -s
@@ -5096,6 +5205,13 @@ int@'erprete v@'alida.
 La lista de opciones @code{shopt} es:
 @table @code
 
+@item assoc_expand_once
+Si est@'a habilitada, el int@'erprete suprime la evaluaci@'on m@'ultiple de
+super@'indices de vectores durante la evaluaci@'on de una expresi@'on
+aritm@'etica, mientras ejecuta instrucciones integradas que pueden realizar
+asignaciones de variables y mientras ejecuta instrucciones integradas que
+realizan la desreferenciaci@'on de vectores.
+
 @item autocd
 Si est@'a habilitada, un nombre de instrucci@'on que es el nombre de un
 directorio es ejecutado como si fuera el argumento de la instrucci@'on
@@ -5107,7 +5223,7 @@ integrada @code{cd} que no es un directorio es el nombre de una variable
 cuyo valor es el directorio al que cambiar.
 
 @item cdspell
-Si est@'a habilita, ser@'an corregidos los errores de escritura menores de
+Si est@'a habilitada, ser@'an corregidos los errores de escritura menores de
 un componente de directorio en una instrucci@'on @code{cd}.  Los errores
 comprobados son caracteres transpuestos, y un car@'acter de m@'as.  Si se
 encuentra una correcci@'on, se imprime la ruta corregida, y la instrucci@'on
@@ -5122,20 +5238,23 @@ con un hash ya no existe, se realiza una b@'usqueda de ruta normal.
 Si est@'a habilitada, Bash lista el estado de cualquier tarea detenida o en
 ejecuci@'on antes de que salga de un int@'erprete interactivo.  Si alguna
 tarea est@'a en ejecuci@'on, esto hace que la salida sea pospuesta hasta que
-sea intentada una segunda salida sin una instrucci@'on interviniente
+se intente una segunda salida sin una instrucci@'on interviniente
 (@pxref{Control de Tareas}).  El int@'erprete siempre pospone la salida si
 se detiene cualquier tarea.
 
 @item checkwinsize
 Si est@'a habilitada, Bash comprueba la tama@~no de la ventana despu@'es de
-cada instrucci@'on y, si es necesario, actualiza los valores de @env{LINES}
-y @env{COLUMNS}.
+cada instrucci@'on externa (no integrada) y, si es necesario, actualiza los
+valores de @env{LINES} y @env{COLUMNS}.  Esta opci@'on est@'a habilitada por
+defecto.
 
 @item cmdhist
 Si est@'a habilitada, Bash intenta guardar todas las l@'{@dotless{i}}neas de
 una instrucci@'on de varias l@'{@dotless{i}}neas en la misma entrada del
 historial.  Esto permite una reedici@'on sencilla de instrucciones de varias
-l@'{@dotless{i}}neas.
+l@'{@dotless{i}}neas.  Esta opci@'on est@'a habilitada por defecto, pero
+solo tiene efecto si el historial de instrucciones est@'a habilitado
+(@pxref{Servicios del Historial de Bash}).
 
 @item compat31
 Si est@'a habilitada, Bash cambia su comportamiento al de la versi@'on 3.1
@@ -5188,6 +5307,11 @@ del bucle cuando se ejecuta una funci@'on del int@'erprete (esto permite que
 @code{break} o @code{continue} en una funci@'on del int@'erprete afecten a
 los bucles en el contexto del llamador).
 
+@item compat44
+Si est@'a habilitada, Bash guarda los par@'ametros posicionales de BASH_ARGV
+y BASH_ARGC antes de que sean usados, sin importar si est@'a habilitado o no
+el modo de depuraci@'on extendido.
+
 @item complete_fullquote
 Si est@'a habilitada, Bash entrecomilla todos los metacaracteres del
 int@'erprete en nombres de archivo y nombre de directorio al realizar la
@@ -5218,7 +5342,9 @@ directorio proporcionado inicialmente no existe.
 
 @item dotglob
 Si est@'a establecida, Bash incluye los nombres que empiezan por un `.' en
-los resultados de la expansi@'on de nombre de archivo.
+los resultados de la expansi@'on de nombre de archivo.  Los nombres de
+archivo @samp{.} y @samp{..} siempre tienen que ser coincididos
+expl@'icitamente, incluso si est@'a habilitada @code{dotglob}.
 
 @item execfail
 Si esto est@'a establecido, un int@'erprete no interactivo no se cerrar@'a
@@ -5342,7 +5468,7 @@ cuando se cierre un int@'erprete de acceso interactivo (@pxref{Se@~nales}).
 @item inherit_errexit
 Si est@'a establecida, la sustituci@'on de instrucciones hereda el valor de
 la opci@'on @code{errexit}, en vez de eliminarlo en el entorno del
-subint@'erprete.  Esta opciones es habilitada cuando se habilita el modo
+subint@'erprete.  Esta opci@'on es habilitada cuando se habilita el modo
 @sc{posix}.
 
 @item interactive_comments
@@ -5361,20 +5487,32 @@ instrucciones de m@'ultiples l@'{@dotless{i}}neas son guardadas en el
 historial con nuevas l@'{@dotless{i}}neas incorporadas en vez de usar
 separadores de puntos y comas donde sea posible.
 
+@item localvar_inherit
+Si est@'a habilitada, las variables locales heredan el valor y los atributos
+de una variable del mismo nombre que exista en un alcance previo antes de
+que se asigne un nuevo valor.  El atributo @var{nameref} no se hereda.
+
+@item localvar_unset
+Si est@'a habilitada, llamar a @code{unset} con variables locales en
+alcances previos de funciones las marca de forma que las siguientes
+consultas las encuentran sin asignar hasta que la funci@'on retorne. Esto es
+id@'entico al comportamiento de eliminar variables locales en el alcance
+actual de la funci@'on.
+
 @item login_shell
-El int@'erprete establece esta opci@'on si es iniciado como un int@'erprete
-de acceso (@pxref{Llamando a Bash}).  El valor no puede ser cambiado.
+El int@'erprete establece esta opci@'on si se inicia como un int@'erprete de
+acceso (@pxref{Llamando a Bash}).  El valor no puede ser cambiado.
 
 @item mailwarn
 Si est@'a habilitada, y un archivo que Bash est@'a comprobando en busca de
 correo ha sido accedido desde la @'ultima hora en que fue comprobado, el
-mensaje @code{"El correo en @var{mailfile} ha sido le@'{@dotless{i}}do"} es
-mostrado.
+mensaje @code{"El correo en @var{mailfile} ha sido le@'{@dotless{i}}do"}
+ser@'a mostrado.
 
 @item no_empty_cmd_completion
 Si est@'a habilitada, y se est@'a usando Readline, Bash no tratar@'a de
-buscar en el @env{PATH} para posibles compleciones cuando la compleci@'on es
-intentada en una l@'{@dotless{i}}nea vac@'{@dotless{i}}a.
+buscar en el @env{PATH} para posibles compleciones cuando la compleci@'on se
+intenta en una l@'{@dotless{i}}nea vac@'{@dotless{i}}a.
 
 @item nocaseglob
 Si est@'a habilitada, Bash hace coincidir nombres de archivo
@@ -5398,6 +5536,13 @@ Si est@'a habilitada, las facilidades programables de compleci@'on
 (@pxref{Compleci@'on Programable}) son habilitadas.  Est@'a opci@'on est@'a
 habilitada por defecto.
 
+@item progcomp_alias
+Si est@'a habilitada y la compleci@'on programable est@'a activada, Bash
+trata un nombre de instrucci@'on que no tiene ninguna compleci@'on como un
+posible alias e intenta la expansi@'on de alias.  Si tiene un alias, Bash
+intenta la compleci@'on programable usando la palabra de instrucci@'on
+resultante del alias expandido.
+
 @item promptvars
 Si est@'a habilitada, las cadenas de prompt experimentan la expansi@'on de
 par@'ametros, sustituci@'on de instrucciones, expansi@'on aritm@'etica y
@@ -5408,9 +5553,9 @@ por defecto.
 @item restricted_shell
 El int@'erprete establece esta opci@'on si es iniciado en modo restringido
 (@pxref{El Int@'erprete Restringido}).  El valor no puede ser cambiado.
-Esto no es eliminado cuando los archivos de arranque son ejecutados,
-permitiendo a los archivos de arranque descubrir si el int@'erprete est@'a
-restringido o no.
+Esto no se elimina cuando los archivos de arranque se ejecutan, permitiendo
+a los archivos de arranque descubrir si el int@'erprete est@'a restringido o
+no.
 
 @item shift_verbose
 Si esto est@'a establecido, la instrucci@'on integrada @code{shift} imprime
@@ -5543,6 +5688,7 @@ que son expandidas  antes de que se muestre @env{PS1}.
 
 @item PS2
 La cadena de prompt secundaria.  El valor predeterminado es @samp{>}.
+@env{PS2} se expande de la misma forma que @env{PS1} antes de ser mostrado.
 
 @end vtable
 
@@ -5572,9 +5718,11 @@ cada opci@'on del int@'erprete en la lista ser@'a activada antes de leer
 cualquier archivo de inicio.  La variable es de solo lectura.
 
 @item BASHPID
-Se expande al ID de proceso del actual proceso de Bash.  Esto difiere de
-@code{$$} bajo ciertas circunstancias, como con subint@'erpretes que no
-requieren que Bash vuelva a ser inicializado.
+Se expande al ID de proceso del proceso actual de Bash.  Esto difiere de
+@code{$$} bajo algunas circunstancias, como subint@'erpretes que no
+necesitan que Bash sea reinicializado.  Las asignaciones a @env{BASHPID} no
+tienen efecto.  Si @code{BASHPID} est@'a sin asignar, pierde sus propiedades
+especiales, incluso si es posteriormente restablecido.
 
 @item BASH_ALIASES
 Una variable de vector asociativo cuyos miembros corresponden a la lista
@@ -5588,24 +5736,39 @@ posteriormente.
 
 @item BASH_ARGC
 Una variable de vector cuyos valores son el n@'umero de par@'ametros en cada
-marco de la actual pila de ejecuci@'on de bash.  El n@'umero de par@'ametros
-para la actual subrutina (funci@'on del int@'erprete o guion ejecutado con
-@code{.} o @code{source}) est@'a encima en la pila.  Cuando se ejecuta una
-subrutina, se empuja el n@'umero de par@'ametros pasado a @code{BASH_ARGC}.
-El int@'erprete asigna @code{BASH_ARGC} solo cuando est@'a en modo de
-depuraci@'on extendido (vea @ref{La Instrucci@'on Integrada Shopt} para una
-descripci@'on de la opci@'on @code{extdebug} para la instrucci@'on integrada
-@code{shopt}).
+marco de la actual pila de llamadas de ejecuci@'on de bash.  El n@'umero de
+par@'ametros para la subrutina actual (funci@'on del int@'erprete o guion
+ejecutado con @code{.} o @code{source}) est@'a encima en la pila. Cuando se
+ejecuta una subrutina, el n@'umero de par@'ametros pasados se mete en
+@code{BASH_ARGC}.  El int@'erprete asigna @code{BASH_ARGC} solo cuando
+est@'a en el modo de depuraci@'on extendido (consulte @ref{La Instrucci@'on
+Integrada Shopt} para una descripci@'on de la opci@'on @code{extdebug} para
+la instrucci@'on integrada @code{shopt}).  Asignar @code{extdebug} despu@'es
+de que se haya iniciado el int@'erprete para ejecutar un guion o referenciar
+esta variable cuando @code{extdebug} no est@'a activada, puede producir
+valores inconsistentes.
 
 @item BASH_ARGV
 Una variable de vector que contiene todos los par@'ametros en la pila de
-llamada de ejecuci@'on actual de bash.  El par@'ametro final de la @'ultima
-llamada de subrutina est@'a encima en la pila; el primer par@'ametro de la
-llamada inicial est@'a abajo.  Cuando se ejecuta una subrutina, se empujan
-los par@'ametros proporcionados a @code{BASH_ARGV}.  El int@'erprete asigna
-@code{BASH_ARGV} solo cuando est@'a en modo de depuraci@'on extendido (vea
-@ref{La Instrucci@'on Integrada Shopt} para una descripci@'on de la opci@'on
-@code{extdebug} de la instrucci@'on integrada @code{shopt}).
+ejecuci@'on actual de bash.  El par@'ametro final de la @'ultima llamada de
+subrutina est@'a encima en la pila; el primer par@'ametro de la llamada
+inicial est@'a abajo.  Cuando se ejecuta una subrutina, los par@'ametros
+proporcionados se meten en @code{BASH_ARGV}.  El int@'erprete asigna
+@code{BASH_ARGV} solo cuando est@'a en el modo de depuraci@'on extendido
+(vea @ref{La Instrucci@'on Integrada Shopt} para una descripci@'on de la
+opci@'on @code{extdebug} de la instrucci@'on integrada @code{shopt}).
+Establecer @code{extdebug} despu@'es de que el int@'erprete ha empezado a
+ejecutar un guion o hacer referencia a esta variable cuando @code{extdebug}
+no est@'a habilitado, puede producir valores inconsistentes.
+
+@item BASH_ARGV0
+Cuando se hace referencia, esta variable se expande al nombre del
+int@'erprete o el guion del int@'erprete (id@'entica a @code{$0};
+@xref{Par@'ametros Especiales}, para una descripci@'on del par@'ametro
+especial 0).  La asignaci@'on a @code{BASH_ARGV0} hace que el valor asignado
+tambi@'en sea asignado a @code{$0}.  Si @code{BASH_ARGV0} es eliminado,
+pierde sus propiedades especiales, incluso si es posteriormente
+restablecido.
 
 @item BASH_CMDS
 Una variable de vector asociativo cuyos miembros corresponden a la tabla
@@ -5757,7 +5920,7 @@ El @'{@dotless{i}}ndice de la posici@'on actual del cursor relativa al
 comienzo de la instrucci@'on actual.  Si la posici@'on actual del cursor
 est@'a al final de la instrucci@'on actual, el valor de esta variable es
 igual a @code{$@{#COMP_LINE@}}.  Esta variable est@'a disponible solo en
-funciones del int@'erprete y instrucciones externas llamadas por las
+funciones del int@'erprete e instrucciones externas llamadas por las
 herramientas de compleci@'on programables (@pxref{Compleci@'on
 Programable}).
 
@@ -5820,6 +5983,23 @@ l@'{@dotless{i}}nea.
 @item ENV
 Similar a @code{BASH_ENV}; usada cuando el int@'erprete es llamado en Modo
 @sc{posix} (@pxref{Modo POSIX de Bash}).
+
+@item EPOCHREALTIME
+Cada vez que se hace referencia a este par@'ametro se expande al n@'umero de
+segundos desde la @'Epoca Unix como un valor de coma flotante con
+granularidad de microsegundos (consulte la documentaci@'on de la funci@'on
+de la librer@'ia C @var{time} para la definici@'on de @'Epoca).  Las
+asignaciones a @env{EPOCHREALTIME} son ignoradas.  Si @env{EPOCHREALTIME} es
+eliminada, pierde sus propiedades espciales, incluso si es restablecida
+posteriormente.
+
+@item EPOCHSECONDS
+Cada vez que se hace referencia a este par@'ametro, se expande al n@'umero
+de segundos desde el Tiempo Unix (consulte la definici@'on de @'Epoca en la
+documentaci@'on de la funci@'on @var{time} de la librer@'ia C).  Las
+asignaciones a  @env{EPOCHSECONDS} son ignoradas.  Si @env{EPOCHSECONDS} no
+est@'a asignada, pierde sus propiedades especiales, incluso si es
+restablecida posteriormente.
 
 @item EUID
 El id num@'erico efectivo de usuario del actual usuario.  Esta variable es
@@ -6010,13 +6190,19 @@ como la @'unica entrada.  Si est@'a asignado, el valor denota el n@'umero de
 caracteres @code{EOF} consecutivos que pueden ser le@'{@dotless{i}}dos como
 el primer car@'acter de una l@'{@dotless{i}}nea de entrada antes de que
 finalice el int@'erprete.  Si la variable existe pero no tiene un valor
-num@'erico (o no tiene valor), entonces el predeterminado es 10.  Si la
+num@'erico, o no tiene valor, entonces el predeterminado es 10.  Si la
 variable no existe, el @code{EOF} significa el final de la entrada para el
 int@'erprete.  Esto solo est@'a en efecto para int@'erpretes interactivos.
 
 @item INPUTRC
 El nombre del archivo de inicializaci@'on Readline, que sobrescribe el valor
 predeterminado de @file{~/.inputrc}.
+
+@item INSIDE_EMACS
+Si Bash encuentra esta variable en el entorno cuando el int@'erprete se
+inicia, asume que el int@'erprete est@'a corriendo en un b@'ufer de
+int@'erprete de Emacs y puede deshabilitar la edici@'on de
+l@'{@dotless{i}}nea dependiendo del valor de @env{TERM}.
 
 @item LANG
 Usada para determinar la categor@'{@dotless{i}}a de configuraci@'on regional
@@ -6111,7 +6297,8 @@ ejecuci@'on, Bash activa el modo @sc{posix}, como si la instrucci@'on
 @code{set -o posix}
 @end example
 @noindent
-hubiera sido ejecutada.  
+hubiera sido ejecutada.  Cuando el int@'erprete entra en modo @sc{posix}
+asigna la variable si no a sido a@'un asignada.
 
 @item PPID
 El @sc{id} de proceso del proceso padre del int@'erprete.  Esta variable es
@@ -6139,11 +6326,12 @@ El valor de esta variable se usa como el prompt para la instrucci@'on
 @code{select} usa el prompt @samp{#? }.
 
 @item PS4
-El valor es el prompt imprimido antes de que la l@'{@dotless{i}}nea de
-instrucci@'on sea repetida cuando la opci@'on @option{-x} est@'e habilitada
-(@pxref{La Instrucci@'on Integrada Set}).  El primer car@'acter de @env{PS4}
-es remplazado m@'ultiples veces, seg@'un sea necesario, para indicar
-m@'ultiples niveles de indirecci@'on.  El predeterminado es @samp{+}.
+El valor de este par@'ametro se expande como @var{PS1} y el valor expandido
+es el prompt imprimido antes de que la l@'{@dotless{i}}nea de instrucci@'on
+sea repetida cuando la opci@'on @option{-x} est@'e habilitada (@pxref{La
+Instrucci@'on Integrada Set}).  El primer car@'acter del valor expandido se
+repete m@'ultiples veces, seg@'un sea necesario, para indicar m@'ultiples
+niveles de indirecci@'on.  El predeterminado es @samp{+}.
 
 @item PWD
 El directorio de trabajo actual seg@'un se establece por la instrucci@'on
@@ -6273,7 +6461,7 @@ Este cap@'{@dotless{i}}tulo describe funcionalidades @'unicas de Bash.
 * Int@'erpretes Interactivos::  Qu@'e es un int@'erprete interactivo.
 * Expresiones Condicionales de Bash::  Primitivos usados para componer 
                                          expresiones para la instrucci@'on 
-                                         integrada@code{test}.
+                                         integrada @code{test}.
 * Aritm@'etica del Int@'erprete::  Aritm@'etica en variables del 
                                      int@'erprete.
 * Aliases::                  Sustituyendo una instrucci@'on con otra.
@@ -6283,7 +6471,7 @@ Este cap@'{@dotless{i}}tulo describe funcionalidades @'unicas de Bash.
 * El Int@'erprete Restringido::  Un modo m@'as controlado de ejecuci@'on del 
                                    int@'erprete.
 * Modo POSIX de Bash::       Hacer que Bash se comporte m@'as cerca de 
-                               c@'omo especifica el est@'andarPOSIX.
+                               c@'omo especifica el est@'andar POSIX.
 @end menu
 
 @node Llamando a Bash
@@ -6403,7 +6591,8 @@ Restringido}).
 Si est@'a presente esta opci@'on, o si no quedan argumentos tras el
 procesado de opciones, las instrucciones son le@'{@dotless{i}}das de la
 entrada est@'andar.  Esta opci@'on permite que sean establecidos los
-par@'ametros posicionales al llamar a un int@'erprete interactivo.
+par@'ametros posicionales al llamar a un int@'erprete interactivo o al leer
+entrada a trav@'es de una tuber@'ia.
 
 @item -D
 Se imprime una lista de todas las cadenas entre comillas dobles a la entrada
@@ -6413,15 +6602,14 @@ idioma cuando la configuraci@'on regional actual no es @code{C} o
 opci@'on @option{-n}; no se ejecutar@'an instrucciones.
 
 @item [-+]O [@var{opci@'on_shopt}]
-@var{opci@'on_shopt} es una de las opciones del int@'erprete aceptadas
-por la instrucci@'on integrada @code{shopt} (@pxref{La Instrucci@'on
-Integrada Shopt}).  Si est@'a presente @var{opci@'on_shopt},
-@option{-O} habilita el valor de esa opci@'on; @option{+O} lo
-deshabilita.  Si no se proporciona @var{opci@'on_shopt}, se imprimen
-los nombres y valores de las opciones del int@'erprete aceptadas por
-@code{shopt} en la salida est@'andar.  Si la opci@'on de llamada es
-@option{+O}, la salida se muestra en un formato que puede ser
-reutilizado como entrada.
+@var{opci@'on_shopt} es una de las opciones del int@'erprete aceptadas por
+la instrucci@'on integrada @code{shopt} (@pxref{La Instrucci@'on Integrada
+Shopt}).  Si est@'a presente @var{opci@'on_shopt}, @option{-O} habilita el
+valor de esa opci@'on; @option{+O} lo deshabilita.  Si no se proporciona
+@var{opci@'on_shopt}, se imprimen los nombres y valores de las opciones del
+int@'erprete aceptadas por @code{shopt} en la salida est@'andar.  Si la
+opci@'on de llamada es @option{+O}, la salida se muestra en un formato que
+puede ser reusado como entrada.
 
 @item --
 Un @code{--} se@~nala el fin de opciones y deshabilita el posterior
@@ -6646,8 +6834,10 @@ se@~nales de control de tareas generadas por el teclado @code{SIGTTIN},
 Bash expande y muestra @env{PS1} antes de leer la primera
 l@'{@dotless{i}}nea de una instrucci@'on, y expande y muestra @env{PS2}
 antes de leer la segunda y posteriores l@'{@dotless{i}}neas de una
-instrucci@'on multil@'{@dotless{i}}nea.  Bash muestra @env{PS0} tras leer
-una instrucci@'on pero antes de ejecutarla.
+instrucci@'on multil@'{@dotless{i}}nea.  Bash expande y muestra @env{PS0}
+tras leer una instrucci@'on pero antes de ejecutarla. Consulte
+@ref{Controlando el Prompt} para una lista completa de secuencias de escape
+de cadenas de prompt.
 
 @item
 Bash ejecuta el valor de la variable @env{PROMPT_COMMAND} como una
@@ -6679,7 +6869,7 @@ En ausencia de traps, Bash ignora @code{SIGTERM} (@pxref{Se@~nales}).
 
 @item
 En ausencia de traps, @code{SIGINT} es atrapada y manejada
-((@pxref{Se@~nales}.  @code{SIGINT} interrumpir@'a algunas instrucciones
+(@pxref{Se@~nales}).  @code{SIGINT} interrumpir@'a algunas instrucciones
 integradas del int@'erprete.
 
 @item
@@ -6741,21 +6931,24 @@ n@'umero de segundos especificado antes de imprimir @env{$PS1}
 @section Expresiones Condicionales de Bash
 @cindex expresiones, condicionales
 
-Las expresiones condicionales se usan por la instrucci@'on compuesta
-@code{[[} y las instrucciones integradas @code{test} y @code{[}.
+Las expresiones condicionales son usadas por la instrucci@'on compuesta
+@code{[[} y las instrucciones integradas @code{test} y @code{[}. Las
+instrucciones @code{test} y @code{[} determinan su comportamiento basadas en
+el n@'umero de argumentos; consulte las descripciones de estas instrucciones
+para cualquier otra acci@'on especifica de la instrucci@'on.
 
-Las expresiones pueden ser unarias o binarias.  Las expresiones unarias se
-usan frecuentemente para examinar el estado de un archivo.  Hay operadores
-de cadenas y operadores num@'ericos de comparaci@'on tambi@'en.  Bash maneja
-varias nombres de archivo de forma especial cuando son usados en
-expresiones.  Si el sistema operativo en que Bash est@'a corriendo
-proporciona estos archivos especiales, Bash los usar@'a; de lo contrario,
-los emular@'a internamente con este comportamiento: si el argumento
-@var{archivo} para uno de los primarios es de la forma
-@file{/dev/fd/@var{N}}, entonces se comprueba el descriptor de archivo
-@var{N}.  Si el argumento @var{archivo} para uno de los primarios es
-@file{/dev/stdin}, @file{/dev/stdout}, o @file{/dev/stderr} se comprueba el
-descriptor de archivo 0, 1 o 2, respectivamente.
+Las expresiones pueden ser unarias o binarias, y est@'an formadas por las
+siguientes unarias.  Las expresiones unarias se usan frecuentemente para
+examinar el estado de un archivo.  Hay operadores de cadenas y operadores
+num@'ericos de comparaci@'on tambi@'en.  Bash maneja varias nombres de
+archivo de forma especial cuando son usados en expresiones.  Si el sistema
+operativo en que Bash est@'a corriendo proporciona estos archivos
+especiales, Bash los usar@'a; de lo contrario, los emular@'a internamente
+con este comportamiento: si el argumento @var{archivo} para uno de los
+primarios es de la forma @file{/dev/fd/@var{N}}, entonces se comprueba el
+descriptor de archivo @var{N}.  Si el argumento @var{archivo} para uno de
+los primarios es @file{/dev/stdin}, @file{/dev/stdout}, o @file{/dev/stderr}
+se comprueba el descriptor de archivo 0, 1 o 2, respectivamente.
 
 Al usarse con @code{[[}, los operadores @samp{<} y @samp{>} ordenan
 lexicogr@'aficamente usando la configuraci@'on regional actual.  La
@@ -6893,7 +7086,9 @@ Verdadero si @var{cadena1} se ordena lexicogr@'aficamente despu@'es que
 @samp{-gt} o @samp{-ge}.  Estos operadores aritm@'eticos binarios devuelven
 verdadero si @var{arg1} es igual a, no igual a, menor que, menor que o igual
 a, mayor que, mayor que o igual a @var{arg2}, respectivamente.  @var{Arg1} y
-@var{arg2} pueden ser enteros positivos o negativos.
+@var{arg2} pueden ser enteros positivos o negativos.  Cuando se usa con la
+instrucci@'on @code{[[}, @var{Arg1} y @var{Arg2} se eval@'uan como
+expresiones aritm@'eticas (@pxref{Aritm@'etica del Int@'erprete}).
 @end table
 
 @node Aritm@'etica del Int@'erprete
@@ -7010,20 +7205,21 @@ cuando se usa como la primera palabra de una instrucci@'on simple.  El
 int@'erprete mantiene una lista de aliases que puede ser establecida y
 eliminada con las instrucciones integradas @code{alias} y @code{unalias}.
 
-La primera palabra de cada instrucci@'on simple, si no está entrecomillada,
-se comprueba para ver si tiene un alias.  En ese caso, ese palabra es
-reemplazada por el texto del alias.  Los caracteres @samp{/}, @samp{$},
-@samp{`}, @samp{=} y cualquiera de los metacaracteres o caracteres de
-entrecomillado del int@'erprete listados anteriormente no pueden aparecer en
-un nombre de alias.  El texto de reemplazo puede contener cualquier entrada
-de int@'erprete v@'alida, incluyendo metacaracteres del int@'erprete.  La
-primera palabra de texto de reemplazo se comprueba por aliases, pero una
-palabra que es id@'entica a un alias que est@'a siendo expandido no se
-expande una segunda vez.  Esto significa que uno puede crear el alias
-@code{ls} para @code{"ls -F"}, por ejemplo, y Bash no trata de expandir
-recursivamente el texto de reemplazo.  Si el @'ultimo car@'acter del valor
-del alias es un @var{blanco}, entonces la siguiente palabra de instrucci@'on
-que sigue al alias tambi@'en se comprueba para la expansi@'on de alias.
+La primera palabra de cada instrucci@'on simple, si no est@'a
+entrecomillada, se comprueba para ver si tiene un alias.  En ese caso, ese
+palabra es reemplazada por el texto del alias.  Los caracteres @samp{/},
+@samp{$}, @samp{`}, @samp{=} y cualquiera de los metacaracteres o caracteres
+de entrecomillado del int@'erprete listados anteriormente no pueden aparecer
+en un nombre de alias.  El texto de reemplazo puede contener cualquier
+entrada de int@'erprete v@'alida, incluyendo metacaracteres del
+int@'erprete.  La primera palabra de texto de reemplazo se comprueba por
+aliases, pero una palabra que es id@'entica a un alias que est@'a siendo
+expandido no se expande una segunda vez.  Esto significa que uno puede crear
+el alias @code{ls} para @code{"ls -F"}, por ejemplo, y Bash no trata de
+expandir recursivamente el texto de reemplazo.  Si el @'ultimo car@'acter
+del valor del alias es un @var{blanco}, entonces la siguiente palabra de
+instrucci@'on que sigue al alias tambi@'en se comprueba para la expansi@'on
+de alias.
 
 Los alias son creados y listados con la instrucci@'on @code{alias}, y
 eliminados con la instrucci@'on @code{unalias}.
@@ -7038,8 +7234,9 @@ usando @code{shopt} (@pxref{La Instrucci@'on Integrada Shopt}).
 
 Las reglas concernientes a la definici@'on y uso de aliases son en cierto
 modo confusas.  Bash siempre lee al menos una l@'{@dotless{i}}nea completa
-de entrada antes de ejecutar cualquiera de las instrucciones en esa
-l@'{@dotless{i}}nea.  Los aliases se expanden cuando se lee una
+de entrada, y todas las l@'ineas que forman una instrucci@'on compuesta,
+antes de ejecutar cualquiera de las instrucciones en esa l@'{@dotless{i}}nea
+o la instrucci@'on compuesta.  Los aliases se expanden cuando se lee una
 instrucci@'on, no cuando se ejecuta.  Por lo tanto, una definici@'on de
 alias que aparece en la misma l@'{@dotless{i}}nea que otra instrucci@'on no
 tiene efecto hasta que la siguiente l@'{@dotless{i}}nea de entrada es
@@ -7179,12 +7376,17 @@ La instrucci@'on integrada @code{unset} se usa para destruir vectores.
 @code{unset @var{nombre}[@var{sub@'{@dotless{i}}ndice}]} destruye el
 elemento de vector en el @'{@dotless{i}}ndice
 @var{sub@'{@dotless{i}}ndice}.  Los sub@'{@dotless{i}}ndices negativos para
-vectores indexados se interpretan como se describe arriba.  Se debe tomar
-precauci@'on para evitar efectos secundarios no deseados causados por la
-expansi@'on de nombre de archivo.  @code{unset @var{nombre}}, donde
-@var{nombre} es un vector, elimina el vector completo.  Un
-sub@'{@dotless{i}}ndice de @samp{*} o @samp{@@} tambi@'en elimina el vector
-completo.
+vectores indexados se interpretan como se describe arriba.  Eliminar el
+@'ultimo elemento de una variable de vecor no elimina la variable.
+@code{unset @var{nombre}}, donde @var{nombre} es un vector, elimina el
+vector completo.  Un sub@'{@dotless{i}}ndice de @samp{*} o @samp{@@}
+tambi@'en elimina el vector completo.
+
+Al usar un nombre de variable con un sub@'indice como argumento para una
+instrucci@'on, como con @code{unset}, sin usar la sintaxis de expansi@'on de
+palabra descrita anteriormente, el argumento est@'a sujeto a la expansi@'on
+de nombre de archivo del int@'erprete.  Si no se desea la expansi@'on de
+nombre de archivo, el argumento deber@'ia ser entrecomillado.
 
 Cada una de las instrucciones integradas @code{declare}, @code{local} y
 @code{readonly} aceptan una opci@'on @option{-a} para especificar un vector
@@ -7321,7 +7523,8 @@ y tiene un valor no nulo, entonces se ejecuta el valor justo como si hubiera
 sido tecleado en la l@'{@dotless{i}}nea de @'ordenes.
 
 Adem@'as, la siguiente tabla describe los caracteres especiales que pueden
-aparecer en las variables de prompt desde @env{PS1} a @env{PS4}:
+aparecer en las variables de prompt @env{PS0}, @env{PS1}, @env{PS2} y
+@env{PS4}:
 
 @table @code
 @item \a
@@ -7398,7 +7601,7 @@ instrucciones ejecutada durante la sesi@'on actual del int@'erprete.
 Despu@'es de que la cadena es decodificada, se expande a trav@'es de la
 expansi@'on de par@'ametro, sustituci@'on de instrucci@'on, expansi@'on
 aritm@'etica y eliminaci@'on de comillas, sujeta al valor de la opci@'on del
-int@'erprete @code{promptvars} (@pxref{La Instrucci@'on Integrada Set}).
+int@'erprete @code{promptvars} (@pxref{La Instrucci@'on Integrada Shopt}).
 
 @node El Int@'erprete Restringido
 @section El Int@'erprete Restringido
@@ -7473,6 +7676,9 @@ La siguiente lista es lo que se cambia cuando el `modo @sc{posix}' tiene
 efecto:
 
 @enumerate
+@item
+Bash se asegura de que la variable @env{POSIXLY_CORRECT} esta habilitada.
+
 @item
 Cuando una instrucci@'on en la tabla hash ya no existe, Bash volver@'a a
 inspeccionar @env{$PATH} para encontrar la nueva ubicaci@'on.  Esto
@@ -7692,6 +7898,12 @@ ejecutar sustituciones de instrucciones heredan el valor de la opci@'on
 subint@'erpretes.
 
 @item
+Habilitar el modo @sc{posix} tiene el efecto de activar la opci@'on
+@code{shift_verbose}, para que los argumentos num@'ericos de @code{shift}
+que excedan el n@'umero de par@'ametros posicionales produzca un mensaje de
+error.
+
+@item
 Cuando la instrucci@'on integrada @code{alias} muestra definiciones de
 aliases, no las muestra con un @samp{alias } inicial a no ser que se
 proporcione la opci@'on @option{-p}.
@@ -7711,6 +7923,13 @@ Cuando la instrucci@'on integrada @code{cd} es llamada en modo
 @var{logical}, y el nombre de ruta construido de @code{$PWD} y el nombre de
 directorio proporcionado como un argumento no se refiere a un directorio
 existente, @code{cd} fallar@'a en vez de recurrir al modo @var{physical}.
+
+@item
+Cuando la instrucci@'on integrada builtin no puede cambiar de directorio
+porque la longitud del nombre de ruta construido a partir de @code{$PWD} y
+el nombre de directorio proporcionado como argumento excede @var{PATH_MAX}
+cuando se expanden todos los enlaces simb@'olicos, @code{cd} fallar@'a en
+vez de intentar usar solo el nombre de directorio proporcionado.
 
 @item
 La instrucci@'on integrada @code{pwd} verifica que el valor que imprime es
@@ -7748,7 +7967,7 @@ bytes para las opciones @option{-c} y @option{-f}.
 La llegada de @code{SIGCHLD} cuando una trap est@'a establecida en
 @code{SIGCHLD} no interrumpe la instrucci@'on integrada @code{wait} y hace
 que retorne inmediatamente.  La instrucci@'on trap es ejecutada una vez por
-cada cada hijo que finalice.
+cada hijo que finalice.
 
 @item
 La instrucci@'on integrada @code{read} puede ser interrumpida por una
@@ -7771,8 +7990,8 @@ incluso en modo @sc{posix}.  Espec@'{@dotless{i}}ficamente:
 @item
 La instrucci@'on integrada @code{fc} comprueba @code{$EDITOR} como un
 programa para editar entrada de historial si @code{FCEDIT} est@'a sin
-establecer, en vez de recurrir directamente a @code{ed}.  @code{fc} usa
-@code{ed} si @code{EDITOR} est@'a sin establecer.
+asignar, en vez de recurrir directamente a @code{ed}.  @code{fc} usa
+@code{ed} si @code{EDITOR} est@'a sin asignar.
 
 @item
 Como se indica anteriormente, Bash requiere que la opci@'on @code{xpg_echo}
@@ -7796,7 +8015,7 @@ funciona y c@'omo Bash le permite acceder a sus herramientas.
 * Instrucciones Integradas de Control de Tareas::  Instrucciones integradas 
                                                      de Bash usadas para 
                                                      interactuar con el 
-                                                     control detareas.
+                                                     control de tareas.
 * Variables de Control de Tareas::  Variables que Bash usa para personalizar 
                                       el control de tareas.
 @end menu
@@ -7850,7 +8069,7 @@ Si el sistema operativo en que Bash se est@'a ejecutando soporta el control
 de tareas, Bash contiene herramientas para usarlo.  Teclear el car@'acter
 @var{suspend} (t@'{@dotless{i}}picamente @samp{^Z}, Control-Z) mientras
 est@'a corriendo un proceso hace que el proceso se pare cuando trata de leer
-entrada de la terminal y devuelva el control a Bash.  El usuario entonces
+la entrada de la terminal y devuelva el control a Bash.  El usuario entonces
 manipula el estado de esta tarea, usando la instrucci@'on @code{bg} para
 continuarla en segundo plano, la instrucci@'on @code{fg} para continuarla en
 primer plano o la instrucci@'on @code{kill} para matarla.  Un @samp{^Z}
@@ -7901,6 +8120,12 @@ habilitada, lista las tareas y sus estados.  La instrucci@'on @code{jobs}
 puede ser usada entonces para inspeccionar sus estados.  Si se realiza un
 segundo intento de salir sin una instrucci@'on que intervenga, Bash no
 imprime otra advertencia, y se finalizan todas las tareas detenidas.
+
+Cuando el int@'erprete est@'a esperando a una tarea o un proceso usando la
+instrucci@'on integrada @code{wait} y el control de tareas est@'a
+habilitado, @code{wait} retornar@'a cuando la tarea cambie de estado. La
+opci@'on @option{-f} forzar@'a a @code{wait} a esperar antes de retornar
+hasta que la tarea o el proceso finalice.
 
 @node Instrucciones Integradas de Control de Tareas
 @section Instrucciones Integradas de Control de Tareas
@@ -7999,17 +8224,20 @@ un error o se encuentra una opci@'on inv@'alida.
 @item wait
 @btindex wait
 @example
-wait [-n] [@var{espectarea} or @var{pid} @dots{}]
+wait [-fn] [@var{espec-tarea} o @var{pid} @dots{}]
 @end example
 
-Espera hasta que el proceso hijo especificado por cada @sc{id} de proceso
-@var{pid} o especificaci@'on de tarea @var{espectarea} finalice y devuelve
-el estado de salida de la @'ultima instrucci@'on a la que se espera.  Si se
-pasa una especificaci@'on de tarea, se esperan todos los procesos en la
-tarea.  Si no se pasan argumentos, se esperan todos los procesos hijos
-actualmente activos, y el estado de retorno es cero.  Si se proporciona la
-opci@'on @option{-n}, @code{wait} espera a que la tarea termine y devuelve
-su estado de salida.  Si ni @var{espectarea} ni @var{pid} especifican un
+Espera hasta que cada proceso hijo especificado para cada @sc{id} de proceso
+@var{pid} o especificaci@'on de tarea @var{jobspec} finalice y devuelva el
+estado de salida de la @'ultima instrucci@'on a la que esper@'o.  Si se pasa
+una especificaci@'on de tarea, se esperan a todos los procesos en la tarea.
+Si no se pasan argumentos, se esperan a todos los procesos hijos actualmente
+activos, y el estado de retorno es cero.  Si se proporciona la opci@'on
+@option{-n}, @code{wait} espera a que cualquier tarea termine y devuelve su
+estado de salida.  Si se proporciona la opci@'on @option{-f} y est@'a
+habilitado el control de tareas, @code{wait} fuerza a cada @var{pid} o
+@var{jobspec} a terminar antes de devolver su estado, en vez de retornar
+cuando cambia el estado.  Si ni @var{jobspec} ni @var{pid} especifica un
 proceso hijo activo del int@'erprete, el estado de retorno es 127.
 
 @item disown
@@ -8093,19 +8321,20 @@ portadas independientes para @sc{ms-dos}, @sc{os/2} y plataformas Windows.
                                distintos sistemas.
 * Compilando para M@'ultiples Arquitecturas::  C@'omo compilar Bash para 
                                                  m@'as de un tipo de sistema 
-                                                 desde el mismo @'arbolde 
+                                                 desde el mismo @'arbol de 
                                                  fuentes.
 * Nombres de Instalaci@'on::  C@'omo establecer las distintas rutas usadas 
                                 por la instalaci@'on.
 * Especificando el Tipo de Sistema::  C@'omo configurar Bash para un sistema 
                                         concreto.
 * Compartiendo Predeterminados::  C@'omo compartir los valores de 
-                                    configuraci@'on predeterminados 
-                                    entreprogramas GNU.
+                                    configuraci@'on predeterminados entre 
+                                    programas GNU.
 * Controles de Operaci@'on::  Opciones reconocidas por el programa de 
                                 configuraci@'on.
 * Funcionalidades Opcionales::  C@'omo habilitar y deshabilitar 
-                                  funcionalidades opcionales al construirBash.
+                                  funcionalidades opcionales al construir 
+                                  Bash.
 @end menu
 
 @node Instalaci@'on B@'asica
@@ -8164,16 +8393,32 @@ Para averiguar m@'as sobre las opciones y argumentos que el guion
 @code{configure} entiende, escriba 
 
 @example
-bash-2.04$ ./configure --help
+bash-4.2$ ./configure --help
 @end example
 
 @noindent
 en el prompt de Bash en su directorio de fuentes de Bash.
 
+Si quieres construir Bash en un directorio separado del directorio fuente
+---para construir para varias arquitecturas, por ejemplo--- simplemente usa
+la ruta completa para el guion configure. Las siguientes instrucciones
+construir@'an bash en un directorio bajo @file{/usr/local/build} desde el
+c@'odigo fuente en @file{/usr/local/src/bash-4.4}:
+
+@example
+mkdir /usr/local/build/bash-4.4
+cd /usr/local/build/bash-4.4
+bash /usr/local/src/bash-4.4/configure
+make
+@end example
+
+Consulte @ref{Compilando para M@'ultiples Arquitecturas} para saber m@'as
+sobre constuir en un directorio separado del c@'odigo fuente.
+
 Si necesita hacer cosas inusuales para compilar Bash, intente averiguar
 c@'omo @code{configure} podr@'{@dotless{i}}a comprobar si hacerlas o no, y
 envi@'e diffs o instrucciones a @email{bash-maintainers@@gnu.org} para que
-puedan ser consideradas para la pr@'oxima publicación.
+puedan ser consideradas para la pr@'oxima publicaci@'on.
 
 El archivo @file{configure.ac} se usa para crear @code{configure} por un
 programa llamado Autoconf.  Solo necesita @file{configure.ac} si quiere
@@ -8213,15 +8458,15 @@ disponible.
 @section Compilando para M@'ultiples Arquitecturas
 
 Puede compilar Bash para m@'as de un tipo de ordenador al mismo tiempo,
-ubicando los archivos objeto para cada arquitectura en su propio
-directorio.  Para hacer esto, debe usar una versi@'on de @code{make} que
-soporte la variable @code{VPATH}, como GNU @code{make}.  Vaya con @code{cd}
-al directorio donde quiere que vayan los archivos objeto y ejecutables y
-ejecute el guion @code{configure} desde el directorio fuente.  Puede que
-necesite proporcionar el argumento @option{--srcdir=PATH} para decirle a
-@code{configure} d@'onde est@'an los archivos fuente.  @code{configure}
-comprueba autom@'aticamente el c@'odigo fuente en el directorio en que
-est@'a @code{cofigure} y en `..'.
+ubicando los archivos objeto para cada arquitectura en su propio directorio
+Para hacer esto, debe usar una versi@'on de @code{make} que soporte la
+variable @code{VPATH}, como GNU @code{make}.  Vaya con @code{cd} al
+directorio donde quiere que vayan los archivos objeto y ejecutables y
+ejecute el guion @code{configure} desde el directorio fuente
+(@pxref{Instalaci@'on B@'asica}).  Puede que necesite proporcionar el
+argumento @option{--srcdir=PATH} para decirle a @code{configure} d@'onde
+est@'an los archivos fuente.  @code{configure} comprueba autom@'aticamente
+el c@'odigo fuente en el directorio en que est@'a @code{cofigure} y en `..'.
 
 Si tiene que usar un @code{make} que no soporta la variable @code{VPATH},
 puede compilar Bash para una arquitectura a la vez en el directorio del
@@ -8391,14 +8636,14 @@ enlaza Bash, en vez de cambiar funcionalidades de tiempo de ejecuci@'on.
 @table @code
 @item --enable-largefile
 Habilita soporte para
-@uref{https://en.wikipedia.org/wiki/Large_file_support, archivos grandes} si
-el sistema operativo requiere opciones especiales de compilador para
-construir programas que puede acceder a archivos grandes.  Esto est@'a
+@uref{http://www.unix.org/version2/whatsnew/lfs20mar.html,  archivos
+grandes} si el sistema operativo requiere opciones especiales de compilador
+para construir programas que puede acceder a archivos grandes.  Esto est@'a
 habilitado por defecto, si el sistema operativo ofrece soporte para archivos
 grandes.
 
 @item --enable-profiling
-Esto construye un binario de Bash que produce informaci@'on de análisis de
+Esto construye un binario de Bash que produce informaci@'on de an@'alisis de
 rendimiento para ser procesada por @code{gprof} cada vez que se ejecuta.
 
 @item --enable-static-link
@@ -8471,6 +8716,13 @@ Incluye soporte para coprocesos y la palabra reservada @code{coproc}
 
 @item --enable-debugger
 Incluye soporte para el depurador de Bash (distribuido por separado).
+
+@item --enable-dev-fd-stat-broken
+Si ejecutar @code{stat} en /dev/fd/@var{N} devuelve diferentes resultados
+que ejecutar @code{fstat} en el descriptor de archivo @var{N}, proporciona
+esta opci@'on para activar una soluci@'on alternativa.  Esto tiene
+implicaciones para instrucciones condicionales que comprueban los atributos
+de los archivos.
 
 @item --enable-direxpand-default
 Hace que la opci@'on del int@'erprete @code{direxpand} (@pxref{La
@@ -8547,7 +8799,7 @@ efecto.
 
 @item --enable-prompt-string-decoding
 Activa la interpretaci@'on de varios caracteres escapados con barras
-invertidas en las cadenas del prompt @env{$PS1}, @env{$PS2}, @env{$PS3} y
+invertidas en las cadenas del prompt @env{$PS0}, @env{$PS1}, @env{$PS2} y
 @env{$PS4}.  Consulte @ref{Controlando el Prompt}, para una lista completa
 de secuencias de escape de prompt.
 
@@ -8917,12 +9169,11 @@ entorno usando @code{export -f} (@pxref{Funciones del Int@'erprete}).
 @item
 Las instrucciones integradas de Bash @code{export}, @code{readonly} y
 @code{declare} pueden tomar una opci@'on @option{-f} para actuar en
-funciones del int@'erprete, una opci@'on @option{-p} para mostrar
-variables con varios atributos asignados en un formato que puede ser
-reutilizado como entrada del int@'erprete, una opci@'on @option{-n}
-para eliminar varios atributos de variable y argumentos
-@samp{nombre=valor} para establecer atributos y valores de variable
-simult@'aneamente.
+funciones del int@'erprete, una opci@'on @option{-p} para mostrar variables
+con varios atributos asignados en un formato que puede ser reusado como
+entrada del int@'erprete, una opci@'on @option{-n} para eliminar varios
+atributos de variable y argumentos @samp{nombre=valor} para establecer
+atributos y valores de variable simult@'aneamente.
 
 @item
 La instrucci@'on integrada @code{hash} de Bash permite que un nombre sea
@@ -9025,10 +9276,10 @@ informaci@'on sobre los nombres que encuentra (@pxref{Instrucciones
 Integradas de Bash}).
 
 @item
-La instrucci@'on integrada @code{umask} de Bash permite que una
-opci@'on @option{-p} haga que la salida sea mostrada en la forma de la
-instrucci@'on @code{umask} que pueda ser reutilizada como entrada
-(@pxref{Instrucciones Integradas del Bourne Shell}).
+La instrucci@'on integrada @code{umask} de Bash permite que una opci@'on
+@option{-p} haga que la salida sea mostrada en la forma de la instrucci@'on
+@code{umask} que pueda ser reusada como entrada (@pxref{Instrucciones
+Integradas del Bourne Shell}).
 
 @item
 Bash implementa una pila de directorios del estilo @code{csh} y proporciona
@@ -9102,7 +9353,7 @@ proceso con @code{SIGSEGV} bloqueado (p. ej., usando la llamada de la
 biblioteca C @code{system()}), act@'ua mal.
 
 @item
-Un en cuestionable intento de seguridad, el int@'erprete SVR4.2, al llamarse
+En un cuestionable intento de seguridad, el int@'erprete SVR4.2, al llamarse
 sin la opci@'on @option{-p}, alterar@'a sus @sc{uid} y @sc{gid} reales y
 efectivos si son menores que alg@'un umbral m@'agico, com@'unmente 100.
 Esto puede llevar a resultados inesperados.

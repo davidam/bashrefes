@@ -47,12 +47,6 @@ en las siguientes rutas:
 
 Copia esos archivos a este directorio y ejecuta `make actualiza_pot`.
 
-## Divergencias respecto al manual original
-
-En esta traducción se ha
-[reemplazado una URL rota](https://notabug.org/jorgesumle/bashrefes/issues/28)
-que no ha sido corregida en el manual oficial de Bash aún.
-
 ## Notas de traducción
 
 ### Convenciones
@@ -63,6 +57,7 @@ Se usa el usted para referirse al usuario.
 
 - *[command] argument*: argumento
 - *builtin command*: instrucción integrada
+- *callback*: retrollamada
 - *command*: instrucción u orden
 - *command line*: línea de órdenes o línea de instrucciones
 - *exit status*: estado de salida

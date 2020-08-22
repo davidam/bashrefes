@@ -10,12 +10,12 @@
 \entry{else}{11}{\code {else}}
 \entry{elif}{11}{\code {elif}}
 \entry{fi}{11}{\code {fi}}
-\entry{case}{11}{\code {case}}
-\entry{in}{11}{\code {in}}
-\entry{esac}{11}{\code {esac}}
+\entry{case}{12}{\code {case}}
+\entry{in}{12}{\code {in}}
+\entry{esac}{12}{\code {esac}}
 \entry{select}{12}{\code {select}}
 \entry{[[}{13}{\code {[[}}
 \entry{]]}{13}{\code {]]}}
-\entry{{\indexlbrace }}{16}{\code {{\tt \char 123}}}
-\entry{{\indexrbrace }}{16}{\code {{\tt \char 125}}}
+\entry{{\indexlbrace}}{16}{\code {\lbracechar {}}}
+\entry{{\indexrbrace}}{16}{\code {\rbracechar {}}}
 \entry{function}{18}{\code {function}}
